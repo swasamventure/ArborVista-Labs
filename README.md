@@ -20,3 +20,16 @@ Production-ready static website for GitHub Pages.
 - Menu behavior: `assets/script.js`
 - Page content: individual `.html` files
 - Photography: `images/`
+
+
+## Shared image hosting
+
+This build intentionally does not include an `images` folder. Property images load from the existing production GitHub Pages site:
+
+`https://swasamventure.github.io/ArborVista-Retreat/`
+
+Keep that repository and its image folders public and do not rename or delete those image files. If those URLs change, update the absolute image URLs in the HTML files and `assets/style.css`.
+
+
+## Review carousel
+The homepage review area is rotation-ready. It currently contains the verified review text publicly shown on the Airbnb listing. Add future 5-star reviews as additional `<article class="review-card">` blocks and matching review-dot buttons. Initials-based avatars are used instead of copying guest profile photographs.
