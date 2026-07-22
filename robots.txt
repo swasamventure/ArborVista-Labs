@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://swasamventure.github.io/ArborVista-Retreat/sitemap.xml
