@@ -1,5 +1,218 @@
 {
+  "version": "2.8.1-final",
   "status": "PASS",
-  "html_pages_checked": 12,
-  "missing_local_references": []
+  "checks_passed": 42,
+  "checks_total": 42,
+  "checks": [
+    {
+      "name": "All expected HTML pages exist",
+      "passed": true,
+      "detail": "['index.html', 'cabin.html', 'gallery.html', 'explore.html', 'plan.html', 'faq.html', 'welcome.html', 'rental-agreement.html', 'book-direct.html', '404.html', 'guest/index.html', 'guest/john-smith-4827/index.html']"
+    },
+    {
+      "name": "All local HTML/CSS/JS/image references resolve",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "All packaged image files decode successfully",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "HTML IDs are unique per page",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Every image has alt text",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Form controls have accessible labels",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Every page has title and viewport metadata",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "GitHub Pages base path is consistent",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Property is never described as three bedrooms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Occupancy language supports approved seven-to-eight guest requests",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Correct room model is present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Guest paths are excluded from robots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shared JavaScript passes syntax check",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Python QA and backend files compile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All website pages return HTTP 200",
+      "passed": true,
+      "detail": "[('index.html', 200, 'text/html'), ('cabin.html', 200, 'text/html'), ('gallery.html', 200, 'text/html'), ('explore.html', 200, 'text/html'), ('plan.html', 200, 'text/html'), ('faq.html', 200, 'text/html'), ('welcome.html', 200, 'text/html'), ('rental-agreement.html', 200, 'text/html'), ('book-direct.html', 200, 'text/html'), ('404.html', 200, 'text/html'), ('guest/index.html', 200, 'text/html'), ('guest/john-smith-4827/index.html', 200, 'text/html')]"
+    },
+    {
+      "name": "All inlined page images decode in Chromium",
+      "passed": true,
+      "detail": "[{'page': 'index.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'cabin.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'gallery.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'explore.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'plan.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'faq.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'welcome.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'rental-agreement.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'book-direct.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': '404.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'guest/index.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'guest/john-smith-4827/index.html', 'broken_images': [], 'horizontal_overflow': False}]"
+    },
+    {
+      "name": "Desktop pages have no horizontal overflow",
+      "passed": true,
+      "detail": "[{'page': 'index.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'cabin.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'gallery.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'explore.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'plan.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'faq.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'welcome.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'rental-agreement.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'book-direct.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': '404.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'guest/index.html', 'broken_images': [], 'horizontal_overflow': False}, {'page': 'guest/john-smith-4827/index.html', 'broken_images': [], 'horizontal_overflow': False}]"
+    },
+    {
+      "name": "Website produces no uncaught JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Mobile menu opens and updates aria-expanded",
+      "passed": true,
+      "detail": "true"
+    },
+    {
+      "name": "Mobile pages have no horizontal overflow",
+      "passed": true,
+      "detail": "[('index.html', False), ('cabin.html', False), ('gallery.html', False), ('explore.html', False), ('plan.html', False), ('faq.html', False), ('welcome.html', False), ('rental-agreement.html', False), ('book-direct.html', False), ('404.html', False)]"
+    },
+    {
+      "name": "Booking draft restores after refresh",
+      "passed": true,
+      "detail": "Draft"
+    },
+    {
+      "name": "Restored check-in recalculates checkout minimum",
+      "passed": true,
+      "detail": "2026-12-11"
+    },
+    {
+      "name": "Start over clears the restored draft",
+      "passed": true,
+      "detail": "draft cleared"
+    },
+    {
+      "name": "Blank Step 1 cannot advance",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "name": "Seven-guest request is allowed for host review",
+      "passed": true,
+      "detail": "STEP 2 OF 4\nWho should we welcome?\n\nWe will use these details for your personalized guest page.\n\nFirst name\nLast name\nEmail\nMobile phone\nHome city and state\nExpected number of vehicles\n1\n2\n3\nOne vehicle is included. Shagbark Resort currently charges $10 for each additional vehicle.\nBack\nContinue to agreement"
+    },
+    {
+      "name": "More than eight total guests is rejected",
+      "passed": true,
+      "detail": "STEP 1 OF 4\nWhen would you like to stay?\n\nChoose your dates and tell us who is traveling.\n\nCheck-in\nCheck-out\nAdults\nSelect\n1\n2\n3\n4\n5\n6\n7\n8\nChildren\n0\n1\n2\n3\n4\n5\n6\n7\nStay requests are limited to eight guests total.\nStandard sleeping setup accommodates six guests. Requests for seven or eight guests require host approval and confirmed sofa-bed availability.\nWhat brings you to the Smokies?\nSelect an option\nFamily vacation\nBirthday or celebration\nDollywood trip\nOutdoor getaway\nRelaxing retreat\nOther\nSpecial requests or helpful details\nContinue to guest details"
+    },
+    {
+      "name": "Valid Step 1 advances",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Invalid phone number cannot advance",
+      "passed": true,
+      "detail": "STEP 2 OF 4\nWho should we welcome?\n\nWe will use these details for your personalized guest page.\n\nFirst name\nLast name\nEmail\nMobile phone\nEnter a valid mobile phone number.\nHome city and state\nExpected number of vehicles\n1\n2\n3\nOne vehicle is included. Shagbark Resort currently charges $10 for each additional vehicle.\nBack\nContinue to agreement"
+    },
+    {
+      "name": "Valid Step 2 advances",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Electronic signature must match legal name",
+      "passed": true,
+      "detail": "STEP 3 OF 4\nReview and sign.\n\nPlease review the key terms, then enter your legal name as your electronic signature.\n\nArbor Vista Retreat rental agreement\n\nBy submitting this request, you acknowledge the property rules, the guest count approved by the Host, no-smoking and no-pet policies, check-in at 4:00 PM, check-out by 10:00 AM, and responsibility for damage or extraordinary cleaning. Requests for seven or eight guests require written Host approval and confirmed sofa-bed availability.\n\nThe complete agreement includes cancellation, payment, occupancy, amenity-use, wildlife-safety, liability, dispute-resolution, and fee-schedule provisions.\n\nOpen full rental agreement\nGuest legal name\nDate\nElectronic signature\nTyping your name represents your electronic signature for this test flow.\nSignature must match the guest legal name.\nI have read and agree to the complete Rental Agreement.\nI certify that the information provided is accurate and that I am authorized to make this request.\nBack\nReview request"
+    },
+    {
+      "name": "Valid agreement advances to review",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Review renders guest text without HTML injection",
+      "passed": true,
+      "detail": "STAY\nDecember 10, 2026 \u2013 December 14, 2026\nGUESTS\n6 adult(s) \u00b7 0 child(ren)\nPRIMARY GUEST\nQA <img id=\"xss-marker\" src=x onerror=\"window.xss=1\"> Guest\nCONTACT\nqa@example.com\n+1 (512) 555-1212\nVEHICLES\n1\nELECTRONIC SIGNATURE\nQA <img id=\"xss-marker\" src=x onerror=\"window.xss=1\"> Guest"
+    },
+    {
+      "name": "Clickable progress steps preserve completed information",
+      "passed": true,
+      "detail": "preserved"
+    },
+    {
+      "name": "Successful request shows confirmation",
+      "passed": true,
+      "detail": "\u2713\nREQUEST RECEIVED\nThank you, QA <img id=\"xss-marker\" src=x onerror=\"window.xss=1\">.\n\nYour test stay request has been saved in this browser.\n\nYour personalized guest link preview Open QA <img id=\"xss-marker\" src=x onerror=\"window.xss=1\">'s guest portal preview\n\nThis working preview uses the information saved in this browser. A secure production portal will be created after approval.\n\n1\n\nPooja reviews your request\nExpected response within 24 hours.\n\n2\n\nYour reservation is confirmed\nYou receive your personalized welcome link.\n\n3\n\nThree days before arrival\nYour page displays gate, address and check-in information.\n\nExplore the welcome guide"
+    },
+    {
+      "name": "Confirmation creates a working guest preview link",
+      "passed": true,
+      "detail": "https://arborvista.test/ArborVista-Labs/guest/?id=qa-img-id-xss-marker-src-x-onerror-window-xss-1-guest-7764"
+    },
+    {
+      "name": "Submission keeps request but clears unfinished draft",
+      "passed": true,
+      "detail": "storage state"
+    },
+    {
+      "name": "Guest preview loads submitted request safely",
+      "passed": true,
+      "detail": "PRIMARY GUEST\nQA <img id=\"xss-marker\" src=x onerror=\"window.xss=1\"> Guest\nSTAY\nDec 10, 2026 \u2013 Dec 14, 2026\nGUESTS\n6 adult(s) \u00b7 0 child(ren)\nCONTACT\nqa@example.com\nVEHICLES\n1\nSTATUS\nAwaiting host review"
+    },
+    {
+      "name": "Corrupted guest-preview storage fails safely",
+      "passed": true,
+      "detail": "PREVIEW UNAVAILABLE\nPlease complete the Book Direct form in this browser first."
+    },
+    {
+      "name": "Blank gate-pass form is not stored",
+      "passed": true,
+      "detail": "no storage"
+    },
+    {
+      "name": "Gate-pass form stores valid data and consent",
+      "passed": true,
+      "detail": "{'driver_name': 'QA Driver', 'email': 'driver@example.com', 'phone': '5125551212', 'vehicles': '2', 'consent': True, 'submittedAt': '2026-07-22T22:23:41.967Z'}"
+    },
+    {
+      "name": "Gate-pass success message appears",
+      "passed": true,
+      "detail": "success visible"
+    },
+    {
+      "name": "Gate-pass status persists after refresh",
+      "passed": true,
+      "detail": "Information received \u2014 processing"
+    }
+  ]
 }

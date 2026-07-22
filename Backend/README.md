@@ -1,38 +1,71 @@
-# Arbor Vista v2.8 — Local iCal Database Test Harness
+# Arbor Vista v2.8 Local Calendar Engine
 
-This folder is a safe, local prototype for Phase 1 calendar synchronization. It does **not** connect to Airbnb, Vrbo, Supabase, or the production website.
+This folder is a standard-library-only development prototype for calendar import, reservation conflict checking, owner blocks, direct booking requests, cancellation reconciliation, audit logging, and outbound ICS generation.
 
-## What it tests
-
-- SQLite schema for properties, calendar sources, reservations, owner blocks, sync runs, and audit logs
-- Airbnb-style and Vrbo-style `.ics` imports
-- Idempotent re-sync using `calendar_source_id + external_uid`
-- Date-overlap conflict detection using half-open stays: check-in is occupied; checkout is available
-- Direct booking request creation
-- Owner blocks
-- Outbound Arbor Vista `.ics` generation
-
-## Run
-
-From the `Backend` folder:
+## Automated QA
 
 ```bash
 python run_qa.py
 ```
 
-The QA script resets and rebuilds `arborvista_ical_test.db`, imports both fixtures, tests conflicts, inserts one direct request, exports `exports/arbor-vista.ics`, and writes the database QA reports in the project root.
+The suite creates temporary databases and does not alter the packaged sample database. It covers 33 scenarios, including duplicates, updates, cancellations, missing events, malformed feeds, concurrent booking attempts, export filtering, and database integrity.
 
-## Useful commands
+## Rebuild the packaged sample database
 
 ```bash
-python ical_db.py init --reset
-python ical_db.py sync src_airbnb fixtures/airbnb_sample.ics
-python ical_db.py sync src_vrbo fixtures/vrbo_sample.ics
-python ical_db.py check 2026-09-05 2026-09-07
-python ical_db.py request 2026-09-22 2026-09-25 "Test Guest"
-python ical_db.py export exports/arbor-vista.ics
+python ical_db.py --db arborvista_ical_test.db init --reset
+python ical_db.py --db arborvista_ical_test.db sync src_airbnb fixtures/airbnb_sample.ics
+python ical_db.py --db arborvista_ical_test.db sync src_vrbo fixtures/vrbo_sample.ics
+python ical_db.py --db arborvista_ical_test.db health
 ```
 
-## Production boundary
+## Availability check
 
-GitHub Pages cannot access this SQLite database. The production phase should migrate the same logical schema to Supabase/PostgreSQL and expose availability through authenticated/server-side endpoints. Real Airbnb/Vrbo feed URLs must be stored as secrets and never committed to GitHub.
+Dates use half-open `[check-in, check-out)` semantics.
+
+```bash
+python ical_db.py --db arborvista_ical_test.db check 2026-09-05 2026-09-07
+```
+
+## Create and cancel a direct request
+
+```bash
+python ical_db.py --db arborvista_ical_test.db request 2026-11-01 2026-11-05 "Test Guest"
+python ical_db.py --db arborvista_ical_test.db cancel RESERVATION_ID
+```
+
+## Owner block
+
+```bash
+python ical_db.py --db arborvista_ical_test.db block 2026-11-15 2026-11-18 "Owner stay"
+```
+
+## Outbound calendars
+
+Generic export:
+
+```bash
+python ical_db.py --db arborvista_ical_test.db export exports/arbor-vista-all.ics
+```
+
+Airbnb-targeted export excludes reservations imported from Airbnb:
+
+```bash
+python ical_db.py --db arborvista_ical_test.db export exports/arbor-vista-for-airbnb.ics --exclude-source airbnb
+```
+
+Vrbo-targeted export excludes reservations imported from Vrbo:
+
+```bash
+python ical_db.py --db arborvista_ical_test.db export exports/arbor-vista-for-vrbo.ics --exclude-source vrbo
+```
+
+Channel-specific exports reduce the risk of feeding a channel's own reservation back to that same channel.
+
+## Test a real HTTPS calendar feed later
+
+```bash
+python ical_db.py --db arborvista_ical_test.db sync-url src_airbnb "PRIVATE_HTTPS_ICAL_URL"
+```
+
+Keep the URL private. This prototype has no scheduler, secret manager, admin authentication, or production API yet.

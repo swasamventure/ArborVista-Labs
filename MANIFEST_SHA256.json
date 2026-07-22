@@ -1,6 +1,6 @@
 {
-  "version": "2.8.0",
-  "file_count": 86,
+  "release": "Arbor Vista Retreat v2.8.1 Flexible Occupancy QA",
+  "file_count": 108,
   "files": [
     {
       "path": ".nojekyll",
@@ -10,27 +10,72 @@
     {
       "path": "404.html",
       "bytes": 745,
-      "sha256": "0ca946afec9a135d967c4633de4b5c32ff8abc01f80ef3c956279b38e181b9ee"
+      "sha256": "c3f3ced27b15faeb3794bfb9f25b3746cf55fec6648ae4d9f9ed0963d824cea6"
     },
     {
       "path": "Backend/README.md",
-      "bytes": 1569,
-      "sha256": "e02b658fcdf22be19b0489ee8f02a0d758aa3d0bce8de5670cc9f7b64c771787"
+      "bytes": 2302,
+      "sha256": "737c452a56e0fb03a0a95293c9eb5f928ca7503b9c1acf74c460a72a076b316e"
     },
     {
       "path": "Backend/arborvista_ical_test.db",
       "bytes": 81920,
-      "sha256": "9bbd28f5158140c1cc906ced511f45b5271b02ec30f57308032ec1edecec5be6"
+      "sha256": "bff1ef21a66c8bb396ace913abcf8fe2642e4f465ccdad19b8f72b18e06987d7"
+    },
+    {
+      "path": "Backend/exports/arbor-vista-all.ics",
+      "bytes": 1357,
+      "sha256": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e"
+    },
+    {
+      "path": "Backend/exports/arbor-vista-for-airbnb.ics",
+      "bytes": 883,
+      "sha256": "96c5fb37737d46eb0e67f01c71a50b9cee07fca00fad5b2f75bef9995f0cf766"
+    },
+    {
+      "path": "Backend/exports/arbor-vista-for-vrbo.ics",
+      "bytes": 887,
+      "sha256": "bd03e9fbbe5c4e78d3658052034b057581c074f40d4b6bddf9fa04d018256d9f"
     },
     {
       "path": "Backend/exports/arbor-vista.ics",
-      "bytes": 1502,
-      "sha256": "74876fcfb4d1bd0b78c7ce65c8d4c1946b5dbb1e7de1b870cd02064787aca879"
+      "bytes": 1357,
+      "sha256": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e"
+    },
+    {
+      "path": "Backend/fixtures/airbnb_cancelled.ics",
+      "bytes": 274,
+      "sha256": "76f95febc51d3b7212aa957e6cc98ed4f5e7d64f6da735ed95755e9f0d70516c"
     },
     {
       "path": "Backend/fixtures/airbnb_sample.ics",
       "bytes": 479,
       "sha256": "9442964dcd3e943fb05cc2868526eb517f5601d1b0e9a0f5c317ebe011e2ac15"
+    },
+    {
+      "path": "Backend/fixtures/airbnb_updated_missing.ics",
+      "bytes": 264,
+      "sha256": "e36945bfa80e536bcb2f08e3160556f462d3a07af988f33d936628deca8c59b6"
+    },
+    {
+      "path": "Backend/fixtures/duplicate_uid.ics",
+      "bytes": 258,
+      "sha256": "7cd070cffa9b36fd1d52e9c97f126e7adf2c8c8ff58e07283bd82af56c7f6b75"
+    },
+    {
+      "path": "Backend/fixtures/empty_calendar.ics",
+      "bytes": 106,
+      "sha256": "d997209b18c3075996ea93d1ecd20e924550a560ffaa0e006c0f4dfb93b65fde"
+    },
+    {
+      "path": "Backend/fixtures/folded_line.ics",
+      "bytes": 291,
+      "sha256": "c084a827478ffca575c32546e203b6b6c680bd508198e596a43b2a52e640eec5"
+    },
+    {
+      "path": "Backend/fixtures/malformed_missing_dtend.ics",
+      "bytes": 148,
+      "sha256": "9619a2588ef80e659ca41269546a9038349922839f3314e14956e6b3669b0633"
     },
     {
       "path": "Backend/fixtures/vrbo_sample.ics",
@@ -39,18 +84,18 @@
     },
     {
       "path": "Backend/ical_db.py",
-      "bytes": 10238,
-      "sha256": "4f6c81420869eba301b21d28b7d54fefa8c86a10492ee01df462904aa2bdfe6a"
+      "bytes": 26118,
+      "sha256": "928fd68789b6d6f64adaee98dbfb5f1cc720a925df27ef01662ab1009ff71201"
     },
     {
       "path": "Backend/run_qa.py",
-      "bytes": 3833,
-      "sha256": "a1db607c32a54403461418e4f0be82fcfd3378dbe7172e796146c99a2959c227"
+      "bytes": 12026,
+      "sha256": "ee1a594c12a41bf60e5ad956b835232ca8db83ff9394db4d3fcda97da233fb1f"
     },
     {
       "path": "Backend/schema.sql",
-      "bytes": 3528,
-      "sha256": "b6c5bdc5b5525be1200f0f6619b789765a8783c64ed2f308af85f9c63f6274c8"
+      "bytes": 4384,
+      "sha256": "0ef2c247a28044bb6b87376b784ccd363f718d771c5d1d63e66cd7672a2ff1aa"
     },
     {
       "path": "Backend/seed.sql",
@@ -58,89 +103,154 @@
       "sha256": "6d3f8f486193d870589f22eed72ff86493bcf42437ca1c1a9785777aef5e7886"
     },
     {
+      "path": "Docs/CHANGELOG_V2.8.md",
+      "bytes": 1899,
+      "sha256": "df288404f9161299c07a4ba21c95fa27aa7ebca576b7895549d151f04bb86e0c"
+    },
+    {
       "path": "Docs/ICAL_TEST_PLAN.md",
-      "bytes": 1166,
-      "sha256": "d9179491bc7405dc696aa6a2d9b08c56a6f74bff8e8e7b110f950fad87019c71"
+      "bytes": 1981,
+      "sha256": "420ef436e040d5aab89aa41d2f5680080a6284443434f7bd67440101cca03b0e"
+    },
+    {
+      "path": "Docs/KNOWN_ISSUES.md",
+      "bytes": 907,
+      "sha256": "dc7f6008d9a7d71d4b78a4ac60beaa14edde24ab0701c6e6743f00f914979a24"
+    },
+    {
+      "path": "Docs/SECURITY_NOTES.md",
+      "bytes": 1103,
+      "sha256": "0ab8ba3a593024d32fcd8fecba83099b486272b9a46ba6745570de948be44277"
+    },
+    {
+      "path": "QA/README.md",
+      "bytes": 800,
+      "sha256": "38ff1eac0c939360cf1800aa4b2521c7a287dc4dc29065f5189677c32cf28544"
+    },
+    {
+      "path": "QA/requirements-qa.txt",
+      "bytes": 51,
+      "sha256": "8a141b9f3d39adb962ac6da1b4ed1605e42d272898e7bce68d17aabe13e8b97a"
+    },
+    {
+      "path": "QA/run_all_qa.py",
+      "bytes": 2441,
+      "sha256": "f3b49bf9f88a682dc46db4057321a5344c1d67ec1e7e0d6dda92a1275415a392"
+    },
+    {
+      "path": "QA/run_web_qa.py",
+      "bytes": 24251,
+      "sha256": "cec89566489ae72a50af2cde9b436068d9611f04ff2e288d4ca3288bc2924298"
+    },
+    {
+      "path": "QA/screenshots/booking-confirmation-desktop.png",
+      "bytes": 802147,
+      "sha256": "f041d8a5d60e71f2a6516dbeaba67e58ea7c3931077fdc0c20b5cd3514eb5db3"
+    },
+    {
+      "path": "QA/screenshots/guest-preview-desktop.png",
+      "bytes": 926109,
+      "sha256": "6ded0a38f76ddc3099c5853a13b1a917b640ce2ca0745661121d71d8a0d1f362"
+    },
+    {
+      "path": "QA/screenshots/home-mobile.png",
+      "bytes": 410522,
+      "sha256": "566f4cfc80fbf656d79554e9b56db441c90c6b6989202c7e78744e4b1add0f62"
     },
     {
       "path": "QA_REPORT.json",
-      "bytes": 503,
-      "sha256": "cde7c45b284fd07e2e0a01ffc59fa20e342a72b0fbb53dc5eba172e32afd227b"
+      "bytes": 300,
+      "sha256": "1a33215244b06734bcb81e9f56708d3a97a9b1819f5136fb216124833f1d4954"
     },
     {
       "path": "QA_REPORT.md",
-      "bytes": 912,
-      "sha256": "5ac701522417197ced11a8aec1a85bae7956e594b751867bc26c27684c60d3d5"
+      "bytes": 493,
+      "sha256": "166700b9dc7a4d1cceb5a9bef7904ee6c027c00fa4471f2f2e0898b56c62a361"
     },
     {
       "path": "QA_REPORT_DATABASE.json",
-      "bytes": 2865,
-      "sha256": "7bb05bd95ad81303e5361ca8547ba4b6be72f62dc77e2f9275f065d32e9ac8b7"
+      "bytes": 7633,
+      "sha256": "971923268f9d41b31f9d4ca636e62337a4af471c4f7855f11838c954491d57b7"
     },
     {
       "path": "QA_REPORT_DATABASE.md",
-      "bytes": 521,
-      "sha256": "9eb4208d14a42fc7ee108359861d62fe1a5f5c6b9ce6ea01c044460139575002"
+      "bytes": 1590,
+      "sha256": "721beb78febba0c2674241880c8840cb601181d6919e0fd1d32fa9b118e8dd38"
+    },
+    {
+      "path": "QA_REPORT_FINAL.json",
+      "bytes": 300,
+      "sha256": "1a33215244b06734bcb81e9f56708d3a97a9b1819f5136fb216124833f1d4954"
+    },
+    {
+      "path": "QA_REPORT_FINAL.md",
+      "bytes": 493,
+      "sha256": "166700b9dc7a4d1cceb5a9bef7904ee6c027c00fa4471f2f2e0898b56c62a361"
     },
     {
       "path": "QA_REPORT_WEB_V2.8.json",
-      "bytes": 84,
-      "sha256": "08eb58103461b83b8cb58b175182aa11277a5389224c7969f4ac56869b9c0ccf"
+      "bytes": 11604,
+      "sha256": "d13732c027453a082aaf18868e570b41f0ec4ead2bf5f51f7f8ed270328b14fa"
+    },
+    {
+      "path": "QA_REPORT_WEB_V2.8.md",
+      "bytes": 2230,
+      "sha256": "f6f179fef372e996945db3439f0ae28e5aa45e52d2c49ce2f61375577a34f1e3"
     },
     {
       "path": "README.md",
-      "bytes": 937,
-      "sha256": "2cb205eec4cb92e5a0932e472aa9b6e1b604982af884d0aad081b3c2720cfee2"
+      "bytes": 825,
+      "sha256": "4abbeddeb07707405514e8b6f6403ac67212654e7e9c1045c218ee9b2aa11dbc"
     },
     {
       "path": "README_v2.8.md",
-      "bytes": 812,
-      "sha256": "f9b2fe4e30250c6d17cd7f2c506e232b692212afbf1dee59bb31ffefcd79199d"
+      "bytes": 1947,
+      "sha256": "3d14ee0004773860e2ee8024a968031145e9221648425fb0c53899802a060fe4"
     },
     {
       "path": "assets/script.js",
-      "bytes": 9236,
-      "sha256": "85a4f927ceff3945315994a25a82d8a99ccf806752f5d73c15707bc7874b4054"
+      "bytes": 15935,
+      "sha256": "77f399e3fd2cf6abbbfab705aba8a9f87faf78fe4829e4403e6565c9e53a86c2"
     },
     {
       "path": "assets/style.css",
       "bytes": 16587,
-      "sha256": "e0ab4e242924932314eb52afbd887883c9728d523ace8497ed8cd7671cda2668"
+      "sha256": "13d5635546381f760f65c7061f2ca61ae995ae61b14580e877bb1c13d0a268e5"
     },
     {
       "path": "book-direct.html",
-      "bytes": 11911,
-      "sha256": "1f4f919042a806e85a915a5383b3f1ac4d1287098c25757c2ef9d7ccf21fb4b1"
+      "bytes": 12314,
+      "sha256": "97e01cf374e1bf439eeddf0c8d47b6b281ababd3be4db92b6916f865f2389622"
     },
     {
       "path": "cabin.html",
-      "bytes": 13161,
-      "sha256": "e737d86dccddaa1a6593f138f9b1206735fb55e6675c3c3e1d05640525c21336"
+      "bytes": 13197,
+      "sha256": "037f43dbd275328b8898dfafa3f1bc78637d114ffd209ac0044c998923c69015"
     },
     {
       "path": "explore.html",
-      "bytes": 5001,
-      "sha256": "c0fcd4732d98e9d60233342ee7e478242cbf439ee23b39e1779ec8842a8920ce"
+      "bytes": 5037,
+      "sha256": "dabbc3158bd47a1c6701a14d43ad42997d3e8a065600b93bd2cf6ca2841fffaf"
     },
     {
       "path": "faq.html",
-      "bytes": 2692,
-      "sha256": "566d9e66b490ae37a9919719e29c1d411f79e2baf325fc1e9ffe6942d07820c0"
+      "bytes": 2859,
+      "sha256": "778730992dbd5bb101513dd5bd55c309414264b20320548edc591f2337682841"
     },
     {
       "path": "gallery.html",
-      "bytes": 16783,
-      "sha256": "c68621bc322b30f86a1e6854c38f460cf67525c980893254f040b03893f0268d"
+      "bytes": 16819,
+      "sha256": "8a6d6a6ece3802f3ed2ba54544ab1aaeff84a0e1d4e2278acf47d0c5c4e65c63"
     },
     {
       "path": "guest/index.html",
-      "bytes": 5381,
-      "sha256": "98070f625fa936b62e45793686a82432a7d62c552fc702097841ef0a8226f723"
+      "bytes": 3664,
+      "sha256": "77f451c98b2e603dde9708399c58ee1bf5495e3dfba6a33dad6c5e45fd2b354d"
     },
     {
       "path": "guest/john-smith-4827/index.html",
-      "bytes": 4682,
-      "sha256": "4ffbef947c67fb9b832ad6adee94968cbabff7c4b0116a454653d82db3f1bd38"
+      "bytes": 4837,
+      "sha256": "71c0f1d2a91ce31bd5ed188528610d6e82bb2128ea9fde5036bfe5aa434f8e79"
     },
     {
       "path": "images/area-map.webp",
@@ -389,18 +499,18 @@
     },
     {
       "path": "index.html",
-      "bytes": 5246,
-      "sha256": "3fdb346b725ce8dd2a75f08290bbae5fa0d9a0b856d82172c831f771e85c6cfd"
+      "bytes": 5282,
+      "sha256": "a76c1587dc54182ee97d6f162ca196f227da66da9de7848593c4cc0654035ade"
     },
     {
       "path": "plan.html",
-      "bytes": 2444,
-      "sha256": "d92344aabb85e935b7097ec5f31768684ca6e478d7eca1255186d98f863f0c98"
+      "bytes": 2480,
+      "sha256": "e588c04bb177dea6fb560a39724e8c95bc3f4fee8baead130c514852655db2e0"
     },
     {
       "path": "rental-agreement.html",
-      "bytes": 5961,
-      "sha256": "2ae33637caf5854eb6c3abab6334898ee5a871b4a15765406bdf2c40ee80f6c0"
+      "bytes": 6175,
+      "sha256": "9150386e3b03a29cca7e1ee376df4a48283beebb883e9cea9b0a5fe7f10c41d7"
     },
     {
       "path": "robots.txt",
@@ -429,8 +539,8 @@
     },
     {
       "path": "welcome.html",
-      "bytes": 4906,
-      "sha256": "f5405793d0f60eff3c10b731a8237fd2f8a205b3d278f3cf18172912ab450819"
+      "bytes": 4942,
+      "sha256": "c02fc8e7f9b6bf497382bd132ac15f670870314432c03b16f486568a67687a72"
     }
   ]
 }

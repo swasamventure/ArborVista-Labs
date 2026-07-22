@@ -40,7 +40,13 @@ CREATE TABLE IF NOT EXISTS reservations (
   raw_ical TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  CHECK (date(end_date) > date(start_date)),
+  CHECK (
+    date(start_date) IS NOT NULL
+    AND date(end_date) IS NOT NULL
+    AND date(end_date) > date(start_date)
+    AND start_date = date(start_date)
+    AND end_date = date(end_date)
+  ),
   UNIQUE(calendar_source_id, external_uid)
 );
 
@@ -56,7 +62,14 @@ CREATE TABLE IF NOT EXISTS calendar_blocks (
   created_by TEXT NOT NULL DEFAULT 'owner',
   active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0,1)),
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  CHECK (date(end_date) > date(start_date))
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CHECK (
+    date(start_date) IS NOT NULL
+    AND date(end_date) IS NOT NULL
+    AND date(end_date) > date(start_date)
+    AND start_date = date(start_date)
+    AND end_date = date(end_date)
+  )
 );
 
 CREATE INDEX IF NOT EXISTS idx_blocks_property_dates
@@ -72,6 +85,7 @@ CREATE TABLE IF NOT EXISTS sync_runs (
   events_inserted INTEGER NOT NULL DEFAULT 0,
   events_updated INTEGER NOT NULL DEFAULT 0,
   events_cancelled INTEGER NOT NULL DEFAULT 0,
+  conflicts_found INTEGER NOT NULL DEFAULT 0,
   error_message TEXT
 );
 
@@ -85,6 +99,20 @@ CREATE TABLE IF NOT EXISTS audit_log (
   details_json TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TRIGGER IF NOT EXISTS reservations_touch_updated_at
+AFTER UPDATE ON reservations
+FOR EACH ROW WHEN NEW.updated_at = OLD.updated_at
+BEGIN
+  UPDATE reservations SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+END;
+
+CREATE TRIGGER IF NOT EXISTS blocks_touch_updated_at
+AFTER UPDATE ON calendar_blocks
+FOR EACH ROW WHEN NEW.updated_at = OLD.updated_at
+BEGIN
+  UPDATE calendar_blocks SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+END;
 
 CREATE VIEW IF NOT EXISTS unavailable_periods AS
 SELECT property_id, start_date, end_date, source_type AS source, id AS source_id, status

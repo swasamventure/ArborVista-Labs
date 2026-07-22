@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Arbor Vista QA//Folded Line//EN
+BEGIN:VEVENT
+UID:folded-001@example.com
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261104
+SUMMARY:A very long reservation summary that is folded across calendar lines for
+ parser verification
+END:VEVENT
+END:VCALENDAR
