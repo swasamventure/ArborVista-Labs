@@ -1,132 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Book Direct | Arbor Vista Retreat</title>
-  <meta name="description" content="Request a direct stay at Arbor Vista Retreat, a premium Smoky Mountain cabin near Dollywood.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://arborvistaretreat.com/book-direct">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Book Direct | Arbor Vista Retreat</title>
+<meta content="Request a direct stay at Arbor Vista Retreat, a premium Smoky Mountain cabin near Dollywood." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://arborvistaretreat.com/book-direct" rel="canonical"/>
+<link href="assets/style.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="nav"><div class="container navin"><a class="brand" href="index.html">Arbor Vista Retreat<small>Sevierville · Tennessee</small></a><button class="menu" aria-label="Open menu">☰</button><nav class="links"><a href="cabin.html">The Cabin</a><a href="gallery.html">Gallery</a><a href="explore.html">Explore</a><a href="welcome.html">Welcome Guide</a><a href="book-direct.html">Book Direct</a><a href="faq.html">FAQ</a></nav></div></header>
-
+<header class="nav"><div class="container navin"><a class="brand" href="index.html">Arbor Vista Retreat<small>Sevierville · Tennessee</small></a><button aria-label="Open menu" class="menu">☰</button><nav class="links"><a href="cabin.html">The Cabin</a><a href="gallery.html">Gallery</a><a href="explore.html">Explore</a><a href="welcome.html">Welcome Guide</a><a href="book-direct.html">Book Direct</a><a href="faq.html">FAQ</a></nav></div></header>
 <main>
-  <section class="booking-hero">
-    <div class="container booking-hero-grid">
-      <div>
-        <div class="eyebrow" style="color:#f0c895">A private, personalized stay</div>
-        <h1>Request your Smoky Mountain getaway.</h1>
-        <p class="hero-copy">A simple, guided request with no payment due today. Pooja personally reviews every stay.</p>
-        <div class="trust-row"><span>✓ No payment today</span><span>✓ Personal host review</span><span>✓ Reply within 24 hours</span></div>
-      </div>
-      <aside class="booking-summary-card">
-        <img src="images/hero/2732PC-1.jpeg" alt="Arbor Vista Retreat cabin in the Smoky Mountains">
-        <div class="booking-summary-body">
-          <div class="eyebrow">Arbor Vista Retreat</div>
-          <h3>2 bedrooms + open loft</h3>
-          <p>4 beds · Sleeps 6 · 2.5 bathrooms</p>
-          <div class="amenity-pills"><span>Private hot tub</span><span>Arcade loft</span><span>Shagbark Resort</span></div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section soft">
-    <div class="container booking-layout">
-      <aside class="booking-side">
-        <div class="eyebrow">Your request</div>
-        <h2>Four easy steps.</h2>
-        <div class="booking-step-list" aria-label="Booking progress">
-          <button type="button" class="booking-step-nav active" data-step-nav="1"><span>1</span><div><strong>Stay details</strong><small>Dates and guests</small></div></button>
-          <button type="button" class="booking-step-nav" data-step-nav="2"><span>2</span><div><strong>Guest details</strong><small>How to reach you</small></div></button>
-          <button type="button" class="booking-step-nav" data-step-nav="3"><span>3</span><div><strong>Agreement</strong><small>Review and sign</small></div></button>
-          <button type="button" class="booking-step-nav" data-step-nav="4"><span>4</span><div><strong>Confirm</strong><small>Review your request</small></div></button>
-        </div>
-        <div class="host-note"><strong>A note from Pooja</strong><p>I personally review each request to make sure the cabin is a great fit for your group. No card is charged at this stage.</p></div>
-      </aside>
-
-      <div class="form-shell booking-shell">
-        <div class="booking-progress"><span data-progress-bar></span></div>
-        <form id="bookingFlow" novalidate>
-          <section class="booking-panel active" data-booking-step="1">
-            <div class="form-head light-head"><div><div class="eyebrow">Step 1 of 4</div><h2>When would you like to stay?</h2><p>Choose your dates and tell us who is traveling.</p></div></div>
-            <div class="form-body form-grid">
-              <div class="field"><label for="check_in">Check-in</label><input id="check_in" name="check_in" type="date" required></div>
-              <div class="field"><label for="check_out">Check-out</label><input id="check_out" name="check_out" type="date" required></div>
-              <div class="field"><label for="adults">Adults</label><select id="adults" name="adults" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
-              <div class="field"><label for="children">Children</label><select id="children" name="children"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-              <div class="field full"><label for="visit_reason">What brings you to the Smokies?</label><select id="visit_reason" name="visit_reason"><option value="">Select an option</option><option>Family vacation</option><option>Birthday or celebration</option><option>Dollywood trip</option><option>Outdoor getaway</option><option>Relaxing retreat</option><option>Other</option></select></div>
-              <div class="field full"><label for="notes">Special requests or helpful details</label><textarea id="notes" name="notes" placeholder="Tell us anything that would help us prepare for your stay."></textarea></div>
-              <div class="booking-actions"><span></span><button class="btn gold" type="button" data-next>Continue to guest details</button></div>
-            </div>
-          </section>
-
-          <section class="booking-panel" data-booking-step="2">
-            <div class="form-head light-head"><div><div class="eyebrow">Step 2 of 4</div><h2>Who should we welcome?</h2><p>We will use these details for your personalized guest page.</p></div></div>
-            <div class="form-body form-grid">
-              <div class="field"><label for="first_name">First name</label><input id="first_name" name="first_name" autocomplete="given-name" required></div>
-              <div class="field"><label for="last_name">Last name</label><input id="last_name" name="last_name" autocomplete="family-name" required></div>
-              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-              <div class="field"><label for="phone">Mobile phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Used for your 4-digit door code" required></div>
-              <div class="field full"><label for="city_state">Home city and state</label><input id="city_state" name="city_state" autocomplete="address-level2" placeholder="Austin, Texas"></div>
-              <div class="field full"><label for="vehicles">Expected number of vehicles</label><select id="vehicles" name="vehicles"><option>1</option><option>2</option><option>3</option></select><small>One vehicle is included. Shagbark Resort currently charges $10 for each additional vehicle.</small></div>
-              <div class="booking-actions"><button class="btn outline" type="button" data-back>Back</button><button class="btn gold" type="button" data-next>Continue to agreement</button></div>
-            </div>
-          </section>
-
-          <section class="booking-panel" data-booking-step="3">
-            <div class="form-head light-head"><div><div class="eyebrow">Step 3 of 4</div><h2>Review and sign.</h2><p>Please review the key terms, then enter your legal name as your electronic signature.</p></div></div>
-            <div class="form-body">
-              <div class="agreement-preview">
-                <h3>Arbor Vista Retreat rental agreement</h3>
-                <p>By submitting this request, you acknowledge the property rules, maximum occupancy of six guests, no-smoking and no-pet policies, check-in at 4:00 PM, check-out by 10:00 AM, and responsibility for damage or extraordinary cleaning.</p>
-                <p>The complete agreement includes cancellation, payment, occupancy, amenity-use, wildlife-safety, liability, dispute-resolution, and fee-schedule provisions.</p>
-                <a class="btn outline" href="rental-agreement.html" target="_blank" rel="noopener">Open full rental agreement</a>
-              </div>
-              <div class="form-grid agreement-fields">
-                <div class="field"><label for="legal_name">Guest legal name</label><input id="legal_name" name="legal_name" required></div>
-                <div class="field"><label for="agreement_date">Date</label><input id="agreement_date" name="agreement_date" type="date" required></div>
-                <div class="field full"><label for="electronic_signature">Electronic signature</label><input id="electronic_signature" name="electronic_signature" class="signature-input" placeholder="Type your full legal name" required><small>Typing your name represents your electronic signature for this test flow.</small></div>
-                <div class="field full check"><input id="agree_terms" name="agree_terms" type="checkbox" required><label for="agree_terms">I have read and agree to the complete Rental Agreement.</label></div>
-                <div class="field full check"><input id="certify" name="certify" type="checkbox" required><label for="certify">I certify that the information provided is accurate and that I am authorized to make this request.</label></div>
-              </div>
-              <div class="booking-actions"><button class="btn outline" type="button" data-back>Back</button><button class="btn gold" type="button" data-next>Review request</button></div>
-            </div>
-          </section>
-
-          <section class="booking-panel" data-booking-step="4">
-            <div class="form-head light-head"><div><div class="eyebrow">Step 4 of 4</div><h2>Review your stay request.</h2><p>Please confirm the details below before submitting.</p></div></div>
-            <div class="form-body">
-              <div class="review-grid" data-booking-review></div>
-              <div class="privacy-note"><strong>No payment is collected today.</strong><p>This GitHub test stores the request only in this browser so you can test the complete experience. Email delivery, secure storage, and automatic guest-page creation will be connected later.</p></div>
-              <div class="booking-actions"><button class="btn outline" type="button" data-back>Back</button><button class="btn gold" type="submit">Submit stay request</button></div>
-            </div>
-          </section>
-
-          <section class="booking-panel" data-booking-step="5">
-            <div class="confirmation-panel">
-              <div class="confirmation-mark">✓</div>
-              <div class="eyebrow">Request received</div>
-              <h2>Thank you, <span data-confirm-name>Guest</span>.</h2>
-              <p>Your test stay request has been saved in this browser.</p>
-              <div class="confirmation-card">
-                <small>Your personalized guest link preview</small>
-                <strong data-guest-link>arborvistaretreat.com/guest/guest-0000</strong>
-                <p>This URL is a preview only. The production version will be generated securely after the request is approved.</p>
-              </div>
-              <div class="next-steps"><div><span>1</span><p><strong>Pooja reviews your request</strong><br>Expected response within 24 hours.</p></div><div><span>2</span><p><strong>Your reservation is confirmed</strong><br>You receive your personalized welcome link.</p></div><div><span>3</span><p><strong>Three days before arrival</strong><br>Your page displays gate, address and check-in information.</p></div></div>
-              <a class="btn primary" href="welcome.html">Explore the welcome guide</a>
-            </div>
-          </section>
-        </form>
-      </div>
-    </div>
-  </section>
+<section class="booking-hero">
+<div class="container booking-hero-grid">
+<div>
+<div class="eyebrow" style="color:#f0c895">A private, personalized stay</div>
+<h1>Request your Smoky Mountain getaway.</h1>
+<p class="hero-copy">A simple, guided request with no payment due today. Pooja personally reviews every stay.</p>
+<div class="trust-row"><span>✓ No payment today</span><span>✓ Personal host review</span><span>✓ Reply within 24 hours</span></div>
+</div>
+<aside class="booking-summary-card">
+<img alt="Arbor Vista Retreat cabin in the Smoky Mountains" src="images/hero/2732PC-1.webp"/>
+<div class="booking-summary-body">
+<div class="eyebrow">Arbor Vista Retreat</div>
+<h3>2 bedrooms + open loft</h3>
+<p>4 beds · Sleeps 6 · 2.5 bathrooms</p>
+<div class="amenity-pills"><span>Private hot tub</span><span>Arcade loft</span><span>Shagbark Resort</span></div>
+</div>
+</aside>
+</div>
+</section>
+<section class="section soft">
+<div class="container booking-layout">
+<aside class="booking-side">
+<div class="eyebrow">Your request</div>
+<h2>Four easy steps.</h2>
+<div aria-label="Booking progress" class="booking-step-list">
+<button class="booking-step-nav active" data-step-nav="1" type="button"><span>1</span><div><strong>Stay details</strong><small>Dates and guests</small></div></button>
+<button class="booking-step-nav" data-step-nav="2" type="button"><span>2</span><div><strong>Guest details</strong><small>How to reach you</small></div></button>
+<button class="booking-step-nav" data-step-nav="3" type="button"><span>3</span><div><strong>Agreement</strong><small>Review and sign</small></div></button>
+<button class="booking-step-nav" data-step-nav="4" type="button"><span>4</span><div><strong>Confirm</strong><small>Review your request</small></div></button>
+</div>
+<div class="host-note"><strong>A note from Pooja</strong><p>I personally review each request to make sure the cabin is a great fit for your group. No card is charged at this stage.</p></div>
+</aside>
+<div class="form-shell booking-shell">
+<div class="booking-progress"><span data-progress-bar=""></span></div>
+<form id="bookingFlow" novalidate="">
+<section class="booking-panel active" data-booking-step="1">
+<div class="form-head light-head"><div><div class="eyebrow">Step 1 of 4</div><h2>When would you like to stay?</h2><p>Choose your dates and tell us who is traveling.</p></div></div>
+<div class="form-body form-grid">
+<div class="field"><label for="check_in">Check-in</label><input id="check_in" name="check_in" required="" type="date"/></div>
+<div class="field"><label for="check_out">Check-out</label><input id="check_out" name="check_out" required="" type="date"/></div>
+<div class="field"><label for="adults">Adults</label><select id="adults" name="adults" required=""><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+<div class="field"><label for="children">Children</label><select id="children" name="children"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+<div class="field full"><label for="visit_reason">What brings you to the Smokies?</label><select id="visit_reason" name="visit_reason"><option value="">Select an option</option><option>Family vacation</option><option>Birthday or celebration</option><option>Dollywood trip</option><option>Outdoor getaway</option><option>Relaxing retreat</option><option>Other</option></select></div>
+<div class="field full"><label for="notes">Special requests or helpful details</label><textarea id="notes" name="notes" placeholder="Tell us anything that would help us prepare for your stay."></textarea></div>
+<div class="booking-actions"><span></span><button class="btn gold" data-next="" type="button">Continue to guest details</button></div>
+</div>
+</section>
+<section class="booking-panel" data-booking-step="2">
+<div class="form-head light-head"><div><div class="eyebrow">Step 2 of 4</div><h2>Who should we welcome?</h2><p>We will use these details for your personalized guest page.</p></div></div>
+<div class="form-body form-grid">
+<div class="field"><label for="first_name">First name</label><input autocomplete="given-name" id="first_name" name="first_name" required=""/></div>
+<div class="field"><label for="last_name">Last name</label><input autocomplete="family-name" id="last_name" name="last_name" required=""/></div>
+<div class="field"><label for="email">Email</label><input autocomplete="email" id="email" name="email" required="" type="email"/></div>
+<div class="field"><label for="phone">Mobile phone</label><input autocomplete="tel" id="phone" name="phone" placeholder="Used for your 4-digit door code" required="" type="tel"/></div>
+<div class="field full"><label for="city_state">Home city and state</label><input autocomplete="address-level2" id="city_state" name="city_state" placeholder="Austin, Texas"/></div>
+<div class="field full"><label for="vehicles">Expected number of vehicles</label><select id="vehicles" name="vehicles"><option>1</option><option>2</option><option>3</option></select><small>One vehicle is included. Shagbark Resort currently charges $10 for each additional vehicle.</small></div>
+<div class="booking-actions"><button class="btn outline" data-back="" type="button">Back</button><button class="btn gold" data-next="" type="button">Continue to agreement</button></div>
+</div>
+</section>
+<section class="booking-panel" data-booking-step="3">
+<div class="form-head light-head"><div><div class="eyebrow">Step 3 of 4</div><h2>Review and sign.</h2><p>Please review the key terms, then enter your legal name as your electronic signature.</p></div></div>
+<div class="form-body">
+<div class="agreement-preview">
+<h3>Arbor Vista Retreat rental agreement</h3>
+<p>By submitting this request, you acknowledge the property rules, maximum occupancy of six guests, no-smoking and no-pet policies, check-in at 4:00 PM, check-out by 10:00 AM, and responsibility for damage or extraordinary cleaning.</p>
+<p>The complete agreement includes cancellation, payment, occupancy, amenity-use, wildlife-safety, liability, dispute-resolution, and fee-schedule provisions.</p>
+<a class="btn outline" href="rental-agreement.html" rel="noopener" target="_blank">Open full rental agreement</a>
+</div>
+<div class="form-grid agreement-fields">
+<div class="field"><label for="legal_name">Guest legal name</label><input id="legal_name" name="legal_name" required=""/></div>
+<div class="field"><label for="agreement_date">Date</label><input id="agreement_date" name="agreement_date" required="" type="date"/></div>
+<div class="field full"><label for="electronic_signature">Electronic signature</label><input class="signature-input" id="electronic_signature" name="electronic_signature" placeholder="Type your full legal name" required=""/><small>Typing your name represents your electronic signature for this test flow.</small></div>
+<div class="field full check"><input id="agree_terms" name="agree_terms" required="" type="checkbox"/><label for="agree_terms">I have read and agree to the complete Rental Agreement.</label></div>
+<div class="field full check"><input id="certify" name="certify" required="" type="checkbox"/><label for="certify">I certify that the information provided is accurate and that I am authorized to make this request.</label></div>
+</div>
+<div class="booking-actions"><button class="btn outline" data-back="" type="button">Back</button><button class="btn gold" data-next="" type="button">Review request</button></div>
+</div>
+</section>
+<section class="booking-panel" data-booking-step="4">
+<div class="form-head light-head"><div><div class="eyebrow">Step 4 of 4</div><h2>Review your stay request.</h2><p>Please confirm the details below before submitting.</p></div></div>
+<div class="form-body">
+<div class="review-grid" data-booking-review=""></div>
+<div class="privacy-note"><strong>No payment is collected today.</strong><p>This GitHub test stores the request only in this browser so you can test the complete experience. Email delivery, secure storage, and automatic guest-page creation will be connected later.</p></div>
+<div class="booking-actions"><button class="btn outline" data-back="" type="button">Back</button><button class="btn gold" type="submit">Submit stay request</button></div>
+</div>
+</section>
+<section class="booking-panel" data-booking-step="5">
+<div class="confirmation-panel">
+<div class="confirmation-mark">✓</div>
+<div class="eyebrow">Request received</div>
+<h2>Thank you, <span data-confirm-name="">Guest</span>.</h2>
+<p>Your test stay request has been saved in this browser.</p>
+<div class="confirmation-card">
+<small>Your personalized guest link preview</small>
+<strong data-guest-link="">arborvistaretreat.com/guest/guest-0000</strong>
+<p>This URL is a preview only. The production version will be generated securely after the request is approved.</p>
+</div>
+<div class="next-steps"><div><span>1</span><p><strong>Pooja reviews your request</strong><br/>Expected response within 24 hours.</p></div><div><span>2</span><p><strong>Your reservation is confirmed</strong><br/>You receive your personalized welcome link.</p></div><div><span>3</span><p><strong>Three days before arrival</strong><br/>Your page displays gate, address and check-in information.</p></div></div>
+<a class="btn primary" href="welcome.html">Explore the welcome guide</a>
+</div>
+</section>
+</form>
+</div>
+</div>
+</section>
 </main>
-
-<footer class="footer"><div class="container footer-grid"><div><div class="brand">Arbor Vista Retreat<small>Quiet mountain time, close to everything</small></div><p>Family-friendly cabin inside gated Shagbark Resort near Pigeon Forge, Dollywood, Gatlinburg, and Great Smoky Mountains National Park.</p></div><div><strong>Stay</strong><a href="cabin.html">The Cabin</a><a href="gallery.html">Gallery</a><a href="book-direct.html">Book Direct</a></div><div><strong>Guests</strong><a href="welcome.html">Welcome Guide</a><a href="rental-agreement.html">Rental Agreement</a><a href="https://www.airbnb.com/rooms/1587774879621242014" target="_blank" rel="noopener">Airbnb Profile ↗</a></div></div><div class="container small" style="margin-top:28px;color:#bdcbc5">© <span data-year></span> Arbor Vista Retreat.</div></footer>
+<footer class="footer"><div class="container footer-grid"><div><div class="brand">Arbor Vista Retreat<small>Quiet mountain time, close to everything</small></div><p>Family-friendly cabin inside gated Shagbark Resort near Pigeon Forge, Dollywood, Gatlinburg, and Great Smoky Mountains National Park.</p></div><div><strong>Stay</strong><a href="cabin.html">The Cabin</a><a href="gallery.html">Gallery</a><a href="book-direct.html">Book Direct</a></div><div><strong>Guests</strong><a href="welcome.html">Welcome Guide</a><a href="rental-agreement.html">Rental Agreement</a><a href="https://www.airbnb.com/rooms/1587774879621242014" rel="noopener" target="_blank">Airbnb Profile ↗</a></div></div><div class="container small" style="margin-top:28px;color:#bdcbc5">© <span data-year=""></span> Arbor Vista Retreat.</div></footer>
 <script src="assets/script.js"></script>
 </body>
 </html>

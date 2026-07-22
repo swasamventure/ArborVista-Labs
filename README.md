@@ -72,3 +72,14 @@ For testing on GitHub Pages, submissions are saved to the visitor's browser loca
 - Optimized image payload: 56.3 MB.
 - Reduction: 74.3%.
 - Original master photos should be retained separately; this package contains web-ready copies.
+
+
+## v2.4 image optimization
+
+- Retained 49 curated images, prioritizing the cabin and its private amenities.
+- Reduced community images to 3 representative amenities.
+- Reduced area/town images to 6 representative attractions and scenery images.
+- Converted all deployed images to WebP at a maximum dimension of 1600 px.
+- Removed 37 redundant or lower-priority images.
+- Retained correct bedroom labeling: 2732PC-30 series = King Suite; 2732PC-24 series = Queen Suite.
+- Curated source payload: 29.8 MB; deployed WebP payload: 14.9 MB.
