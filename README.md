@@ -1,35 +1,38 @@
-# ArborVista Retreat v2.0
+# Arbor Vista Retreat v2.2 — Guest Experience Test
 
-Production-ready static website for GitHub Pages.
+GitHub Pages-ready static test package.
 
-## Deploy
-1. Create a new public GitHub repository.
-2. Upload everything inside this folder to the repository root.
-3. Open **Settings → Pages**.
-4. Choose **Deploy from a branch**, branch **main**, folder **/(root)**.
-5. Save and wait for GitHub Pages to publish.
+## Added in v2.2
+- Luxury-style `book-direct.html` request form
+- Branded `rental-agreement.html` draft
+- Public mobile-friendly `welcome.html` guide
+- Personalized demo portal: `guest/john-smith-4827/`
+- Shagbark vehicle-registration test form
+- Booking and 3-day-arrival message templates
+- Professional signature links
+- SEO metadata, VacationRental structured data, sitemap and robots rules
+- Remote property images from the production ArborVista-Retreat repository
 
-## Important before launch
-- Update `robots.txt` and `sitemap.xml` if the repository name or custom domain changes.
-- The Airbnb URL is already wired to listing `1587774879621242014`.
-- Property facts are consistently: **2 bedrooms + open loft, 4 beds, 2.5 baths, sleeps 6**.
-- Direct booking is intentionally not enabled; Airbnb remains the booking source of truth.
+## Test locally
+Open `index.html`, or run:
 
-## Editing
-- Global design: `assets/style.css`
-- Menu behavior: `assets/script.js`
-- Page content: individual `.html` files
-- Photography: `images/`
+```bash
+python -m http.server 8000
+```
 
+Then visit `http://localhost:8000`.
 
-## Shared image hosting
+## GitHub deployment
+Upload the contents of this folder to the **root** of `ArborVista-Labs`, commit, and enable GitHub Pages from `main` / `(root)`.
 
-This build intentionally does not include an `images` folder. Property images load from the existing production GitHub Pages site:
+## Demo guest URL
+On GitHub Pages:
+`https://swasamventure.github.io/ArborVista-Labs/guest/john-smith-4827/`
 
-`https://swasamventure.github.io/ArborVista-Retreat/`
+Future production format:
+`https://arborvistaretreat.com/guest/<first-name>-<last-name>-<4-digit-random-number>`
 
-Keep that repository and its image folders public and do not rename or delete those image files. If those URLs change, update the absolute image URLs in the HTML files and `assets/style.css`.
+## Important limitations
+This static version simulates form submission with browser `localStorage`. It does not email, create guest records, schedule messages, validate PINs, or securely reveal address/codes. Sensitive details must not be embedded until a secure backend is added.
 
-
-## Review carousel
-The homepage review area is rotation-ready. It currently contains the verified review text publicly shown on the Airbnb listing. Add future 5-star reviews as additional `<article class="review-card">` blocks and matching review-dot buttons. Initials-based avatars are used instead of copying guest profile photographs.
+The rental agreement is a working content draft, not legal advice. Obtain Tennessee legal review before using it with guests.

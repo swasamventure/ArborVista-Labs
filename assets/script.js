@@ -1,16 +1,5 @@
-
-const m=document.querySelector('.menu'),l=document.querySelector('.links');if(m&&l)m.addEventListener('click',()=>l.classList.toggle('open'));
-document.querySelectorAll('[data-year]').forEach(x=>x.textContent=new Date().getFullYear());
-
-
-const reviewCards=[...document.querySelectorAll('.review-card')];
-const reviewDots=[...document.querySelectorAll('.review-dot')];
-let reviewIndex=0;
-function showReview(i){
-  if(!reviewCards.length)return;
-  reviewIndex=(i+reviewCards.length)%reviewCards.length;
-  reviewCards.forEach((card,n)=>card.classList.toggle('active',n===reviewIndex));
-  reviewDots.forEach((dot,n)=>dot.classList.toggle('active',n===reviewIndex));
-}
-reviewDots.forEach((dot,i)=>dot.addEventListener('click',()=>showReview(i)));
-if(reviewCards.length>1)setInterval(()=>showReview(reviewIndex+1),6500);
+const menu=document.querySelector('.menu'),links=document.querySelector('.links');if(menu&&links)menu.addEventListener('click',()=>links.classList.toggle('open'));document.querySelectorAll('[data-year]').forEach(x=>x.textContent=new Date().getFullYear());
+function showSuccess(form,id){form.addEventListener('submit',e=>{e.preventDefault();const data=Object.fromEntries(new FormData(form));localStorage.setItem(id,JSON.stringify({...data,submittedAt:new Date().toISOString()}));document.querySelector(`[data-success="${id}"]`)?.classList.add('show');form.reset();window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});});}
+document.querySelectorAll('form[data-save]').forEach(f=>showSuccess(f,f.dataset.save));
+const arrival=document.querySelector('[data-arrival]');if(arrival){const d=new Date(arrival.dataset.arrival+'T16:00:00');const days=Math.max(0,Math.ceil((d-new Date())/86400000));arrival.textContent=days===0?'Today':`${days} day${days===1?'':'s'}`;}
+const portalGate=localStorage.getItem('gate-pass-demo');if(portalGate){document.querySelectorAll('[data-gate-status]').forEach(x=>x.textContent='Information received — processing');document.querySelectorAll('[data-gate-pill]').forEach(x=>x.classList.add('done'));}

@@ -1,0 +1,14 @@
+Subject: Your Arbor Vista arrival details are ready
+
+Hi {{first_name}},
+
+Your arrival information is ready.
+
+Check-in: {{check_in_date}} after 4:00 PM
+Door code: Last four digits of the primary guest’s phone number
+Guest page: {{unique_guest_link}}
+
+The page includes the cabin address, Shagbark gate instructions, parking, Wi-Fi and check-in guidance.
+
+Safe travels,
+Pooja

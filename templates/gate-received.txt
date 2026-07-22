@@ -1,0 +1,5 @@
+Hi {{first_name}},
+
+Thank you—we received your vehicle-registration information and submitted it for processing. Shagbark Resort will send a registration code by email or text for presentation at the guard gate.
+
+Pooja

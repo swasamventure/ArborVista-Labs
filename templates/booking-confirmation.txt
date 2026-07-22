@@ -1,0 +1,17 @@
+Subject: Welcome to Arbor Vista Retreat
+
+Hi {{first_name}},
+
+Thank you for booking Arbor Vista Retreat! My name is Pooja, and I’ll be your host.
+
+Your personalized guest page:
+{{unique_guest_link}}
+
+You can use it now to plan your trip and submit Shagbark vehicle information. Three days before arrival, the page will be updated with your cabin address, access instructions and Wi-Fi details.
+
+Warmly,
+Pooja
+Arbor Vista Retreat
+Website: https://arborvistaretreat.com
+Welcome guide: https://arborvistaretreat.com/welcome
+Airbnb: https://www.airbnb.com/rooms/1587774879621242014
