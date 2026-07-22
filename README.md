@@ -21,3 +21,10 @@ This package is prepared for the `ArborVista-Labs` GitHub Pages repository.
 Upload the contents of this folder to the root of the `ArborVista-Labs` repository. Do not upload the enclosing folder itself.
 
 After GitHub Pages deploys, hard-refresh the browser (Ctrl+F5 on Windows) to clear cached HTML and images.
+
+
+## v2.5.1 gallery fix
+- Normalized all image paths.
+- Renamed `images/dinning` to `images/dining`.
+- Added cache-busting version parameters to local assets.
+- Verified all local references before packaging.
