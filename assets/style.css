@@ -32,3 +32,7 @@ h1{font-weight:600;text-wrap:balance}h2{font-weight:600;text-wrap:balance}h3{fon
 .wide-img,.image-card img{object-fit:cover}
 @media(max-width:900px){.hero{background-attachment:scroll;min-height:70vh}.portal-hero,.booking-hero{padding:72px 0}.photo-gallery.three-col{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-tile img{height:250px}}
 @media(max-width:600px){.photo-gallery.three-col{grid-template-columns:1fr}.photo-tile img{height:260px}.brand{font-size:1.55rem}.gallery-page .portal-hero{min-height:360px}}
+.guest-preview-link{display:inline-block;margin-top:8px;font-weight:800;color:var(--forest,#173c36);text-decoration:underline;text-underline-offset:4px}.guest-preview-link:hover{opacity:.75}
+
+/* v2.7.2 booking navigation and autosave affordances */
+.booking-step-nav{cursor:pointer;transition:background .2s ease,box-shadow .2s ease,transform .2s ease}.booking-step-nav:hover{background:rgba(255,255,255,.72);transform:translateY(-1px)}.booking-step-nav:focus-visible{outline:3px solid rgba(191,143,67,.45);outline-offset:2px}.booking-step-nav.locked{opacity:.58}.step-helper{font-size:.88rem;color:var(--muted);margin-top:-10px}.draft-restored{margin:0 0 18px;padding:12px 15px;border-radius:14px;background:#eef5f1;border:1px solid #d8e8df;color:var(--forest);font-weight:700}.draft-restored button{margin-left:8px;border:0;background:transparent;color:inherit;text-decoration:underline;cursor:pointer;font:inherit}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><base href="/ArborVista-Labs/"/><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Guest Portal Preview | Arbor Vista Retreat</title><meta content="noindex,nofollow,noarchive" name="robots"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="assets/style.css?v=2.7.2" rel="stylesheet"/></head>
+<body class="home-page"><header class="nav"><div class="container navin"><a class="brand" href="index.html">Arbor Vista Retreat<small>Private guest portal · Preview</small></a><a class="btn outline" href="welcome.html">Public guide</a></div></header>
+<main><section class="portal-hero"><div class="container"><div class="eyebrow" style="color:#f0c895">Your personalized stay</div><h1>Welcome, <span data-portal-first>Guest</span>!</h1><p class="hero-copy">Your Smoky Mountains getaway begins in <strong data-portal-countdown>—</strong>.</p><div class="snapshot"><div data-portal-dates>Dates pending</div><div data-portal-guests>Guest count pending</div><div>2 bedrooms + open loft</div><div data-portal-id>Preview portal</div></div></div></section>
+<section class="section soft"><div class="container"><div class="eyebrow">Stay progress</div><h2>Your request is ready for host review.</h2><div class="timeline"><div class="step done"><div class="step-icon">✓</div><div><h3>Request submitted</h3><p>Your stay details were saved in this browser.</p></div></div><div class="step done"><div class="step-icon">✓</div><div><h3>Rental agreement accepted</h3><p>Your electronic acknowledgment was recorded for this preview.</p></div></div><div class="step"><div class="step-icon">3</div><div><h3>Host approval</h3><p>Pooja will review the request.</p></div></div><div class="step"><div class="step-icon">4</div><div><h3>Arrival information</h3><p>Available three days before check-in after confirmation.</p></div></div></div></div></section>
+<section class="section"><div class="container grid2" style="align-items:start"><div><div class="eyebrow">Reservation summary</div><h2>Your submitted details.</h2><p>This preview is generated from the request stored in your current browser. It is not yet a confirmed reservation.</p><div class="notice">Opening this link on another device or after clearing browser data will not show the saved request until a secure backend is connected.</div></div><div class="form-shell"><div class="form-head"><h2 style="margin:0">Stay request</h2></div><div class="form-body"><div class="review-grid" data-portal-review></div></div></div></div></section>
+<section class="section dark"><div class="container"><div class="eyebrow" style="color:#f0c895">Arrival details</div><h2>Protected until your stay is confirmed.</h2><div class="status-grid"><div class="status locked"><strong>Cabin address</strong>Shared three days before arrival</div><div class="status locked"><strong>Door code</strong>Shared securely before check-in</div><div class="status locked"><strong>Wi-Fi &amp; parking</strong>Available before arrival</div></div></div></section>
+<section class="section"><div class="container"><div class="eyebrow">Plan ahead</div><h2>Explore the guest guide.</h2><p><a class="btn primary" href="welcome.html">Open welcome guide</a> <a class="btn outline" href="rental-agreement.html">View agreement</a></p></div></section></main>
+<script src="assets/script.js?v=2.7.2"></script>
+<script>
+(()=>{
+ const raw=localStorage.getItem('arbor-vista-booking-request');
+ const params=new URLSearchParams(location.search); const requested=params.get('id')||'guest-preview';
+ const data=raw?JSON.parse(raw):null;
+ const set=(sel,val)=>{const el=document.querySelector(sel);if(el)el.textContent=val};
+ const pretty=v=>v?new Date(v+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'Pending';
+ set('[data-portal-id]',requested.replace(/-/g,' '));
+ if(!data){
+   set('[data-portal-countdown]','pending confirmation');
+   document.querySelector('[data-portal-review]').innerHTML='<div class="review-item"><small>Preview unavailable</small><strong>Please complete the Book Direct form in this browser first.</strong></div>';
+   return;
+ }
+ set('[data-portal-first]',data.first_name||'Guest');
+ set('[data-portal-dates]',`${pretty(data.check_in)} – ${pretty(data.check_out)}`);
+ set('[data-portal-guests]',`${data.adults||0} adult(s) · ${data.children||0} child(ren)`);
+ if(data.check_in){const d=new Date(data.check_in+'T16:00:00');const days=Math.max(0,Math.ceil((d-new Date())/86400000));set('[data-portal-countdown]',days===0?'today':`${days} day${days===1?'':'s'}`)}
+ const rows=[['Primary guest',`${data.first_name||''} ${data.last_name||''}`.trim()],['Stay',`${pretty(data.check_in)} – ${pretty(data.check_out)}`],['Guests',`${data.adults||0} adult(s) · ${data.children||0} child(ren)`],['Contact',data.email||'—'],['Vehicles',data.vehicles||'—'],['Status','Awaiting host review']];
+ document.querySelector('[data-portal-review]').innerHTML=rows.map(([k,v])=>`<div class="review-item"><small>${k}</small><strong>${v}</strong></div>`).join('');
+})();
+</script></body></html>

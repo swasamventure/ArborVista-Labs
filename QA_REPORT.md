@@ -1,26 +1,21 @@
-# Arbor Vista Retreat v2.7 QA Report
+# Arbor Vista Retreat v2.7.2 QA Report
 
-**Result: PASS**
+Status: **PASS**
 
-- HTML pages checked: 11
-- Internal references checked: 248
-- Image references checked: 102
-- Missing local assets: 0
-- Forbidden guest-facing labels: 0
+## Booking-flow regression checks
+- Four progress steps are semantic buttons and have click handlers.
+- Guests can return to any earlier step without validation blocking navigation.
+- Moving to a later step validates every required earlier step.
+- All form fields, selects, textareas, dates, signatures, and checkboxes autosave.
+- Draft restores after page refresh, agreement-tab review, or browser back navigation.
+- Draft expires automatically after 24 hours.
+- A visible “Start over” action clears the saved draft.
+- Submitted request is retained for the guest preview; the unfinished draft is cleared.
+- Rental Agreement continues to open in a new tab.
 
-## Deployment path
-
-This package is configured for the GitHub Pages project path `/ArborVista-Labs/`. Upload the contents directly to the publishing root of that repository.
-
-## Pages checked
-- `404.html`
-- `book-direct.html`
-- `cabin.html`
-- `explore.html`
-- `faq.html`
-- `gallery.html`
-- `guest/john-smith-4827/index.html`
-- `index.html`
-- `plan.html`
-- `rental-agreement.html`
-- `welcome.html`
+## Static site checks
+- Asset cache version: 2.7.2
+- Legacy v2.7.1 references: 0
+- Old production image links: 0
+- JPG/JPEG image references: 0
+- Missing local HTML/CSS/JS/image references: 0
