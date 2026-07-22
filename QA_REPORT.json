@@ -1,0 +1,23 @@
+{
+  "release": "2.7.0",
+  "pages_checked": 11,
+  "html_pages": [
+    "404.html",
+    "book-direct.html",
+    "cabin.html",
+    "explore.html",
+    "faq.html",
+    "gallery.html",
+    "guest/john-smith-4827/index.html",
+    "index.html",
+    "plan.html",
+    "rental-agreement.html",
+    "welcome.html"
+  ],
+  "internal_references_checked": 248,
+  "image_references_checked": 102,
+  "external_links_catalogued": 45,
+  "missing_local_assets": [],
+  "forbidden_guest_facing_terms": [],
+  "result": "PASS"
+}

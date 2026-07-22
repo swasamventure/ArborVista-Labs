@@ -1,30 +1,20 @@
-# Arbor Vista Retreat v2.5 — Clean GitHub Pages Package
+# Arbor Vista Retreat v2.6 — Mountain Luxury Edition
 
-This package is prepared for the `ArborVista-Labs` GitHub Pages repository.
-
-## Included fixes
-
-- All deployed property images use `.webp`.
-- Every HTML image reference was updated to the matching WebP path.
-- Inline background images, Open Graph image metadata, and VacationRental schema were updated.
-- Space-containing image paths were normalized for safer GitHub Pages deployment.
-- Redundant photos were removed, with the gallery focused primarily on the house.
-- Bedroom mapping remains:
-  - King Suite: 2732PC-30, 31, 32
-  - Queen Suite: 2732PC-24, 25, 26
-  - Open Loft: 2732PC-34, 35, 37
-- Lazy loading remains enabled on gallery/content images.
-- `.nojekyll` is included.
+Clean GitHub Pages package with professional typography, mountain-background treatments, polished guest-facing captions, WebP images, and house-first gallery organization.
 
 ## Upload
+Upload the contents of this folder to the root of the `ArborVista-Labs` repository, replacing older files. Keep the folder structure unchanged.
 
-Upload the contents of this folder to the root of the `ArborVista-Labs` repository. Do not upload the enclosing folder itself.
+## Key updates
+- Cormorant Garamond display type + Manrope body type
+- Mountain imagery integrated into gallery, booking, portal, and footer backgrounds
+- Photographer file numbers removed from all visible captions
+- Professional, descriptive captions and alt text
+- Existing WebP optimization retained
+- Image paths versioned to v2.6.0 for cache refresh
 
-After GitHub Pages deploys, hard-refresh the browser (Ctrl+F5 on Windows) to clear cached HTML and images.
 
-
-## v2.5.1 gallery fix
-- Normalized all image paths.
-- Renamed `images/dinning` to `images/dining`.
-- Added cache-busting version parameters to local assets.
-- Verified all local references before packaging.
+## v2.6.1
+- Removed photographer filenames and image-count language from visible gallery content.
+- Removed repeated “Photo collection” labels.
+- Updated cache-busting asset version to 2.6.1.
