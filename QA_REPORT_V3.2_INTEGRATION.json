@@ -1,0 +1,58 @@
+{
+  "version": "3.2",
+  "passed": 10,
+  "total": 10,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Direct request saved to database",
+      "pass": true,
+      "detail": "{'booking_request_id': 'req_b5e929aaadb1', 'reservation_id': 'res_f677c912dc3e', 'status': 'pending', 'email_status': 'disabled'}"
+    },
+    {
+      "name": "Booking request row created",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Guest row created",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Signed document row created",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Email explicitly disabled",
+      "pass": true,
+      "detail": "{'id': 'ntf_7f6c7aaf957a', 'booking_request_id': 'req_b5e929aaadb1', 'channel': 'disabled', 'recipient': 'swasam.venture@gmail.com', 'status': 'disabled', 'details': 'Outbound email intentionally excluded', 'created_at': '2026-07-23 15:28:44'}"
+    },
+    {
+      "name": "Pending request blocks availability",
+      "pass": true,
+      "detail": "{'property_id': 'prop_arbor_vista', 'start_date': '2027-02-11', 'end_date': '2027-02-12', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2027-02-10', 'end_date': '2027-02-13', 'source': 'direct', 'source_id': 'res_f677c912dc3e', 'status': 'pending'}]}"
+    },
+    {
+      "name": "Overlapping request rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "More than eight guests rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Eight-guest request accepted",
+      "pass": true,
+      "detail": "{'booking_request_id': 'req_aecf3aa48bec', 'reservation_id': 'res_f742c03ce6b1', 'status': 'pending', 'email_status': 'disabled'}"
+    },
+    {
+      "name": "Outbound iCal generated",
+      "pass": true,
+      "detail": "3"
+    }
+  ]
+}

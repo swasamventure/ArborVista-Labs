@@ -1,0 +1,66 @@
+{
+  "passed": 15,
+  "total": 15,
+  "checks": [
+    {
+      "name": "admin dashboard exists",
+      "pass": true
+    },
+    {
+      "name": "admin reservations exists",
+      "pass": true
+    },
+    {
+      "name": "local API server exists",
+      "pass": true
+    },
+    {
+      "name": "Stripe integration excluded",
+      "pass": true
+    },
+    {
+      "name": "Email sending excluded",
+      "pass": true
+    },
+    {
+      "name": "charcoal kitchen 1",
+      "pass": true
+    },
+    {
+      "name": "charcoal kitchen 2",
+      "pass": true
+    },
+    {
+      "name": "charcoal kitchen 3",
+      "pass": true
+    },
+    {
+      "name": "charcoal kitchen 4",
+      "pass": true
+    },
+    {
+      "name": "cabin.html uses charcoal images",
+      "pass": true
+    },
+    {
+      "name": "gallery.html uses charcoal images",
+      "pass": true
+    },
+    {
+      "name": "booking uses API endpoint",
+      "pass": true
+    },
+    {
+      "name": "schema has booking requests",
+      "pass": true
+    },
+    {
+      "name": "schema has documents",
+      "pass": true
+    },
+    {
+      "name": "outbound ICS endpoint",
+      "pass": true
+    }
+  ]
+}

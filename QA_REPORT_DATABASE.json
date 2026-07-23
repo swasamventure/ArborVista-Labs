@@ -7,7 +7,7 @@
     {
       "name": "Database initializes",
       "passed": true,
-      "detail": "/tmp/arborvista-v28-qa-cutroz5a/core.db"
+      "detail": "/tmp/arborvista-v28-qa-xkiwtmjt/core.db"
     },
     {
       "name": "Schema rejects invalid date strings",
@@ -17,22 +17,22 @@
     {
       "name": "Airbnb events inserted",
       "passed": true,
-      "detail": "{'run_id': 'sync_c0a677f4c09d', 'seen': 2, 'inserted': 2, 'updated': 0, 'cancelled': 0, 'conflicts_found': 0}"
+      "detail": "{'run_id': 'sync_025605593c56', 'seen': 2, 'inserted': 2, 'updated': 0, 'cancelled': 0, 'conflicts_found': 0}"
     },
     {
       "name": "Vrbo events inserted",
       "passed": true,
-      "detail": "{'run_id': 'sync_3b33c0b1d468', 'seen': 2, 'inserted': 2, 'updated': 0, 'cancelled': 0, 'conflicts_found': 0}"
+      "detail": "{'run_id': 'sync_865a2493c7ee', 'seen': 2, 'inserted': 2, 'updated': 0, 'cancelled': 0, 'conflicts_found': 0}"
     },
     {
       "name": "Repeated sync is idempotent",
       "passed": true,
-      "detail": "{'run_id': 'sync_fdb36416f1f7', 'seen': 2, 'inserted': 0, 'updated': 0, 'cancelled': 0, 'conflicts_found': 0}"
+      "detail": "{'run_id': 'sync_f3e70b77b600', 'seen': 2, 'inserted': 0, 'updated': 0, 'cancelled': 0, 'conflicts_found': 0}"
     },
     {
       "name": "Airbnb overlap detected",
       "passed": true,
-      "detail": "{'property_id': 'prop_arbor_vista', 'start_date': '2026-09-05', 'end_date': '2026-09-07', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-09-04', 'end_date': '2026-09-08', 'source': 'airbnb', 'source_id': 'res_80ad8ac43cf6', 'status': 'confirmed'}]}"
+      "detail": "{'property_id': 'prop_arbor_vista', 'start_date': '2026-09-05', 'end_date': '2026-09-07', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-09-04', 'end_date': '2026-09-08', 'source': 'airbnb', 'source_id': 'res_aea0c3b05018', 'status': 'confirmed'}]}"
     },
     {
       "name": "Adjacent stays are allowed",
@@ -47,32 +47,32 @@
     {
       "name": "Direct request created",
       "passed": true,
-      "detail": "{'created': True, 'reservation_id': 'res_dd59d169c949', 'property_id': 'prop_arbor_vista', 'start_date': '2026-09-22', 'end_date': '2026-09-25', 'available': True, 'conflicts': []}"
+      "detail": "{'created': True, 'reservation_id': 'res_33d77d7a9b05', 'property_id': 'prop_arbor_vista', 'start_date': '2026-09-22', 'end_date': '2026-09-25', 'available': True, 'conflicts': []}"
     },
     {
       "name": "Conflicting direct request rejected",
       "passed": true,
-      "detail": "{'created': False, 'property_id': 'prop_arbor_vista', 'start_date': '2026-09-23', 'end_date': '2026-09-24', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-09-22', 'end_date': '2026-09-25', 'source': 'direct', 'source_id': 'res_dd59d169c949', 'status': 'pending'}]}"
+      "detail": "{'created': False, 'property_id': 'prop_arbor_vista', 'start_date': '2026-09-23', 'end_date': '2026-09-24', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-09-22', 'end_date': '2026-09-25', 'source': 'direct', 'source_id': 'res_33d77d7a9b05', 'status': 'pending'}]}"
     },
     {
       "name": "Concurrent duplicate booking race is prevented",
       "passed": true,
-      "detail": "[{'created': True, 'reservation_id': 'res_0afd8b7566c2', 'property_id': 'prop_arbor_vista', 'start_date': '2026-11-10', 'end_date': '2026-11-12', 'available': True, 'conflicts': []}, {'created': False, 'property_id': 'prop_arbor_vista', 'start_date': '2026-11-10', 'end_date': '2026-11-12', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-11-10', 'end_date': '2026-11-12', 'source': 'direct', 'source_id': 'res_0afd8b7566c2', 'status': 'pending'}]}]"
+      "detail": "[{'created': True, 'reservation_id': 'res_477c74449bef', 'property_id': 'prop_arbor_vista', 'start_date': '2026-11-10', 'end_date': '2026-11-12', 'available': True, 'conflicts': []}, {'created': False, 'property_id': 'prop_arbor_vista', 'start_date': '2026-11-10', 'end_date': '2026-11-12', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-11-10', 'end_date': '2026-11-12', 'source': 'direct', 'source_id': 'res_477c74449bef', 'status': 'pending'}]}]"
     },
     {
       "name": "Owner block created",
       "passed": true,
-      "detail": "{'created': True, 'block_id': 'block_b9b2dac0efaf', 'conflicts': []}"
+      "detail": "{'created': True, 'block_id': 'block_9679e3d7c4bd', 'conflicts': []}"
     },
     {
       "name": "Overlapping owner block rejected",
       "passed": true,
-      "detail": "{'created': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-11-20', 'end_date': '2026-11-22', 'source': 'owner', 'source_id': 'block_b9b2dac0efaf', 'status': 'blocked'}]}"
+      "detail": "{'created': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2026-11-20', 'end_date': '2026-11-22', 'source': 'owner', 'source_id': 'block_9679e3d7c4bd', 'status': 'blocked'}]}"
     },
     {
       "name": "Cancellation succeeds",
       "passed": true,
-      "detail": "res_dd59d169c949"
+      "detail": "res_33d77d7a9b05"
     },
     {
       "name": "Cancelled direct dates become available",
@@ -87,7 +87,7 @@
     {
       "name": "Outbound ICS uses CRLF and publishing headers",
       "passed": true,
-      "detail": "b'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nPRODID:-//Arbor Vista Retreat//Booking Calendar 2.8//EN\\r\\nCALSCALE:GREGORIAN\\r\\nMETHOD:PUBLISH\\r\\nX-WR-CALNAME:Arbor Vista Retreat Availability\\r\\nBEGIN:VEVENT\\r\\nUID:res_80ad8ac43cf6@arborvistaretreat.com\\r\\nDTSTAMP:20260722T222333Z\\r\\nDTSTART;VALUE=DATE:20260904\\r\\nDTEND;VALUE=DATE:'"
+      "detail": "b'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nPRODID:-//Arbor Vista Retreat//Booking Calendar 2.8//EN\\r\\nCALSCALE:GREGORIAN\\r\\nMETHOD:PUBLISH\\r\\nX-WR-CALNAME:Arbor Vista Retreat Availability\\r\\nBEGIN:VEVENT\\r\\nUID:res_aea0c3b05018@arborvistaretreat.com\\r\\nDTSTAMP:20260723T152838Z\\r\\nDTSTART;VALUE=DATE:20260904\\r\\nDTEND;VALUE=DATE:'"
     },
     {
       "name": "Airbnb-targeted export excludes Airbnb-origin reservations",
@@ -102,7 +102,7 @@
     {
       "name": "Export contains no cancelled reservations",
       "passed": true,
-      "detail": "res_dd59d169c949"
+      "detail": "res_33d77d7a9b05"
     },
     {
       "name": "Exported ICS parses back successfully",
@@ -127,17 +127,17 @@
     {
       "name": "Changed event updates and missing event cancels",
       "passed": true,
-      "detail": "{'run_id': 'sync_ab4a9397018f', 'seen': 1, 'inserted': 0, 'updated': 1, 'cancelled': 1, 'conflicts_found': 0}"
+      "detail": "{'run_id': 'sync_6b97798c3ca8', 'seen': 1, 'inserted': 0, 'updated': 1, 'cancelled': 1, 'conflicts_found': 0}"
     },
     {
       "name": "Explicit STATUS:CANCELLED is reconciled",
       "passed": true,
-      "detail": "{'run_id': 'sync_aa011d2f8a8e', 'seen': 1, 'inserted': 0, 'updated': 0, 'cancelled': 1, 'conflicts_found': 0}"
+      "detail": "{'run_id': 'sync_776653e29ce9', 'seen': 1, 'inserted': 0, 'updated': 0, 'cancelled': 1, 'conflicts_found': 0}"
     },
     {
       "name": "Empty full feed cancels disappeared active events",
       "passed": true,
-      "detail": "{'run_id': 'sync_38a807a9a58a', 'seen': 0, 'inserted': 0, 'updated': 0, 'cancelled': 2, 'conflicts_found': 0}"
+      "detail": "{'run_id': 'sync_7e5916ec6604', 'seen': 0, 'inserted': 0, 'updated': 0, 'cancelled': 2, 'conflicts_found': 0}"
     },
     {
       "name": "Folded iCal lines unfold correctly",

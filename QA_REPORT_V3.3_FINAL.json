@@ -1,0 +1,33 @@
+{
+  "release": "3.3",
+  "status": "PASS",
+  "checks_passed": 124,
+  "checks_total": 124,
+  "suites": {
+    "cloud_architecture": {
+      "passed": 24,
+      "total": 24
+    },
+    "database_ical": {
+      "passed": 33,
+      "total": 33
+    },
+    "merged_v32": {
+      "passed": 15,
+      "total": 15
+    },
+    "booking_integration": {
+      "passed": 10,
+      "total": 10
+    },
+    "website_browser": {
+      "passed": 42,
+      "total": 42
+    }
+  },
+  "excluded": [
+    "Stripe/payment processing",
+    "Outbound email generation/delivery",
+    "Production authentication"
+  ]
+}

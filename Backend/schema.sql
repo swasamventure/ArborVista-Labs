@@ -122,3 +122,73 @@ UNION ALL
 SELECT property_id, start_date, end_date, 'owner' AS source, id AS source_id, 'blocked' AS status
 FROM calendar_blocks
 WHERE active = 1;
+
+
+CREATE TABLE IF NOT EXISTS guests (
+  id TEXT PRIMARY KEY,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS booking_requests (
+  id TEXT PRIMARY KEY,
+  property_id TEXT NOT NULL REFERENCES properties(id) ON DELETE CASCADE,
+  reservation_id TEXT REFERENCES reservations(id) ON DELETE SET NULL,
+  guest_id TEXT NOT NULL REFERENCES guests(id) ON DELETE RESTRICT,
+  adults INTEGER NOT NULL DEFAULT 1 CHECK(adults >= 1),
+  children INTEGER NOT NULL DEFAULT 0 CHECK(children >= 0),
+  vehicles INTEGER NOT NULL DEFAULT 1 CHECK(vehicles >= 0),
+  special_requests TEXT,
+  legal_name TEXT NOT NULL,
+  electronic_signature TEXT NOT NULL,
+  agreement_date TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','approved','declined','cancelled')),
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS documents (
+  id TEXT PRIMARY KEY,
+  booking_request_id TEXT NOT NULL REFERENCES booking_requests(id) ON DELETE CASCADE,
+  document_type TEXT NOT NULL,
+  content_json TEXT NOT NULL,
+  signed_at TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS notification_log (
+  id TEXT PRIMARY KEY,
+  booking_request_id TEXT REFERENCES booking_requests(id) ON DELETE SET NULL,
+  channel TEXT NOT NULL DEFAULT 'disabled',
+  recipient TEXT,
+  status TEXT NOT NULL CHECK(status IN ('disabled','queued','sent','failed')),
+  details TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE IF NOT EXISTS organizations (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS property_domains (
+  id TEXT PRIMARY KEY,
+  property_id TEXT NOT NULL REFERENCES properties(id) ON DELETE CASCADE,
+  hostname TEXT NOT NULL UNIQUE,
+  is_primary INTEGER NOT NULL DEFAULT 0 CHECK(is_primary IN (0,1)),
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS property_members (
+  property_id TEXT NOT NULL REFERENCES properties(id) ON DELETE CASCADE,
+  user_id TEXT NOT NULL,
+  role TEXT NOT NULL CHECK(role IN ('portfolio_owner','property_owner','manager','cohost','cleaner','maintenance','accountant','readonly')),
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY(property_id,user_id)
+);

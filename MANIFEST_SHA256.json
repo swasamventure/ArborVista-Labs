@@ -1,546 +1,148 @@
 {
-  "release": "Arbor Vista Retreat v2.8.1 Flexible Occupancy QA",
-  "file_count": 108,
-  "files": [
-    {
-      "path": ".nojekyll",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "404.html",
-      "bytes": 745,
-      "sha256": "c3f3ced27b15faeb3794bfb9f25b3746cf55fec6648ae4d9f9ed0963d824cea6"
-    },
-    {
-      "path": "Backend/README.md",
-      "bytes": 2302,
-      "sha256": "737c452a56e0fb03a0a95293c9eb5f928ca7503b9c1acf74c460a72a076b316e"
-    },
-    {
-      "path": "Backend/arborvista_ical_test.db",
-      "bytes": 81920,
-      "sha256": "bff1ef21a66c8bb396ace913abcf8fe2642e4f465ccdad19b8f72b18e06987d7"
-    },
-    {
-      "path": "Backend/exports/arbor-vista-all.ics",
-      "bytes": 1357,
-      "sha256": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e"
-    },
-    {
-      "path": "Backend/exports/arbor-vista-for-airbnb.ics",
-      "bytes": 883,
-      "sha256": "96c5fb37737d46eb0e67f01c71a50b9cee07fca00fad5b2f75bef9995f0cf766"
-    },
-    {
-      "path": "Backend/exports/arbor-vista-for-vrbo.ics",
-      "bytes": 887,
-      "sha256": "bd03e9fbbe5c4e78d3658052034b057581c074f40d4b6bddf9fa04d018256d9f"
-    },
-    {
-      "path": "Backend/exports/arbor-vista.ics",
-      "bytes": 1357,
-      "sha256": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e"
-    },
-    {
-      "path": "Backend/fixtures/airbnb_cancelled.ics",
-      "bytes": 274,
-      "sha256": "76f95febc51d3b7212aa957e6cc98ed4f5e7d64f6da735ed95755e9f0d70516c"
-    },
-    {
-      "path": "Backend/fixtures/airbnb_sample.ics",
-      "bytes": 479,
-      "sha256": "9442964dcd3e943fb05cc2868526eb517f5601d1b0e9a0f5c317ebe011e2ac15"
-    },
-    {
-      "path": "Backend/fixtures/airbnb_updated_missing.ics",
-      "bytes": 264,
-      "sha256": "e36945bfa80e536bcb2f08e3160556f462d3a07af988f33d936628deca8c59b6"
-    },
-    {
-      "path": "Backend/fixtures/duplicate_uid.ics",
-      "bytes": 258,
-      "sha256": "7cd070cffa9b36fd1d52e9c97f126e7adf2c8c8ff58e07283bd82af56c7f6b75"
-    },
-    {
-      "path": "Backend/fixtures/empty_calendar.ics",
-      "bytes": 106,
-      "sha256": "d997209b18c3075996ea93d1ecd20e924550a560ffaa0e006c0f4dfb93b65fde"
-    },
-    {
-      "path": "Backend/fixtures/folded_line.ics",
-      "bytes": 291,
-      "sha256": "c084a827478ffca575c32546e203b6b6c680bd508198e596a43b2a52e640eec5"
-    },
-    {
-      "path": "Backend/fixtures/malformed_missing_dtend.ics",
-      "bytes": 148,
-      "sha256": "9619a2588ef80e659ca41269546a9038349922839f3314e14956e6b3669b0633"
-    },
-    {
-      "path": "Backend/fixtures/vrbo_sample.ics",
-      "bytes": 463,
-      "sha256": "bc12dac636f7edf0510f6f34eb921c7c00e9a035993a44e25bc41729dd46428c"
-    },
-    {
-      "path": "Backend/ical_db.py",
-      "bytes": 26118,
-      "sha256": "928fd68789b6d6f64adaee98dbfb5f1cc720a925df27ef01662ab1009ff71201"
-    },
-    {
-      "path": "Backend/run_qa.py",
-      "bytes": 12026,
-      "sha256": "ee1a594c12a41bf60e5ad956b835232ca8db83ff9394db4d3fcda97da233fb1f"
-    },
-    {
-      "path": "Backend/schema.sql",
-      "bytes": 4384,
-      "sha256": "0ef2c247a28044bb6b87376b784ccd363f718d771c5d1d63e66cd7672a2ff1aa"
-    },
-    {
-      "path": "Backend/seed.sql",
-      "bytes": 667,
-      "sha256": "6d3f8f486193d870589f22eed72ff86493bcf42437ca1c1a9785777aef5e7886"
-    },
-    {
-      "path": "Docs/CHANGELOG_V2.8.md",
-      "bytes": 1899,
-      "sha256": "df288404f9161299c07a4ba21c95fa27aa7ebca576b7895549d151f04bb86e0c"
-    },
-    {
-      "path": "Docs/ICAL_TEST_PLAN.md",
-      "bytes": 1981,
-      "sha256": "420ef436e040d5aab89aa41d2f5680080a6284443434f7bd67440101cca03b0e"
-    },
-    {
-      "path": "Docs/KNOWN_ISSUES.md",
-      "bytes": 907,
-      "sha256": "dc7f6008d9a7d71d4b78a4ac60beaa14edde24ab0701c6e6743f00f914979a24"
-    },
-    {
-      "path": "Docs/SECURITY_NOTES.md",
-      "bytes": 1103,
-      "sha256": "0ab8ba3a593024d32fcd8fecba83099b486272b9a46ba6745570de948be44277"
-    },
-    {
-      "path": "QA/README.md",
-      "bytes": 800,
-      "sha256": "38ff1eac0c939360cf1800aa4b2521c7a287dc4dc29065f5189677c32cf28544"
-    },
-    {
-      "path": "QA/requirements-qa.txt",
-      "bytes": 51,
-      "sha256": "8a141b9f3d39adb962ac6da1b4ed1605e42d272898e7bce68d17aabe13e8b97a"
-    },
-    {
-      "path": "QA/run_all_qa.py",
-      "bytes": 2441,
-      "sha256": "f3b49bf9f88a682dc46db4057321a5344c1d67ec1e7e0d6dda92a1275415a392"
-    },
-    {
-      "path": "QA/run_web_qa.py",
-      "bytes": 24251,
-      "sha256": "cec89566489ae72a50af2cde9b436068d9611f04ff2e288d4ca3288bc2924298"
-    },
-    {
-      "path": "QA/screenshots/booking-confirmation-desktop.png",
-      "bytes": 802147,
-      "sha256": "f041d8a5d60e71f2a6516dbeaba67e58ea7c3931077fdc0c20b5cd3514eb5db3"
-    },
-    {
-      "path": "QA/screenshots/guest-preview-desktop.png",
-      "bytes": 926109,
-      "sha256": "6ded0a38f76ddc3099c5853a13b1a917b640ce2ca0745661121d71d8a0d1f362"
-    },
-    {
-      "path": "QA/screenshots/home-mobile.png",
-      "bytes": 410522,
-      "sha256": "566f4cfc80fbf656d79554e9b56db441c90c6b6989202c7e78744e4b1add0f62"
-    },
-    {
-      "path": "QA_REPORT.json",
-      "bytes": 300,
-      "sha256": "1a33215244b06734bcb81e9f56708d3a97a9b1819f5136fb216124833f1d4954"
-    },
-    {
-      "path": "QA_REPORT.md",
-      "bytes": 493,
-      "sha256": "166700b9dc7a4d1cceb5a9bef7904ee6c027c00fa4471f2f2e0898b56c62a361"
-    },
-    {
-      "path": "QA_REPORT_DATABASE.json",
-      "bytes": 7633,
-      "sha256": "971923268f9d41b31f9d4ca636e62337a4af471c4f7855f11838c954491d57b7"
-    },
-    {
-      "path": "QA_REPORT_DATABASE.md",
-      "bytes": 1590,
-      "sha256": "721beb78febba0c2674241880c8840cb601181d6919e0fd1d32fa9b118e8dd38"
-    },
-    {
-      "path": "QA_REPORT_FINAL.json",
-      "bytes": 300,
-      "sha256": "1a33215244b06734bcb81e9f56708d3a97a9b1819f5136fb216124833f1d4954"
-    },
-    {
-      "path": "QA_REPORT_FINAL.md",
-      "bytes": 493,
-      "sha256": "166700b9dc7a4d1cceb5a9bef7904ee6c027c00fa4471f2f2e0898b56c62a361"
-    },
-    {
-      "path": "QA_REPORT_WEB_V2.8.json",
-      "bytes": 11604,
-      "sha256": "d13732c027453a082aaf18868e570b41f0ec4ead2bf5f51f7f8ed270328b14fa"
-    },
-    {
-      "path": "QA_REPORT_WEB_V2.8.md",
-      "bytes": 2230,
-      "sha256": "f6f179fef372e996945db3439f0ae28e5aa45e52d2c49ce2f61375577a34f1e3"
-    },
-    {
-      "path": "README.md",
-      "bytes": 825,
-      "sha256": "4abbeddeb07707405514e8b6f6403ac67212654e7e9c1045c218ee9b2aa11dbc"
-    },
-    {
-      "path": "README_v2.8.md",
-      "bytes": 1947,
-      "sha256": "3d14ee0004773860e2ee8024a968031145e9221648425fb0c53899802a060fe4"
-    },
-    {
-      "path": "assets/script.js",
-      "bytes": 15935,
-      "sha256": "77f399e3fd2cf6abbbfab705aba8a9f87faf78fe4829e4403e6565c9e53a86c2"
-    },
-    {
-      "path": "assets/style.css",
-      "bytes": 16587,
-      "sha256": "13d5635546381f760f65c7061f2ca61ae995ae61b14580e877bb1c13d0a268e5"
-    },
-    {
-      "path": "book-direct.html",
-      "bytes": 12314,
-      "sha256": "97e01cf374e1bf439eeddf0c8d47b6b281ababd3be4db92b6916f865f2389622"
-    },
-    {
-      "path": "cabin.html",
-      "bytes": 13197,
-      "sha256": "037f43dbd275328b8898dfafa3f1bc78637d114ffd209ac0044c998923c69015"
-    },
-    {
-      "path": "explore.html",
-      "bytes": 5037,
-      "sha256": "dabbc3158bd47a1c6701a14d43ad42997d3e8a065600b93bd2cf6ca2841fffaf"
-    },
-    {
-      "path": "faq.html",
-      "bytes": 2859,
-      "sha256": "778730992dbd5bb101513dd5bd55c309414264b20320548edc591f2337682841"
-    },
-    {
-      "path": "gallery.html",
-      "bytes": 16819,
-      "sha256": "8a6d6a6ece3802f3ed2ba54544ab1aaeff84a0e1d4e2278acf47d0c5c4e65c63"
-    },
-    {
-      "path": "guest/index.html",
-      "bytes": 3664,
-      "sha256": "77f451c98b2e603dde9708399c58ee1bf5495e3dfba6a33dad6c5e45fd2b354d"
-    },
-    {
-      "path": "guest/john-smith-4827/index.html",
-      "bytes": 4837,
-      "sha256": "71c0f1d2a91ce31bd5ed188528610d6e82bb2128ea9fde5036bfe5aa434f8e79"
-    },
-    {
-      "path": "images/area-map.webp",
-      "bytes": 115510,
-      "sha256": "a9b5d487410045961604a8433060edb0283e5ff11daa43e72a60c2affb6717e2"
-    },
-    {
-      "path": "images/bathrooms/2732PC-27.webp",
-      "bytes": 122758,
-      "sha256": "a4fe21b08d6385e4dd985ca84499413c1c944c8c2a7d34e8bcefb3da52c9ca45"
-    },
-    {
-      "path": "images/bathrooms/2732PC-28.webp",
-      "bytes": 154076,
-      "sha256": "52db845d7d9576709894cfb417e31d0565b36c1fa200599dfb7ce835fa180a85"
-    },
-    {
-      "path": "images/bathrooms/2732PC-33.webp",
-      "bytes": 227226,
-      "sha256": "1a0f8fef7ed16137900ee90d7964d30516f4a3b1eef8897910db409d7a2547d9"
-    },
-    {
-      "path": "images/bedrooms/2732PC-24.webp",
-      "bytes": 254128,
-      "sha256": "30cbe0d13a72c4e884d6ae6927130d6432d4e08ae7de3cb07a9edfa6a233260d"
-    },
-    {
-      "path": "images/bedrooms/2732PC-25.webp",
-      "bytes": 230884,
-      "sha256": "5d9656218ce63851df43e138159a88d8dabfec53f429acca3c31c6eb20a8a7b5"
-    },
-    {
-      "path": "images/bedrooms/2732PC-26.webp",
-      "bytes": 281572,
-      "sha256": "9509667bbb61dd3a9226e494905d65ad7f2d63c75d6d547f8e8322e6edaa46e7"
-    },
-    {
-      "path": "images/bedrooms/2732PC-30.webp",
-      "bytes": 252448,
-      "sha256": "57c36157783f67ce5bd657b26af565b71b2f44f66abb493bd03eff1a81ac1f2c"
-    },
-    {
-      "path": "images/bedrooms/2732PC-31.webp",
-      "bytes": 205390,
-      "sha256": "6ce5703e2f5e491c7a1899cdf7bf9fdf7b793c72cdfbf5d6d0f80cd559b281ea"
-    },
-    {
-      "path": "images/bedrooms/2732PC-32.webp",
-      "bytes": 266466,
-      "sha256": "4d40e2bb58e36d1fce2203391e54a8958322e40d721b6d0be756a2f2d9a91be8"
-    },
-    {
-      "path": "images/bedrooms/2732PC-34.webp",
-      "bytes": 194548,
-      "sha256": "30c328900c85d3651601cab1e61a9d34c00f34bf717a389a6e3bc47e79506134"
-    },
-    {
-      "path": "images/bedrooms/2732PC-35.webp",
-      "bytes": 283520,
-      "sha256": "ada16812ab05dc64479863b571dccf6ebbd23cd769bf454a47eab557f3d25531"
-    },
-    {
-      "path": "images/bedrooms/2732PC-37.webp",
-      "bytes": 269234,
-      "sha256": "0237aa84a43d4ed07351a77b35430e55a1ffb18924fd41bc0021d89be89c8721"
-    },
-    {
-      "path": "images/community/ShagbarkAmenities-1.webp",
-      "bytes": 584738,
-      "sha256": "3efeb43288872d8d0956ca66b077f327d55a993c356c83fcca7fafd16e3b4e96"
-    },
-    {
-      "path": "images/community/ShagbarkAmenities-4.webp",
-      "bytes": 410972,
-      "sha256": "813eee1be51fd2914c093cb88b93a252af40f04becc94e50dde8439190c85ec0"
-    },
-    {
-      "path": "images/community/ShagbarkAmenities-7.webp",
-      "bytes": 612854,
-      "sha256": "41707b7e5ccda1a523ee6766ee785f55b0e2191df146acc4d3cf54f181aac7b2"
-    },
-    {
-      "path": "images/dining/2732PC-7.webp",
-      "bytes": 332918,
-      "sha256": "e900d084752ba9682932b0cc24a9a4413cf7e94edfe4e3370b5b77f94a51042c"
-    },
-    {
-      "path": "images/explore-smokies/Dollywood-Aerial.webp",
-      "bytes": 543094,
-      "sha256": "cf1370ffeb461a4df90b50af2bbed30801e0ffb2b4f4c1f23d3779e37af396f2"
-    },
-    {
-      "path": "images/explore-smokies/Foothills-Parkway-Sunrise.webp",
-      "bytes": 63770,
-      "sha256": "91197991d7fe798f2ed3ce4c6e63569500aecb388361f4ad8d2584bc036b7b6d"
-    },
-    {
-      "path": "images/explore-smokies/GSMNP-Sign-1.webp",
-      "bytes": 485068,
-      "sha256": "311e80d803005dbab6592318f45be139f4d5a55587300f37a3d605480ebbeb0c"
-    },
-    {
-      "path": "images/explore-smokies/Newfound-Gap.webp",
-      "bytes": 379356,
-      "sha256": "5fe351bb14b1bd3fecbfd8aa5ef899e909ff7d764e6cfb7e1197a8080aa60df4"
-    },
-    {
-      "path": "images/explore-smokies/Ripleys-Aquarium.webp",
-      "bytes": 413552,
-      "sha256": "35ce90e0bc77cf174b86d41cf2873986ba901af53d4fd3a23af8ce74794478c8"
-    },
-    {
-      "path": "images/explore-smokies/The-Island.webp",
-      "bytes": 324338,
-      "sha256": "f1343daa1c6d891fdac50c4963577ce778351106014030cde6b4eca368996018"
-    },
-    {
-      "path": "images/exterior/2732PC-13.webp",
-      "bytes": 414158,
-      "sha256": "3bdd17089e6d7b4cf35ae49a603e4480c6c77b47cb33bcdea79093cdb1f93491"
-    },
-    {
-      "path": "images/exterior/2732PC-14.webp",
-      "bytes": 266246,
-      "sha256": "3eb8f718e5102b67a58ec4e03d10c3adbe8727cdaaac27c5e85c1f8bffda2993"
-    },
-    {
-      "path": "images/exterior/2732PC-16.webp",
-      "bytes": 544378,
-      "sha256": "6f221693af710f350df56dd1d750e7c91579b5e30333da5de185af067bd6d6d6"
-    },
-    {
-      "path": "images/exterior/2732PC-19.webp",
-      "bytes": 479882,
-      "sha256": "fb755c0aaff76023cc4c6dfaa67150a0cc5815f84ba5f63c485bed3fba160ca8"
-    },
-    {
-      "path": "images/exterior/2732PC-41.webp",
-      "bytes": 624450,
-      "sha256": "4b93dbe7e662fbc6885988475a1f9573bc2f76efffc9fee5bbe1c6a8d0414ab4"
-    },
-    {
-      "path": "images/exterior/2732PC-42.webp",
-      "bytes": 524758,
-      "sha256": "4b8d6bfc4f8fc207a588925f3b72bf5452b40b2cb01f2437fcd767cd32cb0a10"
-    },
-    {
-      "path": "images/exterior/2732PC-44.webp",
-      "bytes": 642092,
-      "sha256": "ae77c548c0fe927251f714579609729d8e51c7224f754d42a4174b3e923d7be3"
-    },
-    {
-      "path": "images/exterior/2732PC-45.webp",
-      "bytes": 578806,
-      "sha256": "ba6a8424676f5f90021a4cd7f695fee7b3999cce0127a8fe25fad3155277911d"
-    },
-    {
-      "path": "images/hero/2732PC-1.webp",
-      "bytes": 305976,
-      "sha256": "a0776c5122d35711c7943795e9c89b1f41244049077d35c75dbf4df5bb00b31f"
-    },
-    {
-      "path": "images/hero/2732PCu24-5.webp",
-      "bytes": 372294,
-      "sha256": "9c4826d76b21f2a88e95f971d6c1f503560c7fb073f1ab6838a5562208de93c9"
-    },
-    {
-      "path": "images/hot-tub/2732PC-20.webp",
-      "bytes": 582026,
-      "sha256": "33cb5dea88d3a2ff7633d70a25fb94b9d2ce114510018d4fd15e5b21376b9998"
-    },
-    {
-      "path": "images/hot-tub/2732PC-21.webp",
-      "bytes": 508070,
-      "sha256": "17a57eccc5de5d31b03a318cdea2d0bf929a7e60cf001c24235f0cbd88a4d559"
-    },
-    {
-      "path": "images/hot-tub/2732PCu24-46.webp",
-      "bytes": 396476,
-      "sha256": "84223ac28d07f74d84e03cc4afa74de19099a4962f2a2e66131d530669ff30cb"
-    },
-    {
-      "path": "images/kitchen/2732PC-10.webp",
-      "bytes": 153748,
-      "sha256": "6cb7b5f99e940f6f2b5295224b6614d731c777004df91ad9fb0e8d6090362d9d"
-    },
-    {
-      "path": "images/kitchen/2732PC-11.webp",
-      "bytes": 196104,
-      "sha256": "62f57ef4de24fdb117599169ca838582d863763ce2a098a68fe33f0649b6e408"
-    },
-    {
-      "path": "images/kitchen/2732PC-12.webp",
-      "bytes": 123128,
-      "sha256": "ff7d2ddd7de972c33bd30b5d4f0d84a5013b1103a0e23b6cab51f0f467a07619"
-    },
-    {
-      "path": "images/kitchen/2732PC-9.webp",
-      "bytes": 141372,
-      "sha256": "b84c22c4878f6910d54e56585926f303178bddb6f588620271741ec630cbe5bd"
-    },
-    {
-      "path": "images/laundry/2732PC-8.webp",
-      "bytes": 82476,
-      "sha256": "b43c243df3a6aa96ce446ba533ff2f428ea4d88d9b3655bf2682982dd545a2eb"
-    },
-    {
-      "path": "images/living/2732PC-2.webp",
-      "bytes": 344862,
-      "sha256": "b5f7a68d73110f2c684aa867b746a2b980693a826913df24561098766e380177"
-    },
-    {
-      "path": "images/living/2732PC-22.webp",
-      "bytes": 316454,
-      "sha256": "94a522b06a8c094142c7d052592485dad26df9e5284dfd9f250d5481e67456d4"
-    },
-    {
-      "path": "images/living/2732PC-3.webp",
-      "bytes": 332020,
-      "sha256": "86ed73ec8001a539d6b222a534cb97ce7599b033ffd77593446d2afb97f9b880"
-    },
-    {
-      "path": "images/living/2732PC-40.webp",
-      "bytes": 359040,
-      "sha256": "16a8b2ad20966e11dd5344b2f90a763a81869ece3e262a23458354abaf8339f3"
-    },
-    {
-      "path": "images/living/2732PC-6.webp",
-      "bytes": 286180,
-      "sha256": "fb273f2b5286633638e951ee22df0f4b46ed12faad692d5bc0f3c52c13edf316"
-    },
-    {
-      "path": "images/property/2732PC-46.webp",
-      "bytes": 15066,
-      "sha256": "c4274194650c1cc1c45800a5a5b1bb600025f054ff3675056567545ec9dc8b7f"
-    },
-    {
-      "path": "images/property/2732PC-47.webp",
-      "bytes": 27148,
-      "sha256": "4f7bdf6984baff0c9861ded069e6fa61c6b4f1ca533b9ffeb6fdf2641ea3c431"
-    },
-    {
-      "path": "images/property/2732PC-48.webp",
-      "bytes": 31746,
-      "sha256": "3a4631dd4b5a7b2e80f86c2bf6f7b408d57da674753b72e3d11789fa88d5fff9"
-    },
-    {
-      "path": "index.html",
-      "bytes": 5282,
-      "sha256": "a76c1587dc54182ee97d6f162ca196f227da66da9de7848593c4cc0654035ade"
-    },
-    {
-      "path": "plan.html",
-      "bytes": 2480,
-      "sha256": "e588c04bb177dea6fb560a39724e8c95bc3f4fee8baead130c514852655db2e0"
-    },
-    {
-      "path": "rental-agreement.html",
-      "bytes": 6175,
-      "sha256": "9150386e3b03a29cca7e1ee376df4a48283beebb883e9cea9b0a5fe7f10c41d7"
-    },
-    {
-      "path": "robots.txt",
-      "bytes": 114,
-      "sha256": "8ea67db2a4abca98b2827c349b2f2631828f023e72d15cdea678495d78185426"
-    },
-    {
-      "path": "sitemap.xml",
-      "bytes": 568,
-      "sha256": "cc4c387a5b51aef79a6bb80b39fe82cffdd50c98550e20944c63ebebfbfb42ca"
-    },
-    {
-      "path": "templates/booking-confirmation.txt",
-      "bytes": 579,
-      "sha256": "c5b2e206db607d6992da05cfb3207d7d380bb5f3fa59931053d3f39d81af0c1f"
-    },
-    {
-      "path": "templates/gate-received.txt",
-      "bytes": 221,
-      "sha256": "4085f051e4120aca22785e04a00e51ea4beb91337a60487ec21b1fc8cbe2a253"
-    },
-    {
-      "path": "templates/three-day-arrival.txt",
-      "bytes": 376,
-      "sha256": "5c90506f763e2fa29da3e00aa2a4e70ef4d09ea479ccc9932e747a8312d98f89"
-    },
-    {
-      "path": "welcome.html",
-      "bytes": 4942,
-      "sha256": "c02fc8e7f9b6bf497382bd132ac15f670870314432c03b16f486568a67687a72"
-    }
-  ]
+  "release": "3.3",
+  "algorithm": "SHA-256",
+  "files": {
+    ".env.example": "e9fa5447f272562ef5df21b686801ceaa70fe40a2eb5025102185118e05dd7fa",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "404.html": "7331251aadc9c7a682c6ecd6a3e36c6f1a897efb7b54a709e36e8169bfaa3535",
+    "Backend/README.md": "737c452a56e0fb03a0a95293c9eb5f928ca7503b9c1acf74c460a72a076b316e",
+    "Backend/__pycache__/ical_db.cpython-313.pyc": "03c8fcdb89d2be9994f69998fc8a441af51bcbfe4a9a10bf80fa83eb18223f50",
+    "Backend/__pycache__/run_qa.cpython-313.pyc": "7b435bee72d8b20de06284faa8b54a1f65d846525104398994b4a915c600c3a9",
+    "Backend/__pycache__/server.cpython-313.pyc": "3cefb18cc64329b3f0638214e04f19457099ccffd9b89baf002df17ea12d92b8",
+    "Backend/arborvista_ical_test.db": "bff1ef21a66c8bb396ace913abcf8fe2642e4f465ccdad19b8f72b18e06987d7",
+    "Backend/arborvista_v32.db": "4eb3f1b42d055b6b82d7c35bfdbf816e2abe5f8741fcc28e6ac87809d37d08b8",
+    "Backend/exports/arbor-vista-all.ics": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e",
+    "Backend/exports/arbor-vista-for-airbnb.ics": "96c5fb37737d46eb0e67f01c71a50b9cee07fca00fad5b2f75bef9995f0cf766",
+    "Backend/exports/arbor-vista-for-vrbo.ics": "bd03e9fbbe5c4e78d3658052034b057581c074f40d4b6bddf9fa04d018256d9f",
+    "Backend/exports/arbor-vista.ics": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e",
+    "Backend/fixtures/airbnb_cancelled.ics": "76f95febc51d3b7212aa957e6cc98ed4f5e7d64f6da735ed95755e9f0d70516c",
+    "Backend/fixtures/airbnb_sample.ics": "9442964dcd3e943fb05cc2868526eb517f5601d1b0e9a0f5c317ebe011e2ac15",
+    "Backend/fixtures/airbnb_updated_missing.ics": "e36945bfa80e536bcb2f08e3160556f462d3a07af988f33d936628deca8c59b6",
+    "Backend/fixtures/duplicate_uid.ics": "7cd070cffa9b36fd1d52e9c97f126e7adf2c8c8ff58e07283bd82af56c7f6b75",
+    "Backend/fixtures/empty_calendar.ics": "d997209b18c3075996ea93d1ecd20e924550a560ffaa0e006c0f4dfb93b65fde",
+    "Backend/fixtures/folded_line.ics": "c084a827478ffca575c32546e203b6b6c680bd508198e596a43b2a52e640eec5",
+    "Backend/fixtures/malformed_missing_dtend.ics": "9619a2588ef80e659ca41269546a9038349922839f3314e14956e6b3669b0633",
+    "Backend/fixtures/vrbo_sample.ics": "bc12dac636f7edf0510f6f34eb921c7c00e9a035993a44e25bc41729dd46428c",
+    "Backend/ical_db.py": "928fd68789b6d6f64adaee98dbfb5f1cc720a925df27ef01662ab1009ff71201",
+    "Backend/run_qa.py": "ee1a594c12a41bf60e5ad956b835232ca8db83ff9394db4d3fcda97da233fb1f",
+    "Backend/schema.sql": "2064ec88c7f57da2b1040db1adcd84bf13b7e7bcf4af4c4cdbf24871a863cc17",
+    "Backend/seed.sql": "6d3f8f486193d870589f22eed72ff86493bcf42437ca1c1a9785777aef5e7886",
+    "Backend/server.py": "91206bfc179df28e24c0188e90b3d5fce37410d11a1b403f48ba6e81fa0cdca3",
+    "Docs/CHANGELOG_V2.8.md": "df288404f9161299c07a4ba21c95fa27aa7ebca576b7895549d151f04bb86e0c",
+    "Docs/CLOUD_MIGRATION_ARCHITECTURE.md": "42c8bf4e21a92e9dbb5b16fb331f85e7bc4f8762dc44a918cdad93613d8149ff",
+    "Docs/ICAL_TEST_PLAN.md": "420ef436e040d5aab89aa41d2f5680080a6284443434f7bd67440101cca03b0e",
+    "Docs/KNOWN_ISSUES.md": "dc7f6008d9a7d71d4b78a4ac60beaa14edde24ab0701c6e6743f00f914979a24",
+    "Docs/SCOPE_V3.2.md": "d60a423a2a38b30754cd72a68c36779284bebf1b603e117980bdb9110ae51d8e",
+    "Docs/SECURITY_NOTES.md": "0ab8ba3a593024d32fcd8fecba83099b486272b9a46ba6745570de948be44277",
+    "QA/README.md": "38ff1eac0c939360cf1800aa4b2521c7a287dc4dc29065f5189677c32cf28544",
+    "QA/__pycache__/run_v33_cloud_qa.cpython-313.pyc": "0c41e494da7b7448c64e0d8faae5f885a596775c46f23e500b762e6451efd211",
+    "QA/__pycache__/run_web_qa.cpython-313.pyc": "cbe02f1727c012e615453ee8cc5f2a3196ed8a9955c91832b43fc49ed226daae",
+    "QA/requirements-qa.txt": "8a141b9f3d39adb962ac6da1b4ed1605e42d272898e7bce68d17aabe13e8b97a",
+    "QA/run_all_qa.py": "f3b49bf9f88a682dc46db4057321a5344c1d67ec1e7e0d6dda92a1275415a392",
+    "QA/run_v32_integration_qa.py": "37a45cfec6a0823f835a18c3cb0474fb4dea1612556d2a223390d5bbcddec1ba",
+    "QA/run_v32_qa.py": "5af60136d466b15f8bf609d93ee16f0d1cdcc081a751ad50e237405c45c492a7",
+    "QA/run_v33_cloud_qa.py": "b4d396a81ab5205a021390e1533b04429d9242cd01d66f4daee13946cb2079c1",
+    "QA/run_web_qa.py": "cec89566489ae72a50af2cde9b436068d9611f04ff2e288d4ca3288bc2924298",
+    "QA/screenshots/booking-confirmation-desktop.png": "046c6bccf2e24374a3a9c25ea2332b94a0f8844c8ac47fc298d8f29d06c6a06d",
+    "QA/screenshots/guest-preview-desktop.png": "6ded0a38f76ddc3099c5853a13b1a917b640ce2ca0745661121d71d8a0d1f362",
+    "QA/screenshots/home-mobile.png": "84ce7cfe6b97d786eccd294ab3545748adae1a866a3dfbb0daa83ae9b1acbc18",
+    "QA_REPORT.json": "1a33215244b06734bcb81e9f56708d3a97a9b1819f5136fb216124833f1d4954",
+    "QA_REPORT.md": "166700b9dc7a4d1cceb5a9bef7904ee6c027c00fa4471f2f2e0898b56c62a361",
+    "QA_REPORT_DATABASE.json": "2dbec8ae8b5ebbd30fb80bd0f119e945df82da9aea483c6c3f804bd34c45a5d8",
+    "QA_REPORT_DATABASE.md": "721beb78febba0c2674241880c8840cb601181d6919e0fd1d32fa9b118e8dd38",
+    "QA_REPORT_FINAL.json": "1a33215244b06734bcb81e9f56708d3a97a9b1819f5136fb216124833f1d4954",
+    "QA_REPORT_FINAL.md": "166700b9dc7a4d1cceb5a9bef7904ee6c027c00fa4471f2f2e0898b56c62a361",
+    "QA_REPORT_V3.2.json": "55618f5e00937b138319a4326aebe4c1143bdec9501471a48832d3429e29f16a",
+    "QA_REPORT_V3.2.md": "1acace81bf0952c1cfbab6885c5a1de939231289c4849de811c4941bab73b45e",
+    "QA_REPORT_V3.2_INTEGRATION.json": "36ae133250e08b2a57a43da113424cafb8e9d048fc935270ba41cb442b8916af",
+    "QA_REPORT_V3.3_FINAL.json": "2a189b3826afdc5fa81b8094de7386174a01cc64776d8d26b6aa2483fa62208d",
+    "QA_REPORT_V3.3_FINAL.md": "79b97e3b76218423b9e6571360d72e75ea17b6c3ef0ee48fa5c924000d12c61b",
+    "QA_REPORT_WEB_V2.8.json": "69e5b2d3b76c0bc3fa404c22912c6ef08a9b4d5b36013bca248413897b733e91",
+    "QA_REPORT_WEB_V2.8.md": "f6f179fef372e996945db3439f0ae28e5aa45e52d2c49ce2f61375577a34f1e3",
+    "README.md": "4abbeddeb07707405514e8b6f6403ac67212654e7e9c1045c218ee9b2aa11dbc",
+    "README_v2.8.md": "3d14ee0004773860e2ee8024a968031145e9221648425fb0c53899802a060fe4",
+    "README_v3.2.md": "f4fc8c7100fe735ac146e99082e06eba5e97f92f8cffca96aef2a9a66ad9fd0a",
+    "README_v3.3.md": "469198de6230e152ad679a02aa6f9565dca635cdd91f197d9e25e1d6c3670f3f",
+    "admin/admin.css": "1e204bc88fea9e2c49f68c74cbd01400d91881b1eb3b9f387759dccee74a7c2f",
+    "admin/admin.js": "ef7dcee32652d6dab946cb357884703075b45505befef5298527faf05a1f03c2",
+    "admin/calendar.html": "82f35e7ad6612815c214b645feb76f776c4ec0d4ce9eea74c4fac690e29b62c2",
+    "admin/dashboard.html": "83071967c14a17905527b45399fec27c74c06f57b05da9e361d9058275e595d1",
+    "admin/login.html": "89b09b97502c5033a99c45010150aa15d57811ac52a116125246687319a19925",
+    "admin/reservations.html": "3107da532360a6649d5f7cd37149b5d3d7253b4c49ba96d3ae07903d6db257f6",
+    "admin/settings.html": "af74845ae681a04f3a20413a991e03061816f53535317286628e8c27adde92f6",
+    "admin/sync-log.html": "59cfaa8174bc9fb754ec2668686e65e465db96d87b1e77416114878ebda22d2f",
+    "assets/script.js": "6e7219c3899f6d7fa39121fe6719f868e16ce80207c1b7194b1ec7ca541350c9",
+    "assets/style.css": "a28199cf898454a09d018c979d5a18711e24a427fdd41a46c744614afb2afec4",
+    "book-direct.html": "a2c1140f68228a6bbbbc440c1bacaae5f64406b0d4456011d93d9cc8e14b489e",
+    "cabin.html": "441324056b6cf7fdc98378dc02058c11c236feb683087a82c84c53af8d13bb0a",
+    "config/runtime-config.example.js": "a82d05c41b0178e3f5c913bf676ba9fcff2dea65a02dd86a266678e201b7f6dc",
+    "config/runtime-config.js": "c1d0b310a90039cadf5058608939c4f202ec6c69f20e97066ff4977c8a0485fb",
+    "explore.html": "fde5bd93c82964495811d8d658500daf59c0d6a492bb172b597d93039fdc534f",
+    "faq.html": "836d8df15a90f2d691b0aff61e438046f496971667dde6629d9a7452e7a23c67",
+    "gallery.html": "2eaf64a43463720450d3bbf7fb1e0c6ae617cce42e08f29ee3c5d9b1208d13b6",
+    "guest/index.html": "10819ec0a739d2f2fe3bd86bce33f4a9cd1a5cd93205310408d037c434cfe18f",
+    "guest/john-smith-4827/index.html": "82fb4762af77f418236a5acdc07c4477ba5c0fb3e4f63690be0a6d664f492141",
+    "images/area-map.webp": "a9b5d487410045961604a8433060edb0283e5ff11daa43e72a60c2affb6717e2",
+    "images/bathrooms/2732PC-27.webp": "a4fe21b08d6385e4dd985ca84499413c1c944c8c2a7d34e8bcefb3da52c9ca45",
+    "images/bathrooms/2732PC-28.webp": "52db845d7d9576709894cfb417e31d0565b36c1fa200599dfb7ce835fa180a85",
+    "images/bathrooms/2732PC-33.webp": "1a0f8fef7ed16137900ee90d7964d30516f4a3b1eef8897910db409d7a2547d9",
+    "images/bedrooms/2732PC-24.webp": "30cbe0d13a72c4e884d6ae6927130d6432d4e08ae7de3cb07a9edfa6a233260d",
+    "images/bedrooms/2732PC-25.webp": "5d9656218ce63851df43e138159a88d8dabfec53f429acca3c31c6eb20a8a7b5",
+    "images/bedrooms/2732PC-26.webp": "9509667bbb61dd3a9226e494905d65ad7f2d63c75d6d547f8e8322e6edaa46e7",
+    "images/bedrooms/2732PC-30.webp": "57c36157783f67ce5bd657b26af565b71b2f44f66abb493bd03eff1a81ac1f2c",
+    "images/bedrooms/2732PC-31.webp": "6ce5703e2f5e491c7a1899cdf7bf9fdf7b793c72cdfbf5d6d0f80cd559b281ea",
+    "images/bedrooms/2732PC-32.webp": "4d40e2bb58e36d1fce2203391e54a8958322e40d721b6d0be756a2f2d9a91be8",
+    "images/bedrooms/2732PC-34.webp": "30c328900c85d3651601cab1e61a9d34c00f34bf717a389a6e3bc47e79506134",
+    "images/bedrooms/2732PC-35.webp": "ada16812ab05dc64479863b571dccf6ebbd23cd769bf454a47eab557f3d25531",
+    "images/bedrooms/2732PC-37.webp": "0237aa84a43d4ed07351a77b35430e55a1ffb18924fd41bc0021d89be89c8721",
+    "images/community/ShagbarkAmenities-1.webp": "3efeb43288872d8d0956ca66b077f327d55a993c356c83fcca7fafd16e3b4e96",
+    "images/community/ShagbarkAmenities-4.webp": "813eee1be51fd2914c093cb88b93a252af40f04becc94e50dde8439190c85ec0",
+    "images/community/ShagbarkAmenities-7.webp": "41707b7e5ccda1a523ee6766ee785f55b0e2191df146acc4d3cf54f181aac7b2",
+    "images/dining/2732PC-7.webp": "e900d084752ba9682932b0cc24a9a4413cf7e94edfe4e3370b5b77f94a51042c",
+    "images/explore-smokies/Dollywood-Aerial.webp": "cf1370ffeb461a4df90b50af2bbed30801e0ffb2b4f4c1f23d3779e37af396f2",
+    "images/explore-smokies/Foothills-Parkway-Sunrise.webp": "91197991d7fe798f2ed3ce4c6e63569500aecb388361f4ad8d2584bc036b7b6d",
+    "images/explore-smokies/GSMNP-Sign-1.webp": "311e80d803005dbab6592318f45be139f4d5a55587300f37a3d605480ebbeb0c",
+    "images/explore-smokies/Newfound-Gap.webp": "5fe351bb14b1bd3fecbfd8aa5ef899e909ff7d764e6cfb7e1197a8080aa60df4",
+    "images/explore-smokies/Ripleys-Aquarium.webp": "35ce90e0bc77cf174b86d41cf2873986ba901af53d4fd3a23af8ce74794478c8",
+    "images/explore-smokies/The-Island.webp": "f1343daa1c6d891fdac50c4963577ce778351106014030cde6b4eca368996018",
+    "images/exterior/2732PC-13.webp": "3bdd17089e6d7b4cf35ae49a603e4480c6c77b47cb33bcdea79093cdb1f93491",
+    "images/exterior/2732PC-14.webp": "3eb8f718e5102b67a58ec4e03d10c3adbe8727cdaaac27c5e85c1f8bffda2993",
+    "images/exterior/2732PC-16.webp": "6f221693af710f350df56dd1d750e7c91579b5e30333da5de185af067bd6d6d6",
+    "images/exterior/2732PC-19.webp": "fb755c0aaff76023cc4c6dfaa67150a0cc5815f84ba5f63c485bed3fba160ca8",
+    "images/exterior/2732PC-41.webp": "4b93dbe7e662fbc6885988475a1f9573bc2f76efffc9fee5bbe1c6a8d0414ab4",
+    "images/exterior/2732PC-42.webp": "4b8d6bfc4f8fc207a588925f3b72bf5452b40b2cb01f2437fcd767cd32cb0a10",
+    "images/exterior/2732PC-44.webp": "ae77c548c0fe927251f714579609729d8e51c7224f754d42a4174b3e923d7be3",
+    "images/exterior/2732PC-45.webp": "ba6a8424676f5f90021a4cd7f695fee7b3999cce0127a8fe25fad3155277911d",
+    "images/hero/2732PC-1.webp": "a0776c5122d35711c7943795e9c89b1f41244049077d35c75dbf4df5bb00b31f",
+    "images/hero/2732PCu24-5.webp": "9c4826d76b21f2a88e95f971d6c1f503560c7fb073f1ab6838a5562208de93c9",
+    "images/hot-tub/2732PC-20.webp": "33cb5dea88d3a2ff7633d70a25fb94b9d2ce114510018d4fd15e5b21376b9998",
+    "images/hot-tub/2732PC-21.webp": "17a57eccc5de5d31b03a318cdea2d0bf929a7e60cf001c24235f0cbd88a4d559",
+    "images/hot-tub/2732PCu24-46.webp": "84223ac28d07f74d84e03cc4afa74de19099a4962f2a2e66131d530669ff30cb",
+    "images/kitchen/arbor-vista-charcoal-kitchen-1.webp": "64c3681fd2988ede4f21c429565cfa57d388b3e633665f3c0d70b2b65dc7a77f",
+    "images/kitchen/arbor-vista-charcoal-kitchen-2.webp": "e9685bb3047e07f2430ecb4757bf1197df6f0d7b532dafd2c059b6da19166fca",
+    "images/kitchen/arbor-vista-charcoal-kitchen-3.webp": "e513741b7e51a5167b102800647e4dcb8ee1bc5282419bd5f5b9d2631a43e5df",
+    "images/kitchen/arbor-vista-charcoal-kitchen-4.webp": "c17401c28c5e53d61ebd2112bb25ab3997e487b840a73d8736e845352de66431",
+    "images/laundry/2732PC-8.webp": "b43c243df3a6aa96ce446ba533ff2f428ea4d88d9b3655bf2682982dd545a2eb",
+    "images/living/2732PC-2.webp": "b5f7a68d73110f2c684aa867b746a2b980693a826913df24561098766e380177",
+    "images/living/2732PC-22.webp": "94a522b06a8c094142c7d052592485dad26df9e5284dfd9f250d5481e67456d4",
+    "images/living/2732PC-3.webp": "86ed73ec8001a539d6b222a534cb97ce7599b033ffd77593446d2afb97f9b880",
+    "images/living/2732PC-40.webp": "16a8b2ad20966e11dd5344b2f90a763a81869ece3e262a23458354abaf8339f3",
+    "images/living/2732PC-6.webp": "fb273f2b5286633638e951ee22df0f4b46ed12faad692d5bc0f3c52c13edf316",
+    "images/property/2732PC-46.webp": "c4274194650c1cc1c45800a5a5b1bb600025f054ff3675056567545ec9dc8b7f",
+    "images/property/2732PC-47.webp": "4f7bdf6984baff0c9861ded069e6fa61c6b4f1ca533b9ffeb6fdf2641ea3c431",
+    "images/property/2732PC-48.webp": "3a4631dd4b5a7b2e80f86c2bf6f7b408d57da674753b72e3d11789fa88d5fff9",
+    "index.html": "7423569019149450dfdc87497f516e3e7f94f001ce8726f20f0eefb832b1957f",
+    "plan.html": "068bdfa816d6ec9ca91d523da26688d7623c95c0142ba2a5bb87ed2bb6091543",
+    "properties/arbor-vista-retreat/TRANSFER_CHECKLIST.md": "247fbad3122562a5876baebf5028511a5d46c1731a963e0e4ea2fffcfc7b7892",
+    "properties/arbor-vista-retreat/property.json": "d2bd73230547c265c05e0bbcc4ef1abeefdc537d1f488d906ba7b89ce3bc8f25",
+    "rental-agreement.html": "bb0fa9471fd73578f9995be2254fb7ee4cf119331ef4b720c70b8039a73398ec",
+    "robots.txt": "8ea67db2a4abca98b2827c349b2f2631828f023e72d15cdea678495d78185426",
+    "sitemap.xml": "cc4c387a5b51aef79a6bb80b39fe82cffdd50c98550e20944c63ebebfbfb42ca",
+    "supabase/README.md": "351fcbe973d43c06bf506786d71ce2387504950451bf4354deced68ac8194a30",
+    "supabase/migrations/001_cloud_multi_property.sql": "d61563992d4813d9c2b1e7630eeeb932c67962f53c7663bde1f8ac03d860e1c0",
+    "templates/booking-confirmation.txt": "c5b2e206db607d6992da05cfb3207d7d380bb5f3fa59931053d3f39d81af0c1f",
+    "templates/gate-received.txt": "4085f051e4120aca22785e04a00e51ea4beb91337a60487ec21b1fc8cbe2a253",
+    "templates/three-day-arrival.txt": "5c90506f763e2fa29da3e00aa2a4e70ef4d09ea479ccc9932e747a8312d98f89",
+    "welcome.html": "2d4850f54195868fa1bb3a9c24e71bbc454507f6eb9a472a51ceed1e20119a75"
+  }
 }

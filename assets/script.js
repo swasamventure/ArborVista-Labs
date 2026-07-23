@@ -1,3 +1,4 @@
+// Backward-compatible route name: api/booking-requests
 const menu = document.querySelector('.menu');
 const links = document.querySelector('.links');
 if (menu && links) {
@@ -34,7 +35,7 @@ function localDateISO(value = new Date()) {
 }
 
 function showSuccess(form, id) {
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const data = {};
     [...form.elements].forEach((element) => {
@@ -65,13 +66,18 @@ if (portalGate) {
   document.querySelectorAll('[data-gate-pill]').forEach((element) => element.classList.add('done'));
 }
 
-// v2.8 hardened guided Book Direct flow with safe rendering and 24-hour draft autosave.
+// v3.2 hardened guided Book Direct flow with safe rendering and 24-hour draft autosave.
 (() => {
   const form = document.getElementById('bookingFlow');
   if (!form) return;
 
-  const DRAFT_KEY = 'arbor-vista-booking-draft-v2';
-  const REQUEST_KEY = 'arbor-vista-booking-request';
+  const cfg = window.ARBOR_VISTA_CONFIG || { apiBaseUrl: '/api/v1', propertySlug: 'arbor-vista-retreat', requestTimeoutMs: 15000 };
+  const DRAFT_KEY = cfg.propertySlug === 'arbor-vista-retreat'
+    ? 'arbor-vista-booking-draft-v2'
+    : `${cfg.propertySlug}-booking-draft-v2`;
+  const REQUEST_KEY = cfg.propertySlug === 'arbor-vista-retreat'
+    ? 'arbor-vista-booking-request'
+    : `${cfg.propertySlug}-booking-request`;
   const DRAFT_TTL = 24 * 60 * 60 * 1000;
   const MAX_REQUESTED_GUESTS = 8;
   const panels = [...form.querySelectorAll('[data-booking-step]')];
@@ -308,7 +314,7 @@ if (portalGate) {
     return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'guest';
   }
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!validateStep(3)) {
       setStep(3);
@@ -323,6 +329,24 @@ if (portalGate) {
     const slug = `${slugify(`${data.first_name} ${data.last_name}`)}-${random}`;
     data.guestSlug = slug;
     data.submittedAt = new Date().toISOString();
+    let apiResult = null;
+    try {
+      const apiUrl = new URL(`${cfg.apiBaseUrl.replace(/\/$/, '')}/booking-requests`, window.location.origin);
+      const response = await fetch(apiUrl, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Property-Slug': cfg.propertySlug }, body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        const problem = await response.json().catch(() => ({}));
+        throw new Error(problem.error || 'The request could not be submitted.');
+      }
+      apiResult = await response.json();
+      data.bookingRequestId = apiResult.booking_request_id;
+      data.reservationId = apiResult.reservation_id;
+      data.storageMode = 'database';
+    } catch (error) {
+      data.storageMode = 'browser-preview';
+      data.apiMessage = error.message;
+    }
     safeStorageSet(REQUEST_KEY, JSON.stringify(data));
     clearDraft();
     const confirmName = document.querySelector('[data-confirm-name]');
