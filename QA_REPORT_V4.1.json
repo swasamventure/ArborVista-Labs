@@ -1,0 +1,408 @@
+{
+  "version": "4.1",
+  "status": "PASS",
+  "checks_passed": 80,
+  "checks_total": 80,
+  "checks": [
+    {
+      "name": "Database table exists: organizations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: users",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: organization_members",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: properties",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: property_domains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: property_members",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: property_settings",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: reservations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: booking_requests",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: guests",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: calendar_sources",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: calendar_blocks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: sync_runs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: calendar_share_tokens",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: calendar_share_properties",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: reporting_snapshots",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: data_exports",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database table exists: audit_log",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: dashboard.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: reservations.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: calendar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: settings.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: sync-log.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: reports.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: cleaning-calendar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: property-export.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard page exists: login.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "API endpoint implemented: /properties",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "API endpoint implemented: /reservations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "API endpoint implemented: /calendar/combined",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "API endpoint implemented: /reports/summary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "API endpoint implemented: /ical/cleaning.ics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "API endpoint implemented: /property-export",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "API endpoint implemented: /booking-requests",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shared property template exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Property creation tool exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Property export tool exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supabase base migration exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supabase RLS migration exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supabase reporting/cleaner migration exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Python syntax: Backend/ical_db.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Python syntax: Backend/operations.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Python syntax: Backend/server.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Python syntax: tools/create_property.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Python syntax: tools/export_property.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: assets/script.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: admin/admin.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: config/runtime-config.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Two-property test foundation initialized",
+      "passed": true,
+      "detail": "[{'id': 'prop_arbor_vista', 'organization_id': 'org_swasam', 'code': 'AVR-TN-01', 'name': 'Arbor Vista Retreat', 'slug': 'arbor-vista-retreat', 'public_domain': 'arborvistaretreat.com', 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 6, 'maximum_requested_guests': 8, 'location_label': 'Arbor Vista Retreat \u2014 Shagbark Resort, Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 0, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08'}, {'id': 'prop_demo_smokies', 'organization_id': 'org_swasam', 'code': 'DEMO-TN-02', 'name': 'Smoky Mountain Demo Cabin', 'slug': 'smoky-mountain-demo-cabin', 'public_domain': None, 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 8, 'maximum_requested_guests': 10, 'location_label': 'Demo property \u2014 Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 1, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08'}]"
+    },
+    {
+      "name": "Arbor Vista has stable property code",
+      "passed": true,
+      "detail": "[{'id': 'prop_arbor_vista', 'organization_id': 'org_swasam', 'code': 'AVR-TN-01', 'name': 'Arbor Vista Retreat', 'slug': 'arbor-vista-retreat', 'public_domain': 'arborvistaretreat.com', 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 6, 'maximum_requested_guests': 8, 'location_label': 'Arbor Vista Retreat \u2014 Shagbark Resort, Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 0, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08'}, {'id': 'prop_demo_smokies', 'organization_id': 'org_swasam', 'code': 'DEMO-TN-02', 'name': 'Smoky Mountain Demo Cabin', 'slug': 'smoky-mountain-demo-cabin', 'public_domain': None, 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 8, 'maximum_requested_guests': 10, 'location_label': 'Demo property \u2014 Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 1, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08'}]"
+    },
+    {
+      "name": "Second property is marked demo",
+      "passed": true,
+      "detail": "[{'id': 'prop_arbor_vista', 'organization_id': 'org_swasam', 'code': 'AVR-TN-01', 'name': 'Arbor Vista Retreat', 'slug': 'arbor-vista-retreat', 'public_domain': 'arborvistaretreat.com', 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 6, 'maximum_requested_guests': 8, 'location_label': 'Arbor Vista Retreat \u2014 Shagbark Resort, Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 0, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08'}, {'id': 'prop_demo_smokies', 'organization_id': 'org_swasam', 'code': 'DEMO-TN-02', 'name': 'Smoky Mountain Demo Cabin', 'slug': 'smoky-mountain-demo-cabin', 'public_domain': None, 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 8, 'maximum_requested_guests': 10, 'location_label': 'Demo property \u2014 Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 1, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08'}]"
+    },
+    {
+      "name": "Portfolio owner can access both properties",
+      "passed": true,
+      "detail": "[{'id': 'prop_arbor_vista', 'organization_id': 'org_swasam', 'code': 'AVR-TN-01', 'name': 'Arbor Vista Retreat', 'slug': 'arbor-vista-retreat', 'public_domain': 'arborvistaretreat.com', 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 6, 'maximum_requested_guests': 8, 'location_label': 'Arbor Vista Retreat \u2014 Shagbark Resort, Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 0, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'role': 'portfolio_owner'}, {'id': 'prop_demo_smokies', 'organization_id': 'org_swasam', 'code': 'DEMO-TN-02', 'name': 'Smoky Mountain Demo Cabin', 'slug': 'smoky-mountain-demo-cabin', 'public_domain': None, 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 8, 'maximum_requested_guests': 10, 'location_label': 'Demo property \u2014 Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 1, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'role': 'portfolio_owner'}]"
+    },
+    {
+      "name": "Manager is limited to Arbor Vista",
+      "passed": true,
+      "detail": "[{'id': 'prop_arbor_vista', 'organization_id': 'org_swasam', 'code': 'AVR-TN-01', 'name': 'Arbor Vista Retreat', 'slug': 'arbor-vista-retreat', 'public_domain': 'arborvistaretreat.com', 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 6, 'maximum_requested_guests': 8, 'location_label': 'Arbor Vista Retreat \u2014 Shagbark Resort, Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 0, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'role': 'manager'}]"
+    },
+    {
+      "name": "Cleaner is assigned to both properties",
+      "passed": true,
+      "detail": "[{'id': 'prop_arbor_vista', 'organization_id': 'org_swasam', 'code': 'AVR-TN-01', 'name': 'Arbor Vista Retreat', 'slug': 'arbor-vista-retreat', 'public_domain': 'arborvistaretreat.com', 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 6, 'maximum_requested_guests': 8, 'location_label': 'Arbor Vista Retreat \u2014 Shagbark Resort, Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 0, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'role': 'cleaner'}, {'id': 'prop_demo_smokies', 'organization_id': 'org_swasam', 'code': 'DEMO-TN-02', 'name': 'Smoky Mountain Demo Cabin', 'slug': 'smoky-mountain-demo-cabin', 'public_domain': None, 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 8, 'maximum_requested_guests': 10, 'location_label': 'Demo property \u2014 Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 1, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'role': 'cleaner'}]"
+    },
+    {
+      "name": "Organization accountant can see both properties",
+      "passed": true,
+      "detail": "[{'id': 'prop_arbor_vista', 'organization_id': 'org_swasam', 'code': 'AVR-TN-01', 'name': 'Arbor Vista Retreat', 'slug': 'arbor-vista-retreat', 'public_domain': 'arborvistaretreat.com', 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 6, 'maximum_requested_guests': 8, 'location_label': 'Arbor Vista Retreat \u2014 Shagbark Resort, Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 0, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'role': 'accountant'}, {'id': 'prop_demo_smokies', 'organization_id': 'org_swasam', 'code': 'DEMO-TN-02', 'name': 'Smoky Mountain Demo Cabin', 'slug': 'smoky-mountain-demo-cabin', 'public_domain': None, 'timezone': 'America/New_York', 'check_in_time': '16:00', 'check_out_time': '10:00', 'cleaning_duration_minutes': 240, 'standard_sleeps': 8, 'maximum_requested_guests': 10, 'location_label': 'Demo property \u2014 Sevierville, TN', 'address_line1': None, 'address_line2': None, 'city': 'Sevierville', 'state': 'TN', 'postal_code': None, 'cleaner_notes': None, 'is_demo': 1, 'active': 1, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'role': 'accountant'}]"
+    },
+    {
+      "name": "Cleaner cannot read admin reservation scope",
+      "passed": true,
+      "detail": "Portfolio-wide access is not permitted for this user."
+    },
+    {
+      "name": "Manager cannot access property-sale export role",
+      "passed": true,
+      "detail": "The user's role does not permit this action."
+    },
+    {
+      "name": "Direct booking request created",
+      "passed": true,
+      "detail": "{'booking_request_id': 'req_ace638ecce39', 'reservation_id': 'res_6b3dc1d0f4ae', 'property_id': 'prop_arbor_vista', 'property_code': 'AVR-TN-01', 'status': 'pending', 'email_status': 'disabled'}"
+    },
+    {
+      "name": "Overlapping booking is rejected within same property",
+      "passed": true,
+      "detail": "Those dates are no longer available."
+    },
+    {
+      "name": "Same dates are allowed at a different property",
+      "passed": true,
+      "detail": "{'booking_request_id': 'req_6c0401ed63aa', 'reservation_id': 'res_5ec757afd0fe', 'property_id': 'prop_demo_smokies', 'property_code': 'DEMO-TN-02', 'status': 'pending', 'email_status': 'disabled'}"
+    },
+    {
+      "name": "Pending request blocks availability",
+      "passed": true,
+      "detail": "{'property_id': 'prop_arbor_vista', 'start_date': '2028-03-11', 'end_date': '2028-03-12', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2028-03-10', 'end_date': '2028-03-13', 'source': 'direct', 'source_id': 'res_6b3dc1d0f4ae', 'status': 'pending'}]}"
+    },
+    {
+      "name": "Reservation list carries property identity",
+      "passed": true,
+      "detail": "[{'id': 'res_seed_avr_2027', 'property_id': 'prop_arbor_vista', 'calendar_source_id': 'src_direct', 'external_uid': None, 'source_type': 'direct', 'guest_name': 'Jordan Smith', 'start_date': '2027-02-10', 'end_date': '2027-02-13', 'adults': 4, 'children': 2, 'total_amount_cents': 180000, 'currency': 'USD', 'status': 'confirmed', 'summary': 'Direct reservation', 'cleaner_note': 'Prepare sofa bed only if approved in dashboard.', 'raw_ical': None, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'property_code': 'AVR-TN-01', 'property_name': 'Arbor Vista Retreat', 'property_slug': 'arbor-vista-retreat', 'email': None, 'phone': None, 'booking_request_id': None, 'vehicles': None, 'special_requests': None}, {'id': 'res_seed_demo_2027', 'property_id': 'prop_demo_smokies', 'calendar_source_id': 'src_demo_direct', 'external_uid': None, 'source_type': 'direct', 'guest_name': 'Taylor Jones', 'start_date': '2027-02-13', 'end_date': '2027-02-17', 'adults': 2, 'children': 2, 'total_amount_cents': 160000, 'currency': 'USD', 'status': 'confirmed', 'summary': 'Demo reservation', 'cleaner_note': 'Demo property turnover.', 'raw_ical': None, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'property_code': 'DEMO-TN-02', 'property_name': 'Smoky Mountain Demo Cabin', 'property_slug': 'smoky-mountain-demo-cabin', 'email': None, 'phone': None, 'booking_request_id': None, 'vehicles': None, 'special_requests': None}, {'id': 'res_6b3dc1d0f4ae', 'property_id': 'prop_arbor_vista', 'calendar_source_id': 'src_direct', 'external_uid': None, 'source_type': 'direct', 'guest_name': 'Private Guest', 'start_date': '2028-03-10', 'end_date': '2028-03-13', 'adults': 4, 'children': 2, 'total_amount_cents': None, 'currency': 'USD', 'status': 'pending', 'summary': 'Direct booking request', 'cleaner_note': 'Guest count and turnover details available in the dashboard.', 'raw_ical': None, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'property_code': 'AVR-TN-01', 'property_name': 'Arbor Vista Retreat', 'property_slug': 'arbor-vista-retreat', 'email': 'private@example.test', 'phone': '5125551212', 'booking_request_id': 'req_ace638ecce39', 'vehicles': 2, 'special_requests': ''}, {'id': 'res_5ec757afd0fe', 'property_id': 'prop_demo_smokies', 'calendar_source_id': 'src_demo_direct', 'external_uid': None, 'source_type': 'direct', 'guest_name': 'Private Guest', 'start_date': '2028-03-10', 'end_date': '2028-03-13', 'adults': 4, 'children': 2, 'total_amount_cents': None, 'currency': 'USD', 'status': 'pending', 'summary': 'Direct booking request', 'cleaner_note': 'Guest count and turnover details available in the dashboard.', 'raw_ical': None, 'created_at': '2026-07-24 15:58:08', 'updated_at': '2026-07-24 15:58:08', 'property_code': 'DEMO-TN-02', 'property_name': 'Smoky Mountain Demo Cabin', 'property_slug': 'smoky-mountain-demo-cabin', 'email': 'other@example.test', 'phone': '5125551212', 'booking_request_id': 'req_6c0401e"
+    },
+    {
+      "name": "Portfolio report includes both properties",
+      "passed": true,
+      "detail": "{'portfolio': {'start_date': '2027-01-01', 'end_date': '2029-01-01', 'properties': 2, 'reservations': 4, 'occupied_nights': 13, 'arrivals': 4, 'departures': 4, 'guest_nights': 70, 'gross_revenue_cents': 340000, 'gross_revenue': 3400.0}, 'properties': [{'property_id': 'prop_arbor_vista', 'property_code': 'AVR-TN-01', 'property_name': 'Arbor Vista Retreat', 'property_slug': 'arbor-vista-retreat', 'is_demo': False, 'reservations': 2, 'occupied_nights': 6, 'arrivals': 2, 'departures': 2, 'guest_nights': 36, 'gross_revenue_cents': 180000, 'sources': {'airbnb': 0, 'vrbo': 0, 'direct': 2, 'owner': 0, 'other': 0}, 'occupancy_percent': 0.8, 'gross_revenue': 1800.0}, {'property_id': 'prop_demo_smokies', 'property_code': 'DEMO-TN-02', 'property_name': 'Smoky Mountain Demo Cabin', 'property_slug': 'smoky-mountain-demo-cabin', 'is_demo': True, 'reservations': 2, 'occupied_nights': 7, 'arrivals': 2, 'departures': 2, 'guest_nights': 34, 'gross_revenue_cents': 160000, 'sources': {'airbnb': 0, 'vrbo': 0, 'direct': 2, 'owner': 0, 'other': 0}, 'occupancy_percent': 1.0, 'gross_revenue': 1600.0}]}"
+    },
+    {
+      "name": "Reports include occupied nights and guest nights",
+      "passed": true,
+      "detail": "{'portfolio': {'start_date': '2027-01-01', 'end_date': '2029-01-01', 'properties': 2, 'reservations': 4, 'occupied_nights': 13, 'arrivals': 4, 'departures': 4, 'guest_nights': 70, 'gross_revenue_cents': 340000, 'gross_revenue': 3400.0}, 'properties': [{'property_id': 'prop_arbor_vista', 'property_code': 'AVR-TN-01', 'property_name': 'Arbor Vista Retreat', 'property_slug': 'arbor-vista-retreat', 'is_demo': False, 'reservations': 2, 'occupied_nights': 6, 'arrivals': 2, 'departures': 2, 'guest_nights': 36, 'gross_revenue_cents': 180000, 'sources': {'airbnb': 0, 'vrbo': 0, 'direct': 2, 'owner': 0, 'other': 0}, 'occupancy_percent': 0.8, 'gross_revenue': 1800.0}, {'property_id': 'prop_demo_smokies', 'property_code': 'DEMO-TN-02', 'property_name': 'Smoky Mountain Demo Cabin', 'property_slug': 'smoky-mountain-demo-cabin', 'is_demo': True, 'reservations': 2, 'occupied_nights': 7, 'arrivals': 2, 'departures': 2, 'guest_nights': 34, 'gross_revenue_cents': 160000, 'sources': {'airbnb': 0, 'vrbo': 0, 'direct': 2, 'owner': 0, 'other': 0}, 'occupancy_percent': 1.0, 'gross_revenue': 1600.0}]}"
+    },
+    {
+      "name": "Portfolio cleaning feed contains both properties",
+      "passed": true,
+      "detail": "['AVR-TN-01', 'DEMO-TN-02']"
+    },
+    {
+      "name": "Cleaning feed creates arrival and departure events",
+      "passed": true,
+      "detail": "8"
+    },
+    {
+      "name": "Cleaning feed includes property names",
+      "passed": true,
+      "detail": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Swasam Venture//Multi-Property Cleaning Calendar 4.1//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nX-WR-CALNAME:Portfolio cleaning calendar demo\r\nX-PUBLISHED-TTL:PT30M\r\nREFRESH-INTERVAL;VALUE=DURATION:PT30M\r\nBEGIN:VEVENT\r\nUID:clean-arrival-res_seed_avr_2027@swasamventure.com\r\nDTSTAMP:20260724T155808Z\r\nDTSTART;TZID=America/New_York:20270210T160000\r\nDTEND;TZID=America/New_York:20270210T163000\r\nSUMMARY:[AVR-TN-01] ARRIVAL \u00b7 6 guests\r\nLOCATION:Sevierville\\, TN\r\nDESCRIPTION:Property ID: prop_arbor_vista\\nProperty code: AVR-TN-01\\nProper\r\n ty: Arbor Vista Retreat\\nLocation: Sevierville\\, TN\\nGuest count: 6\\nArriv\r\n al: 2027-02-10 04:00 PM\\nDeparture: 2027-02-13 10:00 AM\\nSource: direct\\nR\r\n eservation ID: res_seed_avr_2027\\nCleaning note: Prepare sofa bed only if \r\n approved in dashboard.\\nPrivacy: Guest names\\, email addresses\\, phone num\r\n bers\\, payment details\\, door codes\\, and private guest notes are intentio\r\n nally excluded from this calendar.\r\nCATEGORIES:ARRIVAL,CLEANING\r\nX-ARBOR-PROPERTY-ID:prop_arbor_vista\r\nX-ARBOR-PROPERTY-CODE:AVR-TN-01\r\nX-ARBOR-EVENT-TYPE:ARRIVAL\r\nTRANSP:TRANSPARENT\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nUID:clean-departure-res_seed_a"
+    },
+    {
+      "name": "Cleaning feed includes property IDs",
+      "passed": true,
+      "detail": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Swasam Venture//Multi-Property Cleaning Calendar 4.1//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nX-WR-CALNAME:Portfolio cleaning calendar demo\r\nX-PUBLISHED-TTL:PT30M\r\nREFRESH-INTERVAL;VALUE=DURATION:PT30M\r\nBEGIN:VEVENT\r\nUID:clean-arrival-res_seed_avr_2027@swasamventure.com\r\nDTSTAMP:20260724T155808Z\r\nDTSTART;TZID=America/New_York:20270210T160000\r\nDTEND;TZID=America/New_York:20270210T163000\r\nSUMMARY:[AVR-TN-01] ARRIVAL \u00b7 6 guests\r\nLOCATION:Sevierville\\, TN\r\nDESCRIPTION:Property ID: prop_arbor_vista\\nProperty code: AVR-TN-01\\nProper\r\n ty: Arbor Vista Retreat\\nLocation: Sevierville\\, TN\\nGuest count: 6\\nArriv\r\n al: 2027-02-10 04:00 PM\\nDeparture: 2027-02-13 10:00 AM\\nSource: direct\\nR\r\n eservation ID: res_seed_avr_2027\\nCleaning note: Prepare sofa bed only if \r\n approved in dashboard.\\nPrivacy: Guest names\\, email addresses\\, phone num\r\n bers\\, payment details\\, door codes\\, and private guest notes are intentio\r\n nally excluded from this calendar.\r\nCATEGORIES:ARRIVAL,CLEANING\r\nX-ARBOR-PROPERTY-ID:prop_arbor_vista\r\nX-ARBOR-PROPERTY-CODE:AVR-TN-01\r\nX-ARBOR-EVENT-TYPE:ARRIVAL\r\nTRANSP:TRANSPARENT\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nUID:clean-departure-res_seed_a"
+    },
+    {
+      "name": "Cleaning feed includes guest counts",
+      "passed": true,
+      "detail": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Swasam Venture//Multi-Property Cleaning Calendar 4.1//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nX-WR-CALNAME:Portfolio cleaning calendar demo\r\nX-PUBLISHED-TTL:PT30M\r\nREFRESH-INTERVAL;VALUE=DURATION:PT30M\r\nBEGIN:VEVENT\r\nUID:clean-arrival-res_seed_avr_2027@swasamventure.com\r\nDTSTAMP:20260724T155808Z\r\nDTSTART;TZID=America/New_York:20270210T160000\r\nDTEND;TZID=America/New_York:20270210T163000\r\nSUMMARY:[AVR-TN-01] ARRIVAL \u00b7 6 guests\r\nLOCATION:Sevierville\\, TN\r\nDESCRIPTION:Property ID: prop_arbor_vista\\nProperty code: AVR-TN-01\\nProper\r\n ty: Arbor Vista Retreat\\nLocation: Sevierville\\, TN\\nGuest count: 6\\nArriv\r\n al: 2027-02-10 04:00 PM\\nDeparture: 2027-02-13 10:00 AM\\nSource: direct\\nR\r\n eservation ID: res_seed_avr_2027\\nCleaning note: Prepare sofa bed only if \r\n approved in dashboard.\\nPrivacy: Guest names\\, email addresses\\, phone num\r\n bers\\, payment details\\, door codes\\, and private guest notes are intentio\r\n nally excluded from this calendar.\r\nCATEGORIES:ARRIVAL,CLEANING\r\nX-ARBOR-PROPERTY-ID:prop_arbor_vista\r\nX-ARBOR-PROPERTY-CODE:AVR-TN-01\r\nX-ARBOR-EVENT-TYPE:ARRIVAL\r\nTRANSP:TRANSPARENT\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nUID:clean-departure-res_seed_a"
+    },
+    {
+      "name": "Cleaning feed excludes all guest identity and contact data",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Cleaning feed explicitly documents privacy",
+      "passed": true,
+      "detail": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Swasam Venture//Multi-Property Cleaning Calendar 4.1//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nX-WR-CALNAME:Portfolio cleaning calendar demo\r\nX-PUBLISHED-TTL:PT30M\r\nREFRESH-INTERVAL;VALUE=DURATION:PT30M\r\nBEGIN:VEVENT\r\nUID:clean-arrival-res_seed_avr_2027@swasamventure.com\r\nDTSTAMP:20260724T155808Z\r\nDTSTART;TZID=America/New_York:20270210T160000\r\nDTEND;TZID=America/New_York:20270210T163000\r\nSUMMARY:[AVR-TN-01] ARRIVAL \u00b7 6 guests\r\nLOCATION:Sevierville\\, TN\r\nDESCRIPTION:Property ID: prop_arbor_vista\\nProperty code: AVR-TN-01\\nProper\r\n ty: Arbor Vista Retreat\\nLocation: Sevierville\\, TN\\nGuest count: 6\\nArriv\r\n al: 2027-02-10 04:00 PM\\nDeparture: 2027-02-13 10:00 AM\\nSource: direct\\nR\r\n eservation ID: res_seed_avr_2027\\nCleaning note: Prepare sofa bed only if \r\n approved in dashboard.\\nPrivacy: Guest names\\, email addresses\\, phone num\r\n bers\\, payment details\\, door codes\\, and private guest notes are intentio\r\n nally excluded from this calendar.\r\nCATEGORIES:ARRIVAL,CLEANING\r\nX-ARBOR-PROPERTY-ID:prop_arbor_vista\r\nX-ARBOR-PROPERTY-CODE:AVR-TN-01\r\nX-ARBOR-EVENT-TYPE:ARRIVAL\r\nTRANSP:TRANSPARENT\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nUID:clean-departure-res_seed_avr_2027@swasamventure.com\r\nDTSTAMP:20260724T155808Z\r\nDTSTART;TZID=America/New_York:20270213T100000\r\nDTEND;TZID=America/New_York:20270213T140000\r\nSUMMARY:[AVR-TN-01] DEPARTURE / CLEAN \u00b7 6 guests\r\nLOCATION:Sevierville\\, TN\r\nDESCRIPTION:Property ID: prop_arbor_vista\\nProperty code: AVR-TN-01\\nProper\r\n ty: Arbor Vista Retreat\\nLocation: Sevierville\\, TN\\nGuest count: 6\\nArriv\r\n al: 2027-02-10 04:00 PM"
+    },
+    {
+      "name": "Property-filtered cleaner feed contains only selected property",
+      "passed": true,
+      "detail": "['AVR-TN-01']"
+    },
+    {
+      "name": "Invalid cleaner token is rejected",
+      "passed": true,
+      "detail": "Invalid or expired cleaning calendar token."
+    },
+    {
+      "name": "Property export contains required transfer files",
+      "passed": true,
+      "detail": "{'owner-blocks.csv', 'TRANSFER_NOTES.md', 'calendar-sources.json', 'future-reservations.csv', 'transfer-manifest.json', 'property.json'}"
+    },
+    {
+      "name": "Property export is scoped to Arbor Vista",
+      "passed": true,
+      "detail": "{\n  \"id\": \"prop_arbor_vista\",\n  \"organization_id\": \"org_swasam\",\n  \"code\": \"AVR-TN-01\",\n  \"name\": \"Arbor Vista Retreat\",\n  \"slug\": \"arbor-vista-retreat\",\n  \"public_domain\": \"arborvistaretreat.com\",\n  \"timezone\": \"America/New_York\",\n  \"check_in_time\": \"16:00\",\n  \"check_out_time\": \"10:00\",\n  \"cleaning_duration_minutes\": 240,\n  \"standard_sleeps\": 6,\n  \"maximum_requested_guests\": 8,\n  \"location_label\": \"Arbor Vista Retreat \\u2014 Shagbark Resort, Sevierville, TN\",\n  \"address_line1\": null,\n  \"address_line2\": null,\n  \"city\": \"Sevierville\",\n  \"state\": \"TN\",\n  \"postal_code\": null,\n  \"is_demo\": 0,\n  \"active\": 1,\n  \"created_at\": \"2026-07-24 15:58:08\",\n  \"updated_at\": \"2026-07-24 15:58:08\"\n}"
+    },
+    {
+      "name": "Property export redacts guest names by default",
+      "passed": true,
+      "detail": "id,source_type,guest_name,start_date,end_date,adults,children,status,summary\r\nres_seed_avr_2027,direct,Redacted,2027-02-10,2027-02-13,4,2,confirmed,Direct reservation\r\nres_6b3dc1d0f4ae,direct,Redacted,2028-03-10,2028-03-13,4,2,pending,Direct booking request\r\n"
+    },
+    {
+      "name": "Property export excludes calendar feed secrets",
+      "passed": true,
+      "detail": "[\n  {\n    \"id\": \"src_airbnb\",\n    \"source_type\": \"airbnb\",\n    \"name\": \"Airbnb test feed\",\n    \"enabled\": 1,\n    \"last_synced_at\": null\n  },\n  {\n    \"id\": \"src_direct\",\n    \"source_type\": \"direct\",\n    \"name\": \"Direct bookings\",\n    \"enabled\": 1,\n    \"last_synced_at\": null\n  },\n  {\n    \"id\": \"src_vrbo\",\n    \"source_type\": \"vrbo\",\n    \"name\": \"Vrbo test feed\",\n    \"enabled\": 1,\n    \"last_synced_at\": null\n  }\n]"
+    },
+    {
+      "name": "Property export manifest records privacy",
+      "passed": true,
+      "detail": "{'schemaVersion': 1, 'exportId': 'export_ef99c110a55f', 'createdAt': '2026-07-24T15:58:08.976905+00:00', 'requestedBy': 'user_owner', 'propertyId': 'prop_arbor_vista', 'propertyCode': 'AVR-TN-01', 'propertySlug': 'arbor-vista-retreat', 'privacy': {'historicalGuestsIncluded': False, 'guestEmailsIncluded': False, 'guestPhonesIncluded': False, 'futureGuestNamesIncluded': False}, 'files': ['property.json', 'future-reservations.csv', 'calendar-sources.json', 'owner-blocks.csv', 'TRANSFER_NOTES.md']}"
+    },
+    {
+      "name": "Supabase cleaner row function excludes guest_name",
+      "passed": true,
+      "detail": "create or replace view public.property_reporting_summary as\nselect p.id property_id,p.code,p.name,\n       count(r.id) filter(where r.status in ('pending','confirmed')) reservations,\n       coalesce(sum(r.end_date-r.start_date) filter(where r.status in ('pending','confirmed')),0) occupied_nights,\n       coalesce(sum(r.total_amount_cents) filter(where r.status in ('pending','confirmed')),0) gross_revenue_cents\nfrom properties p left join reservations r on r.property_id=p.id\ngroup by p.id,p.code,p.name;\n\n-- safe rows for the cleaning calendar are returned only after an edge function verifies\n-- a sha-256 token against calendar_share_tokens. guest identity, contact, payment, access-code, and private-guest-note fields are absent.\ncreate or replace function public.cleaner_calendar_rows(p_token_hash text,p_property_slug text default null)\nreturns table(\n  reservation_id uuid,property_id uuid,property_code text,property_name text,property_slug text,\n  timezone text,check_in_time time,check_out_time time,cleaning_duration_minutes integer,\n  location_label text,address_line1 text,address_line2 text,city text,state text,postal_code text,\n  start_date date,end_date date,adults integer,children integer,source_type text,cleaner_note text\n) language sql stable security definer set search_path=public as $$\n  select r.id,p.id,p.code,p.name,p.slug,p.timezone,p.check_in_time,p.check_out_time,p.cleaning_duration_minutes,\n         p.location_label,p.address_line1,p.address_line2,p.city,p.state,p.postal_code,\n         r.start_date,r.end_date,r.adults,r.children,r.source_type,r.cleaner_note\n  from calendar_share_tokens t\n  join calendar_share_properties sp on sp.share_token_id=t.id\n  join properties p on p.id=sp.property_id\n  join reservations r on r.property_id=p.id\n  where t.token_hash=p_token_hash and t.active=true and t.audience='cleaner'\n    and (t.expires_at is null or t.expires_at>now())\n    and r.status in ('pending','confirmed')\n    and (p_property_slug is null or p.slug=p_property_slug)\n  order by p.name,r.start_date;\n$$;\nrevoke all on function public.cleaner_calendar_rows(text,text) from public,anon,authenticated;\ngrant execute on function public.cleaner_calendar_rows(text,text) to service_role;\n"
+    },
+    {
+      "name": "Supabase RLS excludes cleaner from reservation policy",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

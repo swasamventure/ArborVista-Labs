@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent STR Property Package",
+  "type": "object",
+  "required": ["schemaVersion", "propertyId", "code", "slug", "brandName", "timezone", "standardSleeps", "maximumRequestedGuests"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "propertyId": {"type": "string", "minLength": 3},
+    "code": {"type": "string", "minLength": 3},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "brandName": {"type": "string", "minLength": 2},
+    "publicDomain": {"type": ["string", "null"]},
+    "timezone": {"type": "string"},
+    "standardSleeps": {"type": "integer", "minimum": 1},
+    "maximumRequestedGuests": {"type": "integer", "minimum": 1}
+  }
+}

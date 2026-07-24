@@ -1,11 +1,12 @@
-# Known Limitations — v2.8
+# Known Limitations — v4.1
 
-1. The GitHub Pages website is static and does not call the reservation database.
-2. The Book Direct submission is saved only in the current browser for preview testing.
-3. The included SQLite database and ICS exports contain sample data, not live reservations.
-4. Real Airbnb and Vrbo feed URLs have not been tested in this package.
-5. `sync-url` is manual; there is no hourly scheduler, retry policy, alerting, or secret manager.
-6. Guest portal URLs are browser previews, not authenticated server-side portals.
-7. Email delivery, payments, refunds, pricing, taxes, cleaning, and maintenance are outside v2.8.
-8. The parser supports the all-day reservation events expected from channel feeds; recurrence rules and general-purpose calendar features are not implemented.
-9. Channel calendar refresh timing is controlled by Airbnb/Vrbo and must be measured during live testing.
+1. The bundled backend uses SQLite and is intended for local development and QA only.
+2. The dashboard login uses demo users through the `X-Demo-User` header; hosted Supabase Auth is not active yet.
+3. The Supabase migrations define the cloud target, but they have not been deployed to a hosted Supabase project in this package.
+4. Calendar synchronization is manual. There is no hosted scheduler, retry queue, monitoring, or alerting yet.
+5. Real Airbnb and Vrbo feed URLs are intentionally not included and have not been exercised by the packaged QA.
+6. The shared cleaning iCal uses a public demo token only for local testing. Production must use a private, revocable token over HTTPS.
+7. Guest names are excluded from the cleaning calendar. Guest counts depend on the source data; Airbnb/Vrbo iCal feeds may not provide counts.
+8. The guest portal remains a browser/local preview rather than a production authenticated portal.
+9. Stripe, payment processing, refunds, and outbound email delivery remain excluded.
+10. Production deployment still requires HTTPS, secrets management, rate limiting, database backups, monitoring, privacy controls, and final Row Level Security validation.

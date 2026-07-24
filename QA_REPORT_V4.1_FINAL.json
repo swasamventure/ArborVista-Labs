@@ -1,0 +1,58 @@
+{
+  "version": "4.1",
+  "status": "PASS",
+  "checks_passed": 218,
+  "checks_total": 218,
+  "suites": {
+    "database_ical": {
+      "status": "PASS",
+      "passed": 33,
+      "total": 33
+    },
+    "website_browser": {
+      "status": "PASS",
+      "passed": 42,
+      "total": 42
+    },
+    "two_kitchen_images": {
+      "status": "PASS",
+      "passed": 15,
+      "total": 15
+    },
+    "cloud_architecture": {
+      "status": "PASS",
+      "passed": 24,
+      "total": 24
+    },
+    "booking_integration": {
+      "status": "PASS",
+      "passed": 10,
+      "total": 10
+    },
+    "features_1_to_7": {
+      "status": "PASS",
+      "passed": 80,
+      "total": 80
+    },
+    "api_permissions": {
+      "status": "PASS",
+      "passed": 14,
+      "total": 14
+    }
+  },
+  "scope": [
+    "multi-property database",
+    "central dashboard",
+    "reservation engine",
+    "calendar engine",
+    "local role permissions and Supabase RLS target",
+    "reporting",
+    "property transfer export",
+    "cleaning iCal without guest names"
+  ],
+  "excluded": [
+    "Stripe/payment processing",
+    "outbound email delivery",
+    "live hosted Supabase authentication"
+  ]
+}

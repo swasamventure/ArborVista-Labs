@@ -1,20 +1,48 @@
 #!/usr/bin/env python3
-"""Cloud-ready local reference API for Arbor Vista v3.3.
+"""Arbor Vista Platform v4.1 local multi-property reference server.
 
-Payments and outbound email are intentionally excluded.
-The implementation remains SQLite for local QA, but the interface is
-environment-driven, property-scoped, versioned, and portable to PostgreSQL.
+Implemented for Git/local QA:
+- Multi-property dashboard APIs
+- Reservation and calendar engines
+- Local role simulation plus Supabase/RLS migration target
+- Portfolio reporting
+- Property-transfer export
+- Tokenized portfolio cleaning iCal
+
+Deliberately excluded: Stripe and outbound email delivery.
 """
 from __future__ import annotations
-import json, os, sqlite3, uuid, sys
+
+import json
+import os
+import sys
+import uuid
 from datetime import datetime, timezone
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "Backend"))
-from ical_db import init_db, connect, validate_range, sync_url, export_ics, availability
+
+from ical_db import availability, connect, export_ics, init_db, sync_url, validate_range
+from operations import (
+    ADMIN_ROLES,
+    CLEANER_ROLES,
+    EXPORT_ROLES,
+    REPORT_ROLES,
+    AccessDenied,
+    authorized_properties,
+    cleaning_feed_ics,
+    list_blocks,
+    list_calendar_sources,
+    list_reservations,
+    property_export_bytes,
+    report_summary,
+    resolve_property_scope,
+    user_access,
+)
+
 
 def env_path(name: str, default: Path) -> Path:
     value = os.getenv(name)
@@ -23,122 +51,75 @@ def env_path(name: str, default: Path) -> Path:
     path = Path(value)
     return path if path.is_absolute() else ROOT / path
 
-DB = env_path("ARBOR_DB_PATH", ROOT / "Backend" / "arborvista_v33.db")
+
+DB = env_path("ARBOR_DB_PATH", ROOT / "Backend" / "arborvista_v40.db")
 HOST = os.getenv("ARBOR_HOST", "127.0.0.1")
 PORT = int(os.getenv("PORT", "8000"))
 DEFAULT_PROPERTY_SLUG = os.getenv("ARBOR_DEFAULT_PROPERTY_SLUG", "arbor-vista-retreat")
-ALLOWED_ORIGINS = {x.strip() for x in os.getenv(
-    "ARBOR_ALLOWED_ORIGINS",
-    "http://localhost:8000,http://127.0.0.1:8000"
-).split(",") if x.strip()}
+REQUIRE_DEMO_AUTH = os.getenv("ARBOR_REQUIRE_DEMO_AUTH", "0") == "1"
+ALLOWED_ORIGINS = {
+    value.strip()
+    for value in os.getenv(
+        "ARBOR_ALLOWED_ORIGINS",
+        "http://localhost:8000,http://127.0.0.1:8000",
+    ).split(",")
+    if value.strip()
+}
 
-def now(): return datetime.now(timezone.utc).isoformat()
-def body(handler):
-    n = int(handler.headers.get("Content-Length", "0") or 0)
-    return json.loads(handler.rfile.read(n) or b"{}")
-def rows(cur): return [dict(r) for r in cur.fetchall()]
 
-def resolve_property(conn, handler):
-    parsed = urlparse(handler.path)
-    query = parse_qs(parsed.query)
-    slug = handler.headers.get("X-Property-Slug") or query.get("property", [DEFAULT_PROPERTY_SLUG])[0]
-    row = conn.execute("SELECT * FROM properties WHERE slug=? AND active=1", (slug,)).fetchone()
-    if not row:
-        raise ValueError("Unknown or inactive property.")
-    return row
+class APIError(Exception):
+    def __init__(self, status: int, message: str):
+        super().__init__(message)
+        self.status = status
+        self.message = message
 
-def cors_origin(handler):
+
+def now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def body(handler) -> dict:
+    length = int(handler.headers.get("Content-Length", "0") or 0)
+    raw = handler.rfile.read(length) if length else b"{}"
+    try:
+        return json.loads(raw or b"{}")
+    except json.JSONDecodeError as exc:
+        raise APIError(400, "Request body must be valid JSON.") from exc
+
+
+def rows(cursor) -> list[dict]:
+    return [dict(row) for row in cursor.fetchall()]
+
+
+def cors_origin(handler) -> str | None:
     origin = handler.headers.get("Origin")
     if not origin:
         return None
     return origin if origin in ALLOWED_ORIGINS else None
 
-def reply(h, status, data, ctype="application/json"):
-    raw = data if isinstance(data, (bytes, bytearray)) else (
-        json.dumps(data, indent=2).encode() if ctype == "application/json" else str(data).encode()
-    )
-    h.send_response(status)
-    h.send_header("Content-Type", ctype)
-    h.send_header("Content-Length", str(len(raw)))
-    origin = cors_origin(h)
+
+def reply(handler, status: int, data, content_type: str = "application/json", extra_headers: dict | None = None):
+    if isinstance(data, (bytes, bytearray)):
+        raw = bytes(data)
+    elif content_type.startswith("application/json"):
+        raw = json.dumps(data, indent=2).encode("utf-8")
+    else:
+        raw = str(data).encode("utf-8")
+    handler.send_response(status)
+    handler.send_header("Content-Type", content_type)
+    handler.send_header("Content-Length", str(len(raw)))
+    origin = cors_origin(handler)
     if origin:
-        h.send_header("Access-Control-Allow-Origin", origin)
-        h.send_header("Vary", "Origin")
-    h.send_header("Access-Control-Allow-Headers", "Content-Type, X-Property-Slug, Authorization")
-    h.send_header("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS")
-    h.send_header("Cache-Control", "no-store")
-    h.end_headers()
-    h.wfile.write(raw)
+        handler.send_header("Access-Control-Allow-Origin", origin)
+        handler.send_header("Vary", "Origin")
+    handler.send_header("Access-Control-Allow-Headers", "Content-Type, X-Property-Slug, X-Demo-User, Authorization")
+    handler.send_header("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS")
+    handler.send_header("Cache-Control", "no-store")
+    for key, value in (extra_headers or {}).items():
+        handler.send_header(key, value)
+    handler.end_headers()
+    handler.wfile.write(raw)
 
-def audit(conn, property_id, action, etype, eid, details=None):
-    conn.execute(
-        "INSERT INTO audit_log(property_id,actor,action,entity_type,entity_id,details_json) VALUES(?,?,?,?,?,?)",
-        (property_id, "local-admin", action, etype, eid, json.dumps(details or {}))
-    )
-
-def create_booking(data, property_row=None):
-    if property_row is None:
-        with connect(DB) as _conn:
-            property_row = _conn.execute(
-                "SELECT * FROM properties WHERE slug=? AND active=1",
-                (DEFAULT_PROPERTY_SLUG,)
-            ).fetchone()
-        if not property_row:
-            raise ValueError("Default property is not initialized.")
-    start, end = validate_range(data.get("check_in", ""), data.get("check_out", ""))
-    adults = int(data.get("adults", 1))
-    children = int(data.get("children", 0))
-    max_guests = int(data.get("_maximum_requested_guests") or 8)
-    if adults < 1 or children < 0 or adults + children > max_guests:
-        raise ValueError(f"Guest count must be between 1 and {max_guests} total.")
-    first = str(data.get("first_name", "")).strip()
-    last = str(data.get("last_name", "")).strip()
-    email = str(data.get("email", "")).strip()
-    phone = str(data.get("phone", "")).strip()
-    legal = str(data.get("legal_name", "")).strip()
-    sig = str(data.get("electronic_signature", "")).strip()
-    if not all([first, last, email, legal, sig]):
-        raise ValueError("Missing required guest or agreement details.")
-    if " ".join(sig.lower().split()) != " ".join(legal.lower().split()):
-        raise ValueError("Electronic signature must match legal name.")
-    property_id = property_row["id"]
-    with connect(DB) as conn:
-        conn.execute("BEGIN IMMEDIATE")
-        conflict = conn.execute(
-            "SELECT 1 FROM unavailable_periods WHERE property_id=? AND date(start_date)<date(?) AND date(end_date)>date(?) LIMIT 1",
-            (property_id, end, start)
-        ).fetchone()
-        if conflict:
-            raise ValueError("Those dates are no longer available.")
-        guest_id = "gst_" + uuid.uuid4().hex[:12]
-        res_id = "res_" + uuid.uuid4().hex[:12]
-        req_id = "req_" + uuid.uuid4().hex[:12]
-        conn.execute("INSERT INTO guests(id,first_name,last_name,email,phone) VALUES(?,?,?,?,?)",
-                     (guest_id, first, last, email, phone))
-        conn.execute(
-            "INSERT INTO reservations(id,property_id,source_type,guest_name,start_date,end_date,status,summary) VALUES(?,?, 'direct', ?,?,?, 'pending',?)",
-            (res_id, property_id, f"{first} {last}", start, end, "Direct booking request")
-        )
-        conn.execute("""INSERT INTO booking_requests
-          (id,property_id,reservation_id,guest_id,adults,children,vehicles,special_requests,legal_name,electronic_signature,agreement_date,status)
-          VALUES(?,?,?,?,?,?,?,?,?,?,?,'pending')""",
-          (req_id, property_id, res_id, guest_id, adults, children, int(data.get("vehicles") or 0),
-           data.get("special_requests", ""), legal, sig,
-           data.get("agreement_date") or datetime.now().date().isoformat()))
-        conn.execute(
-            "INSERT INTO documents(id,booking_request_id,document_type,content_json,signed_at) VALUES(?,?,?,?,?)",
-            ("doc_" + uuid.uuid4().hex[:12], req_id, "rental_agreement",
-             json.dumps({"legal_name": legal, "signature": sig, "agreement_date": data.get("agreement_date")}), now())
-        )
-        conn.execute(
-            "INSERT INTO notification_log(id,booking_request_id,channel,recipient,status,details) VALUES(?,?, 'disabled', 'swasam.venture@gmail.com','disabled','Outbound email intentionally excluded')",
-            ("ntf_" + uuid.uuid4().hex[:12], req_id)
-        )
-        audit(conn, property_id, "create", "booking_request", req_id, {"reservation_id": res_id})
-        conn.commit()
-    return {"booking_request_id": req_id, "reservation_id": res_id, "status": "pending", "email_status": "disabled"}
-
-# Backward-compatible endpoint: /api/export.ics
 
 def api_path(path: str) -> str:
     if path.startswith("/api/v1"):
@@ -147,150 +128,461 @@ def api_path(path: str) -> str:
         return path[4:] or "/"
     return path
 
+
+def actor_id(handler) -> str:
+    user_id = handler.headers.get("X-Demo-User", "").strip()
+    if not user_id and not REQUIRE_DEMO_AUTH:
+        user_id = "user_owner"
+    if not user_id:
+        raise APIError(401, "Authentication is required.")
+    return user_id
+
+
+def requested_scope(handler) -> str:
+    query = parse_qs(urlparse(handler.path).query)
+    return (
+        handler.headers.get("X-Property-Slug")
+        or query.get("property", [DEFAULT_PROPERTY_SLUG])[0]
+        or DEFAULT_PROPERTY_SLUG
+    )
+
+
+def scoped_properties(conn, handler, roles: set[str] = REPORT_ROLES) -> list[dict]:
+    try:
+        return resolve_property_scope(conn, actor_id(handler), requested_scope(handler), roles)
+    except AccessDenied as exc:
+        raise APIError(403, str(exc)) from exc
+
+
+def public_property(conn, handler) -> dict:
+    slug = requested_scope(handler)
+    if slug == "all":
+        slug = DEFAULT_PROPERTY_SLUG
+    row = conn.execute("SELECT * FROM properties WHERE slug=? AND active=1", (slug,)).fetchone()
+    if not row:
+        raise APIError(404, "Unknown or inactive property.")
+    return dict(row)
+
+
+def audit(conn, property_id: str | None, actor: str, action: str, entity_type: str, entity_id: str | None, details=None):
+    conn.execute(
+        "INSERT INTO audit_log(property_id,actor,action,entity_type,entity_id,details_json) VALUES(?,?,?,?,?,?)",
+        (property_id, actor, action, entity_type, entity_id, json.dumps(details or {}, sort_keys=True)),
+    )
+
+
+def create_booking(data: dict, property_row: dict | None = None) -> dict:
+    if property_row is None:
+        with connect(DB) as conn:
+            row = conn.execute("SELECT * FROM properties WHERE slug=? AND active=1", (DEFAULT_PROPERTY_SLUG,)).fetchone()
+            property_row = dict(row) if row else None
+    if not property_row:
+        raise ValueError("Property is not initialized.")
+
+    start, end = validate_range(str(data.get("check_in", "")), str(data.get("check_out", "")))
+    adults = int(data.get("adults", 1))
+    children = int(data.get("children", 0))
+    maximum = int(property_row["maximum_requested_guests"])
+    if adults < 1 or children < 0 or adults + children > maximum:
+        raise ValueError(f"Guest count must be between 1 and {maximum} total.")
+
+    first = str(data.get("first_name", "")).strip()
+    last = str(data.get("last_name", "")).strip()
+    email = str(data.get("email", "")).strip()
+    phone = str(data.get("phone", "")).strip()
+    legal = str(data.get("legal_name", "")).strip()
+    signature = str(data.get("electronic_signature", "")).strip()
+    if not all([first, last, email, legal, signature]):
+        raise ValueError("Missing required guest or agreement details.")
+    if " ".join(signature.lower().split()) != " ".join(legal.lower().split()):
+        raise ValueError("Electronic signature must match legal name.")
+
+    property_id = property_row["id"]
+    with connect(DB) as conn:
+        conn.execute("BEGIN IMMEDIATE")
+        conflict = conn.execute(
+            """SELECT 1 FROM unavailable_periods
+               WHERE property_id=? AND date(start_date)<date(?) AND date(end_date)>date(?) LIMIT 1""",
+            (property_id, end, start),
+        ).fetchone()
+        if conflict:
+            raise ValueError("Those dates are no longer available.")
+        direct_source = conn.execute(
+            "SELECT id FROM calendar_sources WHERE property_id=? AND source_type='direct' LIMIT 1",
+            (property_id,),
+        ).fetchone()
+        guest_id = "gst_" + uuid.uuid4().hex[:12]
+        reservation_id = "res_" + uuid.uuid4().hex[:12]
+        request_id = "req_" + uuid.uuid4().hex[:12]
+        conn.execute(
+            "INSERT INTO guests(id,first_name,last_name,email,phone) VALUES(?,?,?,?,?)",
+            (guest_id, first, last, email, phone),
+        )
+        conn.execute(
+            """INSERT INTO reservations(
+                 id,property_id,calendar_source_id,source_type,guest_name,start_date,end_date,
+                 adults,children,status,summary,cleaner_note
+               ) VALUES(?,?,?,?,?,?,?,?,?,'pending','Direct booking request',?)""",
+            (
+                reservation_id,
+                property_id,
+                direct_source["id"] if direct_source else None,
+                "direct",
+                f"{first} {last}",
+                start,
+                end,
+                adults,
+                children,
+                "Guest count and turnover details available in the dashboard.",
+            ),
+        )
+        conn.execute(
+            """INSERT INTO booking_requests(
+                 id,property_id,reservation_id,guest_id,adults,children,vehicles,special_requests,
+                 legal_name,electronic_signature,agreement_date,status
+               ) VALUES(?,?,?,?,?,?,?,?,?,?,?,'pending')""",
+            (
+                request_id,
+                property_id,
+                reservation_id,
+                guest_id,
+                adults,
+                children,
+                int(data.get("vehicles") or 0),
+                data.get("special_requests", ""),
+                legal,
+                signature,
+                data.get("agreement_date") or datetime.now().date().isoformat(),
+            ),
+        )
+        conn.execute(
+            "INSERT INTO documents(id,booking_request_id,document_type,content_json,signed_at) VALUES(?,?,?,?,?)",
+            (
+                "doc_" + uuid.uuid4().hex[:12],
+                request_id,
+                "rental_agreement",
+                json.dumps({"legal_name": legal, "signature": signature, "agreement_date": data.get("agreement_date")}),
+                now(),
+            ),
+        )
+        conn.execute(
+            """INSERT INTO notification_log(id,booking_request_id,channel,recipient,status,details)
+               VALUES(?,?,'disabled','swasam.venture@gmail.com','disabled','Outbound email intentionally excluded from v4.1')""",
+            ("ntf_" + uuid.uuid4().hex[:12], request_id),
+        )
+        audit(conn, property_id, "public-booking-form", "create", "booking_request", request_id, {"reservation_id": reservation_id})
+        conn.commit()
+    return {
+        "booking_request_id": request_id,
+        "reservation_id": reservation_id,
+        "property_id": property_id,
+        "property_code": property_row["code"],
+        "status": "pending",
+        "email_status": "disabled",
+    }
+
+
 class Handler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
-        path = urlparse(path).path
-        rel = path.lstrip("/") or "index.html"
+        rel = urlparse(path).path.lstrip("/") or "index.html"
         candidate = ROOT / rel
         if candidate.is_dir():
             candidate = candidate / "index.html"
         return str(candidate)
-    def log_message(self, fmt, *args): print("[server]", fmt % args)
-    def do_OPTIONS(self): return reply(self, 204, b"", "text/plain")
+
+    def log_message(self, fmt, *args):
+        print("[server]", fmt % args)
+
+    def do_OPTIONS(self):
+        return reply(self, 204, b"", "text/plain")
 
     def do_GET(self):
-        u = urlparse(self.path)
-        q = parse_qs(u.query)
-        p = api_path(u.path)
+        parsed = urlparse(self.path)
+        path = api_path(parsed.path)
+        query = parse_qs(parsed.query)
         try:
-            if u.path.startswith("/api"):
-                with connect(DB) as c:
-                    prop = resolve_property(c, self)
-                property_id = prop["id"]
-                if p == "/health":
+            if not parsed.path.startswith("/api"):
+                return super().do_GET()
+
+            # Token-protected external feed; no dashboard authentication required.
+            if path == "/ical/cleaning.ics":
+                token = query.get("token", [""])[0]
+                property_slug = query.get("property", [None])[0]
+                if not token:
+                    raise APIError(401, "Cleaning calendar token is required.")
+                with connect(DB) as conn:
+                    text, event_count, property_codes = cleaning_feed_ics(conn, token, property_slug)
+                return reply(
+                    self,
+                    200,
+                    text,
+                    "text/calendar; charset=utf-8",
+                    {"X-Arbor-Event-Count": str(event_count), "X-Arbor-Property-Codes": ",".join(property_codes)},
+                )
+
+            if path == "/health":
+                return reply(self, 200, {
+                    "status": "ok",
+                    "version": "4.1",
+                    "apiVersion": "v1",
+                    "architecture": "multi-property",
+                    "stripe": "excluded",
+                    "email": "excluded",
+                    "cleaningCalendar": "enabled-local-reference",
+                })
+
+            if path == "/auth/users":
+                with connect(DB) as conn:
+                    data = rows(conn.execute("SELECT id,email,display_name,active FROM users WHERE active=1 ORDER BY display_name"))
+                return reply(self, 200, data)
+
+            with connect(DB) as conn:
+                user_id = actor_id(self)
+                if path == "/auth/me":
+                    access = user_access(conn, user_id)
+                    user = dict(conn.execute("SELECT id,email,display_name FROM users WHERE id=?", (user_id,)).fetchone())
+                    user["organization_roles"] = access.organization_roles
+                    user["property_roles"] = access.property_roles
+                    return reply(self, 200, user)
+
+                if path == "/properties":
+                    return reply(self, 200, authorized_properties(conn, user_id))
+
+                if path == "/availability":
+                    prop = public_property(conn, self)
+                    start, end = validate_range(query.get("start", [""])[0], query.get("end", [""])[0])
+                    return reply(self, 200, availability(prop["id"], start, end, db_path=DB))
+
+                if path == "/reservations":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    return reply(self, 200, list_reservations(conn, [p["id"] for p in props]))
+
+                if path == "/blocks":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    return reply(self, 200, list_blocks(conn, [p["id"] for p in props]))
+
+                if path == "/calendar-sources":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    return reply(self, 200, list_calendar_sources(conn, [p["id"] for p in props]))
+
+                if path == "/calendar/combined":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    property_ids = [p["id"] for p in props]
+                    items = list_reservations(conn, property_ids)
+                    blocks = list_blocks(conn, property_ids)
+                    for item in blocks:
+                        item.update({"source_type": "owner", "status": "blocked", "guest_name": None, "summary": item["reason"]})
+                    combined = sorted(items + blocks, key=lambda item: (item["start_date"], item.get("property_name", "")))
+                    return reply(self, 200, combined)
+
+                if path == "/sync-runs":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    ids = [p["id"] for p in props]
+                    data = rows(conn.execute(
+                        f"""SELECT s.*,c.name source_name,p.code property_code,p.name property_name
+                            FROM sync_runs s JOIN calendar_sources c ON c.id=s.calendar_source_id
+                            JOIN properties p ON p.id=c.property_id
+                            WHERE p.id IN ({','.join('?' for _ in ids)})
+                            ORDER BY s.started_at DESC LIMIT 100""",
+                        ids,
+                    ))
+                    return reply(self, 200, data)
+
+                if path == "/audit":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    ids = [p["id"] for p in props]
+                    data = rows(conn.execute(
+                        f"""SELECT a.*,p.code property_code,p.name property_name FROM audit_log a
+                            LEFT JOIN properties p ON p.id=a.property_id
+                            WHERE a.property_id IN ({','.join('?' for _ in ids)})
+                            ORDER BY a.created_at DESC LIMIT 100""",
+                        ids,
+                    ))
+                    return reply(self, 200, data)
+
+                if path == "/reports/summary":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    result = report_summary(
+                        conn,
+                        [p["id"] for p in props],
+                        query.get("start", [None])[0],
+                        query.get("end", [None])[0],
+                    )
+                    return reply(self, 200, result)
+
+                if path == "/cleaning-feed/info":
+                    props = scoped_properties(conn, self, ADMIN_ROLES | {"cleaner", "maintenance"})
+                    base = f"http://{HOST}:{PORT}/api/v1/ical/cleaning.ics"
                     return reply(self, 200, {
-                        "status": "ok", "version": "3.3", "apiVersion": "v1",
-                        "stripe": "excluded", "email": "excluded",
-                        "property": {"id": property_id, "slug": prop["slug"], "name": prop["name"]}
+                        "feed_url_template": base + "?token=YOUR_PRIVATE_TOKEN",
+                        "demo_feed_url": base + "?token=demo-cleaner-token-change-me",
+                        "properties": [{"id": p["id"], "code": p["code"], "name": p["name"], "slug": p["slug"]} for p in props],
+                        "privacy": "Includes property identity, arrival/departure timing, guest count, source, reservation reference, and turnover details. Guest names, email, phone, payment information, door codes, and private guest notes are excluded.",
                     })
-                if p == "/availability":
-                    start, end = validate_range(q.get("start", [""])[0], q.get("end", [""])[0])
-                    return reply(self, 200, availability(property_id, start, end, db_path=DB))
-                if p == "/reservations":
-                    with connect(DB) as c:
-                        r = rows(c.execute("""SELECT r.*,g.email,g.phone,b.id booking_request_id,b.adults,b.children,b.vehicles,b.special_requests
-                        FROM reservations r LEFT JOIN booking_requests b ON b.reservation_id=r.id
-                        LEFT JOIN guests g ON g.id=b.guest_id WHERE r.property_id=? ORDER BY start_date""", (property_id,)))
-                    return reply(self, 200, r)
-                if p == "/blocks":
-                    with connect(DB) as c:
-                        r = rows(c.execute("SELECT * FROM calendar_blocks WHERE property_id=? AND active=1 ORDER BY start_date", (property_id,)))
-                    return reply(self, 200, r)
-                if p == "/calendar-sources":
-                    with connect(DB) as c:
-                        r = rows(c.execute("SELECT * FROM calendar_sources WHERE property_id=? ORDER BY source_type", (property_id,)))
-                    return reply(self, 200, r)
-                if p == "/sync-runs":
-                    with connect(DB) as c:
-                        r = rows(c.execute("""SELECT s.*,c.name source_name FROM sync_runs s
-                        JOIN calendar_sources c ON c.id=s.calendar_source_id
-                        WHERE c.property_id=? ORDER BY started_at DESC LIMIT 100""", (property_id,)))
-                    return reply(self, 200, r)
-                if p == "/audit":
-                    with connect(DB) as c:
-                        r = rows(c.execute("SELECT * FROM audit_log WHERE property_id=? ORDER BY created_at DESC LIMIT 100", (property_id,)))
-                    return reply(self, 200, r)
-                if p == "/export.ics":
-                    ex = q.get("exclude_source", [None])[0]
-                    temp = ROOT / "Backend" / "exports" / f"{prop['slug']}-live-export.ics"
-                    temp.parent.mkdir(exist_ok=True)
-                    export_ics(temp, db_path=DB, property_id=property_id, exclude_source=ex)
+
+                if path == "/export.ics":
+                    props = scoped_properties(conn, self, REPORT_ROLES)
+                    if len(props) != 1:
+                        raise APIError(400, "Select one property for a channel availability export.")
+                    excluded = query.get("exclude_source", [None])[0]
+                    temp = ROOT / "Backend" / "exports" / f"{props[0]['slug']}-live-export.ics"
+                    export_ics(temp, db_path=DB, property_id=props[0]["id"], exclude_source=excluded)
                     return reply(self, 200, temp.read_text(encoding="utf-8"), "text/calendar; charset=utf-8")
-                return reply(self, 404, {"error": "Not found"})
-            return super().do_GET()
-        except Exception as e:
-            return reply(self, 400, {"error": str(e)})
+
+                if path == "/property-export/preview":
+                    props = scoped_properties(conn, self, EXPORT_ROLES)
+                    if len(props) != 1:
+                        raise APIError(400, "Select one property to preview its transfer export.")
+                    prop = props[0]
+                    future = conn.execute(
+                        "SELECT COUNT(*) FROM reservations WHERE property_id=? AND end_date>=date('now')",
+                        (prop["id"],),
+                    ).fetchone()[0]
+                    return reply(self, 200, {
+                        "property": {"id": prop["id"], "code": prop["code"], "name": prop["name"], "slug": prop["slug"]},
+                        "future_reservations": future,
+                        "default_privacy": {"guest_names": "redacted", "emails": "excluded", "phones": "excluded", "payments": "excluded"},
+                    })
+
+                raise APIError(404, "Not found.")
+        except APIError as exc:
+            return reply(self, exc.status, {"error": exc.message})
+        except AccessDenied as exc:
+            return reply(self, 403, {"error": str(exc)})
+        except Exception as exc:
+            return reply(self, 400, {"error": str(exc)})
 
     def do_POST(self):
-        raw_path = urlparse(self.path).path
-        p = api_path(raw_path)
+        parsed = urlparse(self.path)
+        path = api_path(parsed.path)
         try:
             data = body(self)
-            with connect(DB) as c:
-                prop = resolve_property(c, self)
-            property_id = prop["id"]
-            if p == "/booking-requests":
+            if path == "/booking-requests":
+                with connect(DB) as conn:
+                    prop = public_property(conn, self)
                 return reply(self, 201, create_booking(data, prop))
-            if p == "/blocks":
-                start, end = validate_range(data.get("start_date", ""), data.get("end_date", ""))
-                bid = "blk_" + uuid.uuid4().hex[:12]
-                with connect(DB) as c:
-                    c.execute("BEGIN IMMEDIATE")
-                    conflict = c.execute(
-                        "SELECT 1 FROM unavailable_periods WHERE property_id=? AND date(start_date)<date(?) AND date(end_date)>date(?) LIMIT 1",
-                        (property_id, end, start)
+
+            with connect(DB) as conn:
+                user_id = actor_id(self)
+                if path == "/blocks":
+                    props = scoped_properties(conn, self, ADMIN_ROLES)
+                    if len(props) != 1:
+                        raise APIError(400, "Select one property to create an owner block.")
+                    prop = props[0]
+                    start, end = validate_range(data.get("start_date", ""), data.get("end_date", ""))
+                    conflict = conn.execute(
+                        """SELECT 1 FROM unavailable_periods
+                           WHERE property_id=? AND date(start_date)<date(?) AND date(end_date)>date(?) LIMIT 1""",
+                        (prop["id"], end, start),
                     ).fetchone()
                     if conflict:
-                        raise ValueError("Block conflicts with an existing unavailable period.")
-                    c.execute("INSERT INTO calendar_blocks(id,property_id,start_date,end_date,reason) VALUES(?,?,?,?,?)",
-                              (bid, property_id, start, end, data.get("reason") or "Owner block"))
-                    audit(c, property_id, "create", "calendar_block", bid)
-                    c.commit()
-                return reply(self, 201, {"id": bid})
-            if p.startswith("/sync/"):
-                sid = p.rsplit("/", 1)[-1]
-                with connect(DB) as c:
-                    src = c.execute("SELECT feed_url FROM calendar_sources WHERE id=? AND property_id=?", (sid, property_id)).fetchone()
-                if not src or not src["feed_url"]:
-                    raise ValueError("Calendar source does not have a feed URL.")
-                return reply(self, 200, sync_url(sid, src["feed_url"], db_path=DB))
-            return reply(self, 404, {"error": "Not found"})
-        except Exception as e:
-            return reply(self, 400, {"error": str(e)})
+                        raise APIError(409, "Block conflicts with an existing unavailable period.")
+                    block_id = "blk_" + uuid.uuid4().hex[:12]
+                    conn.execute(
+                        "INSERT INTO calendar_blocks(id,property_id,start_date,end_date,reason,created_by) VALUES(?,?,?,?,?,?)",
+                        (block_id, prop["id"], start, end, data.get("reason") or "Owner block", user_id),
+                    )
+                    audit(conn, prop["id"], user_id, "create", "calendar_block", block_id)
+                    conn.commit()
+                    return reply(self, 201, {"id": block_id, "property_code": prop["code"]})
+
+                if path.startswith("/sync/"):
+                    props = scoped_properties(conn, self, ADMIN_ROLES)
+                    source_id = path.rsplit("/", 1)[-1]
+                    source = conn.execute(
+                        "SELECT * FROM calendar_sources WHERE id=? AND property_id IN ({})".format(
+                            ",".join("?" for _ in props)
+                        ),
+                        [source_id, *[p["id"] for p in props]],
+                    ).fetchone()
+                    if not source or not source["feed_url"]:
+                        raise APIError(400, "Calendar source does not have an HTTPS feed URL.")
+                    return reply(self, 200, sync_url(source_id, source["feed_url"], db_path=DB))
+
+                if path == "/property-export":
+                    props = scoped_properties(conn, self, EXPORT_ROLES)
+                    if len(props) != 1:
+                        raise APIError(400, "Select one property to create its transfer export.")
+                    include_names = bool(data.get("include_future_guest_names", False))
+                    payload, manifest = property_export_bytes(conn, props[0]["slug"], user_id, include_names)
+                    conn.commit()
+                    filename = f"{props[0]['slug']}-transfer.zip"
+                    return reply(
+                        self,
+                        200,
+                        payload,
+                        "application/zip",
+                        {"Content-Disposition": f'attachment; filename="{filename}"', "X-Arbor-Export-Id": manifest["exportId"]},
+                    )
+
+                raise APIError(404, "Not found.")
+        except APIError as exc:
+            return reply(self, exc.status, {"error": exc.message})
+        except AccessDenied as exc:
+            return reply(self, 403, {"error": str(exc)})
+        except Exception as exc:
+            return reply(self, 400, {"error": str(exc)})
 
     def do_PATCH(self):
-        raw_path = urlparse(self.path).path
-        p = api_path(raw_path)
+        parsed = urlparse(self.path)
+        path = api_path(parsed.path)
         try:
             data = body(self)
-            with connect(DB) as c:
-                prop = resolve_property(c, self)
-            property_id = prop["id"]
-            if p.startswith("/reservations/"):
-                rid = p.rsplit("/", 1)[-1]
-                status = data.get("status")
-                if status not in ("pending", "confirmed", "cancelled", "blocked"):
-                    raise ValueError("Invalid status")
-                with connect(DB) as c:
-                    found = c.execute("SELECT 1 FROM reservations WHERE id=? AND property_id=?", (rid, property_id)).fetchone()
+            with connect(DB) as conn:
+                user_id = actor_id(self)
+                props = scoped_properties(conn, self, ADMIN_ROLES)
+                property_ids = [p["id"] for p in props]
+                if path.startswith("/reservations/"):
+                    reservation_id = path.rsplit("/", 1)[-1]
+                    status = data.get("status")
+                    if status not in ("pending", "confirmed", "cancelled", "blocked"):
+                        raise APIError(400, "Invalid reservation status.")
+                    found = conn.execute(
+                        f"SELECT property_id FROM reservations WHERE id=? AND property_id IN ({','.join('?' for _ in property_ids)})",
+                        [reservation_id, *property_ids],
+                    ).fetchone()
                     if not found:
-                        raise ValueError("Reservation not found for this property.")
-                    c.execute("UPDATE reservations SET status=? WHERE id=? AND property_id=?", (status, rid, property_id))
-                    c.execute("UPDATE booking_requests SET status=? WHERE reservation_id=? AND property_id=?",
-                              ({"confirmed":"approved","cancelled":"cancelled","pending":"pending","blocked":"declined"}[status], rid, property_id))
-                    audit(c, property_id, "status_change", "reservation", rid, {"status": status})
-                    c.commit()
-                return reply(self, 200, {"id": rid, "status": status})
-            if p.startswith("/calendar-sources/"):
-                sid = p.rsplit("/", 1)[-1]
-                with connect(DB) as c:
-                    c.execute("UPDATE calendar_sources SET feed_url=?,enabled=? WHERE id=? AND property_id=?",
-                              (data.get("feed_url"), 1 if data.get("enabled", True) else 0, sid, property_id))
-                    if c.total_changes == 0:
-                        raise ValueError("Calendar source not found for this property.")
-                    audit(c, property_id, "update", "calendar_source", sid)
-                    c.commit()
-                return reply(self, 200, {"id": sid})
-            return reply(self, 404, {"error": "Not found"})
-        except Exception as e:
-            return reply(self, 400, {"error": str(e)})
+                        raise APIError(404, "Reservation not found in the selected property scope.")
+                    conn.execute("UPDATE reservations SET status=? WHERE id=?", (status, reservation_id))
+                    mapped = {"confirmed": "approved", "cancelled": "cancelled", "pending": "pending", "blocked": "declined"}[status]
+                    conn.execute("UPDATE booking_requests SET status=? WHERE reservation_id=?", (mapped, reservation_id))
+                    audit(conn, found["property_id"], user_id, "status_change", "reservation", reservation_id, {"status": status})
+                    conn.commit()
+                    return reply(self, 200, {"id": reservation_id, "status": status})
+
+                if path.startswith("/calendar-sources/"):
+                    source_id = path.rsplit("/", 1)[-1]
+                    found = conn.execute(
+                        f"SELECT property_id FROM calendar_sources WHERE id=? AND property_id IN ({','.join('?' for _ in property_ids)})",
+                        [source_id, *property_ids],
+                    ).fetchone()
+                    if not found:
+                        raise APIError(404, "Calendar source not found in the selected property scope.")
+                    conn.execute(
+                        "UPDATE calendar_sources SET feed_url=?,enabled=? WHERE id=?",
+                        (data.get("feed_url"), 1 if data.get("enabled", True) else 0, source_id),
+                    )
+                    audit(conn, found["property_id"], user_id, "update", "calendar_source", source_id)
+                    conn.commit()
+                    return reply(self, 200, {"id": source_id})
+
+                raise APIError(404, "Not found.")
+        except APIError as exc:
+            return reply(self, exc.status, {"error": exc.message})
+        except AccessDenied as exc:
+            return reply(self, 403, {"error": str(exc)})
+        except Exception as exc:
+            return reply(self, 400, {"error": str(exc)})
+
 
 def main():
     init_db(DB, reset=False)
-    print(f"Arbor Vista v3.3 server: http://{HOST}:{PORT}")
+    print(f"Arbor Vista Platform v4.1: http://{HOST}:{PORT}")
     print(f"Database: {DB}")
+    print("Dashboard: /admin/dashboard.html")
     print("API: /api/v1")
     ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
+
 
 if __name__ == "__main__":
     main()

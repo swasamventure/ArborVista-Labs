@@ -543,6 +543,7 @@ def export_ics(
     *,
     db_path: Path = DEFAULT_DB_PATH,
     exclude_source: str | None = None,
+    property_id: str = PROPERTY_ID,
 ) -> int:
     allowed = {None, "airbnb", "vrbo", "direct", "owner", "other"}
     if exclude_source not in allowed:
@@ -560,7 +561,7 @@ def export_ics(
                WHERE property_id=? AND active=1
                  AND (? IS NULL OR ?<>'owner')
                ORDER BY start_date,end_date""",
-            (PROPERTY_ID, exclude_source, exclude_source, PROPERTY_ID, exclude_source, exclude_source),
+            (property_id, exclude_source, exclude_source, property_id, exclude_source, exclude_source),
         ).fetchall()
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")

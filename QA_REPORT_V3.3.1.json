@@ -1,0 +1,83 @@
+{
+  "version": "3.3.1",
+  "status": "PASS",
+  "checks_passed": 15,
+  "checks_total": 15,
+  "checks": [
+    {
+      "name": "Kitchen image 1 exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Kitchen image 2 exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Kitchen image 3 removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Kitchen image 4 removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html uses image 1 once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html uses image 2 once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html has no image 3 reference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html has no image 4 reference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html uses image 1 once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html uses image 2 once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html has no image 3 reference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html has no image 4 reference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No public page references image 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No public page references image 4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shared JavaScript syntax passes",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

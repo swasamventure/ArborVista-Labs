@@ -1,34 +1,55 @@
-const cfg = window.ARBOR_VISTA_CONFIG || { apiBaseUrl: '/api/v1', propertySlug: 'arbor-vista-retreat', requestTimeoutMs: 15000 };
-const endpoint = (path) => `${cfg.apiBaseUrl}${path.startsWith('/') ? path : `/${path}`}`;
-const api = async (path, opts = {}) => {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), cfg.requestTimeoutMs || 15000);
-  try {
-    const r = await fetch(endpoint(path), {
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Property-Slug': cfg.propertySlug,
-        ...(opts.headers || {})
-      },
-      ...opts,
-      signal: controller.signal
-    });
-    const text = await r.text();
-    const d = text ? JSON.parse(text) : {};
-    if (!r.ok) throw new Error(d.error || 'Request failed');
-    return d;
-  } finally {
-    clearTimeout(timer);
-  }
-};
+const cfg = window.ARBOR_VISTA_CONFIG || {apiBaseUrl:'/api/v1',propertySlug:'arbor-vista-retreat',requestTimeoutMs:15000};
+const state={userId:localStorage.getItem('arbor-admin-user')||'user_owner',propertySlug:localStorage.getItem('arbor-admin-property')||'all',properties:[],user:null};
+const endpoint=path=>`${cfg.apiBaseUrl.replace(/\/$/,'')}${path.startsWith('/')?path:`/${path}`}`;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function table(rows,cols){if(!rows.length)return '<p>No records found.</p>';return `<table><thead><tr>${cols.map(c=>`<th>${esc(c[0])}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${cols.map(c=>`<td>${c[1](r)}</td>`).join('')}</tr>`).join('')}</tbody></table>`}
-async function status(){try{const h=await api('/health');apiStatus.textContent=`API connected · ${h.property?.name||cfg.propertySlug}`;apiStatus.className='status ok'}catch(e){apiStatus.textContent='API offline — start the local backend or configure the cloud API';apiStatus.className='status bad'}}status();
-async function loadDashboard(){const [r,b,s]=await Promise.all([api('/reservations'),api('/blocks'),api('/calendar-sources')]);const today=new Date().toISOString().slice(0,10);mUpcoming.textContent=r.filter(x=>x.end_date>=today&&x.status!=='cancelled').length;mPending.textContent=r.filter(x=>x.status==='pending').length;mBlocks.textContent=b.length;mSources.textContent=s.filter(x=>x.enabled).length;upcomingTable.innerHTML=table(r.filter(x=>x.end_date>=today&&x.status!=='cancelled').slice(0,10),[['Dates',x=>`${esc(x.start_date)} → ${esc(x.end_date)}`],['Guest',x=>esc(x.guest_name||x.summary)],['Source',x=>esc(x.source_type)],['Status',x=>`<span class="pill">${esc(x.status)}</span>`]])}
-async function loadReservations(){const r=await api('/reservations');reservationTable.innerHTML=table(r,[['Dates',x=>`${esc(x.start_date)} → ${esc(x.end_date)}`],['Guest / Summary',x=>esc(x.guest_name||x.summary)],['Contact',x=>`${esc(x.email||'—')}<br>${esc(x.phone||'')}`],['Guests',x=>x.adults?`${x.adults} adults · ${x.children} children`:'—'],['Source',x=>esc(x.source_type)],['Status',x=>`<span class="pill">${esc(x.status)}</span>`],['Action',x=>x.status==='pending'?`<button onclick="setStatus('${esc(x.id)}','confirmed')">Approve</button> <button class="danger" onclick="setStatus('${esc(x.id)}','cancelled')">Decline</button>`:x.status==='confirmed'?`<button class="danger" onclick="setStatus('${esc(x.id)}','cancelled')">Cancel</button>`:'—']])}
+const money=cents=>new Intl.NumberFormat(undefined,{style:'currency',currency:'USD',maximumFractionDigits:0}).format((Number(cents)||0)/100);
+const api=async(path,opts={})=>{const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),cfg.requestTimeoutMs||15000);try{const r=await fetch(endpoint(path),{headers:{'Content-Type':'application/json','X-Property-Slug':state.propertySlug,'X-Demo-User':state.userId,...(opts.headers||{})},...opts,signal:controller.signal});const type=r.headers.get('content-type')||'';if(type.includes('application/zip')){if(!r.ok)throw new Error('Export failed');return {blob:await r.blob(),headers:r.headers}}const text=await r.text();const data=text?JSON.parse(text):{};if(!r.ok)throw new Error(data.error||'Request failed');return data}finally{clearTimeout(timer)}};
+function table(rows,cols){if(!rows.length)return '<p class="muted">No records found for this scope.</p>';return `<table><thead><tr>${cols.map(c=>`<th>${esc(c[0])}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${cols.map(c=>`<td>${c[1](r)}</td>`).join('')}</tr>`).join('')}</tbody></table>`}
+function badge(row){return `<span class="property-badge ${row.is_demo?'demo-badge':''}">${esc(row.property_code||row.code)} · ${esc(row.property_name||row.name)}</span>`}
+async function bootstrap(page){
+  try{
+    const [me,props]=await Promise.all([api('/auth/me'),api('/properties')]);
+    state.user=me;state.properties=props;
+    const roles=new Set([...Object.values(me.organization_roles||{}),...Object.values(me.property_roles||{})]);
+    const hasAny=(allowed)=>allowed.some(role=>roles.has(role));
+    const reportRoles=['portfolio_owner','portfolio_admin','property_owner','manager','cohost','accountant','readonly'];
+    const adminRoles=['portfolio_owner','portfolio_admin','property_owner','manager','cohost'];
+    const exportRoles=['portfolio_owner','portfolio_admin','property_owner'];
+    const cleanerRoles=['portfolio_owner','portfolio_admin','property_owner','manager','cohost','cleaner','maintenance'];
+    document.querySelectorAll('.admin-side nav a[data-page]').forEach(link=>{
+      const key=link.dataset.page;
+      const permitted=key==='cleaning'?hasAny(cleanerRoles):key==='export'?hasAny(exportRoles):key==='settings'?hasAny(adminRoles):hasAny(reportRoles);
+      link.hidden=!permitted;
+    });
+    if(!hasAny(reportRoles)&&hasAny(['cleaner','maintenance'])&&page!=='cleaning'){
+      location.href='cleaning-calendar.html';return false;
+    }
+    const userEl=document.getElementById('currentUser');if(userEl)userEl.textContent=me.display_name;
+    const selector=document.getElementById('propertySelector');
+    if(selector){
+      const portfolio=Object.values(me.organization_roles||{}).some(r=>['portfolio_owner','portfolio_admin','accountant','readonly'].includes(r));
+      selector.innerHTML=(portfolio?'<option value="all">All authorized properties</option>':'')+props.map(p=>`<option value="${esc(p.slug)}">${esc(p.code)} · ${esc(p.name)}${p.is_demo?' (Demo)':''}</option>`).join('');
+      if(![...selector.options].some(o=>o.value===state.propertySlug))state.propertySlug=portfolio?'all':props[0]?.slug||cfg.propertySlug;
+      selector.value=state.propertySlug;
+      selector.onchange=()=>{state.propertySlug=selector.value;localStorage.setItem('arbor-admin-property',state.propertySlug);location.reload()};
+    }
+    document.querySelectorAll('[data-page]').forEach(a=>a.classList.toggle('active',a.dataset.page===page));
+    await status();return true;
+  }catch(e){location.href='login.html';return false}
+}
+async function status(){try{const h=await api('/health');const el=document.getElementById('apiStatus');if(el){el.textContent=`API ${h.version} connected`;el.className='status ok'}}catch(e){const el=document.getElementById('apiStatus');if(el){el.textContent='API offline';el.className='status bad'}}}
+async function initPage(page,loader){if(await bootstrap(page))await loader?.()}
+async function loadDashboard(){const [r,b,s,report]=await Promise.all([api('/reservations'),api('/blocks'),api('/calendar-sources'),api('/reports/summary?start=2027-01-01&end=2028-01-01')]);const today=new Date().toISOString().slice(0,10);mUpcoming.textContent=r.filter(x=>x.end_date>=today&&x.status!=='cancelled').length;mPending.textContent=r.filter(x=>x.status==='pending').length;mBlocks.textContent=b.length;mSources.textContent=s.filter(x=>x.enabled).length;const upcoming=r.filter(x=>x.status!=='cancelled').slice(0,12);upcomingTable.innerHTML=table(upcoming,[['Property',x=>badge(x)],['Dates',x=>`${esc(x.start_date)} → ${esc(x.end_date)}`],['Guest',x=>esc(x.guest_name||x.summary||'—')],['Guests',x=>x.adults?`${x.adults} + ${x.children||0}`:'Not provided'],['Source',x=>esc(x.source_type)],['Status',x=>`<span class="pill">${esc(x.status)}</span>`]]);portfolioSummary.innerHTML=`<strong>${report.portfolio.properties||0}</strong> properties · <strong>${report.portfolio.occupied_nights||0}</strong> occupied nights · <strong>${money(report.portfolio.gross_revenue_cents)}</strong> recorded gross revenue in the demo report period.`}
+async function loadReservations(){const r=await api('/reservations');reservationTable.innerHTML=table(r,[['Property',x=>badge(x)],['Dates',x=>`${esc(x.start_date)} → ${esc(x.end_date)}`],['Guest',x=>esc(x.guest_name||x.summary||'—')],['Contact',x=>`${esc(x.email||'—')}<br>${esc(x.phone||'')}`],['Guests',x=>x.adults?`${x.adults} adults · ${x.children||0} children`:'Not provided'],['Source',x=>esc(x.source_type)],['Status',x=>`<span class="pill">${esc(x.status)}</span>`],['Action',x=>x.status==='pending'?`<button onclick="setStatus('${esc(x.id)}','confirmed')">Approve</button> <button class="danger" onclick="setStatus('${esc(x.id)}','cancelled')">Decline</button>`:x.status==='confirmed'?`<button class="danger" onclick="setStatus('${esc(x.id)}','cancelled')">Cancel</button>`:'—']])}
 async function setStatus(id,status){await api('/reservations/'+id,{method:'PATCH',body:JSON.stringify({status})});loadReservations()}
-async function setupCalendar(){const show=async()=>{const b=await api('/blocks');blockTable.innerHTML=table(b,[['Dates',x=>`${esc(x.start_date)} → ${esc(x.end_date)}`],['Reason',x=>esc(x.reason)]])};blockForm.onsubmit=async e=>{e.preventDefault();try{await api('/blocks',{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(e.target)))});blockMsg.textContent='Block created.';e.target.reset();show()}catch(x){blockMsg.textContent=x.message}};availabilityForm.onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));try{const x=await api(`/availability?start=${encodeURIComponent(d.start)}&end=${encodeURIComponent(d.end)}`);availabilityMsg.textContent=x.available?'Available':'Unavailable — '+x.conflicts.length+' conflict(s)'}catch(x){availabilityMsg.textContent=x.message}};show()}
-async function loadSources(){const s=await api('/calendar-sources');sourceCards.innerHTML=s.map(x=>`<div class="source-card"><strong>${esc(x.name)}</strong><label>iCal feed URL<input id="url-${esc(x.id)}" value="${esc(x.feed_url||'')}"></label><label>Enabled<select id="en-${esc(x.id)}"><option value="1" ${x.enabled?'selected':''}>Yes</option><option value="0" ${!x.enabled?'selected':''}>No</option></select></label><div><button onclick="saveSource('${esc(x.id)}')">Save</button> <button onclick="syncSource('${esc(x.id)}')">Sync now</button></div></div>`).join('')}
-async function saveSource(id){await api('/calendar-sources/'+id,{method:'PATCH',body:JSON.stringify({feed_url:document.getElementById('url-'+id).value,enabled:document.getElementById('en-'+id).value==='1'})});alert('Saved')}
-async function syncSource(id){try{const d=await api('/sync/'+id,{method:'POST',body:'{}'});alert('Sync complete: '+JSON.stringify(d));}catch(e){alert(e.message)}}
-async function loadLogs(){const [s,a]=await Promise.all([api('/sync-runs'),api('/audit')]);syncTable.innerHTML=table(s,[['Started',x=>esc(x.started_at)],['Source',x=>esc(x.source_name)],['Status',x=>esc(x.status)],['Seen',x=>esc(x.events_seen)],['Changes',x=>`${x.events_inserted} inserted · ${x.events_updated} updated · ${x.events_cancelled} cancelled`],['Error',x=>esc(x.error_message||'—')]]);auditTable.innerHTML=table(a,[['Time',x=>esc(x.created_at)],['Action',x=>esc(x.action)],['Entity',x=>`${esc(x.entity_type)}<br>${esc(x.entity_id||'')}`],['Details',x=>esc(x.details_json||'—')]])}
+async function loadCalendar(){const items=await api('/calendar/combined');calendarTable.innerHTML=table(items,[['Property',x=>badge(x)],['Dates',x=>`${esc(x.start_date)} → ${esc(x.end_date)}`],['Type',x=>esc(x.source_type)],['Guest / Reason',x=>esc(x.guest_name||x.summary||x.reason||'—')],['Status',x=>`<span class="pill">${esc(x.status)}</span>`]]);const form=document.getElementById('blockForm');if(form){form.onsubmit=async e=>{e.preventDefault();try{await api('/blocks',{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(form)))});blockMsg.textContent='Owner block created.';form.reset();loadCalendar()}catch(err){blockMsg.textContent=err.message}}}}
+async function loadSources(){const sources=await api('/calendar-sources');sourceCards.innerHTML=sources.map(x=>`<div class="source-card"><div>${badge(x)}</div><strong>${esc(x.name)}</strong><label>iCal URL<input id="url-${esc(x.id)}" value="${esc(x.feed_url||'')}"></label><div><button onclick="saveSource('${esc(x.id)}')">Save</button> <button class="secondary" onclick="syncSource('${esc(x.id)}')">Sync</button></div></div>`).join('')||'<p>No calendar sources.</p>'}
+async function saveSource(id){await api('/calendar-sources/'+id,{method:'PATCH',body:JSON.stringify({feed_url:document.getElementById('url-'+id).value,enabled:true})});alert('Saved')}
+async function syncSource(id){try{const d=await api('/sync/'+id,{method:'POST',body:'{}'});alert('Sync complete: '+JSON.stringify(d))}catch(e){alert(e.message)}}
+async function loadLogs(){const [runs,audit]=await Promise.all([api('/sync-runs'),api('/audit')]);syncTable.innerHTML=table(runs,[['Property',x=>badge(x)],['Started',x=>esc(x.started_at)],['Source',x=>esc(x.source_name)],['Status',x=>esc(x.status)],['Changes',x=>`${x.events_inserted} inserted · ${x.events_updated} updated · ${x.events_cancelled} cancelled`],['Error',x=>esc(x.error_message||'—')]]);auditTable.innerHTML=table(audit,[['Property',x=>badge(x)],['Time',x=>esc(x.created_at)],['Action',x=>esc(x.action)],['Entity',x=>`${esc(x.entity_type)}<br>${esc(x.entity_id||'')}`],['Details',x=>esc(x.details_json||'—')]])}
+async function loadReports(){const start=document.getElementById('reportStart')?.value||'2027-01-01';const end=document.getElementById('reportEnd')?.value||'2028-01-01';const r=await api(`/reports/summary?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`);reportMetrics.innerHTML=`<article><small>Properties</small><strong>${r.portfolio.properties}</strong></article><article><small>Reservations</small><strong>${r.portfolio.reservations}</strong></article><article><small>Occupied nights</small><strong>${r.portfolio.occupied_nights}</strong></article><article><small>Recorded gross</small><strong>${money(r.portfolio.gross_revenue_cents)}</strong></article>`;reportTable.innerHTML=table(r.properties,[['Property',x=>badge(x)],['Reservations',x=>x.reservations],['Occupied nights',x=>x.occupied_nights],['Occupancy',x=>`${x.occupancy_percent}%`],['Guest nights',x=>x.guest_nights],['Recorded gross',x=>money(x.gross_revenue_cents)],['Sources',x=>Object.entries(x.sources).filter(([,v])=>v).map(([k,v])=>`${esc(k)}: ${v}`).join('<br>')||'—']])}
+async function loadCleaning(){const info=await api('/cleaning-feed/info');cleaningFeedUrl.textContent=info.demo_feed_url;cleaningProperties.innerHTML=info.properties.map(p=>`<li><strong>${esc(p.code)}</strong> · ${esc(p.name)} <span class="muted">(${esc(p.id)})</span></li>`).join('');cleaningPrivacy.textContent=info.privacy;feedPreview.innerHTML=`<div class="feed-event"><strong>[AVR-TN-01] ARRIVAL · 6 guests</strong><span>Property ID, property name/code, location, arrival/departure times and source are included.</span></div><div class="feed-event"><strong>[AVR-TN-01] DEPARTURE / CLEAN · 6 guests</strong><span>Includes cleaning window, same-day turnover flag and next-arrival guest count without guest identity.</span></div>`}
+async function loadExport(){try{const p=await api('/property-export/preview');exportPreview.innerHTML=`<p><strong>${esc(p.property.code)} · ${esc(p.property.name)}</strong></p><p>${p.future_reservations} future reservation record(s).</p><p class="muted">Default privacy: guest names ${p.default_privacy.guest_names}; emails, phones and payments ${p.default_privacy.emails}.</p>`;exportButton.disabled=false}catch(e){exportPreview.innerHTML=`<p class="notice warning">${esc(e.message)} Select one property rather than “All properties.”</p>`;exportButton.disabled=true}}
+async function downloadExport(){const result=await api('/property-export',{method:'POST',body:JSON.stringify({include_future_guest_names:false})});const url=URL.createObjectURL(result.blob);const a=document.createElement('a');a.href=url;a.download=`${state.propertySlug}-transfer.zip`;a.click();URL.revokeObjectURL(url)}
+async function loadLogin(){const users=await fetch(endpoint('/auth/users')).then(r=>r.json());userSelect.innerHTML=users.map(u=>`<option value="${esc(u.id)}">${esc(u.display_name)} · ${esc(u.email)}</option>`).join('');userSelect.value=state.userId;loginForm.onsubmit=e=>{e.preventDefault();localStorage.setItem('arbor-admin-user',userSelect.value);localStorage.setItem('arbor-admin-property','all');location.href='dashboard.html'}}
+function logout(){localStorage.removeItem('arbor-admin-user');localStorage.removeItem('arbor-admin-property');location.href='login.html'}
