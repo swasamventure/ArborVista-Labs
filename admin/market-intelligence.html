@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Market Intelligence | Swasam Venture</title>
+  <title>Real Comp Snapshot | Swasam Venture</title>
   <meta name="robots" content="noindex,nofollow">
-  <link rel="stylesheet" href="admin.css?v=4.2">
-  <link rel="stylesheet" href="market-intelligence.css?v=4.2">
+  <link rel="stylesheet" href="admin.css?v=4.2.1">
+  <link rel="stylesheet" href="market-intelligence.css?v=4.2.1">
   <script src="../config/runtime-config.js"></script>
 </head>
 <body>
@@ -25,15 +25,15 @@
       <a data-page="logs" href="sync-log.html">Sync &amp; Audit Logs</a>
       <a href="../index.html">← Arbor Vista website</a>
     </nav>
-    <div class="scope-note">GitHub/browser Phase A<br>No API key required<br>CSV and local browser workspace</div>
+    <div class="scope-note">GitHub/browser v4.2.1<br>Real public metadata snapshot<br>No API key required</div>
   </aside>
 
   <main class="admin-main market-main">
     <header class="topbar market-topbar">
       <div>
-        <span class="kicker">Shared platform · v4.2 · Phase A</span>
+        <span class="kicker">Shared platform · v4.2.1 · Real Comp Snapshot</span>
         <h1>Market Intelligence</h1>
-        <p class="muted max-copy">Compare each property with a manually curated or CSV-imported comp set. All calculations run in this browser.</p>
+        <p class="muted max-copy">Compare Arbor Vista with a dated public-listing metadata snapshot and build recurring public rate observations. All calculations run in this browser.</p>
       </div>
       <div class="top-actions">
         <label>Property
@@ -44,15 +44,15 @@
     </header>
 
     <section class="notice security">
-      <strong>GitHub-safe preview.</strong> Demo data is fictional. Uploaded CSV/JSON files stay in this browser and are not committed to GitHub. Do not place API keys, private iCal URLs, guest information, or confidential financial data in the repository.
+      <strong>GitHub-safe public snapshot.</strong> The bundled records are dated public listing metadata. Uploaded CSV/JSON files stay in this browser. Competitor occupancy and revenue are not claimed. Do not place API keys, private iCal URLs, guest information, or confidential financial data in the repository.
     </section>
 
     <section class="panel market-controls">
       <div class="panel-head">
-        <div><h2>Comparable search profile</h2><p class="muted">Use the address and filters to define the comp set. Phase A does not fetch websites automatically.</p></div>
+        <div><h2>Comparable search profile</h2><p class="muted">Use the property facts and filters to define the comp set. Exact comp distance remains unknown where a public platform does not publish an address. This release does not scrape websites automatically.</p></div>
         <div class="toolbar compact-toolbar">
           <button class="secondary" id="miApplyProfile">Apply profile</button>
-          <button class="secondary" id="miResetDemo">Reset demo</button>
+          <button class="secondary" id="miResetDemo">Reload real snapshot</button>
         </div>
       </div>
       <div class="market-form-grid">
@@ -74,11 +74,27 @@
         <button class="secondary" id="miExportWorkspace">Export workspace</button>
         <button class="secondary" id="miExportAnalysis">Export analysis CSV</button>
         <a class="button-link secondary" href="data/market-comp-import-template.csv" download>CSV template</a>
+        <a class="button-link secondary" href="data/real-comp-snapshot.csv" download>Download real snapshot CSV</a>
+        <a class="button-link secondary" href="data/market-rate-observation-template.csv" download>Rate observation template</a>
         <span id="miMessage" class="muted" role="status" aria-live="polite"></span>
       </div>
     </section>
 
     <section class="metric-grid market-metrics" id="miSummaryMetrics"></section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>Snapshot coverage</h2><p class="muted">Public listing metadata collected for the v4.2.1 research seed set.</p></div></div>
+      <div id="miSnapshotNote" class="data-note"></div>
+      <div class="split market-split">
+        <article class="chart-card"><h3>Platform coverage</h3><div id="miPlatformChart" class="chart-host"></div></article>
+        <article class="chart-card"><h3>Guest-capacity distribution</h3><div id="miGuestCountChart" class="chart-host"></div></article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>Level 2 recurring observation plan</h2><p class="muted">Use consistent dates and guest counts to build your own public rate history over time.</p></div><a class="button-link secondary" href="data/market-rate-observation-template.csv" download>Download observation queue</a></div>
+      <div id="miObservationPlan" class="observation-plan"></div>
+    </section>
 
     <section class="panel">
       <div class="panel-head"><div><h2>Monthly performance</h2><p class="muted">Arbor Vista values are browser-entered/demo actuals. Competitor metrics are estimates or observations from the selected comps.</p></div><span id="miCompCount" class="property-badge"></span></div>
@@ -141,17 +157,17 @@
     <section class="panel">
       <details>
         <summary><strong>Edit the selected property’s monthly actuals</strong></summary>
-        <p class="muted">These values are stored only in this browser. Use zero where data is unavailable.</p>
+        <p class="muted">These values are stored only in this browser. Enter your real Arbor Vista results; leave zero where unavailable.</p>
         <div id="miActualsTable"></div>
       </details>
     </section>
 
     <section class="notice warning">
-      <strong>Interpretation limits:</strong> competitor occupancy and revenue are usually estimates; blocked dates may be owner holds rather than bookings; fees and minimum stays must be normalized; and one physical property may appear on multiple channels. Phase A does not scrape Airbnb, Vrbo, or Booking.com.
+      <strong>Interpretation limits:</strong> exact competitor addresses may be hidden; ratings and amenities change; one physical property may appear on multiple channels; and a displayed rate depends on dates, guest count, minimum stays, fees, taxes, and discounts. This release does not claim competitor occupancy or revenue and does not scrape Airbnb, Vrbo, or Booking.com automatically.
     </section>
   </main>
 </div>
-<script src="data/market-intelligence-demo.js?v=4.2"></script>
-<script src="market-intelligence.js?v=4.2"></script>
+<script src="data/market-intelligence-real-snapshot.js?v=4.2.1"></script>
+<script src="market-intelligence.js?v=4.2.1"></script>
 </body>
 </html>

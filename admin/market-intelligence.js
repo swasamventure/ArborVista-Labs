@@ -1,8 +1,8 @@
 (() => {
   'use strict';
 
-  const STORAGE_KEY = 'arbor-market-workspace-v42';
-  const PROPERTY_KEY = 'arbor-market-property-v42';
+  const STORAGE_KEY = 'arbor-market-workspace-v421';
+  const PROPERTY_KEY = 'arbor-market-property-v421';
   const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const $ = id => document.getElementById(id);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
@@ -13,11 +13,11 @@
   };
   const bool = value => ['true','1','yes','y','included','x'].includes(String(value ?? '').trim().toLowerCase());
   const avg = values => {
-    const clean = values.map(Number).filter(Number.isFinite);
+    const clean = values.map(Number).filter(value => Number.isFinite(value) && value > 0);
     return clean.length ? clean.reduce((sum, value) => sum + value, 0) / clean.length : 0;
   };
   const median = values => {
-    const clean = values.map(Number).filter(Number.isFinite).sort((a,b) => a-b);
+    const clean = values.map(Number).filter(value => Number.isFinite(value) && value > 0).sort((a,b) => a-b);
     if (!clean.length) return 0;
     const middle = Math.floor(clean.length / 2);
     return clean.length % 2 ? clean[middle] : (clean[middle - 1] + clean[middle]) / 2;
@@ -62,20 +62,16 @@
 
   function normalizeComp(comp, index = 0) {
     const metricsInput = Array.isArray(comp.metrics) ? comp.metrics : [];
-    const metrics = MONTHS.map((month, monthIndex) => {
-      const found = metricsInput.find(item => monthName(item.month ?? item.month_start) === month);
-      if (found) return normalizeMetric(found, monthIndex);
-      const adr = number(comp.adr);
-      const occupancy = number(comp.occupancy);
-      return {month, adr, occupancy, revenue:number(comp.revenue, adr * occupancy / 100 * 30.4)};
-    });
+    const metrics = metricsInput.map((item,index) => normalizeMetric(item,index)).filter(item => item.adr > 0 || item.occupancy > 0 || item.revenue > 0);
     return {
       id:String(comp.id || comp.listing_id || `${slugify(comp.name || comp.listing_name)}-${index+1}`),
       name:String(comp.name || comp.listing_name || `Comparable ${index+1}`),
       platform:String(comp.platform || comp.channel || comp.provider || 'Other'),
       listingUrl:String(comp.listingUrl || comp.listing_url || comp.url || ''),
       included:comp.included !== false,
-      distanceMiles:number(comp.distanceMiles ?? comp.distance_miles ?? comp.distance),
+      distanceMiles:(comp.distanceMiles ?? comp.distance_miles ?? comp.distance) === null || (comp.distanceMiles ?? comp.distance_miles ?? comp.distance) === undefined || (comp.distanceMiles ?? comp.distance_miles ?? comp.distance) === '' ? null : number(comp.distanceMiles ?? comp.distance_miles ?? comp.distance),
+      locationName:String(comp.locationName || comp.location || ''), sourceObservedAt:String(comp.sourceObservedAt || comp.source_observed_at || ''),
+      snapshotNotes:String(comp.snapshotNotes || comp.snapshot_notes || ''), observations:Array.isArray(comp.observations) ? comp.observations : [],
       bedrooms:number(comp.bedrooms), bathrooms:number(comp.bathrooms), guests:number(comp.guests ?? comp.accommodates), beds:number(comp.beds),
       rating:number(comp.rating), reviews:number(comp.reviews ?? comp.review_count),
       amenities:{
@@ -149,7 +145,8 @@
       adr:avg(comp.metrics.map(metric => metric.adr)),
       occupancy:avg(comp.metrics.map(metric => metric.occupancy)),
       revenue:avg(comp.metrics.map(metric => metric.revenue)),
-      revpar:avg(comp.metrics.map(metric => metric.adr * metric.occupancy / 100))
+      revpar:avg(comp.metrics.filter(metric=>metric.adr>0&&metric.occupancy>0).map(metric => metric.adr * metric.occupancy / 100)),
+      observedRates:(comp.observations||[]).filter(item=>number(item.nightlyRate)>0).length
     };
   }
 
@@ -173,7 +170,7 @@
   function similarity(comp) {
     const p = app.property;
     let score = 100;
-    score -= Math.min(30, Math.abs(number(comp.distanceMiles)) * 5);
+    if (comp.distanceMiles !== null && comp.distanceMiles !== undefined) score -= Math.min(30, Math.abs(number(comp.distanceMiles)) * 5);
     score -= Math.min(22, Math.abs(number(comp.bedrooms) - number(p.bedrooms)) * 11);
     score -= Math.min(12, Math.abs(number(comp.bathrooms) - number(p.bathrooms)) * 6);
     score -= Math.min(20, Math.abs(number(comp.guests) - number(p.standardGuests)) * 5);
@@ -186,7 +183,7 @@
 
   function profileMatches(comp) {
     const profile = app.property.profile;
-    return number(comp.distanceMiles) <= profile.radiusMiles &&
+    return (comp.distanceMiles === null || comp.distanceMiles === undefined || number(comp.distanceMiles) <= profile.radiusMiles) &&
       number(comp.bedrooms) >= profile.bedroomsMin && number(comp.bedrooms) <= profile.bedroomsMax &&
       number(comp.bathrooms) >= profile.bathroomsMin && number(comp.bathrooms) <= profile.bathroomsMax &&
       number(comp.guests) >= profile.guestsMin && number(comp.guests) <= profile.guestsMax &&
@@ -238,20 +235,22 @@
 
   function renderSummary() {
     const comps = selectedComps();
-    const actual = actualAnnual();
-    const compAnnual = comps.map(annual);
-    const benchmark = {
-      adr:median(compAnnual.map(item => item.adr)), occupancy:median(compAnnual.map(item => item.occupancy)),
-      revenue:median(compAnnual.map(item => item.revenue)), revpar:median(compAnnual.map(item => item.revpar))
-    };
+    const ratings = comps.map(item=>item.rating);
+    const reviews = comps.map(item=>item.reviews);
+    const observedRates = comps.flatMap(item=>item.observations||[]).filter(item=>number(item.nightlyRate)>0);
+    const platforms = new Set(comps.map(item=>item.platform));
+    const arcadeCount = comps.filter(item=>item.amenities.arcade).length;
     $('miSummaryMetrics').innerHTML = [
-      ['Selected comps', comps.length, `<span class="metric-delta">${app.property.comps.length} available</span>`],
-      ['Property ADR', money(actual.adr), deltaMarkup(actual.adr,benchmark.adr,money)],
-      ['Property occupancy', pct(actual.occupancy), deltaMarkup(actual.occupancy,benchmark.occupancy,value=>`${value.toFixed(1)} pts`)],
-      ['Property RevPAR', money(actual.revpar), deltaMarkup(actual.revpar,benchmark.revpar,money)],
-      ['Avg. monthly revenue', money(actual.revenue), deltaMarkup(actual.revenue,benchmark.revenue,money)]
+      ['Included public comps', comps.length, `<span class="metric-delta">${app.property.comps.length} records in snapshot</span>`],
+      ['Platforms', platforms.size, `<span class="metric-delta">${[...platforms].join(' · ')}</span>`],
+      ['Median rating', median(ratings) ? median(ratings).toFixed(2)+' ★' : '—', `<span class="metric-delta">${ratings.filter(Number.isFinite).length} rated listings</span>`],
+      ['Median review count', median(reviews) ? Math.round(median(reviews)) : '—', `<span class="metric-delta">Public review counts</span>`],
+      ['Game room / arcade', `${arcadeCount}/${comps.length}`, `<span class="metric-delta">${comps.length?Math.round(arcadeCount/comps.length*100):0}% of included comps</span>`],
+      ['Rate observations', observedRates.length, `<span class="metric-delta">Consistent-date history grows over time</span>`]
     ].map(([label,value,delta]) => `<article><small>${esc(label)}</small><strong>${value}</strong>${delta}</article>`).join('');
     $('miCompCount').textContent = `${comps.length} included · ${app.property.comps.length - comps.length} excluded`;
+    const snap=app.workspace.snapshot||{};
+    const note=$('miSnapshotNote'); if(note) note.textContent=`${snap.name||'Real Comp Snapshot'} · observed ${snap.observedAt||'—'} · ${snap.limitations||''}`;
   }
 
   function lineChart(hostId, labels, series, options = {}) {
@@ -381,46 +380,46 @@
   }
 
   function renderCharts() {
-    const actual=app.property.actuals;
-    lineChart('miAdrChart',MONTHS,[
-      {name:app.property.name,values:actual.map(item=>item.adr),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},
-      {name:'Comp median',values:monthlyComp('adr'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}
-    ],{format:money,ariaLabel:'Monthly ADR comparison'});
-    lineChart('miOccupancyChart',MONTHS,[
-      {name:app.property.name,values:actual.map(item=>item.occupancy),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},
-      {name:'Comp median',values:monthlyComp('occupancy'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}
-    ],{min:0,max:100,format:value=>`${Math.round(value)}%`,ariaLabel:'Monthly occupancy comparison'});
-    lineChart('miRevparChart',MONTHS,[
-      {name:app.property.name,values:actual.map(item=>item.adr*item.occupancy/100),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},
-      {name:'Comp median',values:monthlyComp('revpar'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}
-    ],{format:money,ariaLabel:'Monthly RevPAR comparison'});
-    lineChart('miRevenueChart',MONTHS,[
-      {name:app.property.name,values:actual.map(item=>item.revenue),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},
-      {name:'Comp median',values:monthlyComp('revenue'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}
-    ],{format:money,ariaLabel:'Monthly revenue comparison'});
-    scatterChart();
-    lineChart('miFutureChart',app.property.futureRates.map(item=>item.label),[
-      {name:app.property.name,values:app.property.futureRates.map(item=>item.ownRate),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},
-      {name:'Comp median',values:app.property.futureRates.map(item=>item.compMedian),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}
-    ],{format:money,ariaLabel:'Future nightly rate comparison'});
-
-    const amenityRows=[['Hot tub','hotTub'],['Arcade/game room','arcade'],['Fireplace','fireplace'],['Resort amenities','resortAmenities'],['Pet friendly','petFriendly'],['EV charger','evCharger']].map(([label,key])=>{
-      const withAmenity=selectedComps().filter(comp=>comp.amenities[key]).map(comp=>annual(comp).revpar);
-      const withoutAmenity=selectedComps().filter(comp=>!comp.amenities[key]).map(comp=>annual(comp).revpar);
-      return {label,value:withAmenity.length&&withoutAmenity.length?avg(withAmenity)-avg(withoutAmenity):0,withCount:withAmenity.length,withoutCount:withoutAmenity.length};
-    }).filter(row=>row.withCount&&row.withoutCount);
-    divergingBarChart('miAmenityChart',amenityRows);
-
-    const six=selectedComps().filter(comp=>comp.guests<=6),eight=selectedComps().filter(comp=>comp.guests>=7&&comp.guests<=8);
-    const capacityRows=[
-      {label:'Sleeps ≤6',value:avg(six.map(comp=>annual(comp).revenue)),className:'bar-own',note:`${six.length} comps · ADR ${money(avg(six.map(comp=>annual(comp).adr)))} · Occupancy ${pct(avg(six.map(comp=>annual(comp).occupancy)))}`},
-      {label:'Sleeps 7–8',value:avg(eight.map(comp=>annual(comp).revenue)),className:'bar-comp',note:`${eight.length} comps · ADR ${money(avg(eight.map(comp=>annual(comp).adr)))} · Occupancy ${pct(avg(eight.map(comp=>annual(comp).occupancy)))}`}
+    const comps=selectedComps();
+    const platformCounts=[...new Set(comps.map(c=>c.platform))].map(platform=>({label:platform,value:comps.filter(c=>c.platform===platform).length,className:'bar-comp'}));
+    verticalBarChart('miPlatformChart',platformCounts,{format:value=>Math.round(value),ariaLabel:'Public comp count by platform'});
+    const buckets=[
+      {label:'Sleeps 5–6',value:comps.filter(c=>c.guests>=5&&c.guests<=6).length,className:'bar-own'},
+      {label:'Sleeps 7–8',value:comps.filter(c=>c.guests>=7&&c.guests<=8).length,className:'bar-comp'},
+      {label:'Sleeps 9+',value:comps.filter(c=>c.guests>=9).length,className:'bar-comp'},
+      {label:'Unknown',value:comps.filter(c=>!c.guests).length,className:'bar-comp'}
     ].filter(row=>row.value>0);
-    verticalBarChart('miCapacityChart',capacityRows,{format:money,ariaLabel:'Guest capacity monthly revenue comparison',footer:capacityRows.map(row=>`${row.label}: ${row.note}`).join(' | ')});
+    verticalBarChart('miGuestCountChart',buckets,{format:value=>Math.round(value),ariaLabel:'Guest capacity distribution'});
 
-    const ranking=selectedComps().map(comp=>({label:comp.name,value:similarity(comp),note:`Est. monthly revenue ${money(annual(comp).revenue)} · ${comp.platform}`})).sort((a,b)=>b.value-a.value);
+    const metricComps=comps.filter(comp=>annual(comp).adr>0 || annual(comp).occupancy>0 || annual(comp).revenue>0);
+    const noMetrics='<div class="chart-empty">No licensed or consistently observed monthly competitor performance data is bundled. Use the rate-observation template or a future provider import.</div>';
+    if(metricComps.length){
+      const actual=app.property.actuals;
+      lineChart('miAdrChart',MONTHS,[{name:app.property.name,values:actual.map(i=>i.adr),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},{name:'Comp median',values:monthlyComp('adr'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}],{format:money});
+      lineChart('miOccupancyChart',MONTHS,[{name:app.property.name,values:actual.map(i=>i.occupancy),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},{name:'Comp median',values:monthlyComp('occupancy'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}],{min:0,max:100,format:v=>`${Math.round(v)}%`});
+      lineChart('miRevparChart',MONTHS,[{name:app.property.name,values:actual.map(i=>i.adr*i.occupancy/100),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},{name:'Comp median',values:monthlyComp('revpar'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}],{format:money});
+      lineChart('miRevenueChart',MONTHS,[{name:app.property.name,values:actual.map(i=>i.revenue),className:'line-own',pointClass:'point-own',legendClass:'legend-own'},{name:'Comp median',values:monthlyComp('revenue'),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}],{format:money});
+      scatterChart();
+    } else ['miAdrChart','miOccupancyChart','miRevparChart','miRevenueChart','miScatterChart','miAmenityChart','miCapacityChart'].forEach(id=>$(id).innerHTML=noMetrics);
+
+    const observed=comps.flatMap(comp=>(comp.observations||[]).map(item=>({label:item.checkIn||item.observedAt,ownRate:0,compMedian:number(item.nightlyRate)}))).filter(item=>item.compMedian>0);
+    if(observed.length) lineChart('miFutureChart',observed.map(i=>i.label),[{name:'Observed public nightly rate',values:observed.map(i=>i.compMedian),className:'line-comp',pointClass:'point-comp',legendClass:'legend-comp'}],{format:money});
+    else $('miFutureChart').innerHTML='<div class="chart-empty">No consistent-date public rate series yet. Download the observation queue and add repeated snapshots.</div>';
+
+    const ranking=comps.map(comp=>({label:comp.name,value:similarity(comp),note:`${comp.platform} · ${comp.locationName||'location not published'}`})).sort((a,b)=>b.value-a.value);
     horizontalBarChart('miRankingChart',ranking,{format:value=>`${Math.round(value)}%`,ariaLabel:'Comparable similarity ranking'});
     reviewChart();
+  }
+
+  function renderObservationPlan(){
+    const host=$('miObservationPlan'); if(!host)return;
+    const rows=[
+      ['Weekday · 30 days','Monthly','2 nights · 6 guests'],['Weekend · 30 days','Monthly','2 nights · 6 guests'],
+      ['Weekday · 60 days','Monthly','2 nights · 6 guests'],['Weekend · 60 days','Monthly','2 nights · 6 guests'],
+      ['Weekday · 90 days','Monthly','2 nights · 6 guests'],['Weekend · 90 days','Monthly','2 nights · 6 guests'],
+      ['Holiday/event','Quarterly','3 nights · 6 guests'],['Sleeps-eight scenario','Quarterly','2 nights · 8 guests']
+    ];
+    host.innerHTML=`<div class="table-scroll"><table><thead><tr><th>Observation window</th><th>Cadence</th><th>Standard search</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div><p class="data-note">Record exact check-in/out dates, guest count, total price, whether taxes/fees are included, availability status, source URL, and observation time. Do not infer occupancy from blocked dates.</p>`;
   }
 
   function renderCompTable() {
@@ -430,7 +429,7 @@
     $('miCompTable').innerHTML=`<div class="table-scroll"><table class="comp-table"><thead><tr><th>Use</th><th>Comparable</th><th>Match</th><th>Property facts</th><th>Performance</th><th>Reviews</th><th>Source</th><th>Action</th></tr></thead><tbody>${rows.map(comp=>{
       const a=annual(comp),score=similarity(comp);
       const amenities=Object.entries(comp.amenities).filter(([,enabled])=>enabled).map(([key])=>({hotTub:'Hot tub',arcade:'Arcade',fireplace:'Fireplace',resortAmenities:'Resort',petFriendly:'Pet friendly',evCharger:'EV charger'}[key])).join(', ')||'—';
-      return `<tr class="${comp.included?'':'excluded'}"><td><input type="checkbox" data-mi-action="toggle" data-id="${esc(comp.id)}" ${comp.included?'checked':''} aria-label="Include ${esc(comp.name)}"></td><td><strong>${esc(comp.name)}</strong><br><span class="pill platform-pill">${esc(comp.platform)}</span>${comp.listingUrl?`<br><a href="${esc(comp.listingUrl)}" target="_blank" rel="noopener">Public listing</a>`:''}</td><td><div class="score-meter"><div class="score-bar"><span style="width:${score}%"></span></div><strong>${score}%</strong></div><span class="data-note">${comp.distanceMiles.toFixed(1)} mi</span></td><td>${comp.bedrooms} BR · ${comp.bathrooms} BA<br>Sleeps ${comp.guests} · ${comp.beds||'—'} beds<br><span class="data-note">${esc(amenities)}</span></td><td>ADR ${money(a.adr)}<br>Occ. ${pct(a.occupancy)}<br>RevPAR ${money(a.revpar)}<br>Revenue ${money(a.revenue)}/mo</td><td>${comp.rating?comp.rating.toFixed(2):'—'} ★<br>${Math.round(comp.reviews||0)} reviews</td><td><select data-mi-action="source" data-id="${esc(comp.id)}"><option ${comp.sourceLabel==='Demo data'?'selected':''}>Demo data</option><option ${comp.sourceLabel==='Manual estimate'?'selected':''}>Manual estimate</option><option ${comp.sourceLabel==='Observed public price'?'selected':''}>Observed public price</option><option ${comp.sourceLabel==='Provider estimate'?'selected':''}>Provider estimate</option></select></td><td><button class="danger small-button" data-mi-action="remove" data-id="${esc(comp.id)}">Remove</button></td></tr>`;
+      return `<tr class="${comp.included?'':'excluded'}"><td><input type="checkbox" data-mi-action="toggle" data-id="${esc(comp.id)}" ${comp.included?'checked':''} aria-label="Include ${esc(comp.name)}"></td><td><strong>${esc(comp.name)}</strong><br><span class="pill platform-pill">${esc(comp.platform)}</span>${comp.listingUrl?`<br><a href="${esc(comp.listingUrl)}" target="_blank" rel="noopener">Public listing</a>`:''}</td><td><div class="score-meter"><div class="score-bar"><span style="width:${score}%"></span></div><strong>${score}%</strong></div><span class="data-note">${comp.distanceMiles===null||comp.distanceMiles===undefined?'Distance not published':comp.distanceMiles.toFixed(1)+' mi'}</span></td><td>${comp.bedrooms} BR · ${comp.bathrooms} BA<br>Sleeps ${comp.guests} · ${comp.beds||'—'} beds<br><span class="data-note">${esc(amenities)}</span></td><td>${a.adr||a.occupancy||a.revenue?`ADR ${money(a.adr)}<br>Occ. ${pct(a.occupancy)}<br>RevPAR ${money(a.revpar)}<br>Revenue ${money(a.revenue)}/mo`:'No performance claim'}<br><span class="data-note">${(comp.observations||[]).length} rate observation(s)</span></td><td>${comp.rating?comp.rating.toFixed(2):'—'} ★<br>${Math.round(comp.reviews||0)} reviews</td><td><select data-mi-action="source" data-id="${esc(comp.id)}"><option ${comp.sourceLabel==='Public listing metadata'?'selected':''}>Public listing metadata</option><option ${comp.sourceLabel==='Manual estimate'?'selected':''}>Manual estimate</option><option ${comp.sourceLabel==='Observed public price'?'selected':''}>Observed public price</option><option ${comp.sourceLabel==='Provider estimate'?'selected':''}>Provider estimate</option></select></td><td><button class="danger small-button" data-mi-action="remove" data-id="${esc(comp.id)}">Remove</button></td></tr>`;
     }).join('')}</tbody></table></div>`;
     $('miCompTable').querySelectorAll('[data-mi-action]').forEach(el=>{
       const action=el.dataset.miAction,id=el.dataset.id;
@@ -450,7 +449,7 @@
   }
 
   function renderAll() {
-    renderSummary(); renderCharts(); renderCompTable(); renderActuals();
+    renderSummary(); renderCharts(); renderCompTable(); renderActuals(); renderObservationPlan();
   }
 
   function parseCSV(text) {
@@ -518,7 +517,7 @@
     $('miProfile').addEventListener('change',()=>applyPreset($('miProfile').value));
     ['miAddress','miRadius','miBedroomsMin','miBedroomsMax','miBathroomsMin','miBathroomsMax','miGuestsMin','miGuestsMax','miRequireHotTub','miRequireArcade'].forEach(id=>$(id).addEventListener('change',readProfileInputs));
     $('miApplyProfile').addEventListener('click',()=>{readProfileInputs();app.property.comps.forEach(comp=>comp.included=profileMatches(comp));save();renderAll();message(`Profile applied: ${selectedComps().length} comparable(s) included.`);});
-    $('miResetDemo').addEventListener('click',()=>{if(confirm('Replace browser workspace with the original fictional demonstration data?')){app.workspace=clone(demoWorkspace);app.property=app.workspace.properties.find(property=>property.slug==='arbor-vista-retreat')||app.workspace.properties[0];save();populatePropertySelector();syncProfileInputs();renderAll();message('Demo workspace restored.');}});
+    $('miResetDemo').addEventListener('click',()=>{if(confirm('Replace the browser workspace with the bundled v4.2.1 real public snapshot?')){app.workspace=clone(demoWorkspace);app.property=app.workspace.properties.find(property=>property.slug==='arbor-vista-retreat')||app.workspace.properties[0];save();populatePropertySelector();syncProfileInputs();renderAll();message('Real public snapshot reloaded.');}});
     $('miCompSearch').addEventListener('input',()=>{app.search=$('miCompSearch').value;renderCompTable();});
     $('miIncludeAll').addEventListener('click',()=>{app.property.comps.forEach(comp=>comp.included=true);save();renderAll();});
     $('miExcludeAll').addEventListener('click',()=>{app.property.comps.forEach(comp=>comp.included=false);save();renderAll();});
@@ -537,10 +536,10 @@
 
   async function init() {
     try {
-      let demoData = window.ARBOR_MARKET_DEMO_DATA;
+      let demoData = window.ARBOR_MARKET_REAL_SNAPSHOT || window.ARBOR_MARKET_DEMO_DATA;
       if (!demoData) {
-        const response=await fetch('data/market-intelligence-demo.json',{cache:'no-store'});
-        if(!response.ok) throw new Error('Demo data file could not be loaded.');
+        const response=await fetch('data/market-intelligence-real-snapshot.json',{cache:'no-store'});
+        if(!response.ok) throw new Error('Real snapshot data file could not be loaded.');
         demoData=await response.json();
       }
       const demoWorkspace=normalizeWorkspace(demoData);
@@ -551,7 +550,7 @@
       app.property=workspace.properties.find(property=>property.slug===requested)||workspace.properties[0];
       populatePropertySelector();syncProfileInputs();bindEvents(demoWorkspace);renderAll();
     } catch(error) {
-      document.querySelector('.market-main').innerHTML=`<section class="notice warning"><strong>Market Intelligence could not start.</strong><br>${esc(error.message)}<br><br>Confirm that the complete package—including <code>admin/data/market-intelligence-demo.json</code>—was uploaded to GitHub.</section>`;
+      document.querySelector('.market-main').innerHTML=`<section class="notice warning"><strong>Market Intelligence could not start.</strong><br>${esc(error.message)}<br><br>Confirm that the complete package—including <code>admin/data/market-intelligence-real-snapshot.json</code>—was uploaded to GitHub.</section>`;
     }
   }
 
