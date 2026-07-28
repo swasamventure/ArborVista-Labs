@@ -1,7 +1,7 @@
 # Upload to ArborVista-Labs
 
 1. Extract this ZIP on your computer.
-2. Open the extracted `ArborVista_Platform_v4.2_Phase_A_Market_Intelligence` folder.
+2. Open the extracted `ArborVista_Platform_v4.2.1_Phase_A_Market_Intelligence` folder.
 3. Upload **the contents inside the folder** to the root of the `ArborVista-Labs` repository, replacing prior files when prompted.
 4. Commit the changes to the branch configured for GitHub Pages.
 5. Open repository **Settings → Pages** and confirm the publishing branch and `/ (root)` folder.

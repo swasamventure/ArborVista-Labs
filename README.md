@@ -1,4 +1,4 @@
-# Arbor Vista Platform v4.2 — Multi-Property Operations
+# Arbor Vista Platform v4.2.1 — Multi-Property Operations
 
 This Git/local build implements features 1–7 requested for the shared STR platform while keeping each property website independently transferable.
 
@@ -37,6 +37,6 @@ python QA/run_v41_qa.py
 The local SQLite API is a reference implementation. Before collecting real guest data, deploy the PostgreSQL/Supabase target, enable authentication and Row Level Security, store secrets outside Git, use HTTPS, and configure backups and monitoring.
 
 
-## Phase A Market Intelligence
+## Real Comp Snapshot
 
 Open `admin/market-intelligence.html`. It runs as a static GitHub Pages browser workspace and does not require the local API. See `Docs/PHASE_A_MARKET_INTELLIGENCE.md`.

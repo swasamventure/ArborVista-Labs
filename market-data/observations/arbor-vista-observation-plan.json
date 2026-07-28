@@ -1,0 +1,80 @@
+{
+  "version": "4.2.1",
+  "propertySlug": "arbor-vista-retreat",
+  "createdAt": "2026-07-28",
+  "collectionPolicy": "Manual public observation only. No automated scraping. Record the exact dates, guest count, displayed total, taxes/fees treatment, and source URL.",
+  "windows": [
+    {
+      "id": "weekday-30",
+      "label": "Weekday 30-day lookahead",
+      "cadence": "monthly",
+      "leadDays": 30,
+      "nights": 2,
+      "dayPattern": "Monday\u2013Wednesday",
+      "guests": 6
+    },
+    {
+      "id": "weekend-30",
+      "label": "Weekend 30-day lookahead",
+      "cadence": "monthly",
+      "leadDays": 30,
+      "nights": 2,
+      "dayPattern": "Friday\u2013Sunday",
+      "guests": 6
+    },
+    {
+      "id": "weekday-60",
+      "label": "Weekday 60-day lookahead",
+      "cadence": "monthly",
+      "leadDays": 60,
+      "nights": 2,
+      "dayPattern": "Monday\u2013Wednesday",
+      "guests": 6
+    },
+    {
+      "id": "weekend-60",
+      "label": "Weekend 60-day lookahead",
+      "cadence": "monthly",
+      "leadDays": 60,
+      "nights": 2,
+      "dayPattern": "Friday\u2013Sunday",
+      "guests": 6
+    },
+    {
+      "id": "weekday-90",
+      "label": "Weekday 90-day lookahead",
+      "cadence": "monthly",
+      "leadDays": 90,
+      "nights": 2,
+      "dayPattern": "Monday\u2013Wednesday",
+      "guests": 6
+    },
+    {
+      "id": "weekend-90",
+      "label": "Weekend 90-day lookahead",
+      "cadence": "monthly",
+      "leadDays": 90,
+      "nights": 2,
+      "dayPattern": "Friday\u2013Sunday",
+      "guests": 6
+    },
+    {
+      "id": "holiday",
+      "label": "Major holiday/event window",
+      "cadence": "quarterly",
+      "leadDays": 120,
+      "nights": 3,
+      "dayPattern": "Selected holiday/event",
+      "guests": 6
+    },
+    {
+      "id": "capacity-8",
+      "label": "Sleeps-eight scenario",
+      "cadence": "quarterly",
+      "leadDays": 60,
+      "nights": 2,
+      "dayPattern": "Weekend",
+      "guests": 8
+    }
+  ]
+}

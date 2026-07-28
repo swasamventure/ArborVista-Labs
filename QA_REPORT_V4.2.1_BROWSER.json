@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "checks_passed": 10,
+  "checks_total": 10,
+  "checks": [
+    {
+      "name": "Six metadata summary cards",
+      "passed": true,
+      "detail": "6"
+    },
+    {
+      "name": "83 public comp rows",
+      "passed": true,
+      "detail": "83"
+    },
+    {
+      "name": "Three platforms represented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Observation plan renders",
+      "passed": true,
+      "detail": "8"
+    },
+    {
+      "name": "Metadata charts render",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Real snapshot label visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No performance claims for metadata-only records",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Analysis CSV downloads",
+      "passed": true,
+      "detail": "arbor-vista-retreat-market-analysis.csv"
+    },
+    {
+      "name": "Mobile page renders",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
