@@ -1,0 +1,12 @@
+{
+  "release": "4.2.1.1",
+  "status": "PASS",
+  "checks": {
+    "real_snapshot_script_present": true,
+    "legacy_workspace_reset_script_present": true,
+    "demo_wording_removed_from_page": true,
+    "cache_busting_updated": true,
+    "real_snapshot_record_count": 83
+  },
+  "purpose": "Force legacy browser demo workspaces to reset once and load the bundled v4.2.1 real comp snapshot."
+}
