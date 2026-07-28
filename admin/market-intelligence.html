@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Market Intelligence | Swasam Venture</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="admin.css?v=4.2">
+  <link rel="stylesheet" href="market-intelligence.css?v=4.2">
+  <script src="../config/runtime-config.js"></script>
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="admin-side">
+    <a class="admin-brand" href="dashboard.html">Swasam Venture<small>Multi-Property STR Console</small></a>
+    <nav>
+      <a data-page="dashboard" href="dashboard.html">Dashboard</a>
+      <a data-page="calendar" href="calendar.html">Combined Calendar</a>
+      <a data-page="reservations" href="reservations.html">Reservations</a>
+      <a data-page="settings" href="settings.html">Calendar Sources</a>
+      <a data-page="cleaning" href="cleaning-calendar.html">Cleaning iCal</a>
+      <a data-page="reports" href="reports.html">Reporting</a>
+      <a class="active" data-page="market" href="market-intelligence.html">Market Intelligence</a>
+      <a data-page="export" href="property-export.html">Property Export</a>
+      <a data-page="logs" href="sync-log.html">Sync &amp; Audit Logs</a>
+      <a href="../index.html">← Arbor Vista website</a>
+    </nav>
+    <div class="scope-note">GitHub/browser Phase A<br>No API key required<br>CSV and local browser workspace</div>
+  </aside>
+
+  <main class="admin-main market-main">
+    <header class="topbar market-topbar">
+      <div>
+        <span class="kicker">Shared platform · v4.2 · Phase A</span>
+        <h1>Market Intelligence</h1>
+        <p class="muted max-copy">Compare each property with a manually curated or CSV-imported comp set. All calculations run in this browser.</p>
+      </div>
+      <div class="top-actions">
+        <label>Property
+          <select id="miPropertySelector"></select>
+        </label>
+        <span class="status ok">Browser workspace</span>
+      </div>
+    </header>
+
+    <section class="notice security">
+      <strong>GitHub-safe preview.</strong> Demo data is fictional. Uploaded CSV/JSON files stay in this browser and are not committed to GitHub. Do not place API keys, private iCal URLs, guest information, or confidential financial data in the repository.
+    </section>
+
+    <section class="panel market-controls">
+      <div class="panel-head">
+        <div><h2>Comparable search profile</h2><p class="muted">Use the address and filters to define the comp set. Phase A does not fetch websites automatically.</p></div>
+        <div class="toolbar compact-toolbar">
+          <button class="secondary" id="miApplyProfile">Apply profile</button>
+          <button class="secondary" id="miResetDemo">Reset demo</button>
+        </div>
+      </div>
+      <div class="market-form-grid">
+        <label class="span-2">Property address<input id="miAddress" autocomplete="street-address"></label>
+        <label>Profile<select id="miProfile"><option value="exact">Exact match</option><option value="expanded">Expanded match</option><option value="custom">Custom</option></select></label>
+        <label>Radius (miles)<input id="miRadius" type="number" min="0.5" max="50" step="0.5"></label>
+        <label>Bedrooms min<input id="miBedroomsMin" type="number" min="0" max="20" step="1"></label>
+        <label>Bedrooms max<input id="miBedroomsMax" type="number" min="0" max="20" step="1"></label>
+        <label>Bathrooms min<input id="miBathroomsMin" type="number" min="0" max="20" step="0.5"></label>
+        <label>Bathrooms max<input id="miBathroomsMax" type="number" min="0" max="20" step="0.5"></label>
+        <label>Guests min<input id="miGuestsMin" type="number" min="1" max="40" step="1"></label>
+        <label>Guests max<input id="miGuestsMax" type="number" min="1" max="40" step="1"></label>
+        <label class="check-field"><input id="miRequireHotTub" type="checkbox"> Require hot tub</label>
+        <label class="check-field"><input id="miRequireArcade" type="checkbox"> Require game room/arcade</label>
+      </div>
+      <div class="toolbar">
+        <label class="file-button primary">Import comp CSV<input id="miCsvInput" type="file" accept=".csv,text/csv" hidden></label>
+        <label class="file-button secondary">Import workspace JSON<input id="miJsonInput" type="file" accept=".json,application/json" hidden></label>
+        <button class="secondary" id="miExportWorkspace">Export workspace</button>
+        <button class="secondary" id="miExportAnalysis">Export analysis CSV</button>
+        <a class="button-link secondary" href="data/market-comp-import-template.csv" download>CSV template</a>
+        <span id="miMessage" class="muted" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="metric-grid market-metrics" id="miSummaryMetrics"></section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>Monthly performance</h2><p class="muted">Arbor Vista values are browser-entered/demo actuals. Competitor metrics are estimates or observations from the selected comps.</p></div><span id="miCompCount" class="property-badge"></span></div>
+      <div class="chart-grid">
+        <article class="chart-card"><h3>ADR</h3><div id="miAdrChart" class="chart-host"></div></article>
+        <article class="chart-card"><h3>Occupancy</h3><div id="miOccupancyChart" class="chart-host"></div></article>
+        <article class="chart-card"><h3>RevPAR</h3><div id="miRevparChart" class="chart-host"></div></article>
+        <article class="chart-card"><h3>Monthly revenue</h3><div id="miRevenueChart" class="chart-host"></div></article>
+      </div>
+    </section>
+
+    <section class="split market-split">
+      <article class="panel"><div class="panel-head"><div><h2>ADR vs occupancy</h2><p class="muted">One point per comparable listing using annualized demo/imported metrics.</p></div></div><div id="miScatterChart" class="chart-host tall-chart"></div></article>
+      <article class="panel"><div class="panel-head"><div><h2>Future nightly rates</h2><p class="muted">Sample forward-rate curve; replace through workspace import when provider data is available.</p></div></div><div id="miFutureChart" class="chart-host tall-chart"></div></article>
+    </section>
+
+    <section class="split market-split">
+      <article class="panel"><div class="panel-head"><div><h2>Amenity premium</h2><p class="muted">Difference in average RevPAR for comps with versus without the amenity. Small samples are flagged.</p></div></div><div id="miAmenityChart" class="chart-host"></div></article>
+      <article class="panel"><div class="panel-head"><div><h2>Guest-capacity comparison</h2><p class="muted">Compares listings sleeping up to six against listings sleeping seven or eight.</p></div></div><div id="miCapacityChart" class="chart-host"></div></article>
+    </section>
+
+    <section class="split market-split">
+      <article class="panel"><div class="panel-head"><div><h2>Comparable ranking</h2><p class="muted">Top included listings by similarity score and estimated monthly performance.</p></div></div><div id="miRankingChart" class="chart-host tall-chart"></div></article>
+      <article class="panel"><div class="panel-head"><div><h2>Review position</h2><p class="muted">Rating and review count for the selected comp set. Review count is shown on a logarithmic visual scale.</p></div></div><div id="miReviewChart" class="chart-host tall-chart"></div></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div><h2>Comparable properties</h2><p class="muted">Include/exclude properties and edit source labels. Similarity uses distance, bedrooms, guests, and amenities.</p></div>
+        <div class="toolbar compact-toolbar"><input id="miCompSearch" placeholder="Search comps"><button id="miIncludeAll" class="secondary">Include all</button><button id="miExcludeAll" class="secondary">Exclude all</button></div>
+      </div>
+      <div id="miCompTable"></div>
+    </section>
+
+    <section class="panel">
+      <details>
+        <summary><strong>Add a comparable property manually</strong></summary>
+        <form id="miAddCompForm" class="market-form-grid manual-form">
+          <label class="span-2">Listing name<input name="name" required></label>
+          <label>Platform<select name="platform"><option>Airbnb</option><option>Vrbo</option><option>Booking.com</option><option>Other</option></select></label>
+          <label>Distance (miles)<input name="distanceMiles" type="number" min="0" step="0.1" required></label>
+          <label>Bedrooms<input name="bedrooms" type="number" min="0" step="1" required></label>
+          <label>Bathrooms<input name="bathrooms" type="number" min="0" step="0.5" required></label>
+          <label>Guests<input name="guests" type="number" min="1" step="1" required></label>
+          <label>Rating<input name="rating" type="number" min="0" max="5" step="0.1"></label>
+          <label>Reviews<input name="reviews" type="number" min="0" step="1"></label>
+          <label>Monthly ADR<input name="adr" type="number" min="0" step="1" required></label>
+          <label>Occupancy %<input name="occupancy" type="number" min="0" max="100" step="1" required></label>
+          <label>Monthly revenue<input name="revenue" type="number" min="0" step="1"></label>
+          <label>Data source<select name="sourceLabel"><option>Manual estimate</option><option>Observed public price</option><option>Provider estimate</option><option>Demo data</option></select></label>
+          <label class="check-field"><input name="hotTub" type="checkbox"> Hot tub</label>
+          <label class="check-field"><input name="arcade" type="checkbox"> Arcade/game room</label>
+          <label class="check-field"><input name="fireplace" type="checkbox"> Fireplace</label>
+          <label class="check-field"><input name="resortAmenities" type="checkbox"> Resort amenities</label>
+          <div class="span-2"><button type="submit">Add comparable</button></div>
+        </form>
+      </details>
+    </section>
+
+    <section class="panel">
+      <details>
+        <summary><strong>Edit the selected property’s monthly actuals</strong></summary>
+        <p class="muted">These values are stored only in this browser. Use zero where data is unavailable.</p>
+        <div id="miActualsTable"></div>
+      </details>
+    </section>
+
+    <section class="notice warning">
+      <strong>Interpretation limits:</strong> competitor occupancy and revenue are usually estimates; blocked dates may be owner holds rather than bookings; fees and minimum stays must be normalized; and one physical property may appear on multiple channels. Phase A does not scrape Airbnb, Vrbo, or Booking.com.
+    </section>
+  </main>
+</div>
+<script src="data/market-intelligence-demo.js?v=4.2"></script>
+<script src="market-intelligence.js?v=4.2"></script>
+</body>
+</html>

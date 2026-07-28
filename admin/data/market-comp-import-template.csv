@@ -1,0 +1,3 @@
+listing_id,listing_name,platform,listing_url,distance_miles,bedrooms,bathrooms,guests,beds,rating,review_count,hot_tub,arcade,fireplace,resort_amenities,pet_friendly,ev_charger,month,adr,occupancy,revenue,data_source
+comp-001,Example cabin,Airbnb,https://example.com/listing,1.2,2,2.5,6,4,4.90,120,true,true,true,true,false,false,Jan,245,62,4620,Provider estimate
+comp-001,Example cabin,Airbnb,https://example.com/listing,1.2,2,2.5,6,4,4.90,120,true,true,true,true,false,false,Feb,252,65,4980,Provider estimate
