@@ -1,0 +1,438 @@
+{
+  "version": "4.2",
+  "status": "PASS",
+  "checks_passed": 86,
+  "checks_total": 86,
+  "checks": [
+    {
+      "name": "Required Phase A file exists: admin/market-intelligence.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: admin/market-intelligence.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: admin/market-intelligence.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: admin/data/market-intelligence-demo.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: admin/data/market-intelligence-demo.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: admin/data/market-comp-import-template.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: Docs/PHASE_A_MARKET_INTELLIGENCE.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: UPLOAD_TO_GITHUB.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: market-data/providers/ADAPTER_CONTRACT.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Required Phase A file exists: supabase/migrations/004_market_intelligence_phase_a.sql",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miPropertySelector",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miAddress",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miProfile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miRadius",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miCsvInput",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miJsonInput",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miSummaryMetrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miAdrChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miOccupancyChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miRevparChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miRevenueChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miScatterChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miFutureChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miAmenityChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miCapacityChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miRankingChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miReviewChart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miCompTable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miAddCompForm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page contains #miActualsTable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page is GitHub project-path compatible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page warns that Phase A does not scrape channels",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market page warns against storing secrets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Two-property demo workspace included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Arbor Vista is the primary demo property",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Arbor Vista retains standard occupancy six",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Arbor Vista expanded scenario is eight",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Demo contains twelve fictional comps",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Every demo comp is explicitly demo-labeled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Demo comp names are fictional",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No guest identity is included in market demo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV parser implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV import grouping implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Workspace import/export implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Browser persistence implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Graceful storage fallback implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Similarity scoring implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Amenity premium calculation implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Capacity analysis implemented",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No external chart library dependency",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Responsive market CSS included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supabase market migration table exists: comp_search_profiles",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supabase market migration table exists: comparable_properties",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supabase market migration table exists: comp_monthly_metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supabase market migration table exists: comp_daily_rates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market JavaScript syntax passes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in sync-log.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in sync-log.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in reservations.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in reservations.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in property-export.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in property-export.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in login.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in reports.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in reports.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in cleaning-calendar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in cleaning-calendar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in market-intelligence.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in market-intelligence.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in dashboard.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in dashboard.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in calendar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in calendar.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No absolute admin base in settings.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence navigation in settings.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Browser renders five summary metrics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Browser renders twelve initial comp rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Browser renders ten dynamic charts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Browser renders two property choices",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Browser has no JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Exact-match profile dynamically filters comps",
+      "passed": true,
+      "detail": "6"
+    },
+    {
+      "name": "Manual comparable can be added",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Workspace JSON export downloads",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Analysis CSV export downloads",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Property selector switches the browser workspace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile view retains all ten charts",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

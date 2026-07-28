@@ -16,6 +16,7 @@ SUITES = [
     ("booking_integration", ROOT / "QA/run_v32_integration_qa.py", ROOT / "QA_REPORT_V3.2_INTEGRATION.json"),
     ("features_1_to_7", ROOT / "QA/run_v41_qa.py", ROOT / "QA_REPORT_V4.1.json"),
     ("api_permissions", ROOT / "QA/run_v41_api_qa.py", ROOT / "QA_REPORT_V4.1_API.json"),
+    ("phase_a_market_intelligence", ROOT / "QA/run_v42_market_qa.py", ROOT / "QA_REPORT_V4.2_MARKET.json"),
 ]
 
 
@@ -43,7 +44,7 @@ def main() -> None:
     total = sum(v["total"] for v in results.values())
     status = "PASS" if all(v["status"] == "PASS" for v in results.values()) and passed == total else "FAIL"
     final = {
-        "version": "4.1",
+        "version": "4.2",
         "status": status,
         "checks_passed": passed,
         "checks_total": total,
@@ -51,14 +52,16 @@ def main() -> None:
         "scope": [
             "multi-property database", "central dashboard", "reservation engine", "calendar engine",
             "local role permissions and Supabase RLS target", "reporting", "property transfer export",
-            "cleaning iCal without guest names",
+            "cleaning iCal without guest names", "Phase A Market Intelligence browser workspace",
+            "manual/CSV comparable-property analysis and dynamic charts",
         ],
-        "excluded": ["Stripe/payment processing", "outbound email delivery", "live hosted Supabase authentication"],
+        "excluded": ["Stripe/payment processing", "outbound email delivery", "live hosted Supabase authentication",
+                     "paid market-data API connection", "automated Airbnb/Vrbo/Booking.com data collection"],
     }
-    (ROOT / "QA_REPORT_V4.1_FINAL.json").write_text(json.dumps(final, indent=2), encoding="utf-8")
+    (ROOT / "QA_REPORT_V4.2_FINAL.json").write_text(json.dumps(final, indent=2), encoding="utf-8")
 
     lines = [
-        "# Arbor Vista Platform v4.1 — Final QA Report", "",
+        "# Arbor Vista Platform v4.2 — Final QA Report", "",
         f"**Overall status: {status}**", "",
         f"**Combined automated result: {passed}/{total} checks passed.**", "",
         "| Suite | Passed | Total | Status |", "|---|---:|---:|---|",
@@ -71,6 +74,7 @@ def main() -> None:
         "booking_integration":"Booking/database integration",
         "features_1_to_7":"Features 1–7 functional QA",
         "api_permissions":"API, roles, and privacy QA",
+        "phase_a_market_intelligence":"Phase A Market Intelligence",
     }
     for key, value in results.items():
         lines.append(f"| {labels[key]} | {value['passed']} | {value['total']} | {value['status']} |")
@@ -80,9 +84,11 @@ def main() -> None:
         "It excludes guest names, email addresses, phone numbers, payment details, door codes, and private guest notes.", "",
         "## Deployment boundary", "",
         "This release is a Git/local reference implementation. Production authentication, secrets, scheduled sync, backups, monitoring, and the hosted PostgreSQL/Supabase deployment are not active until the cloud migration is completed.", "",
-        "Stripe and outbound email delivery remain intentionally excluded.",
+        "Stripe and outbound email delivery remain intentionally excluded.", "",
+        "## Phase A boundary", "",
+        "Market Intelligence works on GitHub Pages using fictional demo data, manual entries, CSV import, and browser-local storage. Paid provider APIs, automated channel collection, server-side credentials, and scheduled refresh jobs remain deferred until the Supabase migration.",
     ]
-    (ROOT / "QA_REPORT_V4.1_FINAL.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (ROOT / "QA_REPORT_V4.2_FINAL.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps(final, indent=2))
     if status != "PASS":
         raise SystemExit(1)
