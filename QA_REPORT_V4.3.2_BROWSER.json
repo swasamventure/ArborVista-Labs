@@ -1,0 +1,103 @@
+{
+  "version": "4.3.2",
+  "status": "PASS",
+  "checks_passed": 19,
+  "checks_total": 19,
+  "checks": [
+    {
+      "name": "Homepage logo visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage direct booking visible",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "Homepage rotator visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage rotates after three seconds",
+      "passed": true,
+      "detail": "('Slow down under the Smoky Mountain sky.', 'Gather around food without leaving the conversation.')"
+    },
+    {
+      "name": "Pause button injected",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "Pause button toggles",
+      "passed": true,
+      "detail": "true"
+    },
+    {
+      "name": "Cabin hero heading is white",
+      "passed": true,
+      "detail": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "Cabin has two rotators",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "Explore has one destination rotator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Explore has no three-column image grid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gallery shows one image",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gallery rotates after three seconds",
+      "passed": true,
+      "detail": "('A warm mountain welcome at Arbor Vista Retreat', 'Your private cabin escape in the Smokies')"
+    },
+    {
+      "name": "Gallery filter works",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Four booking navigation steps remain",
+      "passed": true,
+      "detail": "4"
+    },
+    {
+      "name": "Booking form remains present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile sticky availability visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile body has no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile gallery has no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No page JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ]
+}

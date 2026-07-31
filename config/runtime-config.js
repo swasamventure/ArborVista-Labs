@@ -5,6 +5,7 @@
   window.ARBOR_VISTA_CONFIG = Object.freeze({
     apiBaseUrl: String(injected.apiBaseUrl || (local ? '/api/v1' : 'https://api.swasamventure.com/v1')).replace(/\/$/, ''),
     propertySlug: injected.propertySlug || 'arbor-vista-retreat',
+  analyticsEndpoint: "",
     environment: injected.environment || (local ? 'development' : 'production'),
     requestTimeoutMs: Number(injected.requestTimeoutMs || 15000),
     stripeEnabled: false,

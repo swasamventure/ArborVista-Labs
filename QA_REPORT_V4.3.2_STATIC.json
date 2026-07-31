@@ -1,0 +1,418 @@
+{
+  "version": "4.3.2",
+  "status": "PASS",
+  "checks_passed": 82,
+  "checks_total": 82,
+  "checks": [
+    {
+      "name": "index.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gallery.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "plan.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "plan.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "plan.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "plan.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "plan.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "plan.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "faq.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "faq.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "faq.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "faq.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "faq.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "faq.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "welcome.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "welcome.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "welcome.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "welcome.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "welcome.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "welcome.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "book-direct.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "book-direct.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "book-direct.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "book-direct.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "book-direct.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rental-agreement.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rental-agreement.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rental-agreement.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rental-agreement.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rental-agreement.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rental-agreement.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "404.html: shared logo header",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "404.html: skip link",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "404.html: v4.3.2 stylesheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "404.html: analytics placeholder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "404.html: direct booking path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "404.html: sticky availability CTA",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: has stabilized rotator",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "index.html: all rotators use 3000ms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html: one active slide per rotator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: has stabilized rotator",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "cabin.html: all rotators use 3000ms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cabin.html: one active slide per rotator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: has stabilized rotator",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "explore.html: all rotators use 3000ms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explore.html: one active slide per rotator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gallery uses one image element",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "Gallery data retains full collection",
+      "passed": true,
+      "detail": "47"
+    },
+    {
+      "name": "Explore no multi-image photo grid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage uses no masonry or three-column photo gallery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Only two approved kitchen images referenced outside gallery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Rotator supports keyboard arrows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Rotator supports pause/play",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Rotator supports swipe",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Rotator respects reduced motion",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Analytics excludes common PII fields",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "assets/v43.js: JavaScript syntax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "assets/gallery-v432.js: JavaScript syntax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "assets/analytics-v432.js: JavaScript syntax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sitemap includes all public URLs",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

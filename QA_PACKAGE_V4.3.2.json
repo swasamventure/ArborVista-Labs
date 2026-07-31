@@ -1,0 +1,10 @@
+{
+  "release": "4.3.2",
+  "package_name": "ArborVista_Platform_v4.3.2_UI_Stabilization_QA_GitHub_Ready.zip",
+  "generated_at": "2026-07-31",
+  "qa_status": "PASS",
+  "qa_checks": "347/347",
+  "full_collection_gallery_images": 47,
+  "real_comp_records": 83,
+  "changed_files_vs_v4.3.1": 40
+}
