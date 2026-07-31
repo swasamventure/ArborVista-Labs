@@ -1,4 +1,4 @@
-# Next Phase — AI Guest Assistant
+# Planned v4.4 — AI Guest Assistant
 
 Planned capabilities:
 

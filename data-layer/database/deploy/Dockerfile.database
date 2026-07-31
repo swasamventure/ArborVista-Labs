@@ -1,0 +1,9 @@
+FROM postgres:16-alpine
+
+COPY dist/bootstrap.sql /docker-entrypoint-initdb.d/010_bootstrap.sql
+COPY seed/010_arbor_vista_base.sql /docker-entrypoint-initdb.d/020_arbor_vista_base.sql
+COPY seed/020_real_comp_snapshot.sql /docker-entrypoint-initdb.d/030_real_comp_snapshot.sql
+COPY tests/001_schema_smoke.sql /opt/arbor-vista/tests/001_schema_smoke.sql
+COPY tests/002_business_rules.sql /opt/arbor-vista/tests/002_business_rules.sql
+COPY tests/003_security_contract.sql /opt/arbor-vista/tests/003_security_contract.sql
+COPY tests/004_market_seed.sql /opt/arbor-vista/tests/004_market_seed.sql

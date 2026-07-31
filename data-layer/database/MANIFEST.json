@@ -1,0 +1,205 @@
+{
+  "release": "1.0",
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 253,
+      "sha256": "dfc27b6353dfad14b865c96f38d25ea653b0709c5ad9a7bfdc693a52caf84c87"
+    },
+    {
+      "path": ".github/workflows/database-ci.yml",
+      "bytes": 1474,
+      "sha256": "3181e6971078c2edcaec4d4e539f3856d1b3b96318b6d1402082ce1696427e5b"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 59,
+      "sha256": "371ed6d54e22a0e1b99c3d33089330b82ec831e1635caeaea0fe91cf44787e75"
+    },
+    {
+      "path": "Makefile",
+      "bytes": 321,
+      "sha256": "d3f7736317af1395e49e40d88a449392981a524aa638c8f3de61ab1ae20376ec"
+    },
+    {
+      "path": "QA_REPORT.md",
+      "bytes": 1371,
+      "sha256": "e954b6155005669c4f8ca0e2f88aa499c0ba30c6e10f5c6316946fd2a9973642"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3229,
+      "sha256": "670da496d2a692aa59f7a87e72a1b2a099c25bd9a23c70401214cacacb0ecd67"
+    },
+    {
+      "path": "deploy/Dockerfile.database",
+      "bytes": 591,
+      "sha256": "e3a89032475fc37ed8cb685f5eff03abd8b56be94cdc3260b4f5ef6d9102d060"
+    },
+    {
+      "path": "deploy/roles.example.sql",
+      "bytes": 899,
+      "sha256": "333e7be0c7418a935d75cd10ef0d64253ccbec823d12dcee336f2de56e1d5561"
+    },
+    {
+      "path": "dist/bootstrap.sql",
+      "bytes": 69885,
+      "sha256": "1f699418aeca61800f0f07e971bfabe05f4ac78f3c23037dab4c881f032138e4"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 662,
+      "sha256": "a1c324cd900e05165dfa1d92a150ace921746806df0f6487f7581ca2be4d7e16"
+    },
+    {
+      "path": "docs/DATABASE_ARCHITECTURE.md",
+      "bytes": 2482,
+      "sha256": "3762c139911ee7bdc19ac28cbe2f1ddb3d52853216462cc4d4427d4a50427770"
+    },
+    {
+      "path": "docs/DATA_DICTIONARY.md",
+      "bytes": 3713,
+      "sha256": "e980d9cad848b84016f83278386e312e60c1725d9930c52439a553fd0116b515"
+    },
+    {
+      "path": "docs/ERD.md",
+      "bytes": 1521,
+      "sha256": "7c26c6b9a2f91f05e6230687fd9108bc30d73ba3c8b7ed4e4728cbafd4c8bc0b"
+    },
+    {
+      "path": "docs/MIGRATION_PLAN.md",
+      "bytes": 926,
+      "sha256": "8189d21bcdc996360c3f7c21a879c16e55d42ec96e4a406506303a6ffe555fe7"
+    },
+    {
+      "path": "docs/OPERATIONS.md",
+      "bytes": 998,
+      "sha256": "bd1b10940115db5c9422d7422f9646220730b3023d47a7da21e907f5060462e5"
+    },
+    {
+      "path": "docs/SECURITY_AND_PRIVACY.md",
+      "bytes": 1649,
+      "sha256": "3693456e47a4b04c6c0d17c5565150e7fa35d48b713148dda32fb1bfc1cf2ec6"
+    },
+    {
+      "path": "market-data/arbor-vista-real-comp-snapshot-2026-07-28.json",
+      "bytes": 87623,
+      "sha256": "71d1c2ab9724b72b0685f1d932f3cc839189353c6d8a4bdd0853aa1b3a8fe019"
+    },
+    {
+      "path": "migrations/001_extensions_and_schemas.sql",
+      "bytes": 1168,
+      "sha256": "0642d611dd16bb47b4a86328f7b2772340d3801b3326c12c84c64a9854e0ff09"
+    },
+    {
+      "path": "migrations/002_identity_and_properties.sql",
+      "bytes": 6912,
+      "sha256": "69a1381bc2952a297505558bc7ad53b3a3aa3fe40bac41d8df09e54912137b50"
+    },
+    {
+      "path": "migrations/003_secure_data.sql",
+      "bytes": 3180,
+      "sha256": "6f605e2c55847fe4673ed32a6b16a82c9c05711e241482c0e42954271779b87f"
+    },
+    {
+      "path": "migrations/004_booking_and_calendar.sql",
+      "bytes": 18592,
+      "sha256": "401625d3b2f2a0ef75234a1fae1c5fd97fc3bdc6b4b735f5b4755bf0b05705c8"
+    },
+    {
+      "path": "migrations/005_messaging_and_email.sql",
+      "bytes": 5520,
+      "sha256": "9c1cc1bfd1f00a448f3077acafd443a1678f6851610cfddbdeef8b86c5c78e09"
+    },
+    {
+      "path": "migrations/006_market_intelligence.sql",
+      "bytes": 5921,
+      "sha256": "2a1866e08659e97b6c7dc0e92cd995fbb8ba7939e8a2977aebdbd6c3f23e7739"
+    },
+    {
+      "path": "migrations/007_ai_guest_assistant.sql",
+      "bytes": 6335,
+      "sha256": "649fee50b5445ba0b028e7e32468f8edaab3cc9714b16c4f1bf709215f81af61"
+    },
+    {
+      "path": "migrations/008_observability_and_analytics.sql",
+      "bytes": 5046,
+      "sha256": "fd9fe2efb63fc13486e15c08689254a067c76c72f07d170b54d2051b133128c8"
+    },
+    {
+      "path": "migrations/009_api_views_and_functions.sql",
+      "bytes": 7436,
+      "sha256": "2329a2be426578466e3c3f12a89459e76b1833fd2de2646563026386222182ba"
+    },
+    {
+      "path": "migrations/010_row_level_security.sql",
+      "bytes": 9757,
+      "sha256": "a6068544a09910bd60a47a04c9301216c1f02fdd259743b46798fca511d7cd52"
+    },
+    {
+      "path": "scripts/backup.sh",
+      "bytes": 284,
+      "sha256": "a5a23329341996d506ddc87b59e93c6a028f122986f475744453624c2f04fc9e"
+    },
+    {
+      "path": "scripts/migrate.sh",
+      "bytes": 179,
+      "sha256": "a999dbf1b86302ed32c7eda07b0630b13ef4549fd26f77b3179efeeb507ab451"
+    },
+    {
+      "path": "scripts/reset_local.sh",
+      "bytes": 240,
+      "sha256": "aa0405000276920dbc8caedcbff38e4b31483ba9464967d9b90a98aa4e4fdeb8"
+    },
+    {
+      "path": "scripts/seed.sh",
+      "bytes": 173,
+      "sha256": "8264d43c7214d27a67feb7c116d2284c8d832f8563b4405a7cd2c34c7d9ea101"
+    },
+    {
+      "path": "scripts/test.sh",
+      "bytes": 173,
+      "sha256": "3764fb63735ae9581e783163cff095c458b25d6f6d6281cde6bc4e32cfc0f127"
+    },
+    {
+      "path": "seed/010_arbor_vista_base.sql",
+      "bytes": 6807,
+      "sha256": "4e4a68903ccc78bfb8c08b5c53a451cc9b236f525fbf15751a3c02ca30b69da7"
+    },
+    {
+      "path": "seed/020_real_comp_snapshot.sql",
+      "bytes": 56845,
+      "sha256": "4d40b82714a440607a2d0fbfd01a29eb6145dfd06b8aafdf8c32bfe753b9e423"
+    },
+    {
+      "path": "supabase/001_auth_adapter.sql",
+      "bytes": 934,
+      "sha256": "b7fb3ddb92a03420d22ac865455213a0bcf2bb2dbc051ca105b99ce852dafd2f"
+    },
+    {
+      "path": "supabase/README.md",
+      "bytes": 511,
+      "sha256": "64cb54616f45e77b105c8536944767dfac70e87ded5850220fbae14d8159d04f"
+    },
+    {
+      "path": "tests/001_schema_smoke.sql",
+      "bytes": 611,
+      "sha256": "4560a956c5fab201244a3cc8c09917f7c99106a9178bd94059d26262c75c237d"
+    },
+    {
+      "path": "tests/002_business_rules.sql",
+      "bytes": 2316,
+      "sha256": "ddcf5c29dab1b3342522b2e7b8acba62375a6396a0b2953195e0c98d3ea9a0d6"
+    },
+    {
+      "path": "tests/003_security_contract.sql",
+      "bytes": 816,
+      "sha256": "2f6abd827603cc382432c1fdf27f11b360a0f14788bdeb61b99db9af273fca7b"
+    },
+    {
+      "path": "tests/004_market_seed.sql",
+      "bytes": 762,
+      "sha256": "709ebd44ef4c96402e123e85a0242deacce93e081b2865e44f0eceab3a29709d"
+    }
+  ]
+}

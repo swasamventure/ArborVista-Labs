@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Real Comp Snapshot | Swasam Venture</title>
   <meta name="robots" content="noindex,nofollow">
-  <link rel="stylesheet" href="admin.css?v=4.2.1.1">
-  <link rel="stylesheet" href="market-intelligence.css?v=4.2.1.1">
+  <link rel="stylesheet" href="admin.css?v=4.2.1">
+  <link rel="stylesheet" href="market-intelligence.css?v=4.2.1">
   <script src="../config/runtime-config.js"></script>
 </head>
 <body>
@@ -97,7 +97,7 @@
     </section>
 
     <section class="panel">
-      <div class="panel-head"><div><h2>Monthly performance</h2><p class="muted">Arbor Vista values are owner-entered actuals. Comparable performance charts populate only from imported, manually entered, or repeatedly observed metrics.</p></div><span id="miCompCount" class="property-badge"></span></div>
+      <div class="panel-head"><div><h2>Monthly performance</h2><p class="muted">Arbor Vista values are browser-entered/demo actuals. Competitor metrics are estimates or observations from the selected comps.</p></div><span id="miCompCount" class="property-badge"></span></div>
       <div class="chart-grid">
         <article class="chart-card"><h3>ADR</h3><div id="miAdrChart" class="chart-host"></div></article>
         <article class="chart-card"><h3>Occupancy</h3><div id="miOccupancyChart" class="chart-host"></div></article>
@@ -107,8 +107,8 @@
     </section>
 
     <section class="split market-split">
-      <article class="panel"><div class="panel-head"><div><h2>ADR vs occupancy</h2><p class="muted">One point per comparable listing when imported or observed performance metrics are available.</p></div></div><div id="miScatterChart" class="chart-host tall-chart"></div></article>
-      <article class="panel"><div class="panel-head"><div><h2>Future nightly rates</h2><p class="muted">Forward-rate observations populate after importing your recurring observation workspace.</p></div></div><div id="miFutureChart" class="chart-host tall-chart"></div></article>
+      <article class="panel"><div class="panel-head"><div><h2>ADR vs occupancy</h2><p class="muted">One point per comparable listing using annualized demo/imported metrics.</p></div></div><div id="miScatterChart" class="chart-host tall-chart"></div></article>
+      <article class="panel"><div class="panel-head"><div><h2>Future nightly rates</h2><p class="muted">Sample forward-rate curve; replace through workspace import when provider data is available.</p></div></div><div id="miFutureChart" class="chart-host tall-chart"></div></article>
     </section>
 
     <section class="split market-split">
@@ -144,7 +144,7 @@
           <label>Monthly ADR<input name="adr" type="number" min="0" step="1" required></label>
           <label>Occupancy %<input name="occupancy" type="number" min="0" max="100" step="1" required></label>
           <label>Monthly revenue<input name="revenue" type="number" min="0" step="1"></label>
-          <label>Data source<select name="sourceLabel"><option>Manual estimate</option><option>Observed public price</option><option>Provider estimate</option><option>Public listing metadata</option></select></label>
+          <label>Data source<select name="sourceLabel"><option>Manual estimate</option><option>Observed public price</option><option>Provider estimate</option><option>Demo data</option></select></label>
           <label class="check-field"><input name="hotTub" type="checkbox"> Hot tub</label>
           <label class="check-field"><input name="arcade" type="checkbox"> Arcade/game room</label>
           <label class="check-field"><input name="fireplace" type="checkbox"> Fireplace</label>
@@ -167,8 +167,7 @@
     </section>
   </main>
 </div>
-<script src="market-intelligence-v421-reset.js?v=4.2.1.1"></script>
-<script src="data/market-intelligence-real-snapshot.js?v=4.2.1.1"></script>
-<script src="market-intelligence.js?v=4.2.1.1"></script>
+<script src="data/market-intelligence-real-snapshot.js?v=4.2.1"></script>
+<script src="market-intelligence.js?v=4.2.1"></script>
 </body>
 </html>
