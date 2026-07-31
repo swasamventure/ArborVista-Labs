@@ -1,0 +1,193 @@
+{
+  "release": "4.3",
+  "name": "Premium UI Simplification",
+  "status": "PASS",
+  "checks_passed": 34,
+  "checks_total": 34,
+  "render_summary": {
+    "desktop_width": 1440,
+    "desktop_client": 1440,
+    "main_images": 6,
+    "nav_links": 5,
+    "logo": true,
+    "mobile_overflow": false,
+    "cabin_h1": "Designed for together time\u2014\nwith room for privacy."
+  },
+  "checks": [
+    {
+      "name": "Release README exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "v4.3 changelog exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supplied logo asset exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Logo asset has useful size",
+      "passed": true,
+      "detail": "28101"
+    },
+    {
+      "name": "Preferred UI stylesheet exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "v4.3 interaction script exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage uses Playfair Display",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage uses DM Sans",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage uses supplied logo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage has five primary navigation links",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "Homepage main content uses six image tags",
+      "passed": true,
+      "detail": "6"
+    },
+    {
+      "name": "Homepage total curated image concepts are seven",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage has no photo masonry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage directs full collection to Gallery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cabin page is curated",
+      "passed": true,
+      "detail": "7"
+    },
+    {
+      "name": "Cabin page says open loft is not a third bedroom",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cabin page uses kitchen image 1 once",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "Cabin page uses kitchen image 2 once",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "Removed kitchen images 3 and 4 stay removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Property remains two bedrooms plus loft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Standard occupancy remains six",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage desktop render has no horizontal overflow",
+      "passed": true,
+      "detail": "{'desktop_width': 1440, 'desktop_client': 1440, 'main_images': 6, 'nav_links': 5, 'logo': True, 'mobile_overflow': False, 'cabin_h1': 'Designed for together time\u2014\\nwith room for privacy.'}"
+    },
+    {
+      "name": "Homepage mobile render has no horizontal overflow",
+      "passed": true,
+      "detail": "{'desktop_width': 1440, 'desktop_client': 1440, 'main_images': 6, 'nav_links': 5, 'logo': True, 'mobile_overflow': False, 'cabin_h1': 'Designed for together time\u2014\\nwith room for privacy.'}"
+    },
+    {
+      "name": "Homepage desktop screenshot exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage mobile screenshot exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cabin mobile screenshot exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Market Intelligence real snapshot remains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "83 real comparable records remain",
+      "passed": true,
+      "detail": "83"
+    },
+    {
+      "name": "Cleaning feed privacy implementation remains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database v1.0 logical package included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Database package has ten migrations",
+      "passed": true,
+      "detail": "10"
+    },
+    {
+      "name": "AI phase is sequenced after UI v4.3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax passes",
+      "passed": true,
+      "detail": "{'script.js': 0, 'v43.js': 0, 'admin.js': 0, 'market-intelligence.js': 0}"
+    },
+    {
+      "name": "Public-page local references resolve",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "legacy_regression": {
+    "v4.2.1_real_comp": "18/18 passed",
+    "v3.3.1_kitchen": "15/15 passed",
+    "v4.1_platform": "80/80 passed"
+  }
+}

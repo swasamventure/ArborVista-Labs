@@ -1,3 +1,7 @@
+# Arbor Vista Platform v4.3 — Premium UI Test Build
+
+See `README_V4.3.md` and `Docs/CHANGELOG_V4.3.md` for the UI scope.
+
 # Arbor Vista Platform v4.2.1 — Multi-Property Operations
 
 This Git/local build implements features 1–7 requested for the shared STR platform while keeping each property website independently transferable.
