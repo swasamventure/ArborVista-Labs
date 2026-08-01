@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 Disallow: /guest/
-Disallow: /templates/
+Disallow: /api/
 Sitemap: https://arborvistaretreat.com/sitemap.xml

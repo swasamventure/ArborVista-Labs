@@ -1,0 +1,9 @@
+When applying the patch over v4.3.2, delete these directories from the production repository before deployment:
+admin/
+guest/
+Backend/
+data-layer/
+market-data/
+QA/
+Docs/
+templates/

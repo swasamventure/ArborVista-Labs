@@ -1,0 +1,87 @@
+{
+  "release": "v4.3.3",
+  "checks": {
+    "homepage_rotates_3s": true,
+    "gallery_rotates_3s": true,
+    "gallery_one_image": true,
+    "gallery_no_pause": true,
+    "booking_no_form": true,
+    "airbnb_cta": true,
+    "no_overflow": true,
+    "tagline_visible": true,
+    "no_pause_text": true,
+    "no_host_console": true,
+    "no_page_errors": true,
+    "admin_absent": true,
+    "guest_absent": true
+  },
+  "details": {
+    "index.html-1440": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 9,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    },
+    "index.html-390": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 6.5,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    },
+    "book-direct.html-1440": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 9,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    },
+    "book-direct.html-390": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 6.5,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    },
+    "gallery.html-1440": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 9,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    },
+    "gallery.html-390": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 6.5,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    },
+    "faq.html-1440": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 9,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    },
+    "faq.html-390": {
+      "overflow": false,
+      "tagline": true,
+      "tagline_px": 6.5,
+      "pause": 0,
+      "host": 0,
+      "errors": []
+    }
+  },
+  "errors": [],
+  "passed": 13,
+  "total": 13
+}

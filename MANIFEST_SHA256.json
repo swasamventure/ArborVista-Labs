@@ -1,1218 +1,338 @@
 {
-  "release": "4.3.2",
-  "name": "UI Stabilization",
-  "generated_at": "2026-07-31",
-  "file_count": 242,
-  "files": [
-    {
-      "path": ".env.example",
-      "bytes": 220,
-      "sha256": "029961069ddd1a509d2d39076eaeffbf511f48ffdfc4583af74ba5ab1ecda7a8"
-    },
-    {
-      "path": ".nojekyll",
-      "bytes": 0,
+  "release": "v4.3.3",
+  "fileCount": 83,
+  "files": {
+    ".nojekyll": {
+      "size": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
-    {
-      "path": "404.html",
-      "bytes": 4709,
-      "sha256": "949bf2290f760467d67cc2a9e5a5e10f5b91c284298e7c7687216e63c6f512b8"
-    },
-    {
-      "path": "Backend/README.md",
-      "bytes": 1026,
-      "sha256": "4220f5a7f3fb54e4ac6069058240fd7aa7e12f8d31baddb830bb76f518c87dc2"
-    },
-    {
-      "path": "Backend/exports/arbor-vista-all.ics",
-      "bytes": 1357,
-      "sha256": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e"
-    },
-    {
-      "path": "Backend/exports/arbor-vista-for-airbnb.ics",
-      "bytes": 883,
-      "sha256": "96c5fb37737d46eb0e67f01c71a50b9cee07fca00fad5b2f75bef9995f0cf766"
-    },
-    {
-      "path": "Backend/exports/arbor-vista-for-vrbo.ics",
-      "bytes": 887,
-      "sha256": "bd03e9fbbe5c4e78d3658052034b057581c074f40d4b6bddf9fa04d018256d9f"
-    },
-    {
-      "path": "Backend/exports/arbor-vista.ics",
-      "bytes": 1357,
-      "sha256": "029e36c10f84bd0fd6a8603a427c2853873667550b005b3a4971eba7bb135a5e"
-    },
-    {
-      "path": "Backend/fixtures/airbnb_cancelled.ics",
-      "bytes": 274,
-      "sha256": "76f95febc51d3b7212aa957e6cc98ed4f5e7d64f6da735ed95755e9f0d70516c"
-    },
-    {
-      "path": "Backend/fixtures/airbnb_sample.ics",
-      "bytes": 479,
-      "sha256": "9442964dcd3e943fb05cc2868526eb517f5601d1b0e9a0f5c317ebe011e2ac15"
-    },
-    {
-      "path": "Backend/fixtures/airbnb_updated_missing.ics",
-      "bytes": 264,
-      "sha256": "e36945bfa80e536bcb2f08e3160556f462d3a07af988f33d936628deca8c59b6"
-    },
-    {
-      "path": "Backend/fixtures/duplicate_uid.ics",
-      "bytes": 258,
-      "sha256": "7cd070cffa9b36fd1d52e9c97f126e7adf2c8c8ff58e07283bd82af56c7f6b75"
-    },
-    {
-      "path": "Backend/fixtures/empty_calendar.ics",
-      "bytes": 106,
-      "sha256": "d997209b18c3075996ea93d1ecd20e924550a560ffaa0e006c0f4dfb93b65fde"
-    },
-    {
-      "path": "Backend/fixtures/folded_line.ics",
-      "bytes": 291,
-      "sha256": "c084a827478ffca575c32546e203b6b6c680bd508198e596a43b2a52e640eec5"
-    },
-    {
-      "path": "Backend/fixtures/malformed_missing_dtend.ics",
-      "bytes": 148,
-      "sha256": "9619a2588ef80e659ca41269546a9038349922839f3314e14956e6b3669b0633"
-    },
-    {
-      "path": "Backend/fixtures/vrbo_sample.ics",
-      "bytes": 463,
-      "sha256": "bc12dac636f7edf0510f6f34eb921c7c00e9a035993a44e25bc41729dd46428c"
-    },
-    {
-      "path": "Backend/ical_db.py",
-      "bytes": 26154,
-      "sha256": "5cb3880501455dc8a8afbb800887d7b2145335fd33d2f3e4883a8c8a65553b45"
-    },
-    {
-      "path": "Backend/operations.py",
-      "bytes": 19047,
-      "sha256": "8d20b856f3fe42ece69d9e92779fb770c86cb7d5d91976670135688a91ef8ea0"
-    },
-    {
-      "path": "Backend/run_qa.py",
-      "bytes": 12026,
-      "sha256": "ee1a594c12a41bf60e5ad956b835232ca8db83ff9394db4d3fcda97da233fb1f"
-    },
-    {
-      "path": "Backend/schema.sql",
-      "bytes": 10277,
-      "sha256": "e1b637eaf7e7f1160db5db2ec9db1d42e5de837f10f5f69064086234b7961bea"
-    },
-    {
-      "path": "Backend/seed.sql",
-      "bytes": 3474,
-      "sha256": "28b0f09f43868aef1923d5bcf0da1f8271da39ff392db2c1a2657163bc1bb084"
-    },
-    {
-      "path": "Backend/server.py",
-      "bytes": 26268,
-      "sha256": "a9f84df679e34db5094cf46d898098570c24ea3dd11f626acf88d0832b5e9d7a"
-    },
-    {
-      "path": "Docs/CHANGELOG_V2.8.md",
-      "bytes": 1899,
-      "sha256": "df288404f9161299c07a4ba21c95fa27aa7ebca576b7895549d151f04bb86e0c"
-    },
-    {
-      "path": "Docs/CHANGELOG_V4.1.md",
-      "bytes": 872,
-      "sha256": "2fb5aae9cfd78e72d44355fb406edc5618252e900c619cbd066562360f0a379d"
-    },
-    {
-      "path": "Docs/CHANGELOG_V4.2.1.md",
-      "bytes": 392,
-      "sha256": "e7be3f0cd7d9b3214475dc51a31284646b1ee1ec151776851329a22654220841"
-    },
-    {
-      "path": "Docs/CHANGELOG_V4.2.md",
-      "bytes": 1213,
-      "sha256": "3025e7e499df2a64255dfd4471e9a10500cf5608bfb8facb066e1a854fa6b3db"
-    },
-    {
-      "path": "Docs/CHANGELOG_V4.3.1.md",
-      "bytes": 290,
-      "sha256": "069633d93e46365b30f00149ccd9385acf710713017671cef1aba1b91924d938"
-    },
-    {
-      "path": "Docs/CHANGELOG_V4.3.2.md",
-      "bytes": 1555,
-      "sha256": "fa0d264201fea7b741406edb5c5ec053b720990509a1241f255ee38bdcf31789"
-    },
-    {
-      "path": "Docs/CHANGELOG_V4.3.md",
-      "bytes": 1449,
-      "sha256": "370103c5dee3afb96ec33611fe872e03f7cebc606e285904c2883a868bc9054d"
-    },
-    {
-      "path": "Docs/CLOUD_MIGRATION_ARCHITECTURE.md",
-      "bytes": 921,
-      "sha256": "42c8bf4e21a92e9dbb5b16fb331f85e7bc4f8762dc44a918cdad93613d8149ff"
-    },
-    {
-      "path": "Docs/FEATURES_1_TO_7_IMPLEMENTED.md",
-      "bytes": 2022,
-      "sha256": "d7c50b6030566ddaa4d9972ffce55f5157ba9bda0ca82efe59205a3c61f0cc44"
-    },
-    {
-      "path": "Docs/ICAL_TEST_PLAN.md",
-      "bytes": 1981,
-      "sha256": "420ef436e040d5aab89aa41d2f5680080a6284443434f7bd67440101cca03b0e"
-    },
-    {
-      "path": "Docs/KNOWN_ISSUES.md",
-      "bytes": 1218,
-      "sha256": "f28241052053a1bf4674b57cb31743679d8999a97a59000b0c169a0e873b9714"
-    },
-    {
-      "path": "Docs/NEXT_PHASE_AI_GUEST_ASSISTANT.md",
-      "bytes": 881,
-      "sha256": "faaeff00d8021443b7cfa3b4573b32f6234146e6fcedf00c6da7c4c34b222ebc"
-    },
-    {
-      "path": "Docs/PHASE_A_MARKET_INTELLIGENCE.md",
-      "bytes": 1569,
-      "sha256": "a7f4beb2ecf0f509e58cac8048b40dc76744f351c1e80f2ef56e86bf9b4a404b"
-    },
-    {
-      "path": "Docs/SCOPE_V3.2.md",
-      "bytes": 490,
-      "sha256": "d60a423a2a38b30754cd72a68c36779284bebf1b603e117980bdb9110ae51d8e"
-    },
-    {
-      "path": "Docs/SECURITY_NOTES.md",
-      "bytes": 1103,
-      "sha256": "0ab8ba3a593024d32fcd8fecba83099b486272b9a46ba6745570de948be44277"
-    },
-    {
-      "path": "QA/README.md",
-      "bytes": 800,
-      "sha256": "38ff1eac0c939360cf1800aa4b2521c7a287dc4dc29065f5189677c32cf28544"
-    },
-    {
-      "path": "QA/requirements-qa.txt",
-      "bytes": 51,
-      "sha256": "8a141b9f3d39adb962ac6da1b4ed1605e42d272898e7bce68d17aabe13e8b97a"
-    },
-    {
-      "path": "QA/run_all_qa.py",
-      "bytes": 4789,
-      "sha256": "d213b48f6f9720d367092ed5dd518e20ea77cab1efad05423c9ba21d82757ed3"
-    },
-    {
-      "path": "QA/run_v32_integration_qa.py",
-      "bytes": 2472,
-      "sha256": "76cfcfa396710d8a6a72fc812b7dedb171020aab53de007ef06518cbcb17dd8e"
-    },
-    {
-      "path": "QA/run_v32_qa.py",
-      "bytes": 1826,
-      "sha256": "5af60136d466b15f8bf609d93ee16f0d1cdcc081a751ad50e237405c45c492a7"
-    },
-    {
-      "path": "QA/run_v331_qa.py",
-      "bytes": 1961,
-      "sha256": "fa11acf28c6e13d34acd5b4f8247088de092aab2f799a01641473405481e3492"
-    },
-    {
-      "path": "QA/run_v33_cloud_qa.py",
-      "bytes": 3044,
-      "sha256": "b4d396a81ab5205a021390e1533b04429d9242cd01d66f4daee13946cb2079c1"
-    },
-    {
-      "path": "QA/run_v41_api_qa.py",
-      "bytes": 4942,
-      "sha256": "c791fd48aaa942746b7c56a7a0b9472b4e9d6dffe89c7d47e5add56b31f997d3"
-    },
-    {
-      "path": "QA/run_v41_qa.py",
-      "bytes": 11285,
-      "sha256": "3040c1fdaa613badc0c368528d05155c038ef694aee2404015b4685a79f3e0b9"
-    },
-    {
-      "path": "QA/run_v421_browser_qa.py",
-      "bytes": 3555,
-      "sha256": "f0090dac295ea91b5783f582b4ba85d1f5f9c861ed0353f91b94986c0821df1e"
-    },
-    {
-      "path": "QA/run_v421_real_comp_qa.py",
-      "bytes": 2145,
-      "sha256": "461fcaa4c4b89a4bf1dec32450ea52055cd38ef477a475953f96d5746cc65afd"
-    },
-    {
-      "path": "QA/run_v42_market_qa.py",
-      "bytes": 9205,
-      "sha256": "65fa4980d8295a5b338092ff78e3080b5cb1e485858887e4df77dbf698ea99cf"
-    },
-    {
-      "path": "QA/run_v432_browser_qa.py",
-      "bytes": 7509,
-      "sha256": "67b856a940777403c7d28632d1b9f47101b689cc811dfcbd0cb6a5c4bcf1542b"
-    },
-    {
-      "path": "QA/run_v432_static_qa.py",
-      "bytes": 3735,
-      "sha256": "26a3b2df5672282a9d5e0d44253b6615c2d2d7a3c90cab0820c461a360f36098"
-    },
-    {
-      "path": "QA/run_web_qa.py",
-      "bytes": 24523,
-      "sha256": "eb9d126c339c7c7472778495cb944297f00930d49b6f437108c23fc7aface5be"
-    },
-    {
-      "path": "QA/screenshots/booking-confirmation-desktop.png",
-      "bytes": 767484,
-      "sha256": "22c5addb9a7936b601b7e2f60d056204e79be329b69ec03d971edf51521ab412"
-    },
-    {
-      "path": "QA/screenshots/guest-preview-desktop.png",
-      "bytes": 922420,
-      "sha256": "73ebd8c1c4fd8259eb6bed97bf1ec188ea41c38d1768a103879c62c91e812959"
-    },
-    {
-      "path": "QA/screenshots/home-mobile.png",
-      "bytes": 553206,
-      "sha256": "9d00d92577eb9af6e56dd18a43a85e535d099b9093c521fd1e3f31fcd5749faf"
-    },
-    {
-      "path": "QA/screenshots/market-intelligence-v421-desktop.png",
-      "bytes": 2430811,
-      "sha256": "a8ead06e4b4baec270b2e484158126bcb0d6f836e16f283d99642501c8418224"
-    },
-    {
-      "path": "QA/screenshots/market-intelligence-v421-mobile.png",
-      "bytes": 1320328,
-      "sha256": "89da045a934e9402b3ee6c2fecbbd35b70acd088bec905866347389b52d1b82a"
-    },
-    {
-      "path": "QA_PACKAGE_V4.3.2.json",
-      "bytes": 290,
-      "sha256": "7b17953ce521978ec58276ea99dd0fb64ea039c8a46a026879f8e769691f64c5"
-    },
-    {
-      "path": "QA_REPORT_DATABASE.json",
-      "bytes": 7633,
-      "sha256": "b164a22dacaad645152b87b48710ed94f089158a1af9ed1bd4b28917d3d9aa48"
-    },
-    {
-      "path": "QA_REPORT_DATABASE.md",
-      "bytes": 1590,
-      "sha256": "721beb78febba0c2674241880c8840cb601181d6919e0fd1d32fa9b118e8dd38"
-    },
-    {
-      "path": "QA_REPORT_V3.2_INTEGRATION.json",
-      "bytes": 1995,
-      "sha256": "fa10406e1d1e923151ac41715dd824889d3e1e408df3428daf2cda565a18c82d"
-    },
-    {
-      "path": "QA_REPORT_V3.3.1.json",
-      "bytes": 1634,
-      "sha256": "f2397994107806a35fd336ad45e8454a93ccb008400021957d03101f3a0c7349"
-    },
-    {
-      "path": "QA_REPORT_V4.1.json",
-      "bytes": 33750,
-      "sha256": "a67cdc1054a79a2f8575e409fbc03b4ebcc857c082b3df73cf91713a3cb0b0c2"
-    },
-    {
-      "path": "QA_REPORT_V4.1_API.json",
-      "bytes": 11360,
-      "sha256": "12c11ea6460f8f615044811c6e438bf65880f03d43191d9ff44111dec26fc039"
-    },
-    {
-      "path": "QA_REPORT_V4.2.1_BROWSER.json",
-      "bytes": 1112,
-      "sha256": "f7dbea9a45fe3248ece953b3aea30584eb3b54195f441d3856074d8a4750f1a1"
-    },
-    {
-      "path": "QA_REPORT_V4.2.1_FINAL.md",
-      "bytes": 1822,
-      "sha256": "ef19e38ffd54fc915e88be83cbe610ddcd1bb38471f6764495ef5c102d19ee89"
-    },
-    {
-      "path": "QA_REPORT_V4.2_FINAL.json",
-      "bytes": 1487,
-      "sha256": "dd39b56a4a09757e442deebf7603f6edd560d498d45cd0faf23a0459f0c1fcd5"
-    },
-    {
-      "path": "QA_REPORT_V4.2_FINAL.md",
-      "bytes": 1544,
-      "sha256": "02a465b1228736337b5ce19d7cfe49fac87247b55d1a5957ad347cb5d610031c"
-    },
-    {
-      "path": "QA_REPORT_V4.2_MARKET.json",
-      "bytes": 9955,
-      "sha256": "62f6f36ebbe499d5fa8ea9be9337a4d841435d8aef94ee659dcff48076221017"
-    },
-    {
-      "path": "QA_REPORT_V4.3.1_BROWSER.json",
-      "bytes": 808,
-      "sha256": "1d540a74b664129b0877c59d15d62fc8a114113e1ed6aa0015f37dcd3d1b5e2b"
-    },
-    {
-      "path": "QA_REPORT_V4.3.1_FINAL.json",
-      "bytes": 1319,
-      "sha256": "774925122ed2358467cca5ac18864e290ddb3e7da1e63426efdc5a989f38b9cc"
-    },
-    {
-      "path": "QA_REPORT_V4.3.1_FINAL.md",
-      "bytes": 2104,
-      "sha256": "490c7306153297bb5562b5213b0d136a5272722f15aa683351aeb1850313f8f5"
-    },
-    {
-      "path": "QA_REPORT_V4.3.1_STATIC.json",
-      "bytes": 709,
-      "sha256": "210030a5c29cadbafe751e7f4954e2a63ce655ba91603f99ad439d96da298100"
-    },
-    {
-      "path": "QA_REPORT_V4.3.2_BROWSER.json",
-      "bytes": 2251,
-      "sha256": "e1694cf8b8c2e92872a40da22ccf5f0425b1e03d27c4f88a2594c4169d9b7bde"
-    },
-    {
-      "path": "QA_REPORT_V4.3.2_FINAL.json",
-      "bytes": 1654,
-      "sha256": "af27126d90ed6a7030594c8cb0ba8bc0550dc9d1a5b4d976f6ff7f7d9d4ea361"
-    },
-    {
-      "path": "QA_REPORT_V4.3.2_FINAL.md",
-      "bytes": 1521,
-      "sha256": "989c3d847c6ac60630d5479fda14b0842175615a362e495204c2db5f647120d9"
-    },
-    {
-      "path": "QA_REPORT_V4.3.2_STATIC.json",
-      "bytes": 8715,
-      "sha256": "808235409b59b1a75f7a95bf39230595ac7360fdd7064862bfa335a90104fe41"
-    },
-    {
-      "path": "QA_REPORT_V4.3_FINAL.json",
-      "bytes": 4629,
-      "sha256": "c7c2c359c54fb288c9d9e3caa1fa114a63d0b1376b0f37351d7a6e7be574ea75"
-    },
-    {
-      "path": "QA_REPORT_V4.3_FINAL.md",
-      "bytes": 2590,
-      "sha256": "986c8ca0650cbca45bdb93c25d08ce0896483fc20705a8bc46467d2df781a441"
-    },
-    {
-      "path": "QA_REPORT_WEB_V2.8.json",
-      "bytes": 11607,
-      "sha256": "a4de54140e87c65ad2922dd0128326c47a324cf118a5cfec83d52dcc31379dcb"
-    },
-    {
-      "path": "QA_REPORT_WEB_V2.8.md",
-      "bytes": 2233,
-      "sha256": "a91968792ecae781b07746a0ca454a1f86fb88a5179ea3667a4aa98de4157cd0"
-    },
-    {
-      "path": "README.md",
-      "bytes": 1856,
-      "sha256": "e2e4c7a127a7be87877d2f829e94e18d969fa9967b16036e7da34385c7a57834"
-    },
-    {
-      "path": "README_V4.2.1.md",
-      "bytes": 1601,
-      "sha256": "76fd2093c7a7eefb3cc51dc89feaaaf3239aef140d1285d612c76d08ff99a5f3"
-    },
-    {
-      "path": "README_V4.3.1.md",
-      "bytes": 1270,
-      "sha256": "c6de75367444966f30906c1050d521c7248a66570ef9a0d51b76067c8f042e03"
-    },
-    {
-      "path": "README_V4.3.2.md",
-      "bytes": 848,
-      "sha256": "983eee6456b8c2fdf3aa50ccf917e0d8c8496aab4ba937a3bc3feada60c3ced3"
-    },
-    {
-      "path": "README_V4.3.md",
-      "bytes": 939,
-      "sha256": "9fe6dea065e74866f6888b6ed7edf6788aee2d32336e755ec1b101f43cccc9d5"
-    },
-    {
-      "path": "UPLOAD_TO_GITHUB.md",
-      "bytes": 742,
-      "sha256": "19ebef9bd47c649b7252046821d8466616f44fae430e9bec002204ca108a4a38"
-    },
-    {
-      "path": "UPLOAD_TO_GITHUB_V4.3.1.md",
-      "bytes": 408,
-      "sha256": "48474b5926cc83dfd56eba59a0b99d1c203ee580379b5f88055dee728a685ac0"
-    },
-    {
-      "path": "UPLOAD_TO_GITHUB_V4.3.2.md",
-      "bytes": 512,
-      "sha256": "458708adc4b3a76467393768e96e917ddb20cdb4bd419460aabd7f4e380b6cd9"
-    },
-    {
-      "path": "UPLOAD_TO_GITHUB_V4.3.md",
-      "bytes": 593,
-      "sha256": "96ac944c2f30959362f75e6662be472e8e3edd7dee72e7c08b0cd263fd23ef2b"
-    },
-    {
-      "path": "admin/admin.css",
-      "bytes": 4919,
-      "sha256": "e5061e8b9eeb778256b8522f79426a3bc8ce313af4b7f09a26b68444d8318784"
-    },
-    {
-      "path": "admin/admin.js",
-      "bytes": 11942,
-      "sha256": "879ac4fec4884651e9412801b6a1d0a72d8660bf35e8f9cb131c0c8e5696fe84"
-    },
-    {
-      "path": "admin/calendar.html",
-      "bytes": 2648,
-      "sha256": "8d24aa4a07688b8cde81676da33735da75bf10700f6ebfa4211817ef2348522f"
-    },
-    {
-      "path": "admin/cleaning-calendar.html",
-      "bytes": 2812,
-      "sha256": "30076c2abe8a3438ca2974f2573b79aeb4b457193b12b70d3e3a519616b47166"
-    },
-    {
-      "path": "admin/dashboard.html",
-      "bytes": 2388,
-      "sha256": "43084b0dcd6da1bbf8997c4d8628869ca8cddd727b04bece324bc361426f6331"
-    },
-    {
-      "path": "admin/data/future-rate-template.csv",
-      "bytes": 74,
-      "sha256": "05061be51aace8945a8a04f502a8cc0205cabfbb543fe57fa79b08cffcf6d02c"
-    },
-    {
-      "path": "admin/data/market-comp-import-template.csv",
-      "bytes": 511,
-      "sha256": "4dd63e5037367141379449d6948e809f8785fc33bbc809fc7a5b8ea00de09922"
-    },
-    {
-      "path": "admin/data/market-intelligence-demo.js",
-      "bytes": 60522,
-      "sha256": "7c0a4277e563dd68b8e00dc8b1c52d30eb8da4e561ed6f4cbc642959de406048"
-    },
-    {
-      "path": "admin/data/market-intelligence-demo.json",
-      "bytes": 87664,
-      "sha256": "4a7dd4fc2ca430d34ac01cc3589c5a694ab144e746233da45e18160a23febdd8"
-    },
-    {
-      "path": "admin/data/market-intelligence-real-snapshot.js",
-      "bytes": 60526,
-      "sha256": "fb0b68a076547e872eea2cf8313ded6f82a018bb3e013d805339ba8465248345"
-    },
-    {
-      "path": "admin/data/market-intelligence-real-snapshot.json",
-      "bytes": 87664,
-      "sha256": "4a7dd4fc2ca430d34ac01cc3589c5a694ab144e746233da45e18160a23febdd8"
-    },
-    {
-      "path": "admin/data/market-rate-observation-template.csv",
-      "bytes": 13111,
-      "sha256": "6ca52dc8fee1c0a3547bafb8a823561cd37611a65edf9f0ba4d780647d5d2959"
-    },
-    {
-      "path": "admin/data/real-comp-snapshot.csv",
-      "bytes": 19885,
-      "sha256": "4e607290d592309b4b0f4959bd72ec6b91d0d8edacf8b041db8403f01e94c290"
-    },
-    {
-      "path": "admin/login.html",
-      "bytes": 901,
-      "sha256": "f39a4f4632863f9097cd3e4fc2d80662e4df12abb5ec4e0f6bcde091515ac86d"
-    },
-    {
-      "path": "admin/market-intelligence.css",
-      "bytes": 3954,
-      "sha256": "62e4d2f3f00e4547e181b99bc94bdd01d12b143436457385012e53ebe9103a39"
-    },
-    {
-      "path": "admin/market-intelligence.html",
-      "bytes": 12525,
-      "sha256": "b4eb3ebcd4d6c1e827fe53dbef6622a7690a0455886f9f2688cf82e5b5a0de94"
-    },
-    {
-      "path": "admin/market-intelligence.js",
-      "bytes": 44451,
-      "sha256": "14e2488cdf71971f4f91e14d8d3d8b3ae5c44e4d7ec4bce4268dd7d22f3d4192"
-    },
-    {
-      "path": "admin/property-export.html",
-      "bytes": 2188,
-      "sha256": "d363eb432c71f18736a88c058224480a88fe3bbd4b09ca33270d0f68fc7760f2"
-    },
-    {
-      "path": "admin/reports.html",
-      "bytes": 2257,
-      "sha256": "bdbc14af36482cef8696d43435d13b72e49cbfa69bc5da0f38c13a9149409ca9"
-    },
-    {
-      "path": "admin/reservations.html",
-      "bytes": 2085,
-      "sha256": "ac8f68abb8bc90f1196c6adf044c31b56d8fd404d4ea72987507f565b2de852e"
-    },
-    {
-      "path": "admin/settings.html",
-      "bytes": 2049,
-      "sha256": "ecc7bddf3d90e4deebf645248f3c63c9930efa6057ea86552bc65ec7f63bd7a7"
-    },
-    {
-      "path": "admin/sync-log.html",
-      "bytes": 1903,
-      "sha256": "48820de4ab9fea512f78ffb38a485721c69542a596c198b7b35d57a65d7de3ac"
-    },
-    {
-      "path": "assets/analytics-v432.js",
-      "bytes": 2035,
+    "404.html": {
+      "size": 5830,
+      "sha256": "1a2d4dc57df37a8e9db2bcfabaef4712ced55c10bec71cfa0f3789ae94a2ab90"
+    },
+    "CHANGELOG_V4.3.3.md": {
+      "size": 1151,
+      "sha256": "acc347eaf3c209dfb6c5273ac600b8d4382b001db3697816a28b40d4ea2ce522"
+    },
+    "CNAME": {
+      "size": 22,
+      "sha256": "a24a5d54f75afb679712fc55d1539897cdcdc3465a4831fe5a99dfe96077f7b2"
+    },
+    "DELETE_BEFORE_DEPLOY_FROM_V4.3.2.txt": {
+      "size": 181,
+      "sha256": "035d63c7379b8c949eef601fab4309c52e8879501cacf563ea4d785937723a24"
+    },
+    "DEPLOYMENT_CHECKLIST_V4.3.3.md": {
+      "size": 701,
+      "sha256": "d699845938093a4a29f6d8ee1e40911154c5b3a4dd692f9076b3da3d02c4ba0a"
+    },
+    "QA_REPORT_V4.3.3.json": {
+      "size": 1495,
+      "sha256": "b660aea9ad2013c01960e9d7dacc87808c7c4158bd4327c6768382a7f1a05ed3"
+    },
+    "QA_REPORT_V4.3.3.md": {
+      "size": 631,
+      "sha256": "7325548d2a5ca47ca15b2df2c99f31f80fb0f18fdaf0334e9e2bbfe7b777a5b6"
+    },
+    "QA_REPORT_V4.3.3_BROWSER.json": {
+      "size": 1751,
+      "sha256": "8776df70a68c86a85b6e7f3ab53f12812f181288d86b4b24a7bac68f857a924f"
+    },
+    "QA_REPORT_V4.3.3_FINAL.md": {
+      "size": 1855,
+      "sha256": "407a45aee3e9bec52a9ad0c85c211bb325ed6f58394712b711e1ed613318161a"
+    },
+    "README_V4.3.3.md": {
+      "size": 837,
+      "sha256": "f33ee5d24829cdb784005c52e65ac5690482f4f016c23eeda5ca23acd75a83f2"
+    },
+    "RELEASE_TAG.json": {
+      "size": 158,
+      "sha256": "f88285ab958e27b3e7f85b0f7925a2d189f786e286c132cb55be234ea46901ba"
+    },
+    "VERSION": {
+      "size": 7,
+      "sha256": "d7f86fa76b27f38b39fccd18b36a5af5d3208aba53148e2fa37ef1667c13080b"
+    },
+    "assets/analytics-v432.js": {
+      "size": 2035,
       "sha256": "4f1f242ebd50b848582eb740c8e9383399b062bc67fff69ee8d9ce6afa29c2eb"
     },
-    {
-      "path": "assets/arbor-vista-logo.svg",
-      "bytes": 1030,
-      "sha256": "e3af2bdd8d0c7327ca25f8352fb716e3a95ea5cc7f1dfad515c80b505d6ff1a1"
+    "assets/arbor-vista-logo.svg": {
+      "size": 1030,
+      "sha256": "fd993a3530f48f31e6ba9b0d5624d6ba14a10e18e4127b4103ba90776652da98"
     },
-    {
-      "path": "assets/gallery-v432.js",
-      "bytes": 4117,
-      "sha256": "77fd9114b1e2c089ba22a82a6471a388d409fe4cf7cc31aac8d303fcae5d2296"
+    "assets/gallery-v432.js": {
+      "size": 3337,
+      "sha256": "b8988dea512c47aff255fccbe4a59f0b55f4f394f02b033bcd1ab1af0e7a3828"
     },
-    {
-      "path": "assets/script.js",
-      "bytes": 17144,
-      "sha256": "6e7219c3899f6d7fa39121fe6719f868e16ce80207c1b7194b1ec7ca541350c9"
+    "assets/script.js": {
+      "size": 864,
+      "sha256": "d6847d0c6dd54ffd246d12a4c9371c7832aca8371d557e479bcebb6b61d19a36"
     },
-    {
-      "path": "assets/style-v43.css",
-      "bytes": 25715,
-      "sha256": "3f5b687f15295497f20cf5f3c56877c6b844c4e712f2d434d82afbca9e4428e2"
+    "assets/style-v43.css": {
+      "size": 28878,
+      "sha256": "be8666945666eec81f4d5e540ec21cb8b92d179ab4c090c58f7cd726b08db286"
     },
-    {
-      "path": "assets/style.css",
-      "bytes": 16579,
+    "assets/style.css": {
+      "size": 16579,
       "sha256": "a28199cf898454a09d018c979d5a18711e24a427fdd41a46c744614afb2afec4"
     },
-    {
-      "path": "assets/v43.js",
-      "bytes": 5667,
-      "sha256": "fad8397e8899081b07334f9ca97781c71c811db0010193d07c9b60f789c146e1"
+    "assets/v43.js": {
+      "size": 4125,
+      "sha256": "d2aec02318ca60571fbcf510d0873dd6ce515705d12b19ca83dbadb5a34dd544"
     },
-    {
-      "path": "book-direct.html",
-      "bytes": 15084,
-      "sha256": "7efbf92098e35b650a5bf50a944491d0ba65a71f93812b4c967b3dd88ce0d3e6"
+    "book-direct.html": {
+      "size": 8167,
+      "sha256": "2165305f3c9443f33cf038586e59590b27d2aba34093f0054d36010d24501730"
     },
-    {
-      "path": "cabin.html",
-      "bytes": 11631,
-      "sha256": "4e035241a5e590076ff82395ac34f04eb199557b026fcc94979c1d9d97c45595"
+    "cabin.html": {
+      "size": 12482,
+      "sha256": "00bfb427a94aeff6cc7f67a958b865e985a30afa26e1cb9c1646026a3b70d14a"
     },
-    {
-      "path": "config/runtime-config.example.js",
-      "bytes": 193,
-      "sha256": "6f75253a85bec9b04056d095c3241487a41ec1d0202da44c813eedeb387855a5"
+    "config/runtime-config.js": {
+      "size": 328,
+      "sha256": "541ee4181464ccd554f67c8b4bd7a6496b868a823a9274c424a55f25c443d471"
     },
-    {
-      "path": "config/runtime-config.js",
-      "bytes": 660,
-      "sha256": "fe8e6aae68138d058cd3722a76d131a6ef6f3482488c494e581d8ccb78cc4f41"
+    "explore.html": {
+      "size": 11504,
+      "sha256": "9d73a35501eb24a78929800f7bd43202f0d22e2fbf6659e43e340e8b7305c683"
     },
-    {
-      "path": "data-layer/README.md",
-      "bytes": 385,
-      "sha256": "19f7ed1f0507f8ff0c60f14a88858e210f4321290a2d6b47ed4b7a67abed61fe"
+    "faq.html": {
+      "size": 9098,
+      "sha256": "180aed9f442c682d726d2d9072292df202593cf5ac44cba08ba2002e2bd1c6d7"
     },
-    {
-      "path": "data-layer/database/.env.example",
-      "bytes": 253,
-      "sha256": "dfc27b6353dfad14b865c96f38d25ea653b0709c5ad9a7bfdc693a52caf84c87"
+    "gallery.html": {
+      "size": 19831,
+      "sha256": "cc329ea1acdc5b62577a7c185128ec63ceb7690403b2870d213f8d2f6a9225ad"
     },
-    {
-      "path": "data-layer/database/.github/workflows/database-ci.yml",
-      "bytes": 1474,
-      "sha256": "3181e6971078c2edcaec4d4e539f3856d1b3b96318b6d1402082ce1696427e5b"
-    },
-    {
-      "path": "data-layer/database/.gitignore",
-      "bytes": 59,
-      "sha256": "371ed6d54e22a0e1b99c3d33089330b82ec831e1635caeaea0fe91cf44787e75"
-    },
-    {
-      "path": "data-layer/database/MANIFEST.json",
-      "bytes": 6477,
-      "sha256": "8f8450bca1001124c17a2247dbd4bad2b3c768482bf6f969111f1b3b5e67586d"
-    },
-    {
-      "path": "data-layer/database/Makefile",
-      "bytes": 321,
-      "sha256": "d3f7736317af1395e49e40d88a449392981a524aa638c8f3de61ab1ae20376ec"
-    },
-    {
-      "path": "data-layer/database/QA_REPORT.md",
-      "bytes": 1371,
-      "sha256": "e954b6155005669c4f8ca0e2f88aa499c0ba30c6e10f5c6316946fd2a9973642"
-    },
-    {
-      "path": "data-layer/database/README.md",
-      "bytes": 3229,
-      "sha256": "670da496d2a692aa59f7a87e72a1b2a099c25bd9a23c70401214cacacb0ecd67"
-    },
-    {
-      "path": "data-layer/database/deploy/Dockerfile.database",
-      "bytes": 591,
-      "sha256": "e3a89032475fc37ed8cb685f5eff03abd8b56be94cdc3260b4f5ef6d9102d060"
-    },
-    {
-      "path": "data-layer/database/deploy/roles.example.sql",
-      "bytes": 899,
-      "sha256": "333e7be0c7418a935d75cd10ef0d64253ccbec823d12dcee336f2de56e1d5561"
-    },
-    {
-      "path": "data-layer/database/dist/bootstrap.sql",
-      "bytes": 69885,
-      "sha256": "1f699418aeca61800f0f07e971bfabe05f4ac78f3c23037dab4c881f032138e4"
-    },
-    {
-      "path": "data-layer/database/docker-compose.yml",
-      "bytes": 662,
-      "sha256": "a1c324cd900e05165dfa1d92a150ace921746806df0f6487f7581ca2be4d7e16"
-    },
-    {
-      "path": "data-layer/database/docs/DATABASE_ARCHITECTURE.md",
-      "bytes": 2482,
-      "sha256": "3762c139911ee7bdc19ac28cbe2f1ddb3d52853216462cc4d4427d4a50427770"
-    },
-    {
-      "path": "data-layer/database/docs/DATA_DICTIONARY.md",
-      "bytes": 3713,
-      "sha256": "e980d9cad848b84016f83278386e312e60c1725d9930c52439a553fd0116b515"
-    },
-    {
-      "path": "data-layer/database/docs/ERD.md",
-      "bytes": 1521,
-      "sha256": "7c26c6b9a2f91f05e6230687fd9108bc30d73ba3c8b7ed4e4728cbafd4c8bc0b"
-    },
-    {
-      "path": "data-layer/database/docs/MIGRATION_PLAN.md",
-      "bytes": 926,
-      "sha256": "8189d21bcdc996360c3f7c21a879c16e55d42ec96e4a406506303a6ffe555fe7"
-    },
-    {
-      "path": "data-layer/database/docs/OPERATIONS.md",
-      "bytes": 998,
-      "sha256": "bd1b10940115db5c9422d7422f9646220730b3023d47a7da21e907f5060462e5"
-    },
-    {
-      "path": "data-layer/database/docs/SECURITY_AND_PRIVACY.md",
-      "bytes": 1649,
-      "sha256": "3693456e47a4b04c6c0d17c5565150e7fa35d48b713148dda32fb1bfc1cf2ec6"
-    },
-    {
-      "path": "data-layer/database/market-data/arbor-vista-real-comp-snapshot-2026-07-28.json",
-      "bytes": 87623,
-      "sha256": "71d1c2ab9724b72b0685f1d932f3cc839189353c6d8a4bdd0853aa1b3a8fe019"
-    },
-    {
-      "path": "data-layer/database/migrations/001_extensions_and_schemas.sql",
-      "bytes": 1168,
-      "sha256": "0642d611dd16bb47b4a86328f7b2772340d3801b3326c12c84c64a9854e0ff09"
-    },
-    {
-      "path": "data-layer/database/migrations/002_identity_and_properties.sql",
-      "bytes": 6912,
-      "sha256": "69a1381bc2952a297505558bc7ad53b3a3aa3fe40bac41d8df09e54912137b50"
-    },
-    {
-      "path": "data-layer/database/migrations/003_secure_data.sql",
-      "bytes": 3180,
-      "sha256": "6f605e2c55847fe4673ed32a6b16a82c9c05711e241482c0e42954271779b87f"
-    },
-    {
-      "path": "data-layer/database/migrations/004_booking_and_calendar.sql",
-      "bytes": 18592,
-      "sha256": "401625d3b2f2a0ef75234a1fae1c5fd97fc3bdc6b4b735f5b4755bf0b05705c8"
-    },
-    {
-      "path": "data-layer/database/migrations/005_messaging_and_email.sql",
-      "bytes": 5520,
-      "sha256": "9c1cc1bfd1f00a448f3077acafd443a1678f6851610cfddbdeef8b86c5c78e09"
-    },
-    {
-      "path": "data-layer/database/migrations/006_market_intelligence.sql",
-      "bytes": 5921,
-      "sha256": "2a1866e08659e97b6c7dc0e92cd995fbb8ba7939e8a2977aebdbd6c3f23e7739"
-    },
-    {
-      "path": "data-layer/database/migrations/007_ai_guest_assistant.sql",
-      "bytes": 6335,
-      "sha256": "649fee50b5445ba0b028e7e32468f8edaab3cc9714b16c4f1bf709215f81af61"
-    },
-    {
-      "path": "data-layer/database/migrations/008_observability_and_analytics.sql",
-      "bytes": 5046,
-      "sha256": "fd9fe2efb63fc13486e15c08689254a067c76c72f07d170b54d2051b133128c8"
-    },
-    {
-      "path": "data-layer/database/migrations/009_api_views_and_functions.sql",
-      "bytes": 7436,
-      "sha256": "2329a2be426578466e3c3f12a89459e76b1833fd2de2646563026386222182ba"
-    },
-    {
-      "path": "data-layer/database/migrations/010_row_level_security.sql",
-      "bytes": 9757,
-      "sha256": "a6068544a09910bd60a47a04c9301216c1f02fdd259743b46798fca511d7cd52"
-    },
-    {
-      "path": "data-layer/database/scripts/backup.sh",
-      "bytes": 284,
-      "sha256": "a5a23329341996d506ddc87b59e93c6a028f122986f475744453624c2f04fc9e"
-    },
-    {
-      "path": "data-layer/database/scripts/migrate.sh",
-      "bytes": 179,
-      "sha256": "a999dbf1b86302ed32c7eda07b0630b13ef4549fd26f77b3179efeeb507ab451"
-    },
-    {
-      "path": "data-layer/database/scripts/reset_local.sh",
-      "bytes": 240,
-      "sha256": "aa0405000276920dbc8caedcbff38e4b31483ba9464967d9b90a98aa4e4fdeb8"
-    },
-    {
-      "path": "data-layer/database/scripts/seed.sh",
-      "bytes": 173,
-      "sha256": "8264d43c7214d27a67feb7c116d2284c8d832f8563b4405a7cd2c34c7d9ea101"
-    },
-    {
-      "path": "data-layer/database/scripts/test.sh",
-      "bytes": 173,
-      "sha256": "3764fb63735ae9581e783163cff095c458b25d6f6d6281cde6bc4e32cfc0f127"
-    },
-    {
-      "path": "data-layer/database/seed/010_arbor_vista_base.sql",
-      "bytes": 6807,
-      "sha256": "4e4a68903ccc78bfb8c08b5c53a451cc9b236f525fbf15751a3c02ca30b69da7"
-    },
-    {
-      "path": "data-layer/database/seed/020_real_comp_snapshot.sql",
-      "bytes": 56845,
-      "sha256": "4d40b82714a440607a2d0fbfd01a29eb6145dfd06b8aafdf8c32bfe753b9e423"
-    },
-    {
-      "path": "data-layer/database/supabase/001_auth_adapter.sql",
-      "bytes": 934,
-      "sha256": "b7fb3ddb92a03420d22ac865455213a0bcf2bb2dbc051ca105b99ce852dafd2f"
-    },
-    {
-      "path": "data-layer/database/supabase/README.md",
-      "bytes": 511,
-      "sha256": "64cb54616f45e77b105c8536944767dfac70e87ded5850220fbae14d8159d04f"
-    },
-    {
-      "path": "data-layer/database/tests/001_schema_smoke.sql",
-      "bytes": 611,
-      "sha256": "4560a956c5fab201244a3cc8c09917f7c99106a9178bd94059d26262c75c237d"
-    },
-    {
-      "path": "data-layer/database/tests/002_business_rules.sql",
-      "bytes": 2316,
-      "sha256": "ddcf5c29dab1b3342522b2e7b8acba62375a6396a0b2953195e0c98d3ea9a0d6"
-    },
-    {
-      "path": "data-layer/database/tests/003_security_contract.sql",
-      "bytes": 816,
-      "sha256": "2f6abd827603cc382432c1fdf27f11b360a0f14788bdeb61b99db9af273fca7b"
-    },
-    {
-      "path": "data-layer/database/tests/004_market_seed.sql",
-      "bytes": 762,
-      "sha256": "709ebd44ef4c96402e123e85a0242deacce93e081b2865e44f0eceab3a29709d"
-    },
-    {
-      "path": "explore.html",
-      "bytes": 10662,
-      "sha256": "54035cc43b7b163db5250286411a22f883cbe6fb72aa95985ee1e4daa29f74c1"
-    },
-    {
-      "path": "faq.html",
-      "bytes": 5995,
-      "sha256": "f22b886e34190782a01e96fb1d86c8f9ff8385ee67ea609fe013cb10d8a82333"
-    },
-    {
-      "path": "gallery.html",
-      "bytes": 19129,
-      "sha256": "41203379d8fbd834a675e12710d296fe226cbda47d1ac6e607bdefa32bc153c7"
-    },
-    {
-      "path": "guest/index.html",
-      "bytes": 3695,
-      "sha256": "e5c7bbae3b064e9115980092eae24acf0801fee09c23e676978d7d68854a3aa3"
-    },
-    {
-      "path": "guest/john-smith-4827/index.html",
-      "bytes": 4875,
-      "sha256": "21aff652885e31fc2fb1fff11f5a4188efccf63130dcf6acf99af44e6821b449"
-    },
-    {
-      "path": "images/area-map.webp",
-      "bytes": 115510,
+    "images/area-map.webp": {
+      "size": 115510,
       "sha256": "a9b5d487410045961604a8433060edb0283e5ff11daa43e72a60c2affb6717e2"
     },
-    {
-      "path": "images/bathrooms/2732PC-27.webp",
-      "bytes": 122758,
+    "images/bathrooms/2732PC-27.webp": {
+      "size": 122758,
       "sha256": "a4fe21b08d6385e4dd985ca84499413c1c944c8c2a7d34e8bcefb3da52c9ca45"
     },
-    {
-      "path": "images/bathrooms/2732PC-28.webp",
-      "bytes": 154076,
+    "images/bathrooms/2732PC-28.webp": {
+      "size": 154076,
       "sha256": "52db845d7d9576709894cfb417e31d0565b36c1fa200599dfb7ce835fa180a85"
     },
-    {
-      "path": "images/bathrooms/2732PC-33.webp",
-      "bytes": 227226,
+    "images/bathrooms/2732PC-33.webp": {
+      "size": 227226,
       "sha256": "1a0f8fef7ed16137900ee90d7964d30516f4a3b1eef8897910db409d7a2547d9"
     },
-    {
-      "path": "images/bedrooms/2732PC-24.webp",
-      "bytes": 254128,
+    "images/bedrooms/2732PC-24.webp": {
+      "size": 254128,
       "sha256": "30cbe0d13a72c4e884d6ae6927130d6432d4e08ae7de3cb07a9edfa6a233260d"
     },
-    {
-      "path": "images/bedrooms/2732PC-25.webp",
-      "bytes": 230884,
+    "images/bedrooms/2732PC-25.webp": {
+      "size": 230884,
       "sha256": "5d9656218ce63851df43e138159a88d8dabfec53f429acca3c31c6eb20a8a7b5"
     },
-    {
-      "path": "images/bedrooms/2732PC-26.webp",
-      "bytes": 281572,
+    "images/bedrooms/2732PC-26.webp": {
+      "size": 281572,
       "sha256": "9509667bbb61dd3a9226e494905d65ad7f2d63c75d6d547f8e8322e6edaa46e7"
     },
-    {
-      "path": "images/bedrooms/2732PC-30.webp",
-      "bytes": 252448,
+    "images/bedrooms/2732PC-30.webp": {
+      "size": 252448,
       "sha256": "57c36157783f67ce5bd657b26af565b71b2f44f66abb493bd03eff1a81ac1f2c"
     },
-    {
-      "path": "images/bedrooms/2732PC-31.webp",
-      "bytes": 205390,
+    "images/bedrooms/2732PC-31.webp": {
+      "size": 205390,
       "sha256": "6ce5703e2f5e491c7a1899cdf7bf9fdf7b793c72cdfbf5d6d0f80cd559b281ea"
     },
-    {
-      "path": "images/bedrooms/2732PC-32.webp",
-      "bytes": 266466,
+    "images/bedrooms/2732PC-32.webp": {
+      "size": 266466,
       "sha256": "4d40e2bb58e36d1fce2203391e54a8958322e40d721b6d0be756a2f2d9a91be8"
     },
-    {
-      "path": "images/bedrooms/2732PC-34.webp",
-      "bytes": 194548,
+    "images/bedrooms/2732PC-34.webp": {
+      "size": 194548,
       "sha256": "30c328900c85d3651601cab1e61a9d34c00f34bf717a389a6e3bc47e79506134"
     },
-    {
-      "path": "images/bedrooms/2732PC-35.webp",
-      "bytes": 283520,
+    "images/bedrooms/2732PC-35.webp": {
+      "size": 283520,
       "sha256": "ada16812ab05dc64479863b571dccf6ebbd23cd769bf454a47eab557f3d25531"
     },
-    {
-      "path": "images/bedrooms/2732PC-37.webp",
-      "bytes": 269234,
+    "images/bedrooms/2732PC-37.webp": {
+      "size": 269234,
       "sha256": "0237aa84a43d4ed07351a77b35430e55a1ffb18924fd41bc0021d89be89c8721"
     },
-    {
-      "path": "images/community/ShagbarkAmenities-1.webp",
-      "bytes": 584738,
+    "images/community/ShagbarkAmenities-1.webp": {
+      "size": 584738,
       "sha256": "3efeb43288872d8d0956ca66b077f327d55a993c356c83fcca7fafd16e3b4e96"
     },
-    {
-      "path": "images/community/ShagbarkAmenities-4.webp",
-      "bytes": 410972,
+    "images/community/ShagbarkAmenities-4.webp": {
+      "size": 410972,
       "sha256": "813eee1be51fd2914c093cb88b93a252af40f04becc94e50dde8439190c85ec0"
     },
-    {
-      "path": "images/community/ShagbarkAmenities-7.webp",
-      "bytes": 612854,
+    "images/community/ShagbarkAmenities-7.webp": {
+      "size": 612854,
       "sha256": "41707b7e5ccda1a523ee6766ee785f55b0e2191df146acc4d3cf54f181aac7b2"
     },
-    {
-      "path": "images/dining/2732PC-7.webp",
-      "bytes": 332918,
+    "images/dining/2732PC-7.webp": {
+      "size": 332918,
       "sha256": "e900d084752ba9682932b0cc24a9a4413cf7e94edfe4e3370b5b77f94a51042c"
     },
-    {
-      "path": "images/explore-smokies/Dollywood-Aerial.webp",
-      "bytes": 543094,
+    "images/explore-smokies/Dollywood-Aerial.webp": {
+      "size": 543094,
       "sha256": "cf1370ffeb461a4df90b50af2bbed30801e0ffb2b4f4c1f23d3779e37af396f2"
     },
-    {
-      "path": "images/explore-smokies/Foothills-Parkway-Sunrise.webp",
-      "bytes": 63770,
+    "images/explore-smokies/Foothills-Parkway-Sunrise.webp": {
+      "size": 63770,
       "sha256": "91197991d7fe798f2ed3ce4c6e63569500aecb388361f4ad8d2584bc036b7b6d"
     },
-    {
-      "path": "images/explore-smokies/GSMNP-Sign-1.webp",
-      "bytes": 485068,
+    "images/explore-smokies/GSMNP-Sign-1.webp": {
+      "size": 485068,
       "sha256": "311e80d803005dbab6592318f45be139f4d5a55587300f37a3d605480ebbeb0c"
     },
-    {
-      "path": "images/explore-smokies/Newfound-Gap.webp",
-      "bytes": 379356,
+    "images/explore-smokies/Newfound-Gap.webp": {
+      "size": 379356,
       "sha256": "5fe351bb14b1bd3fecbfd8aa5ef899e909ff7d764e6cfb7e1197a8080aa60df4"
     },
-    {
-      "path": "images/explore-smokies/Ripleys-Aquarium.webp",
-      "bytes": 413552,
+    "images/explore-smokies/Ripleys-Aquarium.webp": {
+      "size": 413552,
       "sha256": "35ce90e0bc77cf174b86d41cf2873986ba901af53d4fd3a23af8ce74794478c8"
     },
-    {
-      "path": "images/explore-smokies/The-Island.webp",
-      "bytes": 324338,
+    "images/explore-smokies/The-Island.webp": {
+      "size": 324338,
       "sha256": "f1343daa1c6d891fdac50c4963577ce778351106014030cde6b4eca368996018"
     },
-    {
-      "path": "images/exterior/2732PC-13.webp",
-      "bytes": 414158,
+    "images/exterior/2732PC-13.webp": {
+      "size": 414158,
       "sha256": "3bdd17089e6d7b4cf35ae49a603e4480c6c77b47cb33bcdea79093cdb1f93491"
     },
-    {
-      "path": "images/exterior/2732PC-14.webp",
-      "bytes": 266246,
+    "images/exterior/2732PC-14.webp": {
+      "size": 266246,
       "sha256": "3eb8f718e5102b67a58ec4e03d10c3adbe8727cdaaac27c5e85c1f8bffda2993"
     },
-    {
-      "path": "images/exterior/2732PC-16.webp",
-      "bytes": 544378,
+    "images/exterior/2732PC-16.webp": {
+      "size": 544378,
       "sha256": "6f221693af710f350df56dd1d750e7c91579b5e30333da5de185af067bd6d6d6"
     },
-    {
-      "path": "images/exterior/2732PC-19.webp",
-      "bytes": 479882,
+    "images/exterior/2732PC-19.webp": {
+      "size": 479882,
       "sha256": "fb755c0aaff76023cc4c6dfaa67150a0cc5815f84ba5f63c485bed3fba160ca8"
     },
-    {
-      "path": "images/exterior/2732PC-41.webp",
-      "bytes": 624450,
+    "images/exterior/2732PC-41.webp": {
+      "size": 624450,
       "sha256": "4b93dbe7e662fbc6885988475a1f9573bc2f76efffc9fee5bbe1c6a8d0414ab4"
     },
-    {
-      "path": "images/exterior/2732PC-42.webp",
-      "bytes": 524758,
+    "images/exterior/2732PC-42.webp": {
+      "size": 524758,
       "sha256": "4b8d6bfc4f8fc207a588925f3b72bf5452b40b2cb01f2437fcd767cd32cb0a10"
     },
-    {
-      "path": "images/exterior/2732PC-44.webp",
-      "bytes": 642092,
+    "images/exterior/2732PC-44.webp": {
+      "size": 642092,
       "sha256": "ae77c548c0fe927251f714579609729d8e51c7224f754d42a4174b3e923d7be3"
     },
-    {
-      "path": "images/exterior/2732PC-45.webp",
-      "bytes": 578806,
+    "images/exterior/2732PC-45.webp": {
+      "size": 578806,
       "sha256": "ba6a8424676f5f90021a4cd7f695fee7b3999cce0127a8fe25fad3155277911d"
     },
-    {
-      "path": "images/hero/2732PC-1.webp",
-      "bytes": 305976,
+    "images/hero/2732PC-1.webp": {
+      "size": 305976,
       "sha256": "a0776c5122d35711c7943795e9c89b1f41244049077d35c75dbf4df5bb00b31f"
     },
-    {
-      "path": "images/hero/2732PCu24-5.webp",
-      "bytes": 372294,
+    "images/hero/2732PCu24-5.webp": {
+      "size": 372294,
       "sha256": "9c4826d76b21f2a88e95f971d6c1f503560c7fb073f1ab6838a5562208de93c9"
     },
-    {
-      "path": "images/hot-tub/2732PC-20.webp",
-      "bytes": 582026,
+    "images/hot-tub/2732PC-20.webp": {
+      "size": 582026,
       "sha256": "33cb5dea88d3a2ff7633d70a25fb94b9d2ce114510018d4fd15e5b21376b9998"
     },
-    {
-      "path": "images/hot-tub/2732PC-21.webp",
-      "bytes": 508070,
+    "images/hot-tub/2732PC-21.webp": {
+      "size": 508070,
       "sha256": "17a57eccc5de5d31b03a318cdea2d0bf929a7e60cf001c24235f0cbd88a4d559"
     },
-    {
-      "path": "images/hot-tub/2732PCu24-46.webp",
-      "bytes": 396476,
+    "images/hot-tub/2732PCu24-46.webp": {
+      "size": 396476,
       "sha256": "84223ac28d07f74d84e03cc4afa74de19099a4962f2a2e66131d530669ff30cb"
     },
-    {
-      "path": "images/kitchen/arbor-vista-charcoal-kitchen-1.webp",
-      "bytes": 166788,
+    "images/kitchen/arbor-vista-charcoal-kitchen-1.webp": {
+      "size": 166788,
       "sha256": "64c3681fd2988ede4f21c429565cfa57d388b3e633665f3c0d70b2b65dc7a77f"
     },
-    {
-      "path": "images/kitchen/arbor-vista-charcoal-kitchen-2.webp",
-      "bytes": 294718,
+    "images/kitchen/arbor-vista-charcoal-kitchen-2.webp": {
+      "size": 294718,
       "sha256": "e9685bb3047e07f2430ecb4757bf1197df6f0d7b532dafd2c059b6da19166fca"
     },
-    {
-      "path": "images/laundry/2732PC-8.webp",
-      "bytes": 82476,
+    "images/laundry/2732PC-8.webp": {
+      "size": 82476,
       "sha256": "b43c243df3a6aa96ce446ba533ff2f428ea4d88d9b3655bf2682982dd545a2eb"
     },
-    {
-      "path": "images/living/2732PC-2.webp",
-      "bytes": 344862,
+    "images/living/2732PC-2.webp": {
+      "size": 344862,
       "sha256": "b5f7a68d73110f2c684aa867b746a2b980693a826913df24561098766e380177"
     },
-    {
-      "path": "images/living/2732PC-22.webp",
-      "bytes": 316454,
+    "images/living/2732PC-22.webp": {
+      "size": 316454,
       "sha256": "94a522b06a8c094142c7d052592485dad26df9e5284dfd9f250d5481e67456d4"
     },
-    {
-      "path": "images/living/2732PC-3.webp",
-      "bytes": 332020,
+    "images/living/2732PC-3.webp": {
+      "size": 332020,
       "sha256": "86ed73ec8001a539d6b222a534cb97ce7599b033ffd77593446d2afb97f9b880"
     },
-    {
-      "path": "images/living/2732PC-40.webp",
-      "bytes": 359040,
+    "images/living/2732PC-40.webp": {
+      "size": 359040,
       "sha256": "16a8b2ad20966e11dd5344b2f90a763a81869ece3e262a23458354abaf8339f3"
     },
-    {
-      "path": "images/living/2732PC-6.webp",
-      "bytes": 286180,
+    "images/living/2732PC-6.webp": {
+      "size": 286180,
       "sha256": "fb273f2b5286633638e951ee22df0f4b46ed12faad692d5bc0f3c52c13edf316"
     },
-    {
-      "path": "images/property/2732PC-46.webp",
-      "bytes": 15066,
+    "images/property/2732PC-46.webp": {
+      "size": 15066,
       "sha256": "c4274194650c1cc1c45800a5a5b1bb600025f054ff3675056567545ec9dc8b7f"
     },
-    {
-      "path": "images/property/2732PC-47.webp",
-      "bytes": 27148,
+    "images/property/2732PC-47.webp": {
+      "size": 27148,
       "sha256": "4f7bdf6984baff0c9861ded069e6fa61c6b4f1ca533b9ffeb6fdf2641ea3c431"
     },
-    {
-      "path": "images/property/2732PC-48.webp",
-      "bytes": 31746,
+    "images/property/2732PC-48.webp": {
+      "size": 31746,
       "sha256": "3a4631dd4b5a7b2e80f86c2bf6f7b408d57da674753b72e3d11789fa88d5fff9"
     },
-    {
-      "path": "index.html",
-      "bytes": 13127,
-      "sha256": "778129e688a94961b053bc64339d3f63f3ef577a72dbec65bb693570e1587c1e"
+    "index.html": {
+      "size": 14179,
+      "sha256": "7ad7fb4cd4c0927bca0dd5843cee3da613c04a58e6f32a4a0aa2928596d39b73"
     },
-    {
-      "path": "market-data/README_REAL_COMP_SNAPSHOT.md",
-      "bytes": 1952,
-      "sha256": "426fce88bb5db4f04a9303ca7e73a4d349dfe48e572ec28e6f1e6c4d0a2979cf"
+    "plan.html": {
+      "size": 6380,
+      "sha256": "6f13458db2d66648a1de5fbf5454b9788928d724f2be21a88090672d9945538e"
     },
-    {
-      "path": "market-data/observations/arbor-vista-observation-plan.json",
-      "bytes": 1976,
-      "sha256": "a1a09bb1edc1e3bd1b39aa90f3980771d597ee02df7cbf1c6176f37eb449d510"
+    "privacy.html": {
+      "size": 7370,
+      "sha256": "5d2b03a013d14daca67aea6144bb35c4bb8f5d2eec1a5f6f3dfad3c46055e9d5"
     },
-    {
-      "path": "market-data/providers/ADAPTER_CONTRACT.md",
-      "bytes": 797,
-      "sha256": "bcc7875116a63f17af58c8c62e3980a816f9574e4b09e4f193637bf47ea7aa9b"
-    },
-    {
-      "path": "market-data/public-snapshots/arbor-vista-real-comp-snapshot-2026-07-28.json",
-      "bytes": 87664,
-      "sha256": "4a7dd4fc2ca430d34ac01cc3589c5a694ab144e746233da45e18160a23febdd8"
-    },
-    {
-      "path": "plan.html",
-      "bytes": 5609,
-      "sha256": "9007ccc865e9912393cb9cd66da1a5ccaaf7c59876b531b8ce878b17b739cc83"
-    },
-    {
-      "path": "properties/arbor-vista-retreat/TRANSFER_CHECKLIST.md",
-      "bytes": 555,
+    "properties/arbor-vista-retreat/TRANSFER_CHECKLIST.md": {
+      "size": 555,
       "sha256": "247fbad3122562a5876baebf5028511a5d46c1731a963e0e4ea2fffcfc7b7892"
     },
-    {
-      "path": "properties/arbor-vista-retreat/property.json",
-      "bytes": 475,
+    "properties/arbor-vista-retreat/property.json": {
+      "size": 475,
       "sha256": "d2bd73230547c265c05e0bbcc4ef1abeefdc537d1f488d906ba7b89ce3bc8f25"
     },
-    {
-      "path": "rental-agreement.html",
-      "bytes": 8946,
-      "sha256": "dced9995be7999302e14b2bbd7c6654552ff1143239f45e1d37205fcccda6081"
+    "rental-agreement.html": {
+      "size": 9393,
+      "sha256": "e7fa2eb82e9aa73572f487fb856f8784e7d0c9667870ceb89715e281364da3e3"
     },
-    {
-      "path": "robots.txt",
-      "bytes": 114,
-      "sha256": "8ea67db2a4abca98b2827c349b2f2631828f023e72d15cdea678495d78185426"
+    "robots.txt": {
+      "size": 126,
+      "sha256": "68f30ad9c49a5dc75e48fbd110917bc908b5495c3a909a7b365e511962b46625"
     },
-    {
-      "path": "shared-template/README.md",
-      "bytes": 537,
-      "sha256": "7996cf5b95c70097a1687ace6628e166f06c72d084a0bfe819dc742d6edc6b0a"
+    "sitemap.xml": {
+      "size": 1156,
+      "sha256": "9d63b12bd14e7a3b054cb778f4d479eb34cf0c525c85f59bcabac4915eb4527d"
     },
-    {
-      "path": "shared-template/property.schema.json",
-      "bytes": 756,
-      "sha256": "e564efa7a3e237bda9fdb7db4016e0d9b6e72ebbb15ea52813b136b5c9c98a48"
+    "terms.html": {
+      "size": 7296,
+      "sha256": "52659f1fc3fc984bd288da8bf7bcd24b6879bc4805f88b6570157901e81e18f6"
     },
-    {
-      "path": "sitemap.xml",
-      "bytes": 966,
-      "sha256": "0e274ddba2d08f25af9ae597c506336bd79938c2715273f818717c8d8e621671"
-    },
-    {
-      "path": "supabase/README.md",
-      "bytes": 440,
-      "sha256": "351fcbe973d43c06bf506786d71ce2387504950451bf4354deced68ac8194a30"
-    },
-    {
-      "path": "supabase/migrations/001_cloud_multi_property.sql",
-      "bytes": 7280,
-      "sha256": "70c5341f7f85760d33d30546b21af35b15c470f4ef7849ae1b545a8b47a06fe0"
-    },
-    {
-      "path": "supabase/migrations/002_rls_policies.sql",
-      "bytes": 3901,
-      "sha256": "13d651bafcccc075d88fae551dbe49d8739d9153644bf4d21a6da2318e21ae02"
-    },
-    {
-      "path": "supabase/migrations/003_reporting_and_cleaner_feed.sql",
-      "bytes": 2223,
-      "sha256": "339476f2bd90c191a67a06abb5b4fcc2abc61949b0271e6a98377f1dd9a13989"
-    },
-    {
-      "path": "supabase/migrations/004_market_intelligence_phase_a.sql",
-      "bytes": 2824,
-      "sha256": "2b622d9caff0c1d0a6b412eecd0c1572b2428db97def1e6504bd70ca3e3f913d"
-    },
-    {
-      "path": "supabase/migrations/005_real_comp_snapshot_and_rate_observations.sql",
-      "bytes": 971,
-      "sha256": "9d89a0dc0d6144cc8e377799b5406005c4ed6fd541d41131e1661a333b844f62"
-    },
-    {
-      "path": "templates/booking-confirmation.txt",
-      "bytes": 579,
-      "sha256": "c5b2e206db607d6992da05cfb3207d7d380bb5f3fa59931053d3f39d81af0c1f"
-    },
-    {
-      "path": "templates/gate-received.txt",
-      "bytes": 221,
-      "sha256": "4085f051e4120aca22785e04a00e51ea4beb91337a60487ec21b1fc8cbe2a253"
-    },
-    {
-      "path": "templates/three-day-arrival.txt",
-      "bytes": 376,
-      "sha256": "5c90506f763e2fa29da3e00aa2a4e70ef4d09ea479ccc9932e747a8312d98f89"
-    },
-    {
-      "path": "tools/create_property.py",
-      "bytes": 1996,
-      "sha256": "70b9be170402cb235699692c4b2312c89faf5a1e3530ec6e2533fe3fd662b5eb"
-    },
-    {
-      "path": "tools/export_property.py",
-      "bytes": 1274,
-      "sha256": "af198b9f09dff1deaf94939de5d9d0676c5db80320cc05cd005dce0589c3b729"
-    },
-    {
-      "path": "welcome.html",
-      "bytes": 8103,
-      "sha256": "db573c7dd66b24c7e29a897252f00449c9823970fb8ef2eafbce34cc0347e281"
+    "welcome.html": {
+      "size": 8957,
+      "sha256": "e305a8ceb9bba2c5c9afbd7d6bdc2ffe99e6af86f057c3bfef79d9ac974d46e8"
     }
-  ]
+  }
 }

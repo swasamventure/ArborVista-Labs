@@ -210,7 +210,7 @@ html,body{overflow-x:hidden}
 .v43-rotator-controls{display:flex;justify-content:center;gap:10px;margin-top:18px}
 .v43-rotator-controls button{width:38px;height:4px;border:0;padding:0;background:rgba(25,56,47,.25);cursor:pointer;transition:background .2s,transform .2s}
 .v43-rotator-controls button.is-active{background:var(--forest);transform:scaleX(1.12)}
-.v43-rotator.is-paused .v43-rotator-controls::after{content:"Paused";font-size:10px;color:var(--muted);margin-left:5px}
+
 .v43-room-rotator .v43-rotator-stage,.v43-kitchen-rotator .v43-rotator-stage{min-height:clamp(440px,45vw,575px)}
 
 /* Direct booking remains a first-class feature. */
@@ -271,11 +271,11 @@ body.v43-public .btn.light{background:#fff;color:var(--forest)}
 .sticky-book{position:fixed;right:20px;bottom:20px;z-index:85;background:var(--forest)!important;color:#fff!important;padding:14px 19px!important;box-shadow:0 12px 32px rgba(7,30,23,.26);text-decoration:none;font-size:12px!important}
 .v432-sr-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .v43-rotator-controls{align-items:center;min-height:42px}
-.v432-rotator-arrow,.v432-rotator-pause{width:auto!important;height:38px!important;padding:0 13px!important;background:transparent!important;border:1px solid var(--line)!important;color:var(--forest)!important;font-family:var(--sans);font-size:13px;font-weight:700}
+.v432-rotator-arrow{width:auto!important;height:38px!important;padding:0 13px!important;background:transparent!important;border:1px solid var(--line)!important;color:var(--forest)!important;font-family:var(--sans);font-size:13px;font-weight:700}
 .v432-rotator-arrow{font-size:20px!important;line-height:1}
 .v43-rotator-controls [data-rotator-dot]{margin-inline:2px}
-.v43-rotator.is-user-paused .v43-rotator-controls::after{content:"Automatic rotation paused";font-size:10px;color:var(--muted);margin-left:4px}
-.v43-rotator.is-interaction-paused:not(.is-user-paused) .v43-rotator-controls::after{content:"Paused while you interact";font-size:10px;color:var(--muted);margin-left:4px}
+
+
 .v432-destination-rotator .v43-rotator-stage{min-height:clamp(480px,48vw,610px)}
 .gallery-v432-hero{background:url("../images/hero/2732PC-1.webp") center/cover no-repeat;position:relative;isolation:isolate}
 .gallery-v432-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,15,12,.92),rgba(3,15,12,.52));z-index:-1}
@@ -299,8 +299,28 @@ body.v43-public .btn.light{background:#fff;color:var(--forest)}
   .v432-booking-cta-inner{grid-template-columns:1fr;gap:28px}.v432-booking-cta .v43-button{justify-self:start}
   .sticky-book{left:0;right:0;bottom:0;text-align:center;padding:16px!important;box-shadow:0 -7px 25px rgba(0,0,0,.15)}
   body.v43-public{padding-bottom:52px}
-  .v43-rotator-controls{flex-wrap:wrap}.v43-rotator.is-user-paused .v43-rotator-controls::after,.v43-rotator.is-interaction-paused .v43-rotator-controls::after{width:100%;text-align:center}
+  .v43-rotator-controls{flex-wrap:wrap}
   .v432-gallery-stage,.v432-gallery-stage img{height:58vh;min-height:390px}.v432-gallery-stage figcaption{display:block}.v432-gallery-stage figcaption strong{display:block;text-align:left;margin-top:5px}
   .v432-gallery-filters{flex-wrap:nowrap;overflow:auto;padding-bottom:6px}.v432-gallery-filters button{white-space:nowrap}
 }
 @media(prefers-reduced-motion:reduce){.v432-gallery-stage img{transition:none}}
+
+
+/* v4.3.3 final production-safety and brand-visibility pass */
+.brand-copy small{font-family:var(--sans);font-size:9px!important;font-weight:800;letter-spacing:.14em!important;line-height:1.35;text-transform:uppercase;color:var(--gold);margin-top:4px;text-shadow:none}
+.home-page .nav:not(.scrolled) .brand-copy small{color:#ffe0ac;text-shadow:0 1px 7px rgba(0,0,0,.55)}
+.footer-v43 .brand-copy small{color:#f2c982}
+@media(max-width:1000px){.brand-copy small{font-size:8px!important;letter-spacing:.12em!important}.brand-lockup{min-width:242px}}
+@media(max-width:760px){.brand-copy small{font-size:7.2px!important;letter-spacing:.1em!important;display:block!important}.brand-lockup{min-width:205px}}
+@media(max-width:500px){.brand-copy small{font-size:6.5px!important;letter-spacing:.08em!important;display:block!important}.brand-lockup{min-width:184px}.brand-copy strong{font-size:18px}.brand-copy em{font-size:19px}}
+.v432-rotator-arrow{width:46px!important;min-width:46px!important;height:38px!important;padding:0!important;background:transparent!important;border:1px solid var(--line)!important;color:var(--forest)!important;font-size:20px!important;font-weight:700;line-height:1}
+.v43-rotator-controls::after{content:none!important;display:none!important}
+.v43-review-proof{background:var(--paper);padding:clamp(64px,8vw,96px) 0;border-top:1px solid var(--line)}
+.v43-review-proof-inner{display:grid;grid-template-columns:1fr auto;gap:7vw;align-items:center}.v43-review-proof h2{font-family:var(--serif);font-size:clamp(38px,4.8vw,64px);line-height:1.05;margin:10px 0 16px}.v43-review-proof p:not(.v43-kicker){color:var(--muted);margin:0}
+.v433-booking-hold h1{font-family:var(--serif);font-size:clamp(52px,7vw,90px);line-height:.98;margin:12px 0 25px;color:#fff}.v433-booking-status{display:grid;grid-template-columns:1fr .75fr;gap:8vw;align-items:start}.v433-booking-status h2{font-family:var(--serif);font-size:clamp(40px,5vw,65px);line-height:1.06;margin:10px 0 20px}.v433-booking-status p{color:var(--muted)}.v433-status-card{background:var(--forest);color:#fff;padding:34px}.v433-status-card>strong{font-family:var(--serif);font-size:30px}.v433-status-card ol{padding-left:20px;margin:20px 0 0}.v433-status-card li{padding:7px 0;color:#d7e2dc}
+.v433-safeguard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.v433-safeguard-grid article{background:#fff;border:1px solid var(--line);padding:27px}.v433-safeguard-grid span{color:var(--gold);font-weight:800;font-size:12px;letter-spacing:.12em}.v433-safeguard-grid h3{font-size:26px;margin:16px 0 10px}.v433-safeguard-grid p{font-size:15px;color:var(--muted);margin:0}
+.v433-gate-disclosure{background:var(--sand);padding:70px 0}.v433-gate-disclosure h2{font-family:var(--serif);font-size:clamp(36px,4vw,56px);margin:0 0 18px}.v433-gate-disclosure p{color:var(--muted)}.v433-gate-disclosure a,.v433-legal-copy a{font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.v433-faq-booking{margin-top:42px;padding:28px!important}.v433-faq-booking .v43-button{text-decoration:none;margin-top:8px}.v433-agreement-status{margin-bottom:30px}.v433-agreement-actions{display:flex;align-items:center;gap:28px;margin-top:40px;flex-wrap:wrap}.v433-agreement-actions .v43-text-link{text-decoration:none}.v433-legal-copy h2{margin-top:36px}.v433-legal-copy p{color:var(--muted)}
+.footer-bottom{justify-content:flex-start}.footer-bottom a{display:none!important}
+@media(max-width:900px){.v43-review-proof-inner,.v433-booking-status{grid-template-columns:1fr}.v433-safeguard-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.v433-safeguard-grid{grid-template-columns:1fr}.v43-review-proof-inner .v43-button{justify-self:start}.v433-booking-hold .v43-actions{align-items:flex-start}}
