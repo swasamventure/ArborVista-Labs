@@ -101,7 +101,13 @@ def static_checks(qa: QA) -> None:
         if not viewport:
             missing_metadata.append(f"{rel}: viewport")
         base = soup.find("base")
-        if not base or base.get("href") != "/ArborVista-Labs/":
+        if rel == "guest/index.html":
+            if not base or base.get("href") != "../":
+                wrong_base.append(rel)
+        elif rel == "guest/john-smith-4827/index.html":
+            if not base or base.get("href") != "../../":
+                wrong_base.append(rel)
+        elif base is not None:
             wrong_base.append(rel)
 
         ids: dict[str, int] = {}
@@ -159,7 +165,7 @@ def static_checks(qa: QA) -> None:
     qa.check("Every image has alt text", not missing_alt, missing_alt)
     qa.check("Form controls have accessible labels", not unlabeled, unlabeled)
     qa.check("Every page has title and viewport metadata", not missing_metadata, missing_metadata)
-    qa.check("GitHub Pages base path is consistent", not wrong_base, wrong_base)
+    qa.check("Portable page base paths are consistent", not wrong_base, wrong_base)
 
     all_html = "\n".join((ROOT / page).read_text(encoding="utf-8") for page in PUBLIC_PAGES).lower()
     qa.check("Property is never described as three bedrooms", "3 bedroom" not in all_html and "three bedroom" not in all_html)
@@ -199,9 +205,9 @@ def render_page(rel: str) -> str:
     for link in list(soup.find_all("link")):
         href = link.get("href", "")
         target = local_target(href)
-        if target == "assets/style.css":
+        if target and target.endswith(".css") and (ROOT / target).exists():
             style = soup.new_tag("style")
-            style.string = (ROOT / "assets" / "style.css").read_text(encoding="utf-8")
+            style.string = (ROOT / target).read_text(encoding="utf-8")
             link.replace_with(style)
         elif href.startswith("https://"):
             link.decompose()

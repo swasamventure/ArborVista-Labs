@@ -7,7 +7,7 @@
     {
       "name": "Direct request saved to database",
       "pass": true,
-      "detail": "{'booking_request_id': 'req_ba17c31abcee', 'reservation_id': 'res_31b4ed6063af', 'property_id': 'prop_arbor_vista', 'property_code': 'AVR-TN-01', 'status': 'pending', 'email_status': 'disabled'}"
+      "detail": "{'booking_request_id': 'req_fd514e7d3e41', 'reservation_id': 'res_256159bc7b8a', 'property_id': 'prop_arbor_vista', 'property_code': 'AVR-TN-01', 'status': 'pending', 'email_status': 'disabled'}"
     },
     {
       "name": "Booking request row created",
@@ -27,12 +27,12 @@
     {
       "name": "Email explicitly disabled",
       "pass": true,
-      "detail": "{'id': 'ntf_f80d351a29f3', 'booking_request_id': 'req_ba17c31abcee', 'channel': 'disabled', 'recipient': 'swasam.venture@gmail.com', 'status': 'disabled', 'details': 'Outbound email intentionally excluded from v4.1', 'created_at': '2026-07-28 21:41:02'}"
+      "detail": "{'id': 'ntf_ae2114e46ba9', 'booking_request_id': 'req_fd514e7d3e41', 'channel': 'disabled', 'recipient': 'swasam.venture@gmail.com', 'status': 'disabled', 'details': 'Outbound email intentionally excluded from v4.1', 'created_at': '2026-07-31 20:55:05'}"
     },
     {
       "name": "Pending request blocks availability",
       "pass": true,
-      "detail": "{'property_id': 'prop_arbor_vista', 'start_date': '2030-02-11', 'end_date': '2030-02-12', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2030-02-10', 'end_date': '2030-02-13', 'source': 'direct', 'source_id': 'res_31b4ed6063af', 'status': 'pending'}]}"
+      "detail": "{'property_id': 'prop_arbor_vista', 'start_date': '2030-02-11', 'end_date': '2030-02-12', 'available': False, 'conflicts': [{'property_id': 'prop_arbor_vista', 'start_date': '2030-02-10', 'end_date': '2030-02-13', 'source': 'direct', 'source_id': 'res_256159bc7b8a', 'status': 'pending'}]}"
     },
     {
       "name": "Overlapping request rejected",
@@ -47,7 +47,7 @@
     {
       "name": "Eight-guest request accepted",
       "pass": true,
-      "detail": "{'booking_request_id': 'req_5c9e33d8d9db', 'reservation_id': 'res_8d066522332c', 'property_id': 'prop_arbor_vista', 'property_code': 'AVR-TN-01', 'status': 'pending', 'email_status': 'disabled'}"
+      "detail": "{'booking_request_id': 'req_c97e162d0d32', 'reservation_id': 'res_395f4ceb8ba1', 'property_id': 'prop_arbor_vista', 'property_code': 'AVR-TN-01', 'status': 'pending', 'email_status': 'disabled'}"
     },
     {
       "name": "Outbound iCal generated",

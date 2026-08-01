@@ -1,0 +1,44 @@
+{
+  "release": "4.3.1",
+  "name": "UI Rotation + Direct Booking Restore",
+  "status": "PASS",
+  "suites": {
+    "v4.3.1_static": {
+      "passed": 14,
+      "total": 14,
+      "status": "PASS"
+    },
+    "v4.3.1_browser": {
+      "passed": 24,
+      "total": 24,
+      "status": "PASS"
+    },
+    "web_regression": {
+      "passed": 42,
+      "total": 42,
+      "status": "PASS"
+    },
+    "database_calendar": {
+      "passed": 33,
+      "total": 33,
+      "status": "PASS"
+    },
+    "platform_api": {
+      "passed": 80,
+      "total": 80,
+      "status": "PASS"
+    }
+  },
+  "key_results": [
+    "Responsive Arbor Vista mountain/wordmark logo is visible on desktop and mobile.",
+    "Cabin hero uses a dark full-width overlay for readable white text.",
+    "Only one image is visible per rotating area; slides fade every 3 seconds.",
+    "Homepage signature area rotates 3 images.",
+    "Cabin sleeping area rotates 3 images.",
+    "Cabin kitchen rotates only the 2 approved charcoal kitchen images.",
+    "Full four-step Book Direct form is present and Step 1 advances to Step 2.",
+    "Root pages are portable across ArborVista-Labs, ArborVista-Retreat, and a custom domain.",
+    "Desktop and mobile pages have no horizontal overflow.",
+    "No browser page errors were detected in focused v4.3.1 testing."
+  ]
+}

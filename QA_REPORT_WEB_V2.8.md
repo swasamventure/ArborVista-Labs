@@ -11,7 +11,7 @@ Passed 42 of 42 automated checks.
 - PASS — Every image has alt text
 - PASS — Form controls have accessible labels
 - PASS — Every page has title and viewport metadata
-- PASS — GitHub Pages base path is consistent
+- PASS — Portable page base paths are consistent
 - PASS — Property is never described as three bedrooms
 - PASS — Occupancy language supports approved seven-to-eight guest requests
 - PASS — Correct room model is present

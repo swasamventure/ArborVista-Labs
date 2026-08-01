@@ -1,3 +1,5 @@
+> Current test UI release: **v4.3.2 UI Stabilization**. See `README_V4.3.2.md`.
+
 # Arbor Vista Platform v4.3 — Premium UI Test Build
 
 See `README_V4.3.md` and `Docs/CHANGELOG_V4.3.md` for the UI scope.

@@ -1,0 +1,21 @@
+{
+  "release": "4.3.1",
+  "name": "UI Rotation + Direct Booking Restore",
+  "static_checks": {
+    "root_pages_portable_no_labs_base": true,
+    "logo_lockup_on_all_public_pages": true,
+    "no_public_png_logo_reference": true,
+    "direct_booking_page_present": true,
+    "direct_booking_form_present": true,
+    "direct_booking_four_steps_present": true,
+    "homepage_direct_booking_section": true,
+    "homepage_rotator_three_slides": true,
+    "cabin_rotators_five_total_slides": true,
+    "rotator_delay_3000": true,
+    "only_approved_kitchen_images_in_cabin": true,
+    "darker_cabin_overlay_css": true,
+    "rotator_js_present": true,
+    "guest_bases_portable": true
+  },
+  "static_status": "PASS"
+}
