@@ -1,0 +1,30 @@
+{
+  "release": "v4.3.3",
+  "scope": "Approved logo replacement only; feature freeze preserved",
+  "sourceLogo": "a_clean_high_resolution_logo_branding_image_on_a.png",
+  "htmlFiles": 12,
+  "logoLockupsReplaced": 24,
+  "checks": {
+    "version_remains_v4_3_3": true,
+    "release_tag_remains_v4_3_3": true,
+    "all_24_logo_lockups_replaced": true,
+    "new_logo_webp_exists": true,
+    "new_logo_png_exists": true,
+    "favicon_exists": true,
+    "all_public_html_reference_new_logo": true,
+    "no_public_html_reference_old_lockup": true,
+    "no_old_svg_favicon_reference": true,
+    "pause_control_still_removed": true,
+    "host_console_link_absent": true,
+    "feature_freeze_preserved": true,
+    "desktop_logo_css_width_present": true,
+    "mobile_logo_css_width_present": true,
+    "approved_logo_dimensions_valid": true,
+    "all_html_image_assets_exist": true
+  },
+  "browser": {
+    "status": "NOT_RUN",
+    "reason": "Localhost and file URL navigation are blocked by the execution environment."
+  },
+  "result": "PASS"
+}

@@ -14,3 +14,7 @@ This is the final v4.3.x public-site package. Feature development is frozen unti
 Upload the contents of this ZIP to the root of the production `ArborVista-Retreat` repository. In GitHub Pages settings, enable **Enforce HTTPS**. The bundled `CNAME` contains `arborvistaretreat.com`.
 
 Do not restore `/admin`, `/guest`, the local role simulator, or the browser-only booking form before v4.4 authentication and secure persistence are live.
+
+### Approved brand asset
+
+The final v4.3.3 package uses `assets/arbor-vista-logo-v433.webp`, created from the approved circular cabin-and-mountain logo with the tagline **Rest. Renew. Reconnect.** The PNG master is included at `assets/arbor-vista-logo-v433.png`.

@@ -14,3 +14,11 @@
 - Increased and emphasized the logo tagline on desktop, tablet, mobile, and footer.
 - Added CNAME, robots, sitemap, VERSION, and v4.3.3 release tag metadata.
 - Feature freeze: no further v4.3 feature releases are planned.
+
+## Final approved logo revision
+
+- Replaced the prior generated/inline wordmark with the approved circular cabin, pine, lake and mountain logo.
+- The approved tagline is **Rest. Renew. Reconnect.**
+- Increased the logo display size in the public header and footer.
+- Version and release tag remain **v4.3.3**.
+- No booking, security, content, database or feature behavior changed.

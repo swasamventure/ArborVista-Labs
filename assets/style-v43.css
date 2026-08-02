@@ -324,3 +324,32 @@ body.v43-public .btn.light{background:#fff;color:var(--forest)}
 .footer-bottom{justify-content:flex-start}.footer-bottom a{display:none!important}
 @media(max-width:900px){.v43-review-proof-inner,.v433-booking-status{grid-template-columns:1fr}.v433-safeguard-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.v433-safeguard-grid{grid-template-columns:1fr}.v43-review-proof-inner .v43-button{justify-self:start}.v433-booking-hold .v43-actions{align-items:flex-start}}
+
+
+/* v4.3.3 final approved logo — no feature changes */
+.brand-logo-v433{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:286px;min-width:286px;padding:3px 7px;background:#fff;
+  line-height:0;box-shadow:0 7px 22px rgba(3,18,13,.16)
+}
+.brand-logo-v433 img{
+  display:block;width:100%;height:auto;max-height:none;object-fit:contain;
+  object-position:center;filter:none!important
+}
+.navin{min-height:168px}
+.home-page .nav:not(.scrolled) .brand-logo-v433 img,
+.footer-v43 .brand-logo-v433 img{filter:none!important}
+.footer-v43 .brand-logo-v433{width:316px;min-width:316px;padding:5px 9px;background:#fff}
+.footer-v43 .footer-logo{width:316px}
+@media(max-width:1120px){
+  .brand-logo-v433{width:238px;min-width:238px}.navin{min-height:145px}.links{gap:17px}
+}
+@media(max-width:760px){
+  .brand-logo-v433{width:184px;min-width:184px;padding:2px 5px}.navin{min-height:116px}
+  .footer-v43 .brand-logo-v433,.footer-v43 .footer-logo{width:250px;min-width:250px}
+  .v43-hero-content{padding-top:170px}
+}
+@media(max-width:430px){
+  .brand-logo-v433{width:162px;min-width:162px}.navin{min-height:106px}
+  .footer-v43 .brand-logo-v433,.footer-v43 .footer-logo{width:230px;min-width:230px}
+}

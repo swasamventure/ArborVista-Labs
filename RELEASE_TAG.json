@@ -1,7 +1,9 @@
 {
   "tag": "v4.3.3",
-  "name": "Production Safety and Trust Final",
+  "name": "Production Safety, Trust and Approved Logo Final",
   "releaseDate": "2026-08-01",
   "featureFreeze": true,
-  "directBookingEnabled": false
+  "directBookingEnabled": false,
+  "logoRevision": "approved-circle-cabin-logo",
+  "logoTagline": "Rest. Renew. Reconnect."
 }
