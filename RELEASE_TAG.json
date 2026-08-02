@@ -4,6 +4,8 @@
   "releaseDate": "2026-08-01",
   "featureFreeze": true,
   "directBookingEnabled": false,
-  "logoRevision": "approved-circle-cabin-logo",
-  "logoTagline": "Rest. Renew. Reconnect."
+  "logoRevision": "approved-circle-cabin-transparent-20pct-smaller",
+  "logoTagline": "Rest. Renew. Reconnect.",
+  "logoBackground": "transparent",
+  "logoScaleChange": "-20%"
 }

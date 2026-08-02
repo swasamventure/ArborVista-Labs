@@ -326,30 +326,42 @@ body.v43-public .btn.light{background:#fff;color:var(--forest)}
 @media(max-width:600px){.v433-safeguard-grid{grid-template-columns:1fr}.v43-review-proof-inner .v43-button{justify-self:start}.v433-booking-hold .v43-actions{align-items:flex-start}}
 
 
-/* v4.3.3 final approved logo — no feature changes */
+/* v4.3.3 final approved logo — transparent and 20% smaller */
 .brand-logo-v433{
   display:inline-flex;align-items:center;justify-content:center;
-  width:286px;min-width:286px;padding:3px 7px;background:#fff;
-  line-height:0;box-shadow:0 7px 22px rgba(3,18,13,.16)
+  width:229px;min-width:229px;padding:0;background:transparent;
+  line-height:0;box-shadow:none
 }
 .brand-logo-v433 img{
   display:block;width:100%;height:auto;max-height:none;object-fit:contain;
-  object-position:center;filter:none!important
+  object-position:center;
+  filter:drop-shadow(0 2px 4px rgba(3,18,13,.28))!important
 }
-.navin{min-height:168px}
+.navin{min-height:135px}
 .home-page .nav:not(.scrolled) .brand-logo-v433 img,
-.footer-v43 .brand-logo-v433 img{filter:none!important}
-.footer-v43 .brand-logo-v433{width:316px;min-width:316px;padding:5px 9px;background:#fff}
-.footer-v43 .footer-logo{width:316px}
+.footer-v43 .brand-logo-v433 img{
+  filter:drop-shadow(0 2px 4px rgba(3,18,13,.34))!important
+}
+.footer-v43 .brand-logo-v433{
+  width:253px;min-width:253px;padding:0;background:transparent
+}
+.footer-v43 .footer-logo{width:253px}
 @media(max-width:1120px){
-  .brand-logo-v433{width:238px;min-width:238px}.navin{min-height:145px}.links{gap:17px}
+  .brand-logo-v433{width:190px;min-width:190px}
+  .navin{min-height:116px}.links{gap:17px}
 }
 @media(max-width:760px){
-  .brand-logo-v433{width:184px;min-width:184px;padding:2px 5px}.navin{min-height:116px}
-  .footer-v43 .brand-logo-v433,.footer-v43 .footer-logo{width:250px;min-width:250px}
-  .v43-hero-content{padding-top:170px}
+  .brand-logo-v433{width:147px;min-width:147px;padding:0}
+  .navin{min-height:93px}
+  .footer-v43 .brand-logo-v433,.footer-v43 .footer-logo{
+    width:200px;min-width:200px
+  }
+  .v43-hero-content{padding-top:140px}
 }
 @media(max-width:430px){
-  .brand-logo-v433{width:162px;min-width:162px}.navin{min-height:106px}
-  .footer-v43 .brand-logo-v433,.footer-v43 .footer-logo{width:230px;min-width:230px}
+  .brand-logo-v433{width:130px;min-width:130px}
+  .navin{min-height:85px}
+  .footer-v43 .brand-logo-v433,.footer-v43 .footer-logo{
+    width:184px;min-width:184px
+  }
 }

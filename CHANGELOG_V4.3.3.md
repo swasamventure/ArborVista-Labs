@@ -22,3 +22,11 @@
 - Increased the logo display size in the public header and footer.
 - Version and release tag remain **v4.3.3**.
 - No booking, security, content, database or feature behavior changed.
+
+## Final logo display correction
+
+- Removed the white rectangular canvas from the approved logo.
+- The website now uses a transparent WebP logo that blends into the header and footer backgrounds.
+- Reduced the displayed logo dimensions by 20% at desktop, tablet, mobile and footer breakpoints.
+- Added a subtle shape-only drop shadow for readability without restoring a background box.
+- Release tag remains **v4.3.3** and the feature freeze remains active.
