@@ -1,5 +1,19 @@
 (() => {
   'use strict';
+
+  // v4.3.3 final visual cleanup stylesheet, shared by every public page.
+  const cleanupHref = 'assets/v433-final-cleanup.css?v=4.3.3-final';
+  if (!document.querySelector('link[data-v433-final-cleanup]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = cleanupHref;
+    link.dataset.v433FinalCleanup = '';
+    document.head.append(link);
+  }
+
+  // Remove, rather than merely hide, the two approved homepage deletions.
+  document.querySelectorAll('.av-utility,.av-hero-note').forEach(element => element.remove());
+
   const header=document.querySelector('[data-v43-header]');
   if(header){const sync=()=>header.classList.toggle('scrolled',window.scrollY>36);sync();window.addEventListener('scroll',sync,{passive:true});}
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;

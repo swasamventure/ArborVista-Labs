@@ -1,0 +1,33 @@
+{
+  "release": "v4.3.3",
+  "files": {
+    "QA_REPORT_V4.3.3_FINAL_VISUAL_CLEANUP.json": {
+      "bytes": 508,
+      "sha256": "7675dd5a5f8fa883cc0934526f2b269f39ceeae0e91ba5cfd523aaed447b2f54"
+    },
+    "QA_REPORT_V4.3.3_FINAL_VISUAL_CLEANUP.md": {
+      "bytes": 456,
+      "sha256": "a692db34660e1180774c59f719eff6147f4e1709dcace49f43bde61890db2022"
+    },
+    "README_PATCH.md": {
+      "bytes": 1346,
+      "sha256": "5b75109eb2680b0bddc5c4f3625ec4bdd21b06ef8e0506f34b86a847e0927154"
+    },
+    "assets/arbor-vista-logo-horizontal-final-v433.png": {
+      "bytes": 268958,
+      "sha256": "da512740e4931dc86850f3949918612847783be62c75e4fff03bbd28d9c89d78"
+    },
+    "assets/arbor-vista-logo-horizontal-final-v433.webp": {
+      "bytes": 120594,
+      "sha256": "7d8fc9856b72882195e0b90ada1c5d499a4a1657b12c93ebd76a5a886db59a07"
+    },
+    "assets/v43.js": {
+      "bytes": 4690,
+      "sha256": "95ebfa07467ee33482c6a623b350e1d29d475a9836964437d5dc4a70f81660b5"
+    },
+    "assets/v433-final-cleanup.css": {
+      "bytes": 163590,
+      "sha256": "265487c44103bb3380b6ebbaf141867796fa646edc9746accf5317f3f3552ebe"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "release": "v4.3.3",
+  "scope": "Final visual cleanup only",
+  "result": "PASS",
+  "checks": {
+    "approved_logo_png_exists": true,
+    "approved_logo_webp_exists": true,
+    "cleanup_css_exists": true,
+    "shared_js_replacement_exists": true,
+    "utility_text_removed_by_js": true,
+    "utility_text_hidden_by_css": true,
+    "logo_is_transparent": true,
+    "desktop_logo_is_20_percent_smaller": true,
+    "scrolled_nav_matches_page_background": true,
+    "no_feature_version_increment": true
+  }
+}
