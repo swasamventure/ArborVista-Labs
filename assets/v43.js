@@ -1,18 +1,26 @@
 (() => {
   'use strict';
 
-  // v4.3.3 final visual cleanup stylesheet, shared by every public page.
-  const cleanupHref = 'assets/v433-final-cleanup.css?v=4.3.3-final';
-  if (!document.querySelector('link[data-v433-final-cleanup]')) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = cleanupHref;
-    link.dataset.v433FinalCleanup = '';
+  const cleanupHref='assets/v433-final-cleanup.css?v=4.3.3-final-verified';
+  if(!document.querySelector('link[data-v433-final-cleanup]')){
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href=cleanupHref;
+    link.dataset.v433FinalCleanup='';
     document.head.append(link);
   }
 
-  // Remove, rather than merely hide, the two approved homepage deletions.
-  document.querySelectorAll('.av-utility,.av-hero-note').forEach(element => element.remove());
+  // Belt-and-suspenders protection for any older cached homepage markup.
+  document.querySelectorAll('.av-utility,.av-hero-note').forEach(element=>element.remove());
+  document.querySelectorAll('.brand-logo-v433').forEach(lockup=>{
+    lockup.classList.add('brand-logo-horizontal');
+    const img=lockup.querySelector('img');
+    if(img){
+      img.src='assets/arbor-vista-logo-horizontal-v433.webp?v=4.3.3-final-verified';
+      img.width=1200;
+      img.height=281;
+    }
+  });
 
   const header=document.querySelector('[data-v43-header]');
   if(header){const sync=()=>header.classList.toggle('scrolled',window.scrollY>36);sync();window.addEventListener('scroll',sync,{passive:true});}

@@ -1,28 +1,36 @@
-# Arbor Vista Retreat v4.3.3 — Final Visual Cleanup Patch
+# Arbor Vista Retreat v4.3.3 — Final Verified Logo Cleanup
 
-Overlay this patch on the current **v4.3.3 Homepage Redesign** build.
+This is an overlay patch for the current `swasamventure/ArborVista-Labs` v4.3.3 homepage-redesign build.
 
-## Approved changes
+## Why this replaces the previous patch
 
-1. Removes the top utility sentence:
-   `Escape. Unwind. Reconnect. Your mountain retreat awaits.`
-2. Removes the temporary hero note:
-   `Direct booking coming in v4.4 · Current reservations are securely completed on Airbnb.`
-3. Uses the exact user-approved horizontal transparent logo.
-4. Keeps the logo background transparent.
-5. Uses a warm-cream sticky/scrolled navigation background matching the page.
-6. Adds shape-only shadow/glow at the top of the hero so the logo remains readable.
-7. Reduces the current redesigned logo dimensions by 20%.
-8. Applies the same header-logo visibility treatment across all public pages.
-9. Keeps the release version/tag at **v4.3.3** and adds no new features.
+The previous package relied primarily on JavaScript/CSS fallback behavior. This verified package includes a direct replacement `index.html` based on the actual current repository baseline, plus the exact approved logo asset and cache-busted shared files.
 
-## Files
+## Install
 
-- `assets/v43.js` — replace the existing shared file.
-- `assets/v433-final-cleanup.css` — new shared cleanup stylesheet.
-- `assets/arbor-vista-logo-horizontal-final-v433.png` — approved PNG master.
-- `assets/arbor-vista-logo-horizontal-final-v433.webp` — optimized WebP master.
+1. Back up the current repository.
+2. Extract this ZIP.
+3. Overlay its contents at the repository root, preserving the `assets/` folder.
+4. Either use the included replacement `index.html` directly or run:
 
-The CSS embeds the approved optimized logo so the result does not depend on stale image-cache paths.
+```bash
+python apply_v433_final_cleanup.py /path/to/ArborVista-Labs
+```
 
-After deployment, perform a hard refresh once to bypass the older cached `v43.js?v=4.3.3`.
+5. Verify the installed checkout:
+
+```bash
+python verify_v433_final_cleanup.py /path/to/ArborVista-Labs
+```
+
+6. Commit and deploy, then hard-refresh the browser once.
+
+## Changes
+
+- Removes the redundant top utility copy.
+- Removes the temporary hero booking-status sentence.
+- Replaces the production horizontal logo asset with the exact approved transparent logo.
+- Keeps the top navigation dark enough for logo visibility.
+- Uses the page-matching warm-cream background after scroll and on interior pages.
+- Keeps the redesigned logo 20% smaller on desktop and responsive on tablet/mobile.
+- Preserves v4.3.3 and adds no new features before v4.4.

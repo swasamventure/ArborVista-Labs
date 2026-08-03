@@ -1,386 +1,75 @@
 {
   "release": "v4.3.3",
-  "fileCount": 95,
+  "scope": "final-verified-logo-cleanup",
+  "fileCount": 17,
   "files": {
-    ".nojekyll": {
-      "size": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "QA/browser-results.json": {
+      "bytes": 1134,
+      "sha256": "5059c9460a5cd257314f195229a657b08271a57eb525f3fb902a60da75042e39"
     },
-    "404.html": {
-      "size": 5141,
-      "sha256": "a2bb7f79b2d32a754051aca0d1e46b0222b0803b56379645c9dd1dcd989f2730"
+    "QA/home-v433-final-scrolled-desktop.png": {
+      "bytes": 653881,
+      "sha256": "182bb254cd9be7dcb0d1cc40dcede2e0bc3cfd25499632c24e80a2d1c2d205af"
     },
-    "CHANGELOG_V4.3.3.md": {
-      "size": 1992,
-      "sha256": "a61610e859f62013f85691240a1051e7c87d6908315d3986e99d85b1e8f494c5"
+    "QA/home-v433-final-scrolled-mobile.png": {
+      "bytes": 179415,
+      "sha256": "95f8d4d9530a00e446cf89c1fb3177f2d919214042fbd549f5cf141d02602e03"
     },
-    "CNAME": {
-      "size": 22,
-      "sha256": "a24a5d54f75afb679712fc55d1539897cdcdc3465a4831fe5a99dfe96077f7b2"
+    "QA/home-v433-final-top-desktop.png": {
+      "bytes": 1779370,
+      "sha256": "91b833e526b2f903ebc851d990752b91659226c02cdc71defbf89e03b55e8082"
     },
-    "DELETE_BEFORE_DEPLOY_FROM_V4.3.2.txt": {
-      "size": 181,
-      "sha256": "035d63c7379b8c949eef601fab4309c52e8879501cacf563ea4d785937723a24"
+    "QA/home-v433-final-top-mobile.png": {
+      "bytes": 452954,
+      "sha256": "592ff4c7eddf15ce7f28a5d2931c9942d0612bd83ab5fe9cc42c0d9c068d3d80"
     },
-    "DEPLOYMENT_CHECKLIST_V4.3.3.md": {
-      "size": 701,
-      "sha256": "d699845938093a4a29f6d8ee1e40911154c5b3a4dd692f9076b3da3d02c4ba0a"
+    "QA/interior-v433-final-logo-desktop.png": {
+      "bytes": 839966,
+      "sha256": "fb9428c2ae8ad565b867b64e8d6f4282dce5ed7af6f266f33a6ebebb1f215fc8"
     },
-    "QA/screenshots/home-v433-transparent-logo-20pct-visual-preview.png": {
-      "size": 2131115,
-      "sha256": "064fd1b9664679786a5fc3320e50621feb0b7569409ee5a55fabd378766cf736"
+    "QA_REPORT_V4.3.3_FINAL_VERIFIED.json": {
+      "bytes": 6644,
+      "sha256": "76f8ef383e8f664e005ffccccbbc3e44a903541e5ce7d7e12787a4cc9a794929"
     },
-    "QA_REPORT_V4.3.3.json": {
-      "size": 1495,
-      "sha256": "b660aea9ad2013c01960e9d7dacc87808c7c4158bd4327c6768382a7f1a05ed3"
+    "QA_REPORT_V4.3.3_FINAL_VERIFIED.md": {
+      "bytes": 4441,
+      "sha256": "4a55456bebded2ab89181848abecc3520d4d01c8a11d94eec7898292b322706a"
     },
-    "QA_REPORT_V4.3.3.md": {
-      "size": 631,
-      "sha256": "7325548d2a5ca47ca15b2df2c99f31f80fb0f18fdaf0334e9e2bbfe7b777a5b6"
+    "README_PATCH.md": {
+      "bytes": 1407,
+      "sha256": "8d63b01a93f8442436d509e561ab0e3cc8aa4b518938c8df36c660b2a1bbdeb6"
     },
-    "QA_REPORT_V4.3.3_APPROVED_LOGO.json": {
-      "size": 1033,
-      "sha256": "b866b06f49da26bc47babdfd75a601d4048ea7f4a9579fbb27da9f3b09380f9e"
+    "SOURCE_BASELINE.json": {
+      "bytes": 395,
+      "sha256": "911b90704fdc59560c66361b1d7c4e05ceb1d2701ccf98519a5da76190a465d2"
     },
-    "QA_REPORT_V4.3.3_APPROVED_LOGO.md": {
-      "size": 989,
-      "sha256": "dec723c95411c36e55a6d79ded238c421ded4bb86a4f41c49d8059d9e7e00fc5"
-    },
-    "QA_REPORT_V4.3.3_BROWSER.json": {
-      "size": 1751,
-      "sha256": "8776df70a68c86a85b6e7f3ab53f12812f181288d86b4b24a7bac68f857a924f"
-    },
-    "QA_REPORT_V4.3.3_FINAL.md": {
-      "size": 1855,
-      "sha256": "407a45aee3e9bec52a9ad0c85c211bb325ed6f58394712b711e1ed613318161a"
-    },
-    "QA_REPORT_V4.3.3_HOMEPAGE_REDESIGN.md": {
-      "size": 238,
-      "sha256": "3e78352f3f66894ffad5412ac452f293ad2c2e79b8c5d1559d58a190947bd928"
-    },
-    "QA_REPORT_V4.3.3_TRANSPARENT_LOGO_20PCT.md": {
-      "size": 1138,
-      "sha256": "85bb3f4c6bfd54a4739006d290e284eeb37331acca0041a3f703663e7f58e707"
-    },
-    "README_V4.3.3.md": {
-      "size": 1101,
-      "sha256": "7234a8308075eb0e7c50bf929570bd8a91d1958214a70d4774c32497cb523510"
-    },
-    "RELEASE_TAG.json": {
-      "size": 421,
-      "sha256": "6b688717ffc6874f2ea44236012322261f567ac47cb68f26e6290986480ea3cc"
-    },
-    "VERSION": {
-      "size": 7,
-      "sha256": "d7f86fa76b27f38b39fccd18b36a5af5d3208aba53148e2fa37ef1667c13080b"
-    },
-    "assets/analytics-v432.js": {
-      "size": 2035,
-      "sha256": "4f1f242ebd50b848582eb740c8e9383399b062bc67fff69ee8d9ce6afa29c2eb"
-    },
-    "assets/arbor-vista-favicon-v433.png": {
-      "size": 347487,
-      "sha256": "00b071ae61d88c42dd84e56dbd58cf7c08eff98eeaac38919ed251f1234aa247"
+    "apply_v433_final_cleanup.py": {
+      "bytes": 1913,
+      "sha256": "392a6dacdb488ddee078c0825ccf1082e398c663d4f813e02fe48be275b24c45"
     },
     "assets/arbor-vista-logo-horizontal-v433.png": {
-      "size": 192182,
-      "sha256": "de929f1d1bda4365a6abbbd6b2755ec3c03623beafdab2a922fad24be4f71c59"
+      "bytes": 268958,
+      "sha256": "da512740e4931dc86850f3949918612847783be62c75e4fff03bbd28d9c89d78"
     },
     "assets/arbor-vista-logo-horizontal-v433.webp": {
-      "size": 69660,
-      "sha256": "cf6a78064a96d10731e0b33ed8e6b95c76b2d6f753029785319dd147b79a538b"
-    },
-    "assets/arbor-vista-logo-v433-transparent.png": {
-      "size": 947769,
-      "sha256": "b23b7507f630b51a2b8929acbf82e9930010205e8973587be081018416db29fd"
-    },
-    "assets/arbor-vista-logo-v433-transparent.webp": {
-      "size": 141678,
-      "sha256": "c2248a2b4bea4624dbeb46b155507ee22f922bdf8db9cee292102098a79eb3f0"
-    },
-    "assets/arbor-vista-logo-v433.png": {
-      "size": 837720,
-      "sha256": "10c9fd5e01b3009e44461e5a7617ef2969a5eb853e74fa4769dca31056446b92"
-    },
-    "assets/arbor-vista-logo-v433.webp": {
-      "size": 107838,
-      "sha256": "bde8488d521165f516258ecc22f168fe170cad33083c86b966dd4ca485e26047"
-    },
-    "assets/arbor-vista-logo.svg": {
-      "size": 1030,
-      "sha256": "fd993a3530f48f31e6ba9b0d5624d6ba14a10e18e4127b4103ba90776652da98"
-    },
-    "assets/gallery-v432.js": {
-      "size": 3337,
-      "sha256": "b8988dea512c47aff255fccbe4a59f0b55f4f394f02b033bcd1ab1af0e7a3828"
-    },
-    "assets/script.js": {
-      "size": 864,
-      "sha256": "d6847d0c6dd54ffd246d12a4c9371c7832aca8371d557e479bcebb6b61d19a36"
-    },
-    "assets/style-v43.css": {
-      "size": 33381,
-      "sha256": "f54b08de0a45dbb515a0db18a366ab1be6e1c2d32ea1cd967fac2b6b40bb327c"
-    },
-    "assets/style.css": {
-      "size": 16579,
-      "sha256": "a28199cf898454a09d018c979d5a18711e24a427fdd41a46c744614afb2afec4"
+      "bytes": 124858,
+      "sha256": "2f5e8dd8a721967f3d8cb2bf306e98b6b09b8788b78485a21c3c70aa1a28b99b"
     },
     "assets/v43.js": {
-      "size": 4125,
-      "sha256": "d2aec02318ca60571fbcf510d0873dd6ce515705d12b19ca83dbadb5a34dd544"
+      "bytes": 4924,
+      "sha256": "78e466b5e78c309a50a3a1bf8e7184baf3ea52c49cc133fd138db679916778d2"
     },
-    "book-direct.html": {
-      "size": 7478,
-      "sha256": "196a602b9ddc90bd315c6df72bbee758f98ba476c25c04d9c04dff67c3f754c3"
-    },
-    "cabin.html": {
-      "size": 11793,
-      "sha256": "664b51a47b1c6ffbce4f1c778491e8964f54e77a1bbb48f8ae6b13ca55ded66e"
-    },
-    "config/runtime-config.js": {
-      "size": 328,
-      "sha256": "541ee4181464ccd554f67c8b4bd7a6496b868a823a9274c424a55f25c443d471"
-    },
-    "explore.html": {
-      "size": 10815,
-      "sha256": "5e6820767c3ed1e58f711aec0c4c27acb84ffd26f2ab80efa3da035d10a4e69f"
-    },
-    "faq.html": {
-      "size": 8409,
-      "sha256": "44e9103ca02071edf3882981e5122b083212cda9ccae6ef5e4baf8c72dcd8f07"
-    },
-    "gallery.html": {
-      "size": 19142,
-      "sha256": "282f2230d9053c31b856c3c2fac3696aa7805e8044cd7af5603ebb2d3f8d9c7d"
-    },
-    "images/area-map.webp": {
-      "size": 115510,
-      "sha256": "a9b5d487410045961604a8433060edb0283e5ff11daa43e72a60c2affb6717e2"
-    },
-    "images/bathrooms/2732PC-27.webp": {
-      "size": 122758,
-      "sha256": "a4fe21b08d6385e4dd985ca84499413c1c944c8c2a7d34e8bcefb3da52c9ca45"
-    },
-    "images/bathrooms/2732PC-28.webp": {
-      "size": 154076,
-      "sha256": "52db845d7d9576709894cfb417e31d0565b36c1fa200599dfb7ce835fa180a85"
-    },
-    "images/bathrooms/2732PC-33.webp": {
-      "size": 227226,
-      "sha256": "1a0f8fef7ed16137900ee90d7964d30516f4a3b1eef8897910db409d7a2547d9"
-    },
-    "images/bedrooms/2732PC-24.webp": {
-      "size": 254128,
-      "sha256": "30cbe0d13a72c4e884d6ae6927130d6432d4e08ae7de3cb07a9edfa6a233260d"
-    },
-    "images/bedrooms/2732PC-25.webp": {
-      "size": 230884,
-      "sha256": "5d9656218ce63851df43e138159a88d8dabfec53f429acca3c31c6eb20a8a7b5"
-    },
-    "images/bedrooms/2732PC-26.webp": {
-      "size": 281572,
-      "sha256": "9509667bbb61dd3a9226e494905d65ad7f2d63c75d6d547f8e8322e6edaa46e7"
-    },
-    "images/bedrooms/2732PC-30.webp": {
-      "size": 252448,
-      "sha256": "57c36157783f67ce5bd657b26af565b71b2f44f66abb493bd03eff1a81ac1f2c"
-    },
-    "images/bedrooms/2732PC-31.webp": {
-      "size": 205390,
-      "sha256": "6ce5703e2f5e491c7a1899cdf7bf9fdf7b793c72cdfbf5d6d0f80cd559b281ea"
-    },
-    "images/bedrooms/2732PC-32.webp": {
-      "size": 266466,
-      "sha256": "4d40e2bb58e36d1fce2203391e54a8958322e40d721b6d0be756a2f2d9a91be8"
-    },
-    "images/bedrooms/2732PC-34.webp": {
-      "size": 194548,
-      "sha256": "30c328900c85d3651601cab1e61a9d34c00f34bf717a389a6e3bc47e79506134"
-    },
-    "images/bedrooms/2732PC-35.webp": {
-      "size": 283520,
-      "sha256": "ada16812ab05dc64479863b571dccf6ebbd23cd769bf454a47eab557f3d25531"
-    },
-    "images/bedrooms/2732PC-37.webp": {
-      "size": 269234,
-      "sha256": "0237aa84a43d4ed07351a77b35430e55a1ffb18924fd41bc0021d89be89c8721"
-    },
-    "images/community/ShagbarkAmenities-1.webp": {
-      "size": 584738,
-      "sha256": "3efeb43288872d8d0956ca66b077f327d55a993c356c83fcca7fafd16e3b4e96"
-    },
-    "images/community/ShagbarkAmenities-4.webp": {
-      "size": 410972,
-      "sha256": "813eee1be51fd2914c093cb88b93a252af40f04becc94e50dde8439190c85ec0"
-    },
-    "images/community/ShagbarkAmenities-7.webp": {
-      "size": 612854,
-      "sha256": "41707b7e5ccda1a523ee6766ee785f55b0e2191df146acc4d3cf54f181aac7b2"
-    },
-    "images/dining/2732PC-7.webp": {
-      "size": 332918,
-      "sha256": "e900d084752ba9682932b0cc24a9a4413cf7e94edfe4e3370b5b77f94a51042c"
-    },
-    "images/explore-smokies/Dollywood-Aerial.webp": {
-      "size": 543094,
-      "sha256": "cf1370ffeb461a4df90b50af2bbed30801e0ffb2b4f4c1f23d3779e37af396f2"
-    },
-    "images/explore-smokies/Foothills-Parkway-Sunrise.webp": {
-      "size": 63770,
-      "sha256": "91197991d7fe798f2ed3ce4c6e63569500aecb388361f4ad8d2584bc036b7b6d"
-    },
-    "images/explore-smokies/GSMNP-Sign-1.webp": {
-      "size": 485068,
-      "sha256": "311e80d803005dbab6592318f45be139f4d5a55587300f37a3d605480ebbeb0c"
-    },
-    "images/explore-smokies/Newfound-Gap.webp": {
-      "size": 379356,
-      "sha256": "5fe351bb14b1bd3fecbfd8aa5ef899e909ff7d764e6cfb7e1197a8080aa60df4"
-    },
-    "images/explore-smokies/Ripleys-Aquarium.webp": {
-      "size": 413552,
-      "sha256": "35ce90e0bc77cf174b86d41cf2873986ba901af53d4fd3a23af8ce74794478c8"
-    },
-    "images/explore-smokies/The-Island.webp": {
-      "size": 324338,
-      "sha256": "f1343daa1c6d891fdac50c4963577ce778351106014030cde6b4eca368996018"
-    },
-    "images/exterior/2732PC-13.webp": {
-      "size": 414158,
-      "sha256": "3bdd17089e6d7b4cf35ae49a603e4480c6c77b47cb33bcdea79093cdb1f93491"
-    },
-    "images/exterior/2732PC-14.webp": {
-      "size": 266246,
-      "sha256": "3eb8f718e5102b67a58ec4e03d10c3adbe8727cdaaac27c5e85c1f8bffda2993"
-    },
-    "images/exterior/2732PC-16.webp": {
-      "size": 544378,
-      "sha256": "6f221693af710f350df56dd1d750e7c91579b5e30333da5de185af067bd6d6d6"
-    },
-    "images/exterior/2732PC-19.webp": {
-      "size": 479882,
-      "sha256": "fb755c0aaff76023cc4c6dfaa67150a0cc5815f84ba5f63c485bed3fba160ca8"
-    },
-    "images/exterior/2732PC-41.webp": {
-      "size": 624450,
-      "sha256": "4b93dbe7e662fbc6885988475a1f9573bc2f76efffc9fee5bbe1c6a8d0414ab4"
-    },
-    "images/exterior/2732PC-42.webp": {
-      "size": 524758,
-      "sha256": "4b8d6bfc4f8fc207a588925f3b72bf5452b40b2cb01f2437fcd767cd32cb0a10"
-    },
-    "images/exterior/2732PC-44.webp": {
-      "size": 642092,
-      "sha256": "ae77c548c0fe927251f714579609729d8e51c7224f754d42a4174b3e923d7be3"
-    },
-    "images/exterior/2732PC-45.webp": {
-      "size": 578806,
-      "sha256": "ba6a8424676f5f90021a4cd7f695fee7b3999cce0127a8fe25fad3155277911d"
-    },
-    "images/hero/2732PC-1.webp": {
-      "size": 305976,
-      "sha256": "a0776c5122d35711c7943795e9c89b1f41244049077d35c75dbf4df5bb00b31f"
-    },
-    "images/hero/2732PCu24-5.webp": {
-      "size": 372294,
-      "sha256": "9c4826d76b21f2a88e95f971d6c1f503560c7fb073f1ab6838a5562208de93c9"
-    },
-    "images/hot-tub/2732PC-20.webp": {
-      "size": 582026,
-      "sha256": "33cb5dea88d3a2ff7633d70a25fb94b9d2ce114510018d4fd15e5b21376b9998"
-    },
-    "images/hot-tub/2732PC-21.webp": {
-      "size": 508070,
-      "sha256": "17a57eccc5de5d31b03a318cdea2d0bf929a7e60cf001c24235f0cbd88a4d559"
-    },
-    "images/hot-tub/2732PCu24-46.webp": {
-      "size": 396476,
-      "sha256": "84223ac28d07f74d84e03cc4afa74de19099a4962f2a2e66131d530669ff30cb"
-    },
-    "images/kitchen/arbor-vista-charcoal-kitchen-1.webp": {
-      "size": 166788,
-      "sha256": "64c3681fd2988ede4f21c429565cfa57d388b3e633665f3c0d70b2b65dc7a77f"
-    },
-    "images/kitchen/arbor-vista-charcoal-kitchen-2.webp": {
-      "size": 294718,
-      "sha256": "e9685bb3047e07f2430ecb4757bf1197df6f0d7b532dafd2c059b6da19166fca"
-    },
-    "images/laundry/2732PC-8.webp": {
-      "size": 82476,
-      "sha256": "b43c243df3a6aa96ce446ba533ff2f428ea4d88d9b3655bf2682982dd545a2eb"
-    },
-    "images/living/2732PC-2.webp": {
-      "size": 344862,
-      "sha256": "b5f7a68d73110f2c684aa867b746a2b980693a826913df24561098766e380177"
-    },
-    "images/living/2732PC-22.webp": {
-      "size": 316454,
-      "sha256": "94a522b06a8c094142c7d052592485dad26df9e5284dfd9f250d5481e67456d4"
-    },
-    "images/living/2732PC-3.webp": {
-      "size": 332020,
-      "sha256": "86ed73ec8001a539d6b222a534cb97ce7599b033ffd77593446d2afb97f9b880"
-    },
-    "images/living/2732PC-40.webp": {
-      "size": 359040,
-      "sha256": "16a8b2ad20966e11dd5344b2f90a763a81869ece3e262a23458354abaf8339f3"
-    },
-    "images/living/2732PC-6.webp": {
-      "size": 286180,
-      "sha256": "fb273f2b5286633638e951ee22df0f4b46ed12faad692d5bc0f3c52c13edf316"
-    },
-    "images/property/2732PC-46.webp": {
-      "size": 15066,
-      "sha256": "c4274194650c1cc1c45800a5a5b1bb600025f054ff3675056567545ec9dc8b7f"
-    },
-    "images/property/2732PC-47.webp": {
-      "size": 27148,
-      "sha256": "4f7bdf6984baff0c9861ded069e6fa61c6b4f1ca533b9ffeb6fdf2641ea3c431"
-    },
-    "images/property/2732PC-48.webp": {
-      "size": 31746,
-      "sha256": "3a4631dd4b5a7b2e80f86c2bf6f7b408d57da674753b72e3d11789fa88d5fff9"
+    "assets/v433-final-cleanup.css": {
+      "bytes": 3460,
+      "sha256": "bd13ee2b81d58bc718f71c37ff894096e19072cd8ce585232aff60fe5da2faa6"
     },
     "index.html": {
-      "size": 13903,
-      "sha256": "4c596627d1c224dd9925556f8edef1dcd416d3e682215d2e5d3b038310aaacd2"
+      "bytes": 13804,
+      "sha256": "b80e93c5e35a933634056cd395b2e1cd66684b8d01481dae45622edd53b6e5fe"
     },
-    "plan.html": {
-      "size": 5691,
-      "sha256": "227550d83dd5dfafaea4d12cbca28075affea4ae204c43b6a4bbe38a92d29252"
-    },
-    "privacy.html": {
-      "size": 6681,
-      "sha256": "6bc2ffccd89f36536719820aef198dbc242916f06d9e57fa06b6bf1e0b9a8ac5"
-    },
-    "properties/arbor-vista-retreat/TRANSFER_CHECKLIST.md": {
-      "size": 555,
-      "sha256": "247fbad3122562a5876baebf5028511a5d46c1731a963e0e4ea2fffcfc7b7892"
-    },
-    "properties/arbor-vista-retreat/property.json": {
-      "size": 475,
-      "sha256": "d2bd73230547c265c05e0bbcc4ef1abeefdc537d1f488d906ba7b89ce3bc8f25"
-    },
-    "rental-agreement.html": {
-      "size": 8704,
-      "sha256": "11edb4efb25e8f7458b21f3f87d92273736e651b11b3a1ecb8c0f3255fdac9f9"
-    },
-    "robots.txt": {
-      "size": 126,
-      "sha256": "68f30ad9c49a5dc75e48fbd110917bc908b5495c3a909a7b365e511962b46625"
-    },
-    "sitemap.xml": {
-      "size": 1156,
-      "sha256": "9d63b12bd14e7a3b054cb778f4d479eb34cf0c525c85f59bcabac4915eb4527d"
-    },
-    "terms.html": {
-      "size": 6607,
-      "sha256": "d71c85281ddd71a88cd4090aed94e08b42abdb577d74ab04cc3e6c4714bab6f6"
-    },
-    "welcome.html": {
-      "size": 8268,
-      "sha256": "b274ea9aa1e332343b2e2d8e548dbf812546522890c8a9dc7d7ea2b7f3803149"
+    "verify_v433_final_cleanup.py": {
+      "bytes": 1269,
+      "sha256": "988b35d7c57365139a577e8d19884e84a6d76ed5a17311089a8e3f002e43f402"
     }
   }
 }

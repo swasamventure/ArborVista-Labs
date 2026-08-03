@@ -1,0 +1,273 @@
+{
+  "release": "v4.3.3",
+  "scope": "Final logo visibility and copy cleanup only",
+  "result": "PASS",
+  "passed": 51,
+  "total": 51,
+  "baseline": {
+    "repository": "swasamventure/ArborVista-Labs",
+    "branch": "main",
+    "baseCommit": "0666419c2cbfebc973d0421c401395b3c1506117",
+    "baseCommitMessage": "4.3.3. Final with main page redesign",
+    "baseIndexBlobSha": "20d0c31fd16ebee98f3603cbcb5c25b68b86ad1a",
+    "verifiedAt": "2026-08-03T14:33:00-05:00",
+    "releaseTag": "v4.3.3",
+    "scope": "Final visual cleanup only; no feature additions."
+  },
+  "checks": {
+    "source_baseline_recorded": {
+      "passed": true,
+      "detail": "0666419c2cbfebc973d0421c401395b3c1506117"
+    },
+    "index_parses": {
+      "passed": true,
+      "detail": ""
+    },
+    "redundant_utility_markup_removed": {
+      "passed": true,
+      "detail": ""
+    },
+    "temporary_hero_note_markup_removed": {
+      "passed": true,
+      "detail": ""
+    },
+    "cleanup_css_loaded_directly": {
+      "passed": true,
+      "detail": ""
+    },
+    "v43_js_cache_busted": {
+      "passed": true,
+      "detail": ""
+    },
+    "index_header_and_footer_use_approved_logo": {
+      "passed": true,
+      "detail": "2 lockups"
+    },
+    "all_index_logo_lockups_have_horizontal_class": {
+      "passed": true,
+      "detail": ""
+    },
+    "no_pause_control_reintroduced": {
+      "passed": true,
+      "detail": ""
+    },
+    "approved_png_dimensions": {
+      "passed": true,
+      "detail": "(1200, 281)"
+    },
+    "approved_logo_is_transparent": {
+      "passed": true,
+      "detail": "(0, 255)"
+    },
+    "approved_webp_exists": {
+      "passed": true,
+      "detail": "124858 bytes"
+    },
+    "no_logo_background_box": {
+      "passed": true,
+      "detail": ""
+    },
+    "desktop_logo_is_20_percent_smaller": {
+      "passed": true,
+      "detail": ""
+    },
+    "tablet_logo_responsive": {
+      "passed": true,
+      "detail": ""
+    },
+    "mobile_logo_responsive": {
+      "passed": true,
+      "detail": ""
+    },
+    "small_mobile_logo_responsive": {
+      "passed": true,
+      "detail": ""
+    },
+    "top_navigation_dark_for_contrast": {
+      "passed": true,
+      "detail": ""
+    },
+    "scrolled_navigation_matches_page": {
+      "passed": true,
+      "detail": ""
+    },
+    "interior_navigation_matches_page": {
+      "passed": true,
+      "detail": ""
+    },
+    "fallback_removes_old_cached_copy": {
+      "passed": true,
+      "detail": ""
+    },
+    "fallback_normalizes_all_brand_lockups": {
+      "passed": true,
+      "detail": ""
+    },
+    "javascript_syntax": {
+      "passed": true,
+      "detail": ""
+    },
+    "patcher_python_syntax": {
+      "passed": true,
+      "detail": ""
+    },
+    "css_braces_balanced": {
+      "passed": true,
+      "detail": "21 open / 21 close"
+    },
+    "desktop_unwanted_copy_absent": {
+      "passed": true,
+      "detail": ""
+    },
+    "desktop_logo_visible": {
+      "passed": true,
+      "detail": "264px"
+    },
+    "desktop_nav_starts_at_top": {
+      "passed": true,
+      "detail": "0"
+    },
+    "desktop_top_nav_contrast": {
+      "passed": true,
+      "detail": "rgba(5, 24, 18, 0.58)"
+    },
+    "desktop_scrolled_state_activates": {
+      "passed": true,
+      "detail": ""
+    },
+    "desktop_scrolled_nav_is_page_cream": {
+      "passed": true,
+      "detail": "rgba(245, 240, 231, 0.984)"
+    },
+    "desktop_no_horizontal_overflow": {
+      "passed": true,
+      "detail": ""
+    },
+    "desktop_no_console_errors": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "mobile_unwanted_copy_absent": {
+      "passed": true,
+      "detail": ""
+    },
+    "mobile_logo_visible": {
+      "passed": true,
+      "detail": "168px"
+    },
+    "mobile_nav_starts_at_top": {
+      "passed": true,
+      "detail": "0"
+    },
+    "mobile_top_nav_contrast": {
+      "passed": true,
+      "detail": "rgba(5, 24, 18, 0.58)"
+    },
+    "mobile_scrolled_state_activates": {
+      "passed": true,
+      "detail": ""
+    },
+    "mobile_scrolled_nav_is_page_cream": {
+      "passed": true,
+      "detail": "rgba(245, 240, 231, 0.984)"
+    },
+    "mobile_no_horizontal_overflow": {
+      "passed": true,
+      "detail": ""
+    },
+    "mobile_no_console_errors": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "interior_page_logo_visible": {
+      "passed": true,
+      "detail": "264px"
+    },
+    "interior_page_nav_is_page_cream": {
+      "passed": true,
+      "detail": "rgba(245, 240, 231, 0.984)"
+    },
+    "interior_page_no_overflow_or_errors": {
+      "passed": true,
+      "detail": ""
+    },
+    "screenshot_home_v433_final_top_desktop": {
+      "passed": true,
+      "detail": "1440x900, 1779370 bytes"
+    },
+    "screenshot_home_v433_final_scrolled_desktop": {
+      "passed": true,
+      "detail": "1440x900, 653881 bytes"
+    },
+    "screenshot_home_v433_final_top_mobile": {
+      "passed": true,
+      "detail": "390x844, 452954 bytes"
+    },
+    "screenshot_home_v433_final_scrolled_mobile": {
+      "passed": true,
+      "detail": "390x844, 179415 bytes"
+    },
+    "screenshot_interior_v433_final_logo_desktop": {
+      "passed": true,
+      "detail": "1440x500, 839966 bytes"
+    },
+    "patcher_integration_test": {
+      "passed": true,
+      "detail": "Applied v4.3.3 final visual cleanup to 6 HTML files."
+    },
+    "post_install_verifier_created": {
+      "passed": true,
+      "detail": ""
+    }
+  },
+  "browser": {
+    "desktop": {
+      "top": {
+        "utilityCount": 0,
+        "heroNoteCount": 0,
+        "logoVisible": true,
+        "logoWidth": 264,
+        "logoHeight": 62,
+        "navTop": 0,
+        "navBackground": "rgba(5, 24, 18, 0.58)",
+        "overflow": false
+      },
+      "scrolled": {
+        "hasScrolledClass": true,
+        "navBackground": "rgba(245, 240, 231, 0.984)",
+        "navColor": "rgb(23, 55, 47)",
+        "logoWidth": 264,
+        "overflow": false
+      },
+      "errors": []
+    },
+    "mobile": {
+      "top": {
+        "utilityCount": 0,
+        "heroNoteCount": 0,
+        "logoVisible": true,
+        "logoWidth": 168,
+        "logoHeight": 39,
+        "navTop": 0,
+        "navBackground": "rgba(5, 24, 18, 0.58)",
+        "overflow": false
+      },
+      "scrolled": {
+        "hasScrolledClass": true,
+        "navBackground": "rgba(245, 240, 231, 0.984)",
+        "navColor": "rgb(23, 55, 47)",
+        "logoWidth": 168,
+        "overflow": false
+      },
+      "errors": []
+    },
+    "interior": {
+      "logoVisible": true,
+      "logoWidth": 264,
+      "navBackground": "rgba(245, 240, 231, 0.984)",
+      "navColor": "rgb(23, 55, 47)",
+      "overflow": false,
+      "errors": []
+    }
+  }
+}

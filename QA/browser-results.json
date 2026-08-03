@@ -1,0 +1,50 @@
+{
+  "desktop": {
+    "top": {
+      "utilityCount": 0,
+      "heroNoteCount": 0,
+      "logoVisible": true,
+      "logoWidth": 264,
+      "logoHeight": 62,
+      "navTop": 0,
+      "navBackground": "rgba(5, 24, 18, 0.58)",
+      "overflow": false
+    },
+    "scrolled": {
+      "hasScrolledClass": true,
+      "navBackground": "rgba(245, 240, 231, 0.984)",
+      "navColor": "rgb(23, 55, 47)",
+      "logoWidth": 264,
+      "overflow": false
+    },
+    "errors": []
+  },
+  "mobile": {
+    "top": {
+      "utilityCount": 0,
+      "heroNoteCount": 0,
+      "logoVisible": true,
+      "logoWidth": 168,
+      "logoHeight": 39,
+      "navTop": 0,
+      "navBackground": "rgba(5, 24, 18, 0.58)",
+      "overflow": false
+    },
+    "scrolled": {
+      "hasScrolledClass": true,
+      "navBackground": "rgba(245, 240, 231, 0.984)",
+      "navColor": "rgb(23, 55, 47)",
+      "logoWidth": 168,
+      "overflow": false
+    },
+    "errors": []
+  },
+  "interior": {
+    "logoVisible": true,
+    "logoWidth": 264,
+    "navBackground": "rgba(245, 240, 231, 0.984)",
+    "navColor": "rgb(23, 55, 47)",
+    "overflow": false,
+    "errors": []
+  }
+}
