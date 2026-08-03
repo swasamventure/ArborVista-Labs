@@ -4,7 +4,7 @@
   "baseCommit": "0666419c2cbfebc973d0421c401395b3c1506117",
   "baseCommitMessage": "4.3.3. Final with main page redesign",
   "baseIndexBlobSha": "20d0c31fd16ebee98f3603cbcb5c25b68b86ad1a",
-  "verifiedAt": "2026-08-03T14:33:00-05:00",
+  "verifiedAt": "2026-08-03T15:15:00-05:00",
   "releaseTag": "v4.3.3",
-  "scope": "Final visual cleanup only; no feature additions."
+  "scope": "Final visual cleanup plus restoration of the previously planned What Guests Say Airbnb review snapshot."
 }

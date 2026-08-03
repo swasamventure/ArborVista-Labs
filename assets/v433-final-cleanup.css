@@ -118,3 +118,188 @@ body:not(.home-page) .brand-logo-horizontal {
     min-width:150px !important;
   }
 }
+
+
+/* v4.3.3 verified Airbnb review snapshot */
+.v433-guest-reviews{
+  background:#fffdf8;
+  color:#17372f;
+  padding:clamp(78px,9vw,118px) 0;
+  border-top:1px solid rgba(25,56,47,.16);
+  border-bottom:1px solid rgba(25,56,47,.16);
+}
+.v433-guest-reviews .container{
+  width:min(1240px,calc(100% - 2 * clamp(22px,6vw,88px)));
+  margin-inline:auto;
+}
+.v433-reviews-heading{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:7vw;
+  align-items:end;
+  margin-bottom:42px;
+}
+.v433-reviews-heading h2{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:clamp(44px,5.8vw,76px);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.025em;
+  margin:10px 0 17px;
+  color:#17372f;
+}
+.v433-reviews-heading>div:first-child>p:last-child{
+  color:#66716b;
+  margin:0;
+  max-width:660px;
+}
+.v433-rating-summary{
+  min-width:230px;
+  display:grid;
+  justify-items:end;
+  line-height:1.2;
+}
+.v433-rating-number{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:64px;
+  color:#19382f;
+}
+.v433-rating-stars{
+  color:#b58a4e;
+  letter-spacing:.12em;
+  font-size:17px;
+}
+.v433-rating-summary strong{
+  margin-top:9px;
+  font-size:14px;
+}
+.v433-rating-summary small{
+  margin-top:5px;
+  color:#66716b;
+}
+.v433-review-grid{
+  display:grid;
+  grid-template-columns:1.25fr .85fr .85fr;
+  gap:16px;
+}
+.v433-review-card{
+  min-height:285px;
+  padding:32px;
+  border:1px solid rgba(25,56,47,.16);
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 14px 38px rgba(25,56,47,.055);
+}
+.v433-review-card-featured{
+  background:#19382f !important;
+  color:#fff !important;
+}
+.v433-review-stars{
+  color:#efc589;
+  letter-spacing:.12em;
+}
+.v433-review-card blockquote{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:clamp(25px,2.45vw,36px);
+  line-height:1.25;
+  margin:28px 0;
+}
+.v433-review-card-featured blockquote{
+  color:#fff !important;
+}
+.v433-review-card-featured>p{
+  color:#cbd8d2 !important;
+  font-size:13px;
+  margin:0;
+}
+.v433-review-label{
+  color:#b58a4e;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  margin:0 0 22px;
+}
+.v433-category-ratings{
+  display:grid;
+  gap:1px;
+  background:rgba(25,56,47,.16);
+}
+.v433-category-ratings span{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  background:#fff;
+  padding:14px 0;
+  color:#66716b;
+}
+.v433-category-ratings b{
+  order:2;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:24px;
+  color:#19382f;
+}
+.v433-review-themes{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+.v433-review-themes span{
+  border:1px solid rgba(25,56,47,.16);
+  border-radius:999px;
+  padding:8px 12px;
+  color:#19382f;
+  font-size:13px;
+  font-weight:700;
+}
+.v433-five-star{
+  margin:28px 0 0;
+  color:#66716b;
+}
+.v433-five-star b{
+  display:block;
+  font-family:"Playfair Display",Georgia,serif;
+  color:#19382f;
+  font-size:38px;
+}
+.v433-reviews-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  margin-top:30px;
+}
+.v433-reviews-footer .v43-button{
+  display:inline-flex;
+  min-height:52px;
+  align-items:center;
+  justify-content:center;
+  padding:0 25px;
+  background:#19382f;
+  color:#fff;
+  border:1px solid #19382f;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.075em;
+  font-size:12px;
+  font-weight:700;
+}
+.v433-reviews-footer p{
+  margin:0;
+  color:#66716b;
+  font-size:13px;
+}
+@media(max-width:1000px){
+  .v433-review-grid{grid-template-columns:1fr 1fr}
+  .v433-review-card-featured{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .v433-reviews-heading{grid-template-columns:1fr;align-items:start}
+  .v433-rating-summary{justify-items:start;min-width:0}
+  .v433-review-grid{grid-template-columns:1fr}
+  .v433-review-card-featured{grid-column:auto}
+  .v433-review-card{min-height:0}
+  .v433-reviews-footer{align-items:flex-start;flex-direction:column}
+}

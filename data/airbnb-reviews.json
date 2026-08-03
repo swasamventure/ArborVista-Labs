@@ -1,0 +1,48 @@
+{
+  "listingId": "1587774879621242014",
+  "source": "Airbnb public listing",
+  "sourceUrl": "https://www.airbnb.com/rooms/1587774879621242014#reviews",
+  "lastCheckedAt": "2026-08-03T20:15:00Z",
+  "rating": 4.82,
+  "reviewCount": 11,
+  "guestFavorite": true,
+  "fiveStarPercent": 91,
+  "categoryRatings": {
+    "cleanliness": 4.9,
+    "accuracy": 4.9,
+    "checkIn": 4.9,
+    "communication": 5.0,
+    "location": 4.6,
+    "value": 4.6
+  },
+  "reviewThemes": [
+    {
+      "label": "Hospitality",
+      "mentions": 7
+    },
+    {
+      "label": "Cleanliness",
+      "mentions": 5
+    },
+    {
+      "label": "Comfort",
+      "mentions": 4
+    },
+    {
+      "label": "Location",
+      "mentions": 3
+    },
+    {
+      "label": "Hot tub",
+      "mentions": 2
+    }
+  ],
+  "featuredReviews": [
+    {
+      "rating": 5,
+      "excerpt": "Extremely clean and cozy, private, with a pristine hot tub and all the listed amenities.",
+      "sourceLabel": "Verified Airbnb guest excerpt"
+    }
+  ],
+  "note": "Airbnb's public listing page currently exposes one featured review excerpt plus aggregate ratings and review themes. The website displays only data verified from that public page."
+}

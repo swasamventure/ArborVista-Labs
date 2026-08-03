@@ -1,11 +1,23 @@
 {
   "release": "v4.3.3",
-  "scope": "final-verified-logo-cleanup",
-  "fileCount": 17,
+  "scope": "Final verified cleanup with What Guests Say Airbnb snapshot",
+  "fileCount": 27,
   "files": {
+    ".github/workflows/update-airbnb-reviews.yml": {
+      "bytes": 972,
+      "sha256": "02f754d5aa0fa509dabf0f4dc11c782e137e65ea6ca26c486c9a7960969e7dbf"
+    },
+    "CHANGELOG_V4.3.3_FINAL_REVIEWS.md": {
+      "bytes": 1621,
+      "sha256": "796ebb0aee0f2a0746a54ea5e406ca5c0cbe77d42d411f9d170dcd81a30786ca"
+    },
     "QA/browser-results.json": {
       "bytes": 1134,
       "sha256": "5059c9460a5cd257314f195229a657b08271a57eb525f3fb902a60da75042e39"
+    },
+    "QA/browser-review-results.json": {
+      "bytes": 969,
+      "sha256": "b1b396f958e3296bb1ac08d46ee4c27e96483c13ad794d7b031a579b61f793fc"
     },
     "QA/home-v433-final-scrolled-desktop.png": {
       "bytes": 653881,
@@ -23,29 +35,49 @@
       "bytes": 452954,
       "sha256": "592ff4c7eddf15ce7f28a5d2931c9942d0612bd83ab5fe9cc42c0d9c068d3d80"
     },
+    "QA/home-v433-what-guests-say-desktop.png": {
+      "bytes": 136154,
+      "sha256": "0af5965217dc1f600d2d3cf19c1ac28ae403692dd47c4a8748ef8268220fc970"
+    },
+    "QA/home-v433-what-guests-say-mobile.png": {
+      "bytes": 54315,
+      "sha256": "96374d5fc1ed5a00601ddd45240195e1ef141512a4d773d63dd00897be370a3f"
+    },
     "QA/interior-v433-final-logo-desktop.png": {
       "bytes": 839966,
       "sha256": "fb9428c2ae8ad565b867b64e8d6f4282dce5ed7af6f266f33a6ebebb1f215fc8"
     },
-    "QA_REPORT_V4.3.3_FINAL_VERIFIED.json": {
-      "bytes": 6644,
-      "sha256": "76f8ef383e8f664e005ffccccbbc3e44a903541e5ce7d7e12787a4cc9a794929"
+    "QA/what-guests-say-section-desktop.png": {
+      "bytes": 111534,
+      "sha256": "66dc086d8a6552c8f8fb84c3eceecd992de6610b8919ea6dbf287d03a9262cdf"
     },
-    "QA_REPORT_V4.3.3_FINAL_VERIFIED.md": {
-      "bytes": 4441,
-      "sha256": "4a55456bebded2ab89181848abecc3520d4d01c8a11d94eec7898292b322706a"
+    "QA/what-guests-say-section-mobile.png": {
+      "bytes": 93827,
+      "sha256": "40dccc940f143bd719fdf9051fe4a122c6854deacf8811ad60016e1a970ed415"
+    },
+    "QA_REPORT_V4.3.3_FINAL_VERIFIED_REVIEWS.json": {
+      "bytes": 16300,
+      "sha256": "1552de6832778d297408c7305878d3d371d2d2a08d531cea06d69c4cd33815a8"
+    },
+    "QA_REPORT_V4.3.3_FINAL_VERIFIED_REVIEWS.md": {
+      "bytes": 8553,
+      "sha256": "791e1211fc9b604119c15b711ff7da56c9029bd5a87f84121aabb3a27b9b0956"
     },
     "README_PATCH.md": {
-      "bytes": 1407,
-      "sha256": "8d63b01a93f8442436d509e561ab0e3cc8aa4b518938c8df36c660b2a1bbdeb6"
+      "bytes": 2341,
+      "sha256": "467b348864cdfb4da966eb37e90d9de11b6bca99d4ac5ef6ce5d97041e4824c1"
     },
     "SOURCE_BASELINE.json": {
-      "bytes": 395,
-      "sha256": "911b90704fdc59560c66361b1d7c4e05ceb1d2701ccf98519a5da76190a465d2"
+      "bytes": 450,
+      "sha256": "46eda40d52ff99ca581a940add9ebe417f1eb1a1f12f732342be96e27514d6d0"
     },
     "apply_v433_final_cleanup.py": {
-      "bytes": 1913,
-      "sha256": "392a6dacdb488ddee078c0825ccf1082e398c663d4f813e02fe48be275b24c45"
+      "bytes": 5725,
+      "sha256": "e1e4fc840620b31bb13ff4acc0009fe8f195cd7fbf44fd0533668d25d409c5a9"
+    },
+    "assets/airbnb-reviews-v433.js": {
+      "bytes": 3001,
+      "sha256": "67ff0521d3b8d4e81c65f60a5b79afb7804e56c63c156080b7635934767ad949"
     },
     "assets/arbor-vista-logo-horizontal-v433.png": {
       "bytes": 268958,
@@ -60,16 +92,24 @@
       "sha256": "78e466b5e78c309a50a3a1bf8e7184baf3ea52c49cc133fd138db679916778d2"
     },
     "assets/v433-final-cleanup.css": {
-      "bytes": 3460,
-      "sha256": "bd13ee2b81d58bc718f71c37ff894096e19072cd8ce585232aff60fe5da2faa6"
+      "bytes": 7372,
+      "sha256": "62795708524173090c712e0a8295c4ec59bdf3365fec17cd278170d0c7d6583f"
+    },
+    "data/airbnb-reviews.json": {
+      "bytes": 1184,
+      "sha256": "06ead2aa284d06207130363843db1392a76a27d9a71bcf769298b52089ec6670"
     },
     "index.html": {
-      "bytes": 13804,
-      "sha256": "b80e93c5e35a933634056cd395b2e1cd66684b8d01481dae45622edd53b6e5fe"
+      "bytes": 15660,
+      "sha256": "d47c29c8ec185b02f66d51e842824052f511f93f45c84f8828d5af3879b3e01b"
+    },
+    "scripts/update_airbnb_reviews.py": {
+      "bytes": 3950,
+      "sha256": "d175f2005261a188f349454dc9646c956b2a685af49d33f638ca089fb677067d"
     },
     "verify_v433_final_cleanup.py": {
-      "bytes": 1269,
-      "sha256": "988b35d7c57365139a577e8d19884e84a6d76ed5a17311089a8e3f002e43f402"
+      "bytes": 2775,
+      "sha256": "baf2059757ee47271ce86d1c8b9e50d30c542bf91fbe1c64a753c35004b69d9a"
     }
   }
 }

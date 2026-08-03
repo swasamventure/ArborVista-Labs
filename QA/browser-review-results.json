@@ -1,0 +1,32 @@
+{
+  "desktop": {
+    "section_visible": true,
+    "heading": "What Guests Say",
+    "rating": "4.82",
+    "review_count": "11",
+    "snapshot_loaded": "true",
+    "review_excerpt": "\u201cExtremely clean and cozy, private, with a pristine hot tub and all the listed amenities.\u201d",
+    "theme_count": 5,
+    "section_width": 1440,
+    "horizontal_overflow": false,
+    "console_errors": [],
+    "console_warnings": [
+      "<link rel=preload> has an invalid `href` value"
+    ]
+  },
+  "mobile": {
+    "section_visible": true,
+    "heading": "What Guests Say",
+    "rating": "4.82",
+    "review_count": "11",
+    "snapshot_loaded": "true",
+    "review_excerpt": "\u201cExtremely clean and cozy, private, with a pristine hot tub and all the listed amenities.\u201d",
+    "theme_count": 5,
+    "section_width": 390,
+    "horizontal_overflow": false,
+    "console_errors": [],
+    "console_warnings": [
+      "<link rel=preload> has an invalid `href` value"
+    ]
+  }
+}

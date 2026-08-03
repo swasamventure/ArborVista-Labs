@@ -1,0 +1,731 @@
+{
+  "release": "v4.3.3",
+  "scope": "Final verified visual cleanup plus restored What Guests Say Airbnb snapshot",
+  "result": "PASS",
+  "passed": 138,
+  "total": 138,
+  "checks": [
+    {
+      "name": "source_baseline_recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "base_commit_recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "base_index_blob_recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "release_remains_v4_3_3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "scope_mentions_reviews",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index_parses",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "single_doctype",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "redundant_utility_removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "temporary_hero_note_removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "what_guests_say_section_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "what_guests_say_heading_exact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "old_link_only_review_section_removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_section_before_footer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "three_review_summary_cards",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "name": "featured_review_card_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rating_summary_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_count_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "five_star_percentage_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "four_category_scores_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "five_review_themes_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "airbnb_all_reviews_link_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "airbnb_reviews_link_correct",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_snapshot_date_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_loader_linked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_loader_cache_busted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_css_linked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanup_css_cache_busted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "header_footer_use_approved_logo",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "no_pause_control_reintroduced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "host_console_absent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_json_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_json_valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_listing_id_correct",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_source_airbnb",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_source_url_correct",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rating_is_4_82",
+      "passed": true,
+      "detail": "4.82"
+    },
+    {
+      "name": "review_count_is_11",
+      "passed": true,
+      "detail": "11"
+    },
+    {
+      "name": "guest_favorite_true",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "five_star_share_is_91",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "communication_is_5_0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cleanliness_is_4_9",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "accuracy_is_4_9",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "checkin_is_4_9",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "location_is_4_6",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "value_is_4_6",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "five_review_themes_in_json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "one_verified_featured_excerpt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "featured_excerpt_is_short",
+      "passed": true,
+      "detail": "15"
+    },
+    {
+      "name": "featured_excerpt_matches_public_listing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_guest_name_fields",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "last_checked_timestamp_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "integrity_note_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_js_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_fetches_local_json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_does_not_call_airbnb",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_uses_no_store_cache",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_updates_rating",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_updates_review_count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_updates_featured_review",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_updates_categories",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_updates_themes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_updates_checked_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_preserves_fallback",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_marks_loaded_state",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "browser_marks_fallback_state",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_css_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_css_section_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_css_desktop_three_columns",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_css_mobile_stack",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "featured_card_dark_background",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "featured_card_white_text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_button_self_styled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_section_uses_page_background",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_cards_have_borders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "review_mobile_breakpoint",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_targets_correct_listing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_uses_airbnb_public_page",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_parses_rating",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_parses_review_count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_parses_featured_excerpt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_parses_category_scores",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_requires_rating_and_count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_writes_only_after_fetch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "updater_preserves_existing_featured_reviews",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "workflow_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "workflow_manual_dispatch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "workflow_weekly_schedule",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "workflow_contents_write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "workflow_installs_beautifulsoup",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "workflow_runs_updater",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "workflow_commits_snapshot_only",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax_apply_v433_final_cleanup.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax_verify_v433_final_cleanup.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python_syntax_update_airbnb_reviews.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "javascript_syntax_v43.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "javascript_syntax_airbnb-reviews-v433.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "css_braces_balanced",
+      "passed": true,
+      "detail": "59 / 59"
+    },
+    {
+      "name": "desktop_review_section_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop_heading_correct",
+      "passed": true,
+      "detail": "What Guests Say"
+    },
+    {
+      "name": "desktop_rating_loaded",
+      "passed": true,
+      "detail": "4.82"
+    },
+    {
+      "name": "desktop_review_count_loaded",
+      "passed": true,
+      "detail": "11"
+    },
+    {
+      "name": "desktop_snapshot_loaded",
+      "passed": true,
+      "detail": "true"
+    },
+    {
+      "name": "desktop_featured_excerpt_loaded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop_theme_count_is_5",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "desktop_no_horizontal_overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop_no_console_errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "mobile_review_section_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_heading_correct",
+      "passed": true,
+      "detail": "What Guests Say"
+    },
+    {
+      "name": "mobile_rating_loaded",
+      "passed": true,
+      "detail": "4.82"
+    },
+    {
+      "name": "mobile_review_count_loaded",
+      "passed": true,
+      "detail": "11"
+    },
+    {
+      "name": "mobile_snapshot_loaded",
+      "passed": true,
+      "detail": "true"
+    },
+    {
+      "name": "mobile_featured_excerpt_loaded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_theme_count_is_5",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "mobile_no_horizontal_overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_no_console_errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "screenshot_home-v433-what-guests-say-desktop.png",
+      "passed": true,
+      "detail": "136154"
+    },
+    {
+      "name": "screenshot_home-v433-what-guests-say-mobile.png",
+      "passed": true,
+      "detail": "54315"
+    },
+    {
+      "name": "screenshot_what-guests-say-section-desktop.png",
+      "passed": true,
+      "detail": "111534"
+    },
+    {
+      "name": "screenshot_what-guests-say-section-mobile.png",
+      "passed": true,
+      "detail": "93827"
+    },
+    {
+      "name": "screenshot_home-v433-final-top-desktop.png",
+      "passed": true,
+      "detail": "1779370"
+    },
+    {
+      "name": "screenshot_home-v433-final-scrolled-desktop.png",
+      "passed": true,
+      "detail": "653881"
+    },
+    {
+      "name": "screenshot_home-v433-final-top-mobile.png",
+      "passed": true,
+      "detail": "452954"
+    },
+    {
+      "name": "screenshot_interior-v433-final-logo-desktop.png",
+      "passed": true,
+      "detail": "839966"
+    },
+    {
+      "name": "integration_verifier_passes",
+      "passed": true,
+      "detail": "PASS \u2014 v4.3.3 final verified cleanup and What Guests Say snapshot are installed.Spreadsheet runtime warmup failed during python startup\nTraceback (most recent call last):\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py\", line 26, in warm_spreadsheet_runtime_on_startup\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 785, in warm_spreadsheet_runtime\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 720, in _warm_feature_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py\", line 704, in _warm_collaboration_flows\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/generated/interface/models.py\", line 30820, in hydrate_crdt_from_proto\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/remote.py\", line 749, in __call__\n  File \"/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/client.py\", line 150, in call\nartifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document."
+    },
+    {
+      "name": "integration_single_doctype",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "integration_installs_what_guests_say",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "integration_removes_old_review_prompt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "integration_links_review_loader",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "integration_installs_snapshot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "integration_installs_updater",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "integration_installs_workflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "failed_updater_returns_nonzero",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "failed_updater_preserves_last_snapshot",
+      "passed": true,
+      "detail": "06ead2aa284d06207130363843db1392a76a27d9a71bcf769298b52089ec6670 -> 06ead2aa284d06207130363843db1392a76a27d9a71bcf769298b52089ec6670"
+    },
+    {
+      "name": "manifest_created",
+      "passed": true,
+      "detail": "30"
+    },
+    {
+      "name": "manifest_entries_hash_valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "zip_integrity",
+      "passed": true,
+      "detail": "testzip returned no corrupt member"
+    }
+  ],
+  "browser": {
+    "desktop": {
+      "section_visible": true,
+      "heading": "What Guests Say",
+      "rating": "4.82",
+      "review_count": "11",
+      "snapshot_loaded": "true",
+      "review_excerpt": "\u201cExtremely clean and cozy, private, with a pristine hot tub and all the listed amenities.\u201d",
+      "theme_count": 5,
+      "section_width": 1440,
+      "horizontal_overflow": false,
+      "console_errors": [],
+      "console_warnings": [
+        "<link rel=preload> has an invalid `href` value"
+      ]
+    },
+    "mobile": {
+      "section_visible": true,
+      "heading": "What Guests Say",
+      "rating": "4.82",
+      "review_count": "11",
+      "snapshot_loaded": "true",
+      "review_excerpt": "\u201cExtremely clean and cozy, private, with a pristine hot tub and all the listed amenities.\u201d",
+      "theme_count": 5,
+      "section_width": 390,
+      "horizontal_overflow": false,
+      "console_errors": [],
+      "console_warnings": [
+        "<link rel=preload> has an invalid `href` value"
+      ]
+    }
+  }
+}
