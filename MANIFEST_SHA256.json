@@ -1,14 +1,14 @@
 {
   "release": "v4.3.3",
-  "fileCount": 92,
+  "fileCount": 95,
   "files": {
     ".nojekyll": {
       "size": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "404.html": {
-      "size": 5121,
-      "sha256": "5403149ebbab3679a467e7bfd39ed17eb3016461e1730bae2ee3341ed5410f7f"
+      "size": 5141,
+      "sha256": "a2bb7f79b2d32a754051aca0d1e46b0222b0803b56379645c9dd1dcd989f2730"
     },
     "CHANGELOG_V4.3.3.md": {
       "size": 1992,
@@ -54,6 +54,10 @@
       "size": 1855,
       "sha256": "407a45aee3e9bec52a9ad0c85c211bb325ed6f58394712b711e1ed613318161a"
     },
+    "QA_REPORT_V4.3.3_HOMEPAGE_REDESIGN.md": {
+      "size": 238,
+      "sha256": "3e78352f3f66894ffad5412ac452f293ad2c2e79b8c5d1559d58a190947bd928"
+    },
     "QA_REPORT_V4.3.3_TRANSPARENT_LOGO_20PCT.md": {
       "size": 1138,
       "sha256": "85bb3f4c6bfd54a4739006d290e284eeb37331acca0041a3f703663e7f58e707"
@@ -63,8 +67,8 @@
       "sha256": "7234a8308075eb0e7c50bf929570bd8a91d1958214a70d4774c32497cb523510"
     },
     "RELEASE_TAG.json": {
-      "size": 350,
-      "sha256": "ce17950296bcafe12323d15c23e9cd6ad1b8da710a329b056b9c2534175e0aad"
+      "size": 421,
+      "sha256": "6b688717ffc6874f2ea44236012322261f567ac47cb68f26e6290986480ea3cc"
     },
     "VERSION": {
       "size": 7,
@@ -77,6 +81,14 @@
     "assets/arbor-vista-favicon-v433.png": {
       "size": 347487,
       "sha256": "00b071ae61d88c42dd84e56dbd58cf7c08eff98eeaac38919ed251f1234aa247"
+    },
+    "assets/arbor-vista-logo-horizontal-v433.png": {
+      "size": 192182,
+      "sha256": "de929f1d1bda4365a6abbbd6b2755ec3c03623beafdab2a922fad24be4f71c59"
+    },
+    "assets/arbor-vista-logo-horizontal-v433.webp": {
+      "size": 69660,
+      "sha256": "cf6a78064a96d10731e0b33ed8e6b95c76b2d6f753029785319dd147b79a538b"
     },
     "assets/arbor-vista-logo-v433-transparent.png": {
       "size": 947769,
@@ -107,8 +119,8 @@
       "sha256": "d6847d0c6dd54ffd246d12a4c9371c7832aca8371d557e479bcebb6b61d19a36"
     },
     "assets/style-v43.css": {
-      "size": 30174,
-      "sha256": "7ef79b6d94c5e63bfd669f95f3ff017fee0099d4995d671d47fedc5783b92c27"
+      "size": 33381,
+      "sha256": "f54b08de0a45dbb515a0db18a366ab1be6e1c2d32ea1cd967fac2b6b40bb327c"
     },
     "assets/style.css": {
       "size": 16579,
@@ -119,28 +131,28 @@
       "sha256": "d2aec02318ca60571fbcf510d0873dd6ce515705d12b19ca83dbadb5a34dd544"
     },
     "book-direct.html": {
-      "size": 7458,
-      "sha256": "83f72c986cea63bea07e89b6756c40cbdc389beda590fe6ec3548a3f43a81a46"
+      "size": 7478,
+      "sha256": "196a602b9ddc90bd315c6df72bbee758f98ba476c25c04d9c04dff67c3f754c3"
     },
     "cabin.html": {
-      "size": 11773,
-      "sha256": "5c82eacb8f945c8c1f9bef5c4b9e3f335dcbb5e8aa5cbf9d0ec188f57bdec613"
+      "size": 11793,
+      "sha256": "664b51a47b1c6ffbce4f1c778491e8964f54e77a1bbb48f8ae6b13ca55ded66e"
     },
     "config/runtime-config.js": {
       "size": 328,
       "sha256": "541ee4181464ccd554f67c8b4bd7a6496b868a823a9274c424a55f25c443d471"
     },
     "explore.html": {
-      "size": 10795,
-      "sha256": "df81835ac71803b455ff62682da803e38ff30698450621fd6bbf64d406709e14"
+      "size": 10815,
+      "sha256": "5e6820767c3ed1e58f711aec0c4c27acb84ffd26f2ab80efa3da035d10a4e69f"
     },
     "faq.html": {
-      "size": 8389,
-      "sha256": "32aa7a31ef2fbc012bb428011ce26706d25387d6636ed55bbd014a82092740d7"
+      "size": 8409,
+      "sha256": "44e9103ca02071edf3882981e5122b083212cda9ccae6ef5e4baf8c72dcd8f07"
     },
     "gallery.html": {
-      "size": 19122,
-      "sha256": "42552bafb1081cef14d8d7e14009b568ec1a556d57888e1e963664635751d09f"
+      "size": 19142,
+      "sha256": "282f2230d9053c31b856c3c2fac3696aa7805e8044cd7af5603ebb2d3f8d9c7d"
     },
     "images/area-map.webp": {
       "size": 115510,
@@ -331,16 +343,16 @@
       "sha256": "3a4631dd4b5a7b2e80f86c2bf6f7b408d57da674753b72e3d11789fa88d5fff9"
     },
     "index.html": {
-      "size": 13470,
-      "sha256": "d858c61631b6c5f23f6fc6eead154acc291059f2f5c0ab703174ce51a1047ec7"
+      "size": 13903,
+      "sha256": "4c596627d1c224dd9925556f8edef1dcd416d3e682215d2e5d3b038310aaacd2"
     },
     "plan.html": {
-      "size": 5671,
-      "sha256": "6783b6e338e0ccdd33b32e24d11921fe7f291e2edc03317320ffb55ee8eb37b4"
+      "size": 5691,
+      "sha256": "227550d83dd5dfafaea4d12cbca28075affea4ae204c43b6a4bbe38a92d29252"
     },
     "privacy.html": {
-      "size": 6661,
-      "sha256": "f3fef6b471d8f118706b5cdc5f26c87209bded90bca73b23e802b3970561bb43"
+      "size": 6681,
+      "sha256": "6bc2ffccd89f36536719820aef198dbc242916f06d9e57fa06b6bf1e0b9a8ac5"
     },
     "properties/arbor-vista-retreat/TRANSFER_CHECKLIST.md": {
       "size": 555,
@@ -351,8 +363,8 @@
       "sha256": "d2bd73230547c265c05e0bbcc4ef1abeefdc537d1f488d906ba7b89ce3bc8f25"
     },
     "rental-agreement.html": {
-      "size": 8684,
-      "sha256": "a71bddda047a5529fb9ad8bebbf11609f437eb5c1f91f25c62e59ae2615aadb3"
+      "size": 8704,
+      "sha256": "11edb4efb25e8f7458b21f3f87d92273736e651b11b3a1ecb8c0f3255fdac9f9"
     },
     "robots.txt": {
       "size": 126,
@@ -363,12 +375,12 @@
       "sha256": "9d63b12bd14e7a3b054cb778f4d479eb34cf0c525c85f59bcabac4915eb4527d"
     },
     "terms.html": {
-      "size": 6587,
-      "sha256": "f04471eadb1fdabbccef5da770e41640ee1dc75a1d007853d6b1e3239459ee89"
+      "size": 6607,
+      "sha256": "d71c85281ddd71a88cd4090aed94e08b42abdb577d74ab04cc3e6c4714bab6f6"
     },
     "welcome.html": {
-      "size": 8248,
-      "sha256": "67af3557e76cad3e6b27aeea01f8cddafe872eb4a40761e4f13d286804ce6aed"
+      "size": 8268,
+      "sha256": "b274ea9aa1e332343b2e2d8e548dbf812546522890c8a9dc7d7ea2b7f3803149"
     }
   }
 }
